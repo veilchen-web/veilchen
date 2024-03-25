@@ -15,21 +15,19 @@
     :target: https://pypi.python.org/pypi/bottle/
     :alt: License
 
-.. _mako: http://www.makotemplates.org/
-.. _cheetah: http://www.cheetahtemplate.org/
 .. _jinja2: http://jinja.pocoo.org/
-.. _paste: https://pythonpaste.readthedocs.io/
-.. _fapws3: https://github.com/william-os4y/fapws3
 .. _bjoern: https://github.com/jonashaag/bjoern
-.. _cherrypy: https://docs.cherrypy.dev/
 .. _WSGI: https://wsgi.readthedocs.io/
 .. _Python: http://python.org/
 
-============================
-Bottle: Python Web Framework
-============================
+=====================================================
+Veilchen: A minimal and friendly Python Web Framework
+=====================================================
 
-Bottle is a fast, simple and lightweight WSGI_ micro web-framework for Python_. It is distributed as a single file module and has no dependencies other than the `Python Standard Library <http://docs.python.org/library/>`_.
+Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for Python_.
+It is distributed as a single file module and has no dependencies other than the
+`Python Standard Library <http://docs.python.org/library/>`_.
+It is a friendly fork of the `Bottle <http://bottlepy.org>`_ project.
 
 
 * **Routing:** Requests to function-call mapping with support for clean and  dynamic URLs.
@@ -37,15 +35,15 @@ Bottle is a fast, simple and lightweight WSGI_ micro web-framework for Python_. 
 * **Utilities:** Convenient access to form data, file uploads, cookies, headers and other HTTP-related metadata.
 * **Server:** Built-in HTTP development server and support for paste_, fapws3_, bjoern_, `Google App Engine <https://cloud.google.com/appengine/>`_, cherrypy_ or any other WSGI_ capable HTTP server.
 
-Homepage and documentation: http://bottlepy.org
+Homepage and documentation: https://github.com/veilchen-web/veilchen
 
 
-Example: "Hello World" in a bottle
-----------------------------------
+Example: "Hello World" in a Veilchen
+------------------------------------
 
 .. code-block:: python
 
-  from bottle import route, run, template
+  from veilchen import route, run, template
 
   @route('/hello/<name>')
   def index(name):
@@ -59,16 +57,20 @@ Run this script or paste it into a Python console, then point your browser to `<
 Download and Install
 --------------------
 
-.. __: https://github.com/bottlepy/bottle/raw/master/bottle.py
+.. __: https://raw.githubusercontent.com/veilchen-web/veilchen/master/veilchen.py
 
-Install the latest stable release with ``pip install bottle`` or download `bottle.py`__ (unstable) into your project directory. There are no hard dependencies other than the Python standard library. Bottle runs with **Python 2.7 and 3.6+**.
+Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable)
+into your project directory.
+There are no hard dependencies other than the Python standard library. Veilchen runs with Python version **3.7+**.
 
 
 License
 -------
 
-.. __: https://github.com/bottlepy/bottle/raw/master/LICENSE
+.. __: https://raw.githubusercontent.com/veilchen-web/veilchen/master/LICENSE
 
 Code and documentation are available according to the MIT License (see LICENSE__).
 
-The Bottle logo however is *NOT* covered by that license. It is allowed to use the logo as a link to the bottle homepage or in direct context with the unmodified library. In all other cases, please ask first.
+The Veilchen logo however is *NOT* covered by that license.
+It is allowed to use the logo as a link to the Veilchen homepage or in direct context with the unmodified library.
+In all other cases, please ask first.
