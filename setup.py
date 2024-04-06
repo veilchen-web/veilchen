@@ -1,26 +1,22 @@
 #!/usr/bin/env python
 
-import sys
 from setuptools import setup
 
-if sys.version_info < (2, 7):
-    raise NotImplementedError("Sorry, you need at least Python 2.7 or Python 3.6+ to use bottle.")
-
-import bottle
+import veilchen
 
 setup(name='bottle',
-      version=bottle.__version__,
+      version=veilchen.__version__,
       description='Fast and simple WSGI-framework for small web-applications.',
-      long_description=bottle.__doc__,
+      long_description=veilchen.__doc__,
       long_description_content_type="text/markdown",
-      author=bottle.__author__,
-      author_email='marc@gsites.de',
+      author="Oz Tiram",
+      author_email='oz.tiram@gmail.com',
       url='http://bottlepy.org/',
       project_urls={
           'Source': 'https://github.com/bottlepy/bottle',
       },
-      py_modules=['bottle'],
-      scripts=['bottle.py'],
+      py_modules=['veilchen'],
+      scripts=['veilechen.py'],
       license='MIT',
       platforms='any',
       classifiers=['Development Status :: 4 - Beta',
@@ -34,11 +30,10 @@ setup(name='bottle',
                    'Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware',
                    'Topic :: Internet :: WWW/HTTP :: WSGI :: Server',
                    'Topic :: Software Development :: Libraries :: Application Frameworks',
-                   'Programming Language :: Python :: 2.7',
                    'Programming Language :: Python :: 3',
-                   'Programming Language :: Python :: 3.6',
-                   'Programming Language :: Python :: 3.7',
-                   'Programming Language :: Python :: 3.8',
                    'Programming Language :: Python :: 3.9',
+                   'Programming Language :: Python :: 3.10',
+                   'Programming Language :: Python :: 3.11',
+                   'Programming Language :: Python :: 3.12',
                    ],
       )
