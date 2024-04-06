@@ -35,19 +35,19 @@ This is just a simplification. Plugins can do a lot more than just decorating ro
 
 This plugin measures the execution time for each request and adds an appropriate ``X-Exec-Time`` header to the response. As you can see, the plugin returns a wrapper and the wrapper calls the original callback recursively. This is how decorators usually work.
 
-The last line tells Bottle to install the plugin to the default application. This causes the plugin to be automatically applied to all routes of that application. In other words, ``stopwatch()`` is called once for each route callback and the return value is used as a replacement for the original callback.
+The last line tells Veilchen to install the plugin to the default application. This causes the plugin to be automatically applied to all routes of that application. In other words, ``stopwatch()`` is called once for each route callback and the return value is used as a replacement for the original callback.
 
 Plugins are applied on demand, that is, as soon as a route is requested for the first time. For this to work properly in multi-threaded environments, the plugin should be thread-safe. This is not a problem most of the time, but keep it in mind.
 
 Once all plugins are applied to a route, the wrapped callback is cached and subsequent requests are handled by the cached version directly. This means that a plugin is usually applied only once to a specific route. That cache, however, is cleared every time the list of installed plugins changes. Your plugin should be able to decorate the same route more than once.
 
-The decorator API is quite limited, though. You don't know anything about the route being decorated or the associated application object and have no way to efficiently store data that is shared among all routes. But fear not! Plugins are not limited to just decorator functions. Bottle accepts anything as a plugin as long as it is callable or implements an extended API. This API is described below and gives you a lot of control over the whole process.
+The decorator API is quite limited, though. You don't know anything about the route being decorated or the associated application object and have no way to efficiently store data that is shared among all routes. But fear not! Plugins are not limited to just decorator functions. Veilchen accepts anything as a plugin as long as it is callable or implements an extended API. This API is described below and gives you a lot of control over the whole process.
 
 
 Plugin API
 ==========
 
-:class:`Plugin` is not a real class (you cannot import it from :mod:`veilchen`) but an interface that plugins are expected to implement. Bottle accepts any object of any type as a plugin, as long as it conforms to the following API.
+:class:`Plugin` is not a real class (you cannot import it from :mod:`veilchen`) but an interface that plugins are expected to implement. Veilchen accepts any object of any type as a plugin, as long as it conforms to the following API.
 
 .. class:: Plugin(object)
 
@@ -55,7 +55,7 @@ Plugin API
 
     .. attribute:: name
 
-        Both :meth:`Bottle.uninstall` and the `skip` parameter of :meth:`Bottle.route()` accept a name string to refer to a plugin or plugin type. This works only for plugins that have a name attribute.
+        Both :meth:`Veilchen.uninstall` and the `skip` parameter of :meth:`Veilchen.route()` accept a name string to refer to a plugin or plugin type. This works only for plugins that have a name attribute.
 
     .. attribute:: api
 
@@ -63,7 +63,7 @@ Plugin API
 
     .. method:: setup(self, app)
 
-        Called as soon as the plugin is installed to an application (see :meth:`Bottle.install`). The only parameter is the associated application object.
+        Called as soon as the plugin is installed to an application (see :meth:`Veilchen.install`). The only parameter is the associated application object.
 
     .. method:: __call__(self, callback)
 
@@ -75,10 +75,10 @@ Plugin API
 
     .. method:: close(self)
 
-        Called immediately before the plugin is uninstalled or the application is closed (see :meth:`Bottle.uninstall` or :meth:`Bottle.close`).
+        Called immediately before the plugin is uninstalled or the application is closed (see :meth:`Veilchen.uninstall` or :meth:`Veilchen.close`).
 
 
-Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for plugins that are applied directly to a route via the :meth:`Bottle.route()` decorator, but only for plugins installed to an application.
+Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for plugins that are applied directly to a route via the :meth:`Veilchen.route()` decorator, but only for plugins installed to an application.
 
 
 .. _plugin-changelog:
@@ -86,13 +86,13 @@ Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for plugins 
 Plugin API changes
 ------------------
 
-The Plugin API is still evolving and changed with Bottle 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell veilchen which API to use. The API differences are summarized here.
+The Plugin API is still evolving and changed with Veilchen 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell veilchen which API to use. The API differences are summarized here.
 
-* **Bottle 0.9 API 1** (:attr:`Plugin.api` not present)
+* **Veilchen 0.9 API 1** (:attr:`Plugin.api` not present)
 
   * Original Plugin API as described in the 0.9 docs.
 
-* **Bottle 0.10 API 2** (:attr:`Plugin.api` equals 2)
+* **Veilchen 0.10 API 2** (:attr:`Plugin.api` equals 2)
 
   * The `context` parameter of the :meth:`Plugin.apply` method is now an instance of :class:`Route` instead of a context dictionary.
 
@@ -114,10 +114,10 @@ callback     The original callback with no plugins applied. Useful for
              introspection.
 name         The name of the route (if specified) or ``None``.
 plugins      A list of route-specific plugins. These are applied in addition to
-             application-wide plugins. (see :meth:`Bottle.route`).
+             application-wide plugins. (see :meth:`Veilchen.route`).
 skiplist     A list of plugins to not apply to this route (again, see
-             :meth:`Bottle.route`).
-config       Additional keyword arguments passed to the :meth:`Bottle.route`
+             :meth:`Veilchen.route`).
+config       Additional keyword arguments passed to the :meth:`Veilchen.route`
              decorator are stored in this dictionary. Used for route-specific
              configuration and meta-data.
 ===========  =================================================================
@@ -140,7 +140,7 @@ Once all plugins are applied to a route, the wrapped route callback is cached to
 
 For performance reasons, however, it might be worthwhile to choose a different wrapper based on current needs, work with closures, or enable or disable a plugin at runtime. Let's take the built-in HooksPlugin as an example: If no hooks are installed, the plugin removes itself from all affected routes and has virtually no overhead. As soon as you install the first hook, the plugin activates itself and takes effect again.
 
-To achieve this, you need control over the callback cache: :meth:`Route.reset` clears the cache for a single route and :meth:`Bottle.reset` clears all caches for all routes of an application at once. On the next request, all plugins are re-applied to the route as if it were requested for the first time.
+To achieve this, you need control over the callback cache: :meth:`Route.reset` clears the cache for a single route and :meth:`Veilchen.reset` clears all caches for all routes of an application at once. On the next request, all plugins are re-applied to the route as if it were requested for the first time.
 
 Both methods won't affect the current request if called from within a route callback, of cause. To force a restart of the current request, raise :exc:`RouteReset` as an exception.
 
@@ -215,7 +215,7 @@ This plugin provides an sqlite3 database connection handle as an additional keyw
             # Replace the route callback with the wrapped one.
             return wrapper
 
-This plugin is actually useful and very similar to the version bundled with Bottle. Not bad for less than 60 lines of code, don't you think? Here is a usage example::
+This plugin is actually useful and very similar to the version bundled with Veilchen. Not bad for less than 60 lines of code, don't you think? Here is a usage example::
 
     sqlite = SQLitePlugin(dbfile='/tmp/test.db')
     veilchen.install(sqlite)

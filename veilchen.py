@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Bottle is a fast and simple micro-framework for small web applications. It
+Veilchen is a fast and simple micro-framework for small web applications. It
 offers request dispatching (Routes) with URL parameter support, templates,
 a built-in HTTP Server and adapters for many third party WSGI/HTTP-server and
 template engines - all in a single file and with no dependencies other than the
@@ -168,7 +168,7 @@ def update_wrapper(wrapper, wrapped, *a, **ka):
 
 
 def depr(major, minor, cause, fix):
-    text = "Warning: Use of deprecated feature or API. (Deprecated in Bottle-%d.%d)\n"\
+    text = "Warning: Use of deprecated feature or API. (Deprecated in Veilchen-%d.%d)\n"\
            "Cause: %s\n"\
            "Fix: %s\n" % (major, minor, cause, fix)
     if DEBUG == 'strict':
@@ -245,7 +245,7 @@ class lazy_attribute(object):
 ###############################################################################
 
 
-class BottleException(Exception):
+class VeilchenException(Exception):
     """ A base class for exceptions used by veilchen. """
     pass
 
@@ -254,11 +254,11 @@ class BottleException(Exception):
 ###############################################################################
 
 
-class RouteError(BottleException):
+class RouteError(VeilchenException):
     """ This is a base class for all routing related exceptions """
 
 
-class RouteReset(BottleException):
+class RouteReset(VeilchenException):
     """ If raised by a plugin or request handler, the route is reset and all
         plugins are re-applied. """
 
@@ -507,11 +507,11 @@ class Route(object):
         self.callback = callback
         #: The name of the route (if specified) or ``None``.
         self.name = name or None
-        #: A list of route-specific plugins (see :meth:`Bottle.route`).
+        #: A list of route-specific plugins (see :meth:`Veilchen.route`).
         self.plugins = plugins or []
-        #: A list of plugins to not apply to this route (see :meth:`Bottle.route`).
+        #: A list of plugins to not apply to this route (see :meth:`Veilchen.route`).
         self.skiplist = skiplist or []
-        #: Additional keyword arguments passed to the :meth:`Bottle.route`
+        #: Additional keyword arguments passed to the :meth:`Veilchen.route`
         #: decorator are stored in this dictionary. Used for route-specific
         #: plugin configuration and meta-data.
         self.config = app.config._make_overlay()
@@ -598,8 +598,8 @@ class Route(object):
 ###############################################################################
 
 
-class Bottle(object):
-    """ Each Bottle object represents a single, distinct web application and
+class Veilchen(object):
+    """ Each Veilchen object represents a single, distinct web application and
         consists of routes, callbacks, plugins, resources and configuration.
         Instances are callable WSGI applications.
 
@@ -624,12 +624,12 @@ class Bottle(object):
         })
 
         if kwargs.get('catchall') is False:
-            depr(0, 13, "Bottle(catchall) keyword argument.",
+            depr(0, 13, "Veilchen(catchall) keyword argument.",
                         "The 'catchall' setting is now part of the app "
                         "configuration. Fix: `app.config['catchall'] = False`")
             self.config['catchall'] = False
         if kwargs.get('autojson') is False:
-            depr(0, 13, "Bottle(autojson) keyword argument.",
+            depr(0, 13, "Veilchen(autojson) keyword argument.",
                  "The 'autojson' setting is now part of the app "
                  "configuration. Fix: `app.config['json.enable'] = False`")
             self.config['json.disable'] = True
@@ -667,7 +667,7 @@ class Bottle(object):
             after_request
                 Executed once after each request regardless of its outcome.
             app_reset
-                Called whenever :meth:`Bottle.reset` is called.
+                Called whenever :meth:`Veilchen.reset` is called.
         """
         if name in self.__hook_reversed:
             self._hooks[name].insert(0, func)
@@ -759,20 +759,20 @@ class Bottle(object):
             self.add_route(route)
 
     def mount(self, prefix, app, **options):
-        """ Mount an application (:class:`Bottle` or plain WSGI) to a specific
+        """ Mount an application (:class:`Veilchen` or plain WSGI) to a specific
             URL prefix. Example::
 
                 parent_app.mount('/prefix/', child_app)
 
             :param prefix: path prefix or `mount-point`.
-            :param app: an instance of :class:`Bottle` or a WSGI application.
+            :param app: an instance of :class:`Veilchen` or a WSGI application.
 
             Plugins from the parent application are not applied to the routes
             of the mounted child application. If you need plugins in the child
             application, install them separately.
 
             While it is possible to use path wildcards within the prefix path
-            (:class:`Bottle` childs only), it is highly discouraged.
+            (:class:`Veilchen` childs only), it is highly discouraged.
 
             The prefix path must end with a slash. If you want to access the
             root of the child application via `/prefix` in addition to
@@ -783,17 +783,17 @@ class Bottle(object):
         if not prefix.startswith('/'):
             raise ValueError("Prefix must start with '/'")
 
-        if isinstance(app, Bottle):
+        if isinstance(app, Veilchen):
             return self._mount_app(prefix, app, **options)
         else:
             return self._mount_wsgi(prefix, app, **options)
 
     def merge(self, routes):
-        """ Merge the routes of another :class:`Bottle` application or a list of
+        """ Merge the routes of another :class:`Veilchen` application or a list of
             :class:`Route` objects into this application. The routes keep their
             'owner', meaning that the :data:`Route.app` attribute is not
             changed. """
-        if isinstance(routes, Bottle):
+        if isinstance(routes, Veilchen):
             routes = routes.routes
         for route in routes:
             self.add_route(route)
@@ -1116,7 +1116,7 @@ class Bottle(object):
             return [tob(err)]
 
     def __call__(self, environ, start_response):
-        """ Each instance of :class:'Bottle' is a WSGI application. """
+        """ Each instance of :class:'Veilchen' is a WSGI application. """
         return self.wsgi(environ, start_response)
 
     def __enter__(self):
@@ -1161,7 +1161,7 @@ class BaseRequest(object):
 
     @DictProperty('environ', 'veilchen.app', read_only=True)
     def app(self):
-        """ Bottle application handling this request. """
+        """ Veilchen application handling this request. """
         raise RuntimeError('This request is not connected to an application.')
 
     @DictProperty('environ', 'veilchen.route', read_only=True)
@@ -1938,7 +1938,7 @@ Request = BaseRequest
 Response = BaseResponse
 
 
-class HTTPResponse(Response, BottleException):
+class HTTPResponse(Response, VeilchenException):
     def __init__(self, body='', status=None, headers=None, **more_headers):
         super(HTTPResponse, self).__init__(body, status, headers, **more_headers)
 
@@ -1967,7 +1967,7 @@ class HTTPError(HTTPResponse):
 ###############################################################################
 
 
-class PluginError(BottleException):
+class PluginError(VeilchenException):
     pass
 
 
@@ -2596,9 +2596,9 @@ class AppStack(list):
         return self.default
 
     def push(self, value=None):
-        """ Add a new :class:`Bottle` instance to the stack """
-        if not isinstance(value, Bottle):
-            value = Bottle()
+        """ Add a new :class:`Veilchen` instance to the stack """
+        if not isinstance(value, Veilchen):
+            value = Veilchen()
         self.append(value)
         return value
     new_app = push
@@ -3170,14 +3170,14 @@ def auth_basic(check, realm="private", text="Access denied"):
 
     return decorator
 
-# Shortcuts for common Bottle methods.
+# Shortcuts for common Veilchen methods.
 # They all refer to the current default application.
 
 
 def make_default_app_wrapper(name):
     """ Return a callable that relays calls to the current default app. """
 
-    @functools.wraps(getattr(Bottle, name))
+    @functools.wraps(getattr(Veilchen, name))
     def wrapper(*a, **ka):
         return getattr(app(), name)(*a, **ka)
 
@@ -3434,7 +3434,7 @@ class GeventServer(ServerAdapter):
     def run(self, handler):
         from gevent import pywsgi, local
         if not isinstance(threading.local(), local.local):
-            msg = "Bottle requires gevent.monkey.patch_all() (before import)"
+            msg = "Veilchen requires gevent.monkey.patch_all() (before import)"
             raise RuntimeError(msg)
         if self.quiet:
             self.options['log'] = None
@@ -3483,7 +3483,7 @@ class EventletServer(ServerAdapter):
     def run(self, handler):
         from eventlet import wsgi, listen, patcher
         if not patcher.is_monkey_patched(os):
-            msg = "Bottle requires eventlet.monkey_patch() (before import)"
+            msg = "Veilchen requires eventlet.monkey_patch() (before import)"
             raise RuntimeError(msg)
         socket_args = {}
         for arg in ('backlog', 'family'):
@@ -3705,7 +3705,7 @@ def run(app=None,
 
         server.quiet = server.quiet or quiet
         if not server.quiet:
-            _stderr("Bottle v%s server starting up (using %s)..." %
+            _stderr("Veilchen v%s server starting up (using %s)..." %
                     (__version__, repr(server)))
             if server.host.startswith("unix:"):
                 _stderr("Listening on %s" % server.host)
@@ -3781,7 +3781,7 @@ class FileCheckerThread(threading.Thread):
 ###############################################################################
 
 
-class TemplateError(BottleException):
+class TemplateError(VeilchenException):
     pass
 
 
@@ -4346,10 +4346,10 @@ request = LocalRequest()
 #: HTTP response for the *current* request.
 response = LocalResponse()
 
-#: A thread-safe namespace. Not used by Bottle.
+#: A thread-safe namespace. Not used by Veilchen.
 local = threading.local()
 
-# Initialize app stack (create first empty Bottle app now deferred until needed)
+# Initialize app stack (create first empty Veilchen app now deferred until needed)
 # BC: 0.6.4 and needed for run()
 apps = app = default_app = AppStack()
 
@@ -4368,7 +4368,7 @@ def _main(argv):  # pragma: no coverage
         sys.exit(1)
 
     if args.version:
-        print('Bottle %s' % __version__)
+        print('Veilchen %s' % __version__)
         sys.exit(0)
     if not args.app:
         _cli_error("No application entry point specified.")

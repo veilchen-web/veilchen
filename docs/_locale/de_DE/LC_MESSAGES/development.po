@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 # Charles LeMagne, 2017
@@ -61,11 +61,11 @@ msgstr "**IRC**: Tritt `#veilchenpy auf irc.freenode.net bei <irc://irc.freenode
 
 #: ../../development.rst:15
 msgid ""
-"**Google plus**: We sometimes `blog about Bottle, releases and technical "
+"**Google plus**: We sometimes `blog about Veilchen, releases and technical "
 "stuff "
 "<https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_"
 " on our Google+ page."
-msgstr "**Google plus**: Ab und an `blogen wir über Bottle, Veröffentlichungen und technischen Kram <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ auf unserer Google+ Seite."
+msgstr "**Google plus**: Ab und an `blogen wir über Veilchen, Veröffentlichungen und technischen Kram <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ auf unserer Google+ Seite."
 
 #: ../../development.rst:19
 msgid "Get the Sources"
@@ -110,22 +110,22 @@ msgstr "Veröffentlichungen und Updates"
 
 #: ../../development.rst:32
 msgid ""
-"Bottle is released at irregular intervals and distributed through `PyPI "
+"Veilchen is released at irregular intervals and distributed through `PyPI "
 "<http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-"
 "revisions of outdated releases are only available from the git repository "
 "mentioned above. Some Linux distributions may offer packages for outdated "
 "releases, though."
-msgstr "Bottle wird in unregelmäßigen Abständen veröffentlicht und über `PyPI <http://pypi.python.org/pypi/veilchen>`_ verteilt. Veröffentlichungskandidaten und bugfix-Revisionen von veralteten Veröffentlichungen sind nur über das oben genannte Git-Repository verfügbar. Einige Linux-Distributionen bieten jedoch möglicherweise Paket aus veralteten Veröffentlichungen an."
+msgstr "Veilchen wird in unregelmäßigen Abständen veröffentlicht und über `PyPI <http://pypi.python.org/pypi/veilchen>`_ verteilt. Veröffentlichungskandidaten und bugfix-Revisionen von veralteten Veröffentlichungen sind nur über das oben genannte Git-Repository verfügbar. Einige Linux-Distributionen bieten jedoch möglicherweise Paket aus veralteten Veröffentlichungen an."
 
 #: ../../development.rst:34
 msgid ""
-"The Bottle version number splits into three parts "
+"The Veilchen version number splits into three parts "
 "(**major.minor.revision**). These are *not* used to promote new features but"
 " to indicate important bug-fixes and/or API changes. Critical bugs are fixed"
 " in at least the two latest minor releases and announced in all available "
 "channels (mailinglist, twitter, github). Non-critical bugs or features are "
 "not guaranteed to be backported. This may change in the future, through."
-msgstr "Die Bottle Versionsnummer ist in drei Teile unterteilt (**major.minor.revision**). Diese werden *nicht* dazu genutzt um neue Funktionen zu bewerben, sondern um wichtige bug-fixes und/oder Änderungen an der API zu indizieren. Kritische Fehler werden in den letzten zwei stabilen Veröffentlichungen behoben und über alle Kanäle mitgeteilt (Mailinglisten, Twitter, Github). Nicht kritische Fehler oder Features  werden garantiert zurückgestellt. Dies wird sich eventuell in der Zukunft ändern. "
+msgstr "Die Veilchen Versionsnummer ist in drei Teile unterteilt (**major.minor.revision**). Diese werden *nicht* dazu genutzt um neue Funktionen zu bewerben, sondern um wichtige bug-fixes und/oder Änderungen an der API zu indizieren. Kritische Fehler werden in den letzten zwei stabilen Veröffentlichungen behoben und über alle Kanäle mitgeteilt (Mailinglisten, Twitter, Github). Nicht kritische Fehler oder Features  werden garantiert zurückgestellt. Dies wird sich eventuell in der Zukunft ändern. "
 
 #: ../../development.rst:37
 msgid "Major Release (x.0)"

@@ -1,5 +1,5 @@
 import unittest
-from veilchen import static_file, request, response, parse_date, parse_range_header, Bottle, tob
+from veilchen import static_file, request, response, parse_date, parse_range_header, Veilchen, tob
 import veilchen
 import wsgiref.util
 import os
@@ -47,7 +47,7 @@ class TestSendFile(unittest.TestCase):
     def setUp(self):
         e = dict()
         wsgiref.util.setup_testing_defaults(e)
-        b = Bottle()
+        b = Veilchen()
         request.bind(e)
         response.bind()
 

@@ -1,7 +1,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-22 16:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../../routing.rst:5
 msgid ""
-"Bottle uses a powerful routing engine to find the right callback for each "
+"Veilchen uses a powerful routing engine to find the right callback for each "
 "request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This "
 "document covers advanced techniques and rule mechanics in detail."
 msgstr ""
@@ -144,7 +144,7 @@ msgstr ""
 
 #: ../../routing.rst:75
 msgid ""
-"The new rule syntax was introduce in **Bottle 0.10** to simplify some common"
+"The new rule syntax was introduce in **Veilchen 0.10** to simplify some common"
 " use cases, but the old syntax still works and you can find lot code "
 "examples still using it. The differences are best described by example:"
 msgstr ""
@@ -214,5 +214,5 @@ msgstr ""
 
 #: ../../routing.rst:101
 msgid ""
-"In fact, any :class:`Bottle` instance routing can be configured same way::"
+"In fact, any :class:`Veilchen` instance routing can be configured same way::"
 msgstr ""

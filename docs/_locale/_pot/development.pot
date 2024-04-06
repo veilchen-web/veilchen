@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -45,7 +45,7 @@ msgid "**IRC**: Join `#veilchenpy on irc.freenode.net <irc://irc.freenode.net/ve
 msgstr ""
 
 #: ../../development.rst:15
-msgid "**Google plus**: We sometimes `blog about Bottle, releases and technical stuff <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ on our Google+ page."
+msgid "**Google plus**: We sometimes `blog about Veilchen, releases and technical stuff <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ on our Google+ page."
 msgstr ""
 
 #: ../../development.rst:19
@@ -77,11 +77,11 @@ msgid "Releases and Updates"
 msgstr ""
 
 #: ../../development.rst:32
-msgid "Bottle is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though."
+msgid "Veilchen is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though."
 msgstr ""
 
 #: ../../development.rst:34
-msgid "The Bottle version number splits into three parts (**major.minor.revision**). These are *not* used to promote new features but to indicate important bug-fixes and/or API changes. Critical bugs are fixed in at least the two latest minor releases and announced in all available channels (mailinglist, twitter, github). Non-critical bugs or features are not guaranteed to be backported. This may change in the future, through."
+msgid "The Veilchen version number splits into three parts (**major.minor.revision**). These are *not* used to promote new features but to indicate important bug-fixes and/or API changes. Critical bugs are fixed in at least the two latest minor releases and announced in all available channels (mailinglist, twitter, github). Non-critical bugs or features are not guaranteed to be backported. This may change in the future, through."
 msgstr ""
 
 #: ../../development.rst:37

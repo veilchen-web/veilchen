@@ -11,7 +11,7 @@ import veilchen
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
               'sphinx.ext.viewcode']
 master_doc = 'index'
-project = u'Bottle'
+project = u'Veilchen'
 copyright = u'2009-%s, %s' % (time.strftime('%Y'), veilchen.__author__)
 version = ".".join(veilchen.__version__.split(".")[:2])
 release = veilchen.__version__

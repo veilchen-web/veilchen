@@ -1,7 +1,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-22 16:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -141,7 +141,7 @@ msgstr ""
 
 #: ../../api.rst:44
 msgid ""
-"Bottle maintains a stack of :class:`Bottle` instances (see :func:`app` and "
+"Veilchen maintains a stack of :class:`Veilchen` instances (see :func:`app` and "
 ":class:`AppStack`) and uses the top of the stack as a *default application* "
 "for some of the module-level functions and decorators."
 msgstr ""
@@ -149,13 +149,13 @@ msgstr ""
 #: ../../api.rst:54
 msgid ""
 "Decorator to install a route to the current default application. See "
-":meth:`Bottle.route` for details."
+":meth:`Veilchen.route` for details."
 msgstr ""
 
 #: ../../api.rst:59
 msgid ""
 "Decorator to install an error handler to the current default application. "
-"See :meth:`Bottle.error` for details."
+"See :meth:`Veilchen.error` for details."
 msgstr ""
 
 #: ../../api.rst:63
@@ -331,7 +331,7 @@ msgid "Return the current default application and remove it from the stack."
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.AppStack.push:1
-msgid "Add a new :class:`Bottle` instance to the stack"
+msgid "Add a new :class:`Veilchen` instance to the stack"
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.ResourceManager:1
@@ -468,118 +468,118 @@ msgstr ""
 msgid "Exceptions"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.BottleException:1
+#: ../../../veilchen.pydocstring of veilchen.VeilchenException:1
 msgid "A base class for exceptions used by veilchen."
 msgstr ""
 
 #: ../../api.rst:117
-msgid "The :class:`Bottle` Class"
+msgid "The :class:`Veilchen` Class"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen:1
 msgid ""
-"Each Bottle object represents a single, distinct web application and "
+"Each Veilchen object represents a single, distinct web application and "
 "consists of routes, callbacks, plugins, resources and configuration. "
 "Instances are callable WSGI applications."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle:5
+#: ../../../veilchen.pydocstring of veilchen.Veilchen:5
 msgid ""
 "If true (default), handle all exceptions. Turn off to let debugging "
 "middleware handle exceptions."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.config:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.config:1
 msgid "A :class:`ConfigDict` for app specific configuration."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.resources:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.resources:1
 msgid "A :class:`ResourceManager` for application files"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.catchall:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.catchall:1
 msgid "If true, most exceptions are caught and returned as :exc:`HTTPError`"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:1
 msgid "Attach a callback to a hook. Three hooks are currently implemented:"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:4
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:4
 msgid "before_request"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:4
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:4
 msgid ""
 "Executed once before each request. The request context is available, but no "
 "routing has happened yet."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:6
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:6
 msgid "after_request"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:7
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:7
 msgid "Executed once after each request regardless of its outcome."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:8
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:8
 msgid "app_reset"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_hook:9
-msgid "Called whenever :meth:`Bottle.reset` is called."
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_hook:9
+msgid "Called whenever :meth:`Veilchen.reset` is called."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.remove_hook:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.remove_hook:1
 msgid "Remove a callback from a hook."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.trigger_hook:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.trigger_hook:1
 msgid "Trigger a hook and return a list of results."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.hook:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.hook:1
 msgid ""
 "Return a decorator that attaches a callback to a hook. See :meth:`add_hook` "
 "for details."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.mount:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.mount:1
 msgid ""
-"Mount an application (:class:`Bottle` or plain WSGI) to a specific URL "
+"Mount an application (:class:`Veilchen` or plain WSGI) to a specific URL "
 "prefix. Example::"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.mount:6
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.mount:6
 msgid ""
 "path prefix or `mount-point`. If it ends in a slash, that slash is "
 "mandatory."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.mount:8
-msgid "an instance of :class:`Bottle` or a WSGI application."
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.mount:8
+msgid "an instance of :class:`Veilchen` or a WSGI application."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.mount:10
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.mount:10
 msgid "All other parameters are passed to the underlying :meth:`route` call."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.merge:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.merge:1
 msgid ""
-"Merge the routes of another :class:`Bottle` application or a list of "
+"Merge the routes of another :class:`Veilchen` application or a list of "
 ":class:`Route` objects into this application. The routes keep their 'owner',"
 " meaning that the :data:`Route.app` attribute is not changed."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.install:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.install:1
 msgid ""
 "Add a plugin to the list of plugins and prepare it for being applied to all "
 "routes of this application. A plugin may be a simple decorator or an object "
 "that implements the :class:`Plugin` API."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.uninstall:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.uninstall:1
 msgid ""
 "Uninstall plugins. Pass an instance to remove a specific plugin, a type "
 "object to remove all plugins that match that type, a string to remove all "
@@ -587,109 +587,109 @@ msgid ""
 "plugins. Return the list of removed plugins."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.reset:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.reset:1
 msgid ""
 "Reset all routes (force plugins to be re-applied) and clear all caches. If "
 "an ID or route object is given, only that specific route is affected."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.close:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.close:1
 msgid "Close the application and all installed plugins."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.run:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.run:1
 msgid "Calls :func:`run` with the same parameters."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.match:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.match:1
 msgid ""
 "Search for a matching route and return a (:class:`Route` , urlargs) tuple. "
 "The second value is a dictionary with parameters extracted from the URL. "
 "Raise :exc:`HTTPError` (404/405) on a non-match."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.get_url:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.get_url:1
 msgid "Return a string that matches a named route"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.add_route:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.add_route:1
 msgid "Add a route object, but do not change the :data:`Route.app` attribute."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:1
 msgid "A decorator to bind a function to a request URL. Example::"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:7
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:7
 msgid ""
 "The ``:name`` part is a wildcard. See :class:`Router` for syntax details."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:10
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:10
 msgid ""
 "Request path or a list of paths to listen to. If no path is specified, it is"
 " automatically generated from the signature of the function."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:13
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:13
 msgid ""
 "HTTP method (`GET`, `POST`, `PUT`, ...) or a list of methods to listen to. "
 "(default: `GET`)"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:15
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:15
 msgid ""
 "An optional shortcut to avoid the decorator syntax. ``route(..., "
 "callback=func)`` equals ``route(...)(func)``"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:17
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:17
 msgid "The name for this route. (default: None)"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:18
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:18
 msgid ""
 "A decorator or plugin or a list of plugins. These are applied to the route "
 "callback in addition to installed plugins."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:20
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:20
 msgid ""
 "A list of plugins, plugin classes or names. Matching plugins are not "
 "installed to this route. ``True`` skips all."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.route:23
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.route:23
 msgid ""
 "Any additional keyword arguments are stored as route-specific configuration "
 "and passed to plugins (see :meth:`Plugin.apply`)."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.get:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.get:1
 msgid "Equals :meth:`route`."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.post:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.post:1
 msgid "Equals :meth:`route` with a ``POST`` method parameter."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.put:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.put:1
 msgid "Equals :meth:`route` with a ``PUT`` method parameter."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.delete:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.delete:1
 msgid "Equals :meth:`route` with a ``DELETE`` method parameter."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.patch:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.patch:1
 msgid "Equals :meth:`route` with a ``PATCH`` method parameter."
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.error:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.error:1
 msgid "Decorator: Register an output handler for a HTTP error code"
 msgstr ""
 
-#: ../../../veilchen.pydocstring of veilchen.Bottle.wsgi:1
+#: ../../../veilchen.pydocstring of veilchen.Veilchen.wsgi:1
 msgid "The veilchen WSGI-interface."
 msgstr ""
 
@@ -722,17 +722,17 @@ msgid "The name of the route (if specified) or ``None``."
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.Route.plugins:1
-msgid "A list of route-specific plugins (see :meth:`Bottle.route`)."
+msgid "A list of route-specific plugins (see :meth:`Veilchen.route`)."
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.Route.skiplist:1
 msgid ""
-"A list of plugins to not apply to this route (see :meth:`Bottle.route`)."
+"A list of plugins to not apply to this route (see :meth:`Veilchen.route`)."
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.Route.config:1
 msgid ""
-"Additional keyword arguments passed to the :meth:`Bottle.route` decorator "
+"Additional keyword arguments passed to the :meth:`Veilchen.route` decorator "
 "are stored in this dictionary. Used for route-specific plugin configuration "
 "and meta-data."
 msgstr ""
@@ -811,7 +811,7 @@ msgid ""
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.BaseRequest.app:1
-msgid "Bottle application handling this request."
+msgid "Veilchen application handling this request."
 msgstr ""
 
 #: ../../../veilchen.pydocstring of veilchen.BaseRequest.route:1

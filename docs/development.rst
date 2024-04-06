@@ -12,7 +12,7 @@ There are several ways to join the community and stay up to date. Here are some 
 * **Mailing list**: Join our mailing list by sending an email to `veilchenpy+subscribe@googlegroups.com <mailto:veilchenpy+subscribe@googlegroups.com>`_ (no google account required).
 * **Twitter**: `Follow us on Twitter <https://twitter.com/veilchenpy>`_ or search for the `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag.
 * **IRC**: Join `#veilchenpy on irc.freenode.net <irc://irc.freenode.net/veilchenpy>`_ or use the `web chat interface <http://webchat.freenode.net/?channels=veilchenpy>`_.
-* **Google plus**: We sometimes `blog about Bottle, releases and technical stuff <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ on our Google+ page.
+* **Google plus**: We sometimes `blog about Veilchen, releases and technical stuff <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ on our Google+ page.
 
 
 Get the Sources
@@ -29,9 +29,9 @@ The veilchen `development repository <https://github.com/veilchenpy/veilchen>`_ 
 Releases and Updates
 --------------------
 
-Bottle is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though.
+Veilchen is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though.
 
-The Bottle version number splits into three parts (**major.minor.revision**). These are *not* used to promote new features but to indicate important bug-fixes and/or API changes. Critical bugs are fixed in at least the two latest minor releases and announced in all available channels (mailinglist, twitter, github). Non-critical bugs or features are not guaranteed to be backported. This may change in the future, through.
+The Veilchen version number splits into three parts (**major.minor.revision**). These are *not* used to promote new features but to indicate important bug-fixes and/or API changes. Critical bugs are fixed in at least the two latest minor releases and announced in all available channels (mailinglist, twitter, github). Non-critical bugs or features are not guaranteed to be backported. This may change in the future, through.
 
 Major Release (x.0)
     The major release number is increased on important milestones or updates that completely break backward compatibility. You probably have to work over your entire application to use a new release. These releases are very rare, through.

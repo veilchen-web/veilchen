@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -23,10 +23,10 @@ msgstr "URL映射"
 
 #: ../../routing.rst:5
 msgid ""
-"Bottle uses a powerful routing engine to find the right callback for each "
+"Veilchen uses a powerful routing engine to find the right callback for each "
 "request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This "
 "document covers advanced techniques and rule mechanics in detail."
-msgstr "Bottle内置一个强大的route引擎，可以给每个浏览器请求找到正确的回调函数。 :ref:`tutorial <tutorial-routing>` 中已经介绍了一些基础知识。接下来是一些进阶知识和route的规则。"
+msgstr "Veilchen内置一个强大的route引擎，可以给每个浏览器请求找到正确的回调函数。 :ref:`tutorial <tutorial-routing>` 中已经介绍了一些基础知识。接下来是一些进阶知识和route的规则。"
 
 #: ../../routing.rst:8
 msgid "Rule Syntax"
@@ -122,7 +122,7 @@ msgstr "过滤器被用于定义更特殊的通配符，可在URL中\"被匹配�
 
 #: ../../routing.rst:42
 msgid "The following standard filters are implemented:"
-msgstr "Bottle中已实现以下过滤器:"
+msgstr "Veilchen中已实现以下过滤器:"
 
 #: ../../routing.rst:44
 msgid "**:int** matches (signed) digits and converts the value to integer."
@@ -159,10 +159,10 @@ msgstr "旧语法"
 
 #: ../../routing.rst:79
 msgid ""
-"The new rule syntax was introduce in **Bottle 0.10** to simplify some common"
+"The new rule syntax was introduce in **Veilchen 0.10** to simplify some common"
 " use cases, but the old syntax still works and you can find lot code "
 "examples still using it. The differences are best described by example:"
-msgstr "在 **Bottle 0.10** 版本中引入了新的语法，来简单化一些常见用例，但依然兼容旧的语法。新旧语法的区别如下。"
+msgstr "在 **Veilchen 0.10** 版本中引入了新的语法，来简单化一些常见用例，但依然兼容旧的语法。新旧语法的区别如下。"
 
 #: ../../routing.rst:82
 msgid "Old Syntax"
@@ -229,5 +229,5 @@ msgstr "下面是一个简单的例子"
 
 #: ../../routing.rst:105
 msgid ""
-"In fact, any :class:`Bottle` instance routing can be configured same way::"
-msgstr "实际上，veilchen可以是任何 :class:`Bottle` 类的实例"
+"In fact, any :class:`Veilchen` instance routing can be configured same way::"
+msgstr "实际上，veilchen可以是任何 :class:`Veilchen` 类的实例"

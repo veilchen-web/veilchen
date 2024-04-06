@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 " do it (in a micro framework). Depending on requirements and environment you"
 " could use beaker_ middleware with a fitting backend or implement it "
 "yourself. Here is an example for beaker sessions with a file-based backend::"
-msgstr "Bottle自身并没有提供Session的支持，因为在一个迷你框架里面，没有合适的方法来实现。根据需求和使用环境，你可以使用 beaker_ 中间件或自己来实现。下面是一个使用beaker的例子，Session数据存放在\"./data\"目录里面::"
+msgstr "Veilchen自身并没有提供Session的支持，因为在一个迷你框架里面，没有合适的方法来实现。根据需求和使用环境，你可以使用 beaker_ 中间件或自己来实现。下面是一个使用beaker的例子，Session数据存放在\"./data\"目录里面::"
 
 #: ../../recipes.rst:45
 msgid ""
@@ -55,18 +55,18 @@ msgstr "Debugging with Style: 调试中间件"
 
 #: ../../recipes.rst:51
 msgid ""
-"Bottle catches all Exceptions raised in your app code to prevent your WSGI "
+"Veilchen catches all Exceptions raised in your app code to prevent your WSGI "
 "server from crashing. If the built-in :func:`debug` mode is not enough and "
 "you need exceptions to propagate to a debugging middleware, you can turn off"
 " this behaviour::"
-msgstr "Bottle捕获所有应用抛出的异常，防止异常导致WSGI服务器崩溃。如果内置的 :func:`debug` 模式不能满足你的要求，你想在你自己写的中间件里面处理这些异常，那么你可以关闭这个功能。"
+msgstr "Veilchen捕获所有应用抛出的异常，防止异常导致WSGI服务器崩溃。如果内置的 :func:`debug` 模式不能满足你的要求，你想在你自己写的中间件里面处理这些异常，那么你可以关闭这个功能。"
 
 #: ../../recipes.rst:59
 msgid ""
 "Now, veilchen only catches its own exceptions (:exc:`HTTPError`, "
-":exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can "
+":exc:`HTTPResponse` and :exc:`VeilchenException`) and your middleware can "
 "handle the rest."
-msgstr "现在，Bottle仅会捕获并处理它自己抛出的异常( :exc:`HTTPError` , :exc:`HTTPResponse` 和 :exc:`BottleException` )，你的中间件可以处理剩下的那些异常。"
+msgstr "现在，Veilchen仅会捕获并处理它自己抛出的异常( :exc:`HTTPError` , :exc:`HTTPResponse` 和 :exc:`VeilchenException` )，你的中间件可以处理剩下的那些异常。"
 
 #: ../../recipes.rst:61
 msgid ""
@@ -78,7 +78,7 @@ msgid ""
 msgstr "werkzeug_ 和 paste_ 这两个第三方库都提供了非常强大的调试中间件。如果是 werkzeug_ ，可看看 :class:`werkzeug.debug.DebuggedApplication` ，如果是 paste_ ，可看看 :class:`paste.evalexception.middleware.EvalException` 。它们都可让你检查运行栈，甚至在保持运行栈上下文的情况下，执行Python代码。所以 **不要在生产环境中使用它们** 。"
 
 #: ../../recipes.rst:65
-msgid "Unit-Testing Bottle Applications"
+msgid "Unit-Testing Veilchen Applications"
 msgstr ""
 
 #: ../../recipes.rst:67
@@ -97,9 +97,9 @@ msgstr "测试代码::"
 
 #: ../../recipes.rst:87
 msgid ""
-"In the example the Bottle route() method is never executed - only index() is"
+"In the example the Veilchen route() method is never executed - only index() is"
 " tested."
-msgstr "在这个例子中，Bottle的route()函数没有被执行，仅测试了index()函数。"
+msgstr "在这个例子中，Veilchen的route()函数没有被执行，仅测试了index()函数。"
 
 #: ../../recipes.rst:89
 msgid ""
@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 
 #: ../../recipes.rst:108
-msgid "Functional Testing Bottle Applications"
+msgid "Functional Testing Veilchen Applications"
 msgstr "功能测试"
 
 #: ../../recipes.rst:110
@@ -135,13 +135,13 @@ msgid ""
 "This is not the recommend way (you should use a middleware in front of "
 "veilchen to do this) but you can call other WSGI applications from within your"
 " veilchen app and let veilchen act as a pseudo-middleware. Here is an example::"
-msgstr "并不建议你使用这个方法，你应该在Bottle前面使用一个中间件来做这样的事情。但你确实可以在Bottle里面调用其他WSGI应用，让Bottle扮演一个中间件的角色。下面是一个例子。"
+msgstr "并不建议你使用这个方法，你应该在Veilchen前面使用一个中间件来做这样的事情。但你确实可以在Veilchen里面调用其他WSGI应用，让Veilchen扮演一个中间件的角色。下面是一个例子。"
 
 #: ../../recipes.rst:150
 msgid ""
 "Again, this is not the recommend way to implement subprojects. It is only "
 "here because many people asked for this and to show how veilchen maps to WSGI."
-msgstr "再次强调，并不建议使用这种方法。之所以介绍这种方法，是因为很多人问起，如何在Bottle中调用WSGI应用。"
+msgstr "再次强调，并不建议使用这种方法。之所以介绍这种方法，是因为很多人问起，如何在Veilchen中调用WSGI应用。"
 
 #: ../../recipes.rst:154
 msgid "Ignore trailing slashes"
@@ -149,9 +149,9 @@ msgstr "忽略尾部的反斜杠"
 
 #: ../../recipes.rst:156
 msgid ""
-"For Bottle, ``/example`` and ``/example/`` are two different routes [1]_. To"
+"For Veilchen, ``/example`` and ``/example/`` are two different routes [1]_. To"
 " treat both URLs the same you can add two ``@route`` decorators::"
-msgstr "在Bottle看来， ``/example`` 和 ``/example/`` 是两个不同的route [1]_ 。为了一致对待这两个URL，你应该添加两个route。"
+msgstr "在Veilchen看来， ``/example`` 和 ``/example/`` 是两个不同的route [1]_ 。为了一致对待这两个URL，你应该添加两个route。"
 
 #: ../../recipes.rst:162
 msgid "add a WSGI middleware that strips trailing slashes from all URLs::"
@@ -182,12 +182,12 @@ msgid ""
 "Several \"push\" mechanisms like XHR multipart need the ability to write "
 "response data without closing the connection in conjunction with the "
 "response header \"Connection: keep-alive\". WSGI does not easily lend itself"
-" to this behavior, but it is still possible to do so in Bottle by using the "
+" to this behavior, but it is still possible to do so in Veilchen by using the "
 "gevent_ async framework. Here is a sample that works with either the gevent_"
 " HTTP server or the paste_ HTTP server (it may work with others, but I have "
 "not tried). Just change ``server='gevent'`` to ``server='paste'`` to use the"
 " paste_ server::"
-msgstr "像XHR这样的\"push\"机制，需要在HTTP响应头中加入 \"Connection: keep-alive\" ，以便在不关闭连接的情况下，写入响应数据。WSGI并不支持这种行为，但如果在Bottle中使用 gevent_ 这个异步框架，还是可以实现的。下面是一个例子，可配合 gevent_ HTTP服务器或 paste_ HTTP服务器使用(也许支持其他服务器，但是我没试过)。在run()函数里面使用 ``server='gevent'`` 或 ``server='paste'`` 即可使用这两种服务器。"
+msgstr "像XHR这样的\"push\"机制，需要在HTTP响应头中加入 \"Connection: keep-alive\" ，以便在不关闭连接的情况下，写入响应数据。WSGI并不支持这种行为，但如果在Veilchen中使用 gevent_ 这个异步框架，还是可以实现的。下面是一个例子，可配合 gevent_ HTTP服务器或 paste_ HTTP服务器使用(也许支持其他服务器，但是我没试过)。在run()函数里面使用 ``server='gevent'`` 或 ``server='paste'`` 即可使用这两种服务器。"
 
 #: ../../recipes.rst:210
 msgid ""
@@ -197,7 +197,7 @@ msgid ""
 msgstr "通过浏览器访问 ``http://localhost:8080/stream`` ，可看到'START'，'MIDDLE'，和'END'这三个字眼依次出现，一共用了8秒。"
 
 #: ../../recipes.rst:213
-msgid "Gzip Compression in Bottle"
+msgid "Gzip Compression in Veilchen"
 msgstr "Gzip压缩"
 
 #: ../../recipes.rst:216
@@ -206,10 +206,10 @@ msgstr "详见 compression_"
 
 #: ../../recipes.rst:218
 msgid ""
-"A common feature request is for Bottle to support Gzip compression, which "
+"A common feature request is for Veilchen to support Gzip compression, which "
 "speeds up sites by compressing static resources (like CSS and JS files) "
 "during a request."
-msgstr "Gzip压缩，可加速网站静态资源(例如CSS和JS文件)的访问。人们希望Bottle支持Gzip压缩，（但是不支持)......"
+msgstr "Gzip压缩，可加速网站静态资源(例如CSS和JS文件)的访问。人们希望Veilchen支持Gzip压缩，（但是不支持)......"
 
 #: ../../recipes.rst:220
 msgid ""
@@ -258,11 +258,11 @@ msgstr "不缓存小文件，因为寻道时间或许比压缩时间还长"
 
 #: ../../recipes.rst:232
 msgid ""
-"Because of these requirements, it is the recommendation of the Bottle "
-"project that Gzip compression is best handled by the WSGI server Bottle runs"
+"Because of these requirements, it is the recommendation of the Veilchen "
+"project that Gzip compression is best handled by the WSGI server Veilchen runs"
 " on top of. WSGI servers such as cherrypy_ provide a GzipFilter_ middleware "
 "that can be used to accomplish this."
-msgstr "因为有上述种种限制，建议由WSGI服务器来处理Gzip压缩而不是Bottle。像 cherrypy_ 就提供了一个 GzipFilter_ 中间件来处理Gzip压缩。"
+msgstr "因为有上述种种限制，建议由WSGI服务器来处理Gzip压缩而不是Veilchen。像 cherrypy_ 就提供了一个 GzipFilter_ 中间件来处理Gzip压缩。"
 
 #: ../../recipes.rst:236
 msgid "Using the hooks plugin"
@@ -282,8 +282,8 @@ msgid ""
 msgstr "你也可以使用 ``before_request`` ，这样在route的回调函数被调用之前，都会调用你的钩子函数。"
 
 #: ../../recipes.rst:261
-msgid "Using Bottle with Heroku"
-msgstr "在Heroku中使用Bottle"
+msgid "Using Veilchen with Heroku"
+msgstr "在Heroku中使用Veilchen"
 
 #: ../../recipes.rst:263
 msgid ""
@@ -294,15 +294,15 @@ msgstr "Heroku_ ，一个流行的云应用平台，提供Python支持。"
 #: ../../recipes.rst:266
 msgid ""
 "This recipe is based upon the `Heroku Quickstart "
-"<http://devcenter.heroku.com/articles/quickstart>`_, with Bottle specific "
+"<http://devcenter.heroku.com/articles/quickstart>`_, with Veilchen specific "
 "code replacing the `Write Your App "
 "<http://devcenter.heroku.com/articles/python#write_your_app>`_ section of "
 "the `Getting Started with Python on Heroku/Cedar "
 "<http://devcenter.heroku.com/articles/python>`_ guide::"
-msgstr "这份教程基于 `Heroku Quickstart <http://devcenter.heroku.com/articles/quickstart>`_, 用Bottle特有的代码替换了 `Getting Started with Python on Heroku/Cedar <http://devcenter.heroku.com/articles/python>`_ 中的`Write Your App <http://devcenter.heroku.com/articles/python#write_your_app>`_ 这部分::"
+msgstr "这份教程基于 `Heroku Quickstart <http://devcenter.heroku.com/articles/quickstart>`_, 用Veilchen特有的代码替换了 `Getting Started with Python on Heroku/Cedar <http://devcenter.heroku.com/articles/python>`_ 中的`Write Your App <http://devcenter.heroku.com/articles/python#write_your_app>`_ 这部分::"
 
 #: ../../recipes.rst:282
 msgid ""
 "Heroku's app stack passes the port that the application needs to listen on "
 "for requests, using the `os.environ` dictionary."
-msgstr "Heroku使用 `os.environ` 字典来提供Bottle应用需要监听的端口。"
+msgstr "Heroku使用 `os.environ` 字典来提供Veilchen应用需要监听的端口。"

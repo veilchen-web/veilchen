@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''Everything returned by Bottle()._cast() MUST be WSGI compatiple.'''
+'''Everything returned by Veilchen()._cast() MUST be WSGI compatiple.'''
 
 import unittest
 import veilchen

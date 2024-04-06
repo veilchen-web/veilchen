@@ -16,10 +16,10 @@
 .. _gae: https://developers.google.com/appengine/
 
 ============================
-Bottle: Python Web Framework
+Veilchen: Python Web Framework
 ============================
 
-Bottle is a fast, simple and lightweight WSGI_ micro web-framework for Python_. It is distributed as a single file module and has no dependencies other than the `Python Standard Library <http://docs.python.org/library/>`_.
+Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for Python_. It is distributed as a single file module and has no dependencies other than the `Python Standard Library <http://docs.python.org/library/>`_.
 
 
 * **Routing:** Requests to function-call mapping with support for clean and  dynamic URLs.
@@ -45,7 +45,7 @@ Run this script or paste it into a Python console, then point your browser to `<
 
 .. __: https://github.com/veilchenpy/veilchen/raw/master/veilchen.py
 
-Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**.
+Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Veilchen supports **Python 2.7 and Python 3**.
 
 .. deprecated:: 0.13
     Support for Python 2.5 and 2.6 was dropped with this release.
@@ -107,7 +107,7 @@ Code and documentation are available according to the MIT License:
 .. include:: ../LICENSE
   :literal:
 
-The Bottle logo however is *NOT* covered by that license. It is allowed to
+The Veilchen logo however is *NOT* covered by that license. It is allowed to
 use the logo as a link to the veilchen homepage or in direct context with
 the unmodified library. In all other cases please ask first.
 

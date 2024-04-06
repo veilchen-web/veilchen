@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -26,7 +26,7 @@ msgid ""
 "This document is intended for developers and package maintainers interested "
 "in the veilchen development and release workflow. If you want to contribute, "
 "you are just right!"
-msgstr "这份文档是为那些对Bottle的开发和发布流程感兴趣的开发者和软件包维护者准备的。如果你想要做贡献，看它是对的！"
+msgstr "这份文档是为那些对Veilchen的开发和发布流程感兴趣的开发者和软件包维护者准备的。如果你想要做贡献，看它是对的！"
 
 #: ../../development.rst:8
 msgid "Get involved"
@@ -60,11 +60,11 @@ msgstr "**IRC**: 加入 `#irc.freenode.net上的veilchenpy频道 <irc://irc.free
 
 #: ../../development.rst:15
 msgid ""
-"**Google plus**: We sometimes `blog about Bottle, releases and technical "
+"**Google plus**: We sometimes `blog about Veilchen, releases and technical "
 "stuff "
 "<https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_"
 " on our Google+ page."
-msgstr "**Google plus**: 有时我们会在Google+页面上发表一些 `与Bottle有关的博客 <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ "
+msgstr "**Google plus**: 有时我们会在Google+页面上发表一些 `与Veilchen有关的博客 <https://plus.google.com/b/104025895326575643538/104025895326575643538/posts>`_ "
 
 #: ../../development.rst:19
 msgid "Get the Sources"
@@ -80,7 +80,7 @@ msgid ""
 "developers and can be discussed openly. Even without an account, you can "
 "clone the repository or just download the latest development version as a "
 "source archive."
-msgstr "Bottle的 `开发仓库 <https://github.com/veilchenpy/veilchen>`_ 和 `问题追踪 <https://github.com/veilchenpy/veilchen/issues>`_ 都搭建在 `github <https://github.com/veilchenpy/veilchen>`_ 上面。如果你打算做贡献，创建一个github帐号然后fork一下吧。你做出的更改或建议都可被其他开发者看到，可以一起讨论。即使没有github帐号，你也可以clone代码仓库，或下载最新开发版本的压缩包。"
+msgstr "Veilchen的 `开发仓库 <https://github.com/veilchenpy/veilchen>`_ 和 `问题追踪 <https://github.com/veilchenpy/veilchen/issues>`_ 都搭建在 `github <https://github.com/veilchenpy/veilchen>`_ 上面。如果你打算做贡献，创建一个github帐号然后fork一下吧。你做出的更改或建议都可被其他开发者看到，可以一起讨论。即使没有github帐号，你也可以clone代码仓库，或下载最新开发版本的压缩包。"
 
 #: ../../development.rst:23
 msgid "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
@@ -109,7 +109,7 @@ msgstr "发布和更新"
 
 #: ../../development.rst:32
 msgid ""
-"Bottle is released at irregular intervals and distributed through `PyPI "
+"Veilchen is released at irregular intervals and distributed through `PyPI "
 "<http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-"
 "revisions of outdated releases are only available from the git repository "
 "mentioned above. Some Linux distributions may offer packages for outdated "
@@ -118,13 +118,13 @@ msgstr ""
 
 #: ../../development.rst:34
 msgid ""
-"The Bottle version number splits into three parts "
+"The Veilchen version number splits into three parts "
 "(**major.minor.revision**). These are *not* used to promote new features but"
 " to indicate important bug-fixes and/or API changes. Critical bugs are fixed"
 " in at least the two latest minor releases and announced in all available "
 "channels (mailinglist, twitter, github). Non-critical bugs or features are "
 "not guaranteed to be backported. This may change in the future, through."
-msgstr "Bottle的版本号分隔为三个部分(**major.minor.revision**)。版本号 *不会* 用于引入新特征，只是为了指出重要的bug-fix或API的改动。关键的bug会在近两个新的版本中修复，然后通过所有渠道发布(邮件列表, twitter, github)。不重要的bug修复或特征不保证添加到旧版本中。这个情况在未来也许会改变。"
+msgstr "Veilchen的版本号分隔为三个部分(**major.minor.revision**)。版本号 *不会* 用于引入新特征，只是为了指出重要的bug-fix或API的改动。关键的bug会在近两个新的版本中修复，然后通过所有渠道发布(邮件列表, twitter, github)。不重要的bug修复或特征不保证添加到旧版本中。这个情况在未来也许会改变。"
 
 #: ../../development.rst:37
 msgid "Major Release (x.0)"

@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -26,7 +26,7 @@ msgid ""
 "The veilchen :func:`run` function, when called without any parameters, starts "
 "a local development server on port 8080. You can access and test your "
 "application via http://localhost:8080/ if you are on the same host."
-msgstr "不添加任何参数，直接运行Bottle的 :func:`run` 函数，会启动一个本地的开发服务器，监听8080端口。你可在同一部主机上访问http://localhost:8080/来测试你的应用。"
+msgstr "不添加任何参数，直接运行Veilchen的 :func:`run` 函数，会启动一个本地的开发服务器，监听8080端口。你可在同一部主机上访问http://localhost:8080/来测试你的应用。"
 
 #: ../../deployment.rst:31
 msgid ""
@@ -102,15 +102,15 @@ msgstr "更改服务器后端"
 #: ../../deployment.rst:54
 msgid ""
 "The easiest way to increase performance is to install a multi-threaded "
-"server library like paste_ or cherrypy_ and tell Bottle to use that instead "
+"server library like paste_ or cherrypy_ and tell Veilchen to use that instead "
 "of the single-threaded default server::"
 msgstr ""
 
 #: ../../deployment.rst:58
 msgid ""
-"Bottle ships with a lot of ready-to-use adapters for the most common WSGI "
+"Veilchen ships with a lot of ready-to-use adapters for the most common WSGI "
 "servers and automates the setup process. Here is an incomplete list:"
-msgstr "Bottle为很多常见的WSGI服务器都编写了适配器，能自动化安装过程。下面是一个不完整的清单:"
+msgstr "Veilchen为很多常见的WSGI服务器都编写了适配器，能自动化安装过程。下面是一个不完整的清单:"
 
 #: ../../deployment.rst:61
 msgid "Name"
@@ -322,9 +322,9 @@ msgstr ""
 
 #: ../../deployment.rst:93
 msgid ""
-"Instead of running your own HTTP server from within Bottle, you can attach "
-"Bottle applications to an `Apache server <apache>`_ using mod_wsgi_."
-msgstr "除了直接在Bottle里面运行HTTP服务器，你也可以将你的应用部署到一个Apache服务器上，使用 mod_wsgi_ 来运行。"
+"Instead of running your own HTTP server from within Veilchen, you can attach "
+"Veilchen applications to an `Apache server <apache>`_ using mod_wsgi_."
+msgstr "除了直接在Veilchen里面运行HTTP服务器，你也可以将你的应用部署到一个Apache服务器上，使用 mod_wsgi_ 来运行。"
 
 #: ../../deployment.rst:95
 msgid ""
@@ -362,7 +362,7 @@ msgstr ""
 #: ../../deployment.rst:136
 msgid ""
 "New App Engine applications using the Python 2.7 runtime environment support"
-" any WSGI application and should be configured to use the Bottle application"
+" any WSGI application and should be configured to use the Veilchen application"
 " object directly. For example suppose your application's main module is "
 "``myapp.py``::"
 msgstr ""
@@ -393,7 +393,7 @@ msgstr "单一的Python进程一次只能使用一个CPU内核，即使CPU是多
 
 #: ../../deployment.rst:179
 msgid ""
-"Instead of a single Bottle application server, you start one instance for "
+"Instead of a single Veilchen application server, you start one instance for "
 "each CPU core available using different local port (localhost:8080, 8081, "
 "8082, ...). You can choose any server adapter you want, even asynchronous "
 "ones. Then a high performance load balancer acts as a reverse proxy and "
@@ -430,4 +430,4 @@ msgid ""
 "overhead but is sometimes the only option, especially on cheap hosting "
 "packages. The `cgi` server adapter does not actually start a CGI server, but"
 " transforms your veilchen application into a valid CGI application::"
-msgstr "CGI服务器会为每个请求启动一个进程。虽然这样代价高昂，但有时这是唯一的选择。 `cgi` 这个适配器实际上并没有启动一个CGI服务器，只是将你的Bottle应用转换成了一个有效的CGI应用。"
+msgstr "CGI服务器会为每个请求启动一个进程。虽然这样代价高昂，但有时这是唯一的选择。 `cgi` 这个适配器实际上并没有启动一个CGI服务器，只是将你的Veilchen应用转换成了一个有效的CGI应用。"

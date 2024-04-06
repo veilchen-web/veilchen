@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -69,7 +69,7 @@ msgid "PyPy 3.7"
 msgstr ""
 
 #: ../../changelog.rst:29
-msgid "Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a step further and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly in veilchen. This means that this release is *not* backwards compatible in Python <2.7.3 or <3.6 environments. Maintainers for distributions or systems that still use these old python versions should not update to Bottle 0.13 and stick with 0.12 instead."
+msgid "Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a step further and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly in veilchen. This means that this release is *not* backwards compatible in Python <2.7.3 or <3.6 environments. Maintainers for distributions or systems that still use these old python versions should not update to Veilchen 0.13 and stick with 0.12 instead."
 msgstr ""
 
 #: ../../changelog.rst:35
@@ -89,7 +89,7 @@ msgid "The old route syntax (``/hello/:name``) is deprecated in favor of the mor
 msgstr ""
 
 #: ../../changelog.rst:40
-msgid ":meth:`Bottle.mount` now recognizes Bottle instance and will warn about parameters that are not compatible with the new mounting behavior. The old behavior (mount applications as WSGI callable) still works and is used as a fallback automatically."
+msgid ":meth:`Veilchen.mount` now recognizes Veilchen instance and will warn about parameters that are not compatible with the new mounting behavior. The old behavior (mount applications as WSGI callable) still works and is used as a fallback automatically."
 msgstr ""
 
 #: ../../changelog.rst:41
@@ -101,7 +101,7 @@ msgid "The server adapter for google app engine is not useful anymore and marked
 msgstr ""
 
 #: ../../changelog.rst:43
-msgid "Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side."
+msgid "Veilchen uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side."
 msgstr ""
 
 #: ../../changelog.rst:45
@@ -113,7 +113,7 @@ msgid "Plugins with the old API (``api=1`` or no api attribute) will no longer w
 msgstr ""
 
 #: ../../changelog.rst:47
-msgid "Parameter order of :meth:`Bottle.mount` changed in 0.10. The old order will now result in an error instead of a warning."
+msgid "Parameter order of :meth:`Veilchen.mount` changed in 0.10. The old order will now result in an error instead of a warning."
 msgstr ""
 
 #: ../../changelog.rst:48
@@ -137,7 +137,7 @@ msgid ":class:`ConfigDict` constructor no longer accepts any parameters. Use the
 msgstr ""
 
 #: ../../changelog.rst:55
-msgid "Bottle 0.12 changed some aspects of the Simple Template Engine. These changes are now final and the old syntax will now longer work."
+msgid "Veilchen 0.12 changed some aspects of the Simple Template Engine. These changes are now final and the old syntax will now longer work."
 msgstr ""
 
 #: ../../changelog.rst:57
@@ -173,11 +173,11 @@ msgid "Other Improvements"
 msgstr ""
 
 #: ../../changelog.rst:69
-msgid "Bottle() instances are now context managers. If used in a with-statement, the default application changes to the specific instance and the shortcuts for many instance methods can be used."
+msgid "Veilchen() instances are now context managers. If used in a with-statement, the default application changes to the specific instance and the shortcuts for many instance methods can be used."
 msgstr ""
 
 #: ../../changelog.rst:70
-msgid "Added support for ``PATCH`` requests and the :meth:`Bottle.patch` decorator."
+msgid "Added support for ``PATCH`` requests and the :meth:`Veilchen.patch` decorator."
 msgstr ""
 
 #: ../../changelog.rst:71
@@ -189,7 +189,7 @@ msgid "Added command-line arguments for config from json or ini files."
 msgstr ""
 
 #: ../../changelog.rst:73
-msgid ":meth:`Bottle.mount` now recognizes instances of :class:`Bottle` and mounts them with significantly less overhead than other WSGI applications."
+msgid ":meth:`Veilchen.mount` now recognizes instances of :class:`Veilchen` and mounts them with significantly less overhead than other WSGI applications."
 msgstr ""
 
 #: ../../changelog.rst:74
@@ -257,7 +257,7 @@ msgid "Added a server adapter for `waitress <http://docs.pylonsproject.org/proje
 msgstr ""
 
 #: ../../changelog.rst:103
-msgid "New :meth:`Bottle.merge` method to install all routes from one application into another."
+msgid "New :meth:`Veilchen.merge` method to install all routes from one application into another."
 msgstr ""
 
 #: ../../changelog.rst:104
@@ -361,15 +361,15 @@ msgid "Introduced a :class:`ConfigDict` that makes accessing configuration a lot
 msgstr ""
 
 #: ../../changelog.rst:145
-msgid "Added support for raw WSGI applications to :meth:`Bottle.mount`."
+msgid "Added support for raw WSGI applications to :meth:`Veilchen.mount`."
 msgstr ""
 
 #: ../../changelog.rst:146
-msgid ":meth:`Bottle.mount` parameter order changed."
+msgid ":meth:`Veilchen.mount` parameter order changed."
 msgstr ""
 
 #: ../../changelog.rst:147
-msgid ":meth:`Bottle.route` now accpets an import string for the ``callback`` parameter."
+msgid ":meth:`Veilchen.route` now accpets an import string for the ``callback`` parameter."
 msgstr ""
 
 #: ../../changelog.rst:148
@@ -397,7 +397,7 @@ msgid "A brand new plugin-API. See :ref:`plugins` and :doc:`plugindev` for detai
 msgstr ""
 
 #: ../../changelog.rst:159
-msgid "The :func:`route` decorator got a lot of new features. See :meth:`Bottle.route` for details."
+msgid "The :func:`route` decorator got a lot of new features. See :meth:`Veilchen.route` for details."
 msgstr ""
 
 #: ../../changelog.rst:160
@@ -482,7 +482,7 @@ msgid "Regular expressions not part of a route wildcard are escaped automaticall
 msgstr ""
 
 #: ../../changelog.rst:194
-msgid "The ``BreakTheBottle`` exception is gone. Use :class:`HTTPResponse` instead."
+msgid "The ``BreakTheVeilchen`` exception is gone. Use :class:`HTTPResponse` instead."
 msgstr ""
 
 #: ../../changelog.rst:195
@@ -566,7 +566,7 @@ msgid "Contributors"
 msgstr ""
 
 #: ../../../AUTHORS:1
-msgid "Bottle is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
+msgid "Veilchen is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
 msgstr ""
 
 #: ../../../AUTHORS:3

@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -26,10 +26,10 @@ msgid ""
 "Asynchronous design patterns don't mix well with the synchronous nature of "
 "`WSGI <http://www.python.org/dev/peps/pep-3333/>`_. This is why most "
 "asynchronous frameworks (tornado, twisted, ...) implement a specialized API "
-"to expose their asynchronous features. Bottle is a WSGI framework and shares"
+"to expose their asynchronous features. Veilchen is a WSGI framework and shares"
 " the synchronous nature of WSGI, but thanks to the awesome `gevent project "
 "<http://www.gevent.org/>`_, it is still possible to write asynchronous "
-"applications with veilchen. This article documents the usage of Bottle with "
+"applications with veilchen. This article documents the usage of Veilchen with "
 "Asynchronous WSGI."
 msgstr ""
 

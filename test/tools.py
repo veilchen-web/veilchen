@@ -90,7 +90,7 @@ def wsgistr(s):
 
 class ServerTestBase(unittest.TestCase):
     def setUp(self):
-        ''' Create a new Bottle app set it as default_app '''
+        ''' Create a new Veilchen app set it as default_app '''
         self.port = 8080
         self.host = 'localhost'
         self.app = veilchen.app.push()

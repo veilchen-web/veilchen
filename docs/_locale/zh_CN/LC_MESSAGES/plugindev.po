@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -66,12 +66,12 @@ msgstr "这个插件计算每次请求的响应时间，并在响应头中添加
 
 #: ../../plugindev.rst:38
 msgid ""
-"The last line tells Bottle to install the plugin to the default application."
+"The last line tells Veilchen to install the plugin to the default application."
 " This causes the plugin to be automatically applied to all routes of that "
 "application. In other words, ``stopwatch()`` is called once for each route "
 "callback and the return value is used as a replacement for the original "
 "callback."
-msgstr "最后一行，将该插件安装到Bottle的默认应用里面。这样，应用中的所有route都会应用这个插件了。就是说，每次请求都会调用 ``stopwatch()`` ，更改了route的默认行为。"
+msgstr "最后一行，将该插件安装到Veilchen的默认应用里面。这样，应用中的所有route都会应用这个插件了。就是说，每次请求都会调用 ``stopwatch()`` ，更改了route的默认行为。"
 
 #: ../../plugindev.rst:40
 msgid ""
@@ -95,11 +95,11 @@ msgid ""
 "The decorator API is quite limited, though. You don't know anything about "
 "the route being decorated or the associated application object and have no "
 "way to efficiently store data that is shared among all routes. But fear not!"
-" Plugins are not limited to just decorator functions. Bottle accepts "
+" Plugins are not limited to just decorator functions. Veilchen accepts "
 "anything as a plugin as long as it is callable or implements an extended "
 "API. This API is described below and gives you a lot of control over the "
 "whole process."
-msgstr "这种修饰器般的API受到种种限制。你不知道route或相应的应用对象是如何被修饰的，也不知道如何有效地存储那些在route之间共享的数据。但别怕！插件不仅仅是修饰器函数。只要一个插件是callable的或实现了一个扩展的API(后面会讲到)，Bottle都可接受。扩展的API给你更多的控制权。"
+msgstr "这种修饰器般的API受到种种限制。你不知道route或相应的应用对象是如何被修饰的，也不知道如何有效地存储那些在route之间共享的数据。但别怕！插件不仅仅是修饰器函数。只要一个插件是callable的或实现了一个扩展的API(后面会讲到)，Veilchen都可接受。扩展的API给你更多的控制权。"
 
 #: ../../plugindev.rst:48
 msgid "Plugin API"
@@ -109,9 +109,9 @@ msgstr "插件API"
 msgid ""
 ":class:`Plugin` is not a real class (you cannot import it from "
 ":mod:`veilchen`) but an interface that plugins are expected to implement. "
-"Bottle accepts any object of any type as a plugin, as long as it conforms to"
+"Veilchen accepts any object of any type as a plugin, as long as it conforms to"
 " the following API."
-msgstr "``Plugin`` 类不是一个真正的类(你不能从veilchen中导入它)，它只是一个插件需要实现的接口。只要一个对象实现了以下接口，Bottle就认可它作为一个插件。"
+msgstr "``Plugin`` 类不是一个真正的类(你不能从veilchen中导入它)，它只是一个插件需要实现的接口。只要一个对象实现了以下接口，Veilchen就认可它作为一个插件。"
 
 #: ../../plugindev.rst:54
 msgid ""
@@ -122,24 +122,24 @@ msgstr "插件应该是callable的，或实现了 :meth:`apply` 方法。如果�
 
 #: ../../plugindev.rst:58
 msgid ""
-"Both :meth:`Bottle.uninstall` and the `skip` parameter of "
-":meth:`Bottle.route()` accept a name string to refer to a plugin or plugin "
+"Both :meth:`Veilchen.uninstall` and the `skip` parameter of "
+":meth:`Veilchen.route()` accept a name string to refer to a plugin or plugin "
 "type. This works only for plugins that have a name attribute."
-msgstr ":meth:`Bottle.uninstall` 方法和 :meth:`Bottle.route()` 中的 `skip` 参数都接受一个与名字有关的字符串，对应插件或其类型。只有插件中有一个name属性的时候，这才会起作用。"
+msgstr ":meth:`Veilchen.uninstall` 方法和 :meth:`Veilchen.route()` 中的 `skip` 参数都接受一个与名字有关的字符串，对应插件或其类型。只有插件中有一个name属性的时候，这才会起作用。"
 
 #: ../../plugindev.rst:62
 msgid ""
 "The Plugin API is still evolving. This integer attribute tells veilchen which "
 "version to use. If it is missing, veilchen defaults to the first version. The "
 "current version is ``2``. See :ref:`plugin-changelog` for details."
-msgstr "插件的API还在逐步改进。这个整形数告诉Bottle使用哪个版本的插件。如果没有这个属性，Bottle默认使用第一个版本。当前版本是 ``2`` 。详见 :ref:`plugin-changelog` 。"
+msgstr "插件的API还在逐步改进。这个整形数告诉Veilchen使用哪个版本的插件。如果没有这个属性，Veilchen默认使用第一个版本。当前版本是 ``2`` 。详见 :ref:`plugin-changelog` 。"
 
 #: ../../plugindev.rst:66
 msgid ""
 "Called as soon as the plugin is installed to an application (see "
-":meth:`Bottle.install`). The only parameter is the associated application "
+":meth:`Veilchen.install`). The only parameter is the associated application "
 "object."
-msgstr "插件被安装的时候调用(见 :meth:`Bottle.install` )。唯一的参数是相应的应用对象。"
+msgstr "插件被安装的时候调用(见 :meth:`Veilchen.install` )。唯一的参数是相应的应用对象。"
 
 #: ../../plugindev.rst:70
 msgid ""
@@ -161,15 +161,15 @@ msgstr "如果存在，会优先调用，而不调用 :meth:`__call__` 。额外
 #: ../../plugindev.rst:78
 msgid ""
 "Called immediately before the plugin is uninstalled or the application is "
-"closed (see :meth:`Bottle.uninstall` or :meth:`Bottle.close`)."
-msgstr "插件被卸载或应用关闭的时候被调用，详见 :meth:`Bottle.uninstall` 或 :meth:`Bottle.close` 。"
+"closed (see :meth:`Veilchen.uninstall` or :meth:`Veilchen.close`)."
+msgstr "插件被卸载或应用关闭的时候被调用，详见 :meth:`Veilchen.uninstall` 或 :meth:`Veilchen.close` 。"
 
 #: ../../plugindev.rst:81
 msgid ""
 "Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for "
-"plugins that are applied directly to a route via the :meth:`Bottle.route()` "
+"plugins that are applied directly to a route via the :meth:`Veilchen.route()` "
 "decorator, but only for plugins installed to an application."
-msgstr ":meth:`Plugin.setup` 方法和 :meth:`Plugin.close` 方法 *不* 会被调用，如果插件是通过 :meth:`Bottle.route` 方法来应用到route上面的，但会在安装插件的时候被调用。"
+msgstr ":meth:`Plugin.setup` 方法和 :meth:`Plugin.close` 方法 *不* 会被调用，如果插件是通过 :meth:`Veilchen.route` 方法来应用到route上面的，但会在安装插件的时候被调用。"
 
 #: ../../plugindev.rst:87
 msgid "Plugin API changes"
@@ -177,24 +177,24 @@ msgstr "插件API的改动"
 
 #: ../../plugindev.rst:89
 msgid ""
-"The Plugin API is still evolving and changed with Bottle 0.10 to address "
+"The Plugin API is still evolving and changed with Veilchen 0.10 to address "
 "certain issues with the route context dictionary. To ensure backwards "
 "compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` "
 "attribute to tell veilchen which API to use. The API differences are "
 "summarized here."
-msgstr "插件的API还在不断改进中。在Bottle 0.10版本中的改动，定位了route上下文字典中已确定的问题。为了保持对0.9版本插件的兼容，我们添加了一个可选的 :attr:`Plugin.api` 属性，告诉Bottle使用哪个版本的API。API之间的不同点总结如下。"
+msgstr "插件的API还在不断改进中。在Veilchen 0.10版本中的改动，定位了route上下文字典中已确定的问题。为了保持对0.9版本插件的兼容，我们添加了一个可选的 :attr:`Plugin.api` 属性，告诉Veilchen使用哪个版本的API。API之间的不同点总结如下。"
 
 #: ../../plugindev.rst:91
-msgid "**Bottle 0.9 API 1** (:attr:`Plugin.api` not present)"
-msgstr "**Bottle 0.9 API 1** (无 :attr:`Plugin.api` 属性)"
+msgid "**Veilchen 0.9 API 1** (:attr:`Plugin.api` not present)"
+msgstr "**Veilchen 0.9 API 1** (无 :attr:`Plugin.api` 属性)"
 
 #: ../../plugindev.rst:93
 msgid "Original Plugin API as described in the 0.9 docs."
 msgstr ""
 
 #: ../../plugindev.rst:95
-msgid "**Bottle 0.10 API 2** (:attr:`Plugin.api` equals 2)"
-msgstr "**Bottle 0.10 API 2** ( :attr:`Plugin.api` 属性为2)"
+msgid "**Veilchen 0.10 API 2** (:attr:`Plugin.api` equals 2)"
+msgstr "**Veilchen 0.10 API 2** ( :attr:`Plugin.api` 属性为2)"
 
 #: ../../plugindev.rst:97
 msgid ""
@@ -269,8 +269,8 @@ msgstr ""
 #: ../../plugindev.rst:116
 msgid ""
 "A list of route-specific plugins. These are applied in addition to "
-"application-wide plugins. (see :meth:`Bottle.route`)."
-msgstr "route安装的插件列表，除了整个应用范围内的插件，额外添加的(见 :meth:`Bottle.route` )"
+"application-wide plugins. (see :meth:`Veilchen.route`)."
+msgstr "route安装的插件列表，除了整个应用范围内的插件，额外添加的(见 :meth:`Veilchen.route` )"
 
 #: ../../plugindev.rst:118
 msgid "skiplist"
@@ -279,8 +279,8 @@ msgstr ""
 #: ../../plugindev.rst:118
 msgid ""
 "A list of plugins to not apply to this route (again, see "
-":meth:`Bottle.route`)."
-msgstr "应用安装了，但该route没安装的插件列表(见 meth:`Bottle.route` )"
+":meth:`Veilchen.route`)."
+msgstr "应用安装了，但该route没安装的插件列表(见 meth:`Veilchen.route` )"
 
 #: ../../plugindev.rst:120
 msgid "config"
@@ -288,10 +288,10 @@ msgstr ""
 
 #: ../../plugindev.rst:120
 msgid ""
-"Additional keyword arguments passed to the :meth:`Bottle.route` decorator "
+"Additional keyword arguments passed to the :meth:`Veilchen.route` decorator "
 "are stored in this dictionary. Used for route-specific configuration and "
 "meta-data."
-msgstr "传递给 :meth:`Bottle.route` 修饰器的额外参数，存在一个字典中，用于特定的设置和元数据"
+msgstr "传递给 :meth:`Veilchen.route` 修饰器的额外参数，存在一个字典中，用于特定的设置和元数据"
 
 #: ../../plugindev.rst:125
 msgid ""
@@ -352,10 +352,10 @@ msgstr ""
 msgid ""
 "To achieve this, you need control over the callback cache: "
 ":meth:`Route.reset` clears the cache for a single route and "
-":meth:`Bottle.reset` clears all caches for all routes of an application at "
+":meth:`Veilchen.reset` clears all caches for all routes of an application at "
 "once. On the next request, all plugins are re-applied to the route as if it "
 "were requested for the first time."
-msgstr "为了达到这个目的，你需要控制回调函数的缓存： :meth:`Route.reset` 函数清空单一route的缓存， :meth:`Bottle.reset` 函数清空所有route的缓存。在下一次请求的时候，所有插件被重新应用到route上面，就像第一次请求时那样。"
+msgstr "为了达到这个目的，你需要控制回调函数的缓存： :meth:`Route.reset` 函数清空单一route的缓存， :meth:`Veilchen.reset` 函数清空所有route的缓存。在下一次请求的时候，所有插件被重新应用到route上面，就像第一次请求时那样。"
 
 #: ../../plugindev.rst:145
 msgid ""
@@ -381,9 +381,9 @@ msgstr "这个插件提供对sqlite3数据库的访问，如果route的回调函
 #: ../../plugindev.rst:218
 msgid ""
 "This plugin is actually useful and very similar to the version bundled with "
-"Bottle. Not bad for less than 60 lines of code, don't you think? Here is a "
+"Veilchen. Not bad for less than 60 lines of code, don't you think? Here is a "
 "usage example::"
-msgstr "这个插件十分有用，已经和Bottle提供的那个版本很类似了(译者注：=。= 一模一样)。只要60行代码，还不赖嘛！下面是一个使用例子。"
+msgstr "这个插件十分有用，已经和Veilchen提供的那个版本很类似了(译者注：=。= 一模一样)。只要60行代码，还不赖嘛！下面是一个使用例子。"
 
 #: ../../plugindev.rst:239
 msgid ""

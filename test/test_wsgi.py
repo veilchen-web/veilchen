@@ -461,7 +461,7 @@ class TestDecorators(ServerTestBase):
         self.assertEqual('/app/a/xxx/c', veilchen.url('named', b='xxx'))
 
     def test_autoroute(self):
-        app = veilchen.Bottle()
+        app = veilchen.Veilchen()
         def a(): pass
         def b(x): pass
         def c(x, y): pass
@@ -481,7 +481,7 @@ class TestAppShortcuts(ServerTestBase):
 
     def testWithStatement(self):
         default = veilchen.default_app()
-        inner_app = veilchen.Bottle()
+        inner_app = veilchen.Veilchen()
         self.assertEqual(default, veilchen.default_app())
         with inner_app:
             self.assertEqual(inner_app, veilchen.default_app())

@@ -51,11 +51,11 @@ The built-in default server is based on `wsgiref WSGIServer <http://docs.python.
 Switching the Server Backend
 ================================================================================
 
-The easiest way to increase performance is to install a multi-threaded server library like paste_ or cherrypy_ and tell Bottle to use that instead of the single-threaded default server::
+The easiest way to increase performance is to install a multi-threaded server library like paste_ or cherrypy_ and tell Veilchen to use that instead of the single-threaded default server::
 
     run(server='paste')
 
-Bottle ships with a lot of ready-to-use adapters for the most common WSGI servers and automates the setup process. Here is an incomplete list:
+Veilchen ships with a lot of ready-to-use adapters for the most common WSGI servers and automates the setup process. Here is an incomplete list:
 
 ========  ============  ======================================================
 Name      Homepage      Description
@@ -90,7 +90,7 @@ If there is no adapter for your favorite server or if you need more control over
 Apache mod_wsgi
 --------------------------------------------------------------------------------
 
-Instead of running your own HTTP server from within Bottle, you can attach Bottle applications to an `Apache server <apache>`_ using mod_wsgi_.
+Instead of running your own HTTP server from within Veilchen, you can attach Veilchen applications to an `Apache server <apache>`_ using mod_wsgi_.
 
 All you need is an ``app.wsgi`` file that provides an ``application`` object. This object is used by mod_wsgi to start your application and should be a WSGI-compatible Python callable.
 
@@ -133,7 +133,7 @@ Google AppEngine
 
 .. versionadded:: 0.9
 
-New App Engine applications using the Python 2.7 runtime environment support any WSGI application and should be configured to use the Bottle application object directly. For example suppose your application's main module is ``myapp.py``::
+New App Engine applications using the Python 2.7 runtime environment support any WSGI application and should be configured to use the Veilchen application object directly. For example suppose your application's main module is ``myapp.py``::
 
     import veilchen
 
@@ -176,7 +176,7 @@ Load Balancer (Manual Setup)
 
 A single Python process can utilize only one CPU at a time, even if there are more CPU cores available. The trick is to balance the load between multiple independent Python processes to utilize all of your CPU cores.
 
-Instead of a single Bottle application server, you start one instance for each CPU core available using different local port (localhost:8080, 8081, 8082, ...). You can choose any server adapter you want, even asynchronous ones. Then a high performance load balancer acts as a reverse proxy and forwards each new requests to a random port, spreading the load between all available back-ends. This way you can use all of your CPU cores and even spread out the load between different physical servers.
+Instead of a single Veilchen application server, you start one instance for each CPU core available using different local port (localhost:8080, 8081, 8082, ...). You can choose any server adapter you want, even asynchronous ones. Then a high performance load balancer acts as a reverse proxy and forwards each new requests to a random port, spreading the load between all available back-ends. This way you can use all of your CPU cores and even spread out the load between different physical servers.
 
 One of the fastest load balancers available is Pound_ but most common web servers have a proxy-module that can do the work just fine.
 

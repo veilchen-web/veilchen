@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -23,7 +23,7 @@ msgstr "教程"
 
 #: ../../tutorial.rst:26
 msgid ""
-"This tutorial introduces you to the concepts and features of the Bottle web "
+"This tutorial introduces you to the concepts and features of the Veilchen web "
 "framework and covers basic and advanced topics alike. You can read it from "
 "start to end, or use it as a reference later on. The automatically generated"
 " :doc:`api` may be interesting for you, too. It covers more details, but "
@@ -32,7 +32,7 @@ msgid ""
 "you need any help, join our `mailing list "
 "<mailto:veilchenpy@googlegroups.com>`_ or visit us in our `IRC channel "
 "<http://webchat.freenode.net/?channels=veilchenpy>`_."
-msgstr "这份教程将向你介绍Bottle的开发理念和功能特性。既介绍Bottle的基本用法，也包含了进阶用法。你可以从头到尾通读一遍，也可当做开发时的参考。你也许对自动生成的 :doc:`api` 感兴趣。它包含了更多的细节，但解释没有这份教程详细。在 :doc:`recipes` 或 :doc:`faq` 可找到常见问题的解决办法。如果需要任何帮助，可加入我们的 `邮件列表 <mailto:veilchenpy@googlegroups.com>`_ 或在 `IRC频道 <http://webchat.freenode.net/?channels=veilchenpy>`_ 和我们交流。"
+msgstr "这份教程将向你介绍Veilchen的开发理念和功能特性。既介绍Veilchen的基本用法，也包含了进阶用法。你可以从头到尾通读一遍，也可当做开发时的参考。你也许对自动生成的 :doc:`api` 感兴趣。它包含了更多的细节，但解释没有这份教程详细。在 :doc:`recipes` 或 :doc:`faq` 可找到常见问题的解决办法。如果需要任何帮助，可加入我们的 `邮件列表 <mailto:veilchenpy@googlegroups.com>`_ 或在 `IRC频道 <http://webchat.freenode.net/?channels=veilchenpy>`_ 和我们交流。"
 
 #: ../../tutorial.rst:31
 msgid "Installation"
@@ -40,9 +40,9 @@ msgstr "安装"
 
 #: ../../tutorial.rst:33
 msgid ""
-"Bottle does not depend on any external libraries. You can just download "
+"Veilchen does not depend on any external libraries. You can just download "
 "`veilchen.py </veilchen.py>`_ into your project directory and start coding:"
-msgstr "Bottle不依赖其他库，你需要做的仅是下载 `veilchen.py </veilchen.py>`_ (开发版)到你的项目文件夹，然后开始写代码。"
+msgstr "Veilchen不依赖其他库，你需要做的仅是下载 `veilchen.py </veilchen.py>`_ (开发版)到你的项目文件夹，然后开始写代码。"
 
 #: ../../tutorial.rst:39
 msgid ""
@@ -52,7 +52,7 @@ msgid ""
 "<http://pypi.python.org/pypi/veilchen>`_ and can be installed via "
 ":command:`pip` (recommended), :command:`easy_install` or your package "
 "manager:"
-msgstr "在终端运行以上命令，即可下载到Bottle的最新开发版，包含了所有新功能特性。如果更需要稳定性，你应该坚持使用Bottle的稳定版本。可在 `PyPI <http://pypi.python.org/pypi/veilchen>`_ 下载稳定版本，然后通过 :command:`pip` (推荐), :command:`easy_install` 或你的包管理软件安装。"
+msgstr "在终端运行以上命令，即可下载到Veilchen的最新开发版，包含了所有新功能特性。如果更需要稳定性，你应该坚持使用Veilchen的稳定版本。可在 `PyPI <http://pypi.python.org/pypi/veilchen>`_ 下载稳定版本，然后通过 :command:`pip` (推荐), :command:`easy_install` 或你的包管理软件安装。"
 
 #: ../../tutorial.rst:47
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../../tutorial.rst:69
 msgid ""
-"This tutorial assumes you have Bottle either :ref:`installed <installation>`"
+"This tutorial assumes you have Veilchen either :ref:`installed <installation>`"
 " or copied into your project directory. Let's start with a very basic "
 "\"Hello World\" example::"
 msgstr "到目前为止，我假设你已经 :ref:`安装 <installation>` 好了veilchen或已将veilchen.py拷贝到你的项目文件夹。接下来我们就可以写一个非常简单的\"Hello World\"了::"
@@ -112,7 +112,7 @@ msgstr ":ref:`tutorial-debugging` 在早期开发的时候非常有用，但请�
 #: ../../tutorial.rst:87
 msgid ""
 "This is just a demonstration of the basic concept of how applications are "
-"built with Bottle. Continue reading and you'll see what else is possible."
+"built with Veilchen. Continue reading and you'll see what else is possible."
 msgstr ""
 
 #: ../../tutorial.rst:92
@@ -123,13 +123,13 @@ msgstr "`默认应用`"
 msgid ""
 "For the sake of simplicity, most examples in this tutorial use a module-"
 "level :func:`route` decorator to define routes. This adds routes to a global"
-" \"default application\", an instance of :class:`Bottle` that is "
+" \"default application\", an instance of :class:`Veilchen` that is "
 "automatically created the first time you call :func:`route`. Several other "
 "module-level decorators and functions relate to this default application, "
 "but if you prefer a more object oriented approach and don't mind the extra "
 "typing, you can create a separate application object and use that instead of"
 " the global one::"
-msgstr "基于简单性考虑，这份教程中的大部分例子都使用一个模块层面的 :func:`route` 修饰器函数来定义route。这样的话，所有route都添加到了一个全局的“默认应用”里面，即是在第一次调用 :func:`route` 函数时，创建的一个 :class:`Bottle` 类的实例。其他几个模块层面的修饰器函数都与这个“默认应用”有关，如果你偏向于面向对象的做法且不介意多打点字，你可以创建一个独立的应用对象，这样就可避免使用全局范围的“默认应用”。"
+msgstr "基于简单性考虑，这份教程中的大部分例子都使用一个模块层面的 :func:`route` 修饰器函数来定义route。这样的话，所有route都添加到了一个全局的“默认应用”里面，即是在第一次调用 :func:`route` 函数时，创建的一个 :class:`Veilchen` 类的实例。其他几个模块层面的修饰器函数都与这个“默认应用”有关，如果你偏向于面向对象的做法且不介意多打点字，你可以创建一个独立的应用对象，这样就可避免使用全局范围的“默认应用”。"
 
 #: ../../tutorial.rst:106
 msgid ""
@@ -267,10 +267,10 @@ msgid ""
 "The HEAD method is used to ask for the response identical to the one that "
 "would correspond to a GET request, but without the response body. This is "
 "useful for retrieving meta-information about a resource without having to "
-"download the entire document. Bottle handles these requests automatically by"
+"download the entire document. Veilchen handles these requests automatically by"
 " falling back to the corresponding GET route and cutting off the request "
 "body, if present. You don't have to specify any HEAD routes yourself."
-msgstr "HEAD方法类似于GET方法，但服务器不会返回HTTP响应正文，一般用于获取HTTP原数据而不用下载整个页面。Bottle像处理GET请求那样处理HEAD请求，但是会自动去掉HTTP响应正文。你无需亲自处理HEAD请求。"
+msgstr "HEAD方法类似于GET方法，但服务器不会返回HTTP响应正文，一般用于获取HTTP原数据而不用下载整个页面。Veilchen像处理GET请求那样处理HEAD请求，但是会自动去掉HTTP响应正文。你无需亲自处理HEAD请求。"
 
 #: ../../tutorial.rst:212
 msgid ""
@@ -296,7 +296,7 @@ msgid ""
 "Static files such as images or CSS files are not served automatically. You "
 "have to add a route and a callback to control which files get served and "
 "where to find them::"
-msgstr "Bottle不会处理像图片或CSS文件的静态文件请求。你需要给静态文件提供一个route，一个回调函数(用于查找和控制静态文件的访问)。"
+msgstr "Veilchen不会处理像图片或CSS文件的静态文件请求。你需要给静态文件提供一个route，一个回调函数(用于查找和控制静态文件的访问)。"
 
 #: ../../tutorial.rst:228
 msgid ""
@@ -321,10 +321,10 @@ msgstr "错误页面"
 
 #: ../../tutorial.rst:244
 msgid ""
-"If anything goes wrong, Bottle displays an informative but fairly plain "
+"If anything goes wrong, Veilchen displays an informative but fairly plain "
 "error page. You can override the default for a specific HTTP status code "
 "with the :func:`error` decorator::"
-msgstr "如果出错了，Bottle会显示一个默认的错误页面，提供足够的debug信息。你也可以使用 :func:`error` 函数来自定义你的错误页面::"
+msgstr "如果出错了，Veilchen会显示一个默认的错误页面，提供足够的debug信息。你也可以使用 :func:`error` 函数来自定义你的错误页面::"
 
 #: ../../tutorial.rst:251
 msgid ""
@@ -359,12 +359,12 @@ msgstr "在纯WSGI环境里，你的应用能返回的内容类型相当有限�
 
 #: ../../tutorial.rst:267
 msgid ""
-"Bottle is much more flexible and supports a wide range of types. It even "
+"Veilchen is much more flexible and supports a wide range of types. It even "
 "adds a ``Content-Length`` header if possible and encodes unicode "
 "automatically, so you don't have to. What follows is a list of data types "
 "you may return from your application callbacks and a short description of "
 "how these are handled by the framework:"
-msgstr "Bottle支持返回更多的内容类型，更具弹性。它甚至能在合适的情况下，在HTTP头中添加 `Content-Length` 字段和自动转换unicode编码。下面列出了所有你能返回的内容类型，以及框架处理方式的一个简述。"
+msgstr "Veilchen支持返回更多的内容类型，更具弹性。它甚至能在合适的情况下，在HTTP头中添加 `Content-Length` 字段和自动转换unicode编码。下面列出了所有你能返回的内容类型，以及框架处理方式的一个简述。"
 
 #: ../../tutorial.rst:270
 msgid "Dictionaries"
@@ -377,7 +377,7 @@ msgid ""
 " the ``Content-Type`` header set to ``application/json``. This makes it easy"
 " to implement json-based APIs. Data formats other than json are supported "
 "too. See the :ref:`tutorial-output-filter` to learn more."
-msgstr "上面已经提及，Python中的字典类型(或其子类)会被自动转换为JSON字符串。返回给浏览器的时候，HTTP头的 ``Content-Type`` 字段被自动设置为 `` application/json`` 。可十分简单地实现基于JSON的API。Bottle同时支持json之外的数据类型，详见 :ref:`tutorial-output-filter` 。"
+msgstr "上面已经提及，Python中的字典类型(或其子类)会被自动转换为JSON字符串。返回给浏览器的时候，HTTP头的 ``Content-Type`` 字段被自动设置为 `` application/json`` 。可十分简单地实现基于JSON的API。Veilchen同时支持json之外的数据类型，详见 :ref:`tutorial-output-filter` 。"
 
 #: ../../tutorial.rst:273
 msgid "Empty Strings, ``False``, ``None`` or other non-true values:"
@@ -405,12 +405,12 @@ msgstr ""
 
 #: ../../tutorial.rst:279
 msgid ""
-"Bottle returns strings as a whole (instead of iterating over each char) and "
+"Veilchen returns strings as a whole (instead of iterating over each char) and "
 "adds a ``Content-Length`` header based on the string length. Lists of byte "
 "strings are joined first. Other iterables yielding byte strings are not "
 "joined because they may grow too big to fit into memory. The ``Content-"
 "Length`` header is not set in this case."
-msgstr "Bottle将字符串当作一个整体来返回(而不是按字符来遍历)，并根据字符串长度添加 ``Content-Length`` 字段。包含字节型字符串的列表先被合并。其它iterable的字节型字符串不会被合并，因为它们也许太大来，耗内存。在这种情况下， ``Content-Length`` 字段不会被设置。"
+msgstr "Veilchen将字符串当作一个整体来返回(而不是按字符来遍历)，并根据字符串长度添加 ``Content-Length`` 字段。包含字节型字符串的列表先被合并。其它iterable的字节型字符串不会被合并，因为它们也许太大来，耗内存。在这种情况下， ``Content-Length`` 字段不会被设置。"
 
 #: ../../tutorial.rst:282
 msgid "Instances of :exc:`HTTPError` or :exc:`HTTPResponse`"
@@ -465,13 +465,13 @@ msgstr "改变默认编码"
 
 #: ../../tutorial.rst:294
 msgid ""
-"Bottle uses the `charset` parameter of the ``Content-Type`` header to decide"
+"Veilchen uses the `charset` parameter of the ``Content-Type`` header to decide"
 " how to encode unicode strings. This header defaults to ``text/html; "
 "charset=UTF8`` and can be changed using the :attr:`Response.content_type` "
 "attribute or by setting the :attr:`Response.charset` attribute directly. "
 "(The :class:`Response` object is described in the section :ref:`tutorial-"
 "response`.)"
-msgstr "Bottle使用 ``Content-Type`` 的 `charset` 参数来决定编码unicode字符串的方式。默认的 ``Content-Type`` 是 ``text/html;charset=UTF8`` ，可在 :attr:`Response.content_type` 属性中修改，或直接设置 :attr:`Response.charset` 的值。关于 :class:`Response` 对象的介绍，详见 :ref:`tutorial-response` 。"
+msgstr "Veilchen使用 ``Content-Type`` 的 `charset` 参数来决定编码unicode字符串的方式。默认的 ``Content-Type`` 是 ``text/html;charset=UTF8`` ，可在 :attr:`Response.content_type` 属性中修改，或直接设置 :attr:`Response.charset` 的值。关于 :class:`Response` 对象的介绍，详见 :ref:`tutorial-response` 。"
 
 #: ../../tutorial.rst:309
 msgid ""
@@ -704,21 +704,21 @@ msgstr "Cookie签名"
 
 #: ../../tutorial.rst:436
 msgid ""
-"As mentioned above, cookies are easily forged by malicious clients. Bottle "
+"As mentioned above, cookies are easily forged by malicious clients. Veilchen "
 "can cryptographically sign your cookies to prevent this kind of "
 "manipulation. All you have to do is to provide a signature key via the "
 "`secret` keyword argument whenever you read or set a cookie and keep that "
 "key a secret. As a result, :meth:`Request.get_cookie` will return ``None`` "
 "if the cookie is not signed or the signature keys don't match::"
-msgstr "上面提到，cookie容易被客户端伪造。Bottle可通过加密cookie来防止此类攻击。你只需在读取和设置cookie的时候，通过 `secret` 参数来提供一个密钥。如果cookie未签名或密钥不匹配， :meth:`Request.get_cookie` 方法返回 ``None`` "
+msgstr "上面提到，cookie容易被客户端伪造。Veilchen可通过加密cookie来防止此类攻击。你只需在读取和设置cookie的时候，通过 `secret` 参数来提供一个密钥。如果cookie未签名或密钥不匹配， :meth:`Request.get_cookie` 方法返回 ``None`` "
 
 #: ../../tutorial.rst:456
 msgid ""
-"In addition, Bottle automatically pickles and unpickles any data stored to "
+"In addition, Veilchen automatically pickles and unpickles any data stored to "
 "signed cookies. This allows you to store any pickle-able object (not only "
 "strings) to cookies, as long as the pickled data does not exceed the 4 KB "
 "limit."
-msgstr "例外，Bottle自动序列化储存在签名cookie里面的数据。你可在cookie中储存任何可序列化的对象(不仅仅是字符串)，只要对象大小不超过4KB。"
+msgstr "例外，Veilchen自动序列化储存在签名cookie里面的数据。你可在cookie中储存任何可序列化的对象(不仅仅是字符串)，只要对象大小不超过4KB。"
 
 #: ../../tutorial.rst:458
 msgid ""
@@ -753,10 +753,10 @@ msgstr "介绍 :class:`FormsDict` "
 
 #: ../../tutorial.rst:489
 msgid ""
-"Bottle uses a special type of dictionary to store form data and cookies. "
+"Veilchen uses a special type of dictionary to store form data and cookies. "
 ":class:`FormsDict` behaves like a normal dictionary, but has some additional"
 " features to make your life easier."
-msgstr "Bottle使用了一个特殊的字典来储存表单数据和cookies。 :class:`FormsDict` 表现得像一个普通的字典，但提供了更方便的额外功能。"
+msgstr "Veilchen使用了一个特殊的字典来储存表单数据和cookies。 :class:`FormsDict` 表现得像一个普通的字典，但提供了更方便的额外功能。"
 
 #: ../../tutorial.rst:491
 msgid ""
@@ -798,11 +798,11 @@ msgid ""
 "protocol. The server has to decode the byte strings somehow before they are "
 "passed to the application. To be on the safe side, WSGI suggests ISO-8859-1 "
 "(aka latin1), a reversible single-byte codec that can be re-encoded with a "
-"different encoding later. Bottle does that for :meth:`FormsDict.getunicode` "
+"different encoding later. Veilchen does that for :meth:`FormsDict.getunicode` "
 "and attribute access, but not for the dict-access methods. These return the "
 "unchanged values as provided by the server implementation, which is probably"
 " not what you want."
-msgstr "在 **Python3** 中，所有的字符串都是unicode。但HTTP是基于字节的协议，在byte-string被传给应用之前，服务器必须将其转码。安全起见，WSGI协议建议使用ISO-8859-1 (即是latin1)，一个可反转的单字节编码，可被转换为其他编码。Bottle通过 :meth:`FormsDict.getunicode` 和属性访问实现了转码，但不支持字典形式的访问。通过字典形式的访问，将直接返回服务器返回的字符串，未经处理，这或许不是你想要的。"
+msgstr "在 **Python3** 中，所有的字符串都是unicode。但HTTP是基于字节的协议，在byte-string被传给应用之前，服务器必须将其转码。安全起见，WSGI协议建议使用ISO-8859-1 (即是latin1)，一个可反转的单字节编码，可被转换为其他编码。Veilchen通过 :meth:`FormsDict.getunicode` 和属性访问实现了转码，但不支持字典形式的访问。通过字典形式的访问，将直接返回服务器返回的字符串，未经处理，这或许不是你想要的。"
 
 #: ../../tutorial.rst:529
 msgid ""
@@ -958,10 +958,10 @@ msgstr "为了支持文件上传，我们需要小改一下上面 ``<form>`` 标
 
 #: ../../tutorial.rst:643
 msgid ""
-"Bottle stores file uploads in :attr:`BaseRequest.files` as "
+"Veilchen stores file uploads in :attr:`BaseRequest.files` as "
 ":class:`FileUpload` instances, along with some metadata about the upload. "
 "Let us assume you just want to save the file to disk::"
-msgstr "Bottle将上传的文件当做一个 :class:`FileUpload` 实例存储在 :attr:`BaseRequest.files` 中，伴随着一些这次上传的元数据。我们假设你仅是想把上传的文件保存到磁盘中。"
+msgstr "Veilchen将上传的文件当做一个 :class:`FileUpload` 实例存储在 :attr:`BaseRequest.files` 中，伴随着一些这次上传的元数据。我们假设你仅是想把上传的文件保存到磁盘中。"
 
 #: ../../tutorial.rst:657
 msgid ""
@@ -1025,20 +1025,20 @@ msgstr "模板"
 
 #: ../../tutorial.rst:698
 msgid ""
-"Bottle comes with a fast and powerful built-in template engine called "
+"Veilchen comes with a fast and powerful built-in template engine called "
 ":doc:`stpl`. To render a template you can use the :func:`template` function "
 "or the :func:`view` decorator. All you have to do is to provide the name of "
 "the template and the variables you want to pass to the template as keyword "
 "arguments. Here’s a simple example of how to render a template::"
-msgstr "Bottle内置了一个快速的，强大的模板引擎，称为 :doc:`stpl` 。可通过 :func:`template` 函数或 :func:`view` 修饰器来渲染一个模板。只需提供模板的名字和传递给模板的变量。下面是一个渲染模板的简单例子::"
+msgstr "Veilchen内置了一个快速的，强大的模板引擎，称为 :doc:`stpl` 。可通过 :func:`template` 函数或 :func:`view` 修饰器来渲染一个模板。只需提供模板的名字和传递给模板的变量。下面是一个渲染模板的简单例子::"
 
 #: ../../tutorial.rst:705
 msgid ""
 "This will load the template file ``hello_template.tpl`` and render it with "
-"the ``name`` variable set. Bottle will look for templates in the "
+"the ``name`` variable set. Veilchen will look for templates in the "
 "``./views/`` folder or any folder specified in the ``veilchen.TEMPLATE_PATH`` "
 "list."
-msgstr "这会加载 ``hello_template.tpl`` 模板文件，并提供 ``name`` 变量。默认情况，Bottle会在 ``./views/`` 目录查找模板文件(译者注：或当前目录)。可在 ``veilchen.TEMPLATE_PATH`` 这个列表中添加更多的模板路径。"
+msgstr "这会加载 ``hello_template.tpl`` 模板文件，并提供 ``name`` 变量。默认情况，Veilchen会在 ``./views/`` 目录查找模板文件(译者注：或当前目录)。可在 ``veilchen.TEMPLATE_PATH`` 这个列表中添加更多的模板路径。"
 
 #: ../../tutorial.rst:707
 msgid ""
@@ -1079,11 +1079,11 @@ msgstr "插件"
 
 #: ../../tutorial.rst:747
 msgid ""
-"Bottle's core features cover most common use-cases, but as a micro-framework"
+"Veilchen's core features cover most common use-cases, but as a micro-framework"
 " it has its limits. This is where \"Plugins\" come into play. Plugins add "
 "missing functionality to the framework, integrate third party libraries, or "
 "just automate some repetitive work."
-msgstr "Bottle的核心功能覆盖了常见的使用情况，但是作为一个迷你框架，它有它的局限性。所以我们引入了插件机制，插件可以给框架添加其缺少的功能，集成第三方的库，或是自动化一些重复性的工作。"
+msgstr "Veilchen的核心功能覆盖了常见的使用情况，但是作为一个迷你框架，它有它的局限性。所以我们引入了插件机制，插件可以给框架添加其缺少的功能，集成第三方的库，或是自动化一些重复性的工作。"
 
 #: ../../tutorial.rst:749
 msgid ""
@@ -1169,8 +1169,8 @@ msgstr "在任何时候，插件都可以被安装或卸载，即使是在服务
 msgid ""
 "The module-level :func:`install` and :func:`uninstall` functions affect the "
 ":ref:`default-app`. To manage plugins for a specific application, use the "
-"corresponding methods on the :class:`Bottle` application object."
-msgstr "模块层面的 :func:`install` 和 :func:`unistall` 函数会影响 :ref:`default-app` 。针对应用来管理插件，可使用 :class:`Bottle` 应用对象的相应方法。"
+"corresponding methods on the :class:`Veilchen` application object."
+msgstr "模块层面的 :func:`install` 和 :func:`unistall` 函数会影响 :ref:`default-app` 。针对应用来管理插件，可使用 :class:`Veilchen` 应用对象的相应方法。"
 
 #: ../../tutorial.rst:808
 msgid "Route-specific Installation"
@@ -1207,17 +1207,17 @@ msgstr "插件和子应用"
 msgid ""
 "Most plugins are specific to the application they were installed to. "
 "Consequently, they should not affect sub-applications mounted with "
-":meth:`Bottle.mount`. Here is an example::"
-msgstr "大多数插件只会影响到安装了它们的应用。因此，它们不应该影响通过 :meth:`Bottle.mount` 方法挂载上来的子应用。这里有一个例子。"
+":meth:`Veilchen.mount`. Here is an example::"
+msgstr "大多数插件只会影响到安装了它们的应用。因此，它们不应该影响通过 :meth:`Veilchen.mount` 方法挂载上来的子应用。这里有一个例子。"
 
 #: ../../tutorial.rst:860
 msgid ""
-"Whenever you mount an application, Bottle creates a proxy-route on the main-"
+"Whenever you mount an application, Veilchen creates a proxy-route on the main-"
 "application that forwards all requests to the sub-application. Plugins are "
 "disabled for this kind of proxy-route by default. As a result, our "
 "(fictional) `WTForms` plugin affects the ``/contact`` route, but does not "
 "affect the routes of the ``/blog`` sub-application."
-msgstr "在你挂载一个应用的时候，Bottle在主应用上面创建一个代理route，将所有请求转接给子应用。在代理route上，默认禁用了插件。如上所示，我们的 ``WTForms`` 插件影响了 ``/contact`` route，但不会影响挂载在root上面的 ``/blog`` 。"
+msgstr "在你挂载一个应用的时候，Veilchen在主应用上面创建一个代理route，将所有请求转接给子应用。在代理route上，默认禁用了插件。如上所示，我们的 ``WTForms`` 插件影响了 ``/contact`` route，但不会影响挂载在root上面的 ``/blog`` 。"
 
 #: ../../tutorial.rst:862
 msgid ""
@@ -1249,18 +1249,18 @@ msgstr "默认应用"
 
 #: ../../tutorial.rst:881
 msgid ""
-"Bottle maintains a global stack of :class:`Bottle` instances and uses the "
+"Veilchen maintains a global stack of :class:`Veilchen` instances and uses the "
 "top of the stack as a default for some of the module-level functions and "
 "decorators. The :func:`route` decorator, for example, is a shortcut for "
-"calling :meth:`Bottle.route` on the default application::"
-msgstr "Bottle维护一个全局的 :class:`Bottle` 实例的栈，模块层面的函数和修饰器使用栈顶实例作为默认应用。例如 :func:`route` 修饰器，相当于在默认应用上面调用了 :meth:`Bottle.route` 方法。"
+"calling :meth:`Veilchen.route` on the default application::"
+msgstr "Veilchen维护一个全局的 :class:`Veilchen` 实例的栈，模块层面的函数和修饰器使用栈顶实例作为默认应用。例如 :func:`route` 修饰器，相当于在默认应用上面调用了 :meth:`Veilchen.route` 方法。"
 
 #: ../../tutorial.rst:889
 msgid ""
 "This is very convenient for small applications and saves you some typing, "
 "but also means that, as soon as your module is imported, routes are "
 "installed to the global default application. To avoid this kind of import "
-"side-effects, Bottle offers a second, more explicit way to build "
+"side-effects, Veilchen offers a second, more explicit way to build "
 "applications::"
 msgstr ""
 
@@ -1268,12 +1268,12 @@ msgstr ""
 msgid ""
 "Separating the application object improves re-usability a lot, too. Other "
 "developers can safely import the ``app`` object from your module and use "
-":meth:`Bottle.mount` to merge applications together."
-msgstr "分离应用对象，大大提高了可重用性。其他开发者可安全地从你的应用中导入 ``app`` 对象，然后通过 :meth:`Bottle.mount` 方法来合并到其它应用中。"
+":meth:`Veilchen.mount` to merge applications together."
+msgstr "分离应用对象，大大提高了可重用性。其他开发者可安全地从你的应用中导入 ``app`` 对象，然后通过 :meth:`Veilchen.mount` 方法来合并到其它应用中。"
 
 #: ../../tutorial.rst:904
 msgid ""
-"Starting with veilchen-0.13 you can use :class:`Bottle` instances as context "
+"Starting with veilchen-0.13 you can use :class:`Veilchen` instances as context "
 "managers::"
 msgstr ""
 
@@ -1287,11 +1287,11 @@ msgstr "在开发的早期阶段，调试模式非常有用。"
 
 #: ../../tutorial.rst:939
 msgid ""
-"In this mode, Bottle is much more verbose and provides helpful debugging "
+"In this mode, Veilchen is much more verbose and provides helpful debugging "
 "information whenever an error occurs. It also disables some optimisations "
 "that might get in your way and adds some checks that warn you about possible"
 " misconfiguration."
-msgstr "在调试模式下，当错误发生的时候，Bottle会提供更多的调试信息。同时禁用一些可能妨碍你的优化措施，检查你的错误设置。"
+msgstr "在调试模式下，当错误发生的时候，Veilchen会提供更多的调试信息。同时禁用一些可能妨碍你的优化措施，检查你的错误设置。"
 
 #: ../../tutorial.rst:941
 msgid "Here is an incomplete list of things that change in debug mode:"
@@ -1356,7 +1356,7 @@ msgstr "命令行接口"
 
 #: ../../tutorial.rst:985
 msgid "Starting with version 0.10 you can use veilchen as a command-line tool:"
-msgstr "从0.10版本开始，你可像一个命令行工具那样使用Bottle:"
+msgstr "从0.10版本开始，你可像一个命令行工具那样使用Veilchen:"
 
 #: ../../tutorial.rst:1009
 msgid ""
@@ -1378,7 +1378,7 @@ msgstr "部署"
 
 #: ../../tutorial.rst:1034
 msgid ""
-"Bottle runs on the built-in `wsgiref WSGIServer "
+"Veilchen runs on the built-in `wsgiref WSGIServer "
 "<http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_"
 "  by default. This non-threading HTTP server is perfectly fine for "
 "development, but may become a performance veilchenneck when server load "
@@ -1388,9 +1388,9 @@ msgstr ""
 #: ../../tutorial.rst:1036
 msgid ""
 "The easiest way to increase performance is to install a multi-threaded "
-"server library like paste_ or cherrypy_ and tell Bottle to use that instead "
+"server library like paste_ or cherrypy_ and tell Veilchen to use that instead "
 "of the single-threaded server::"
-msgstr "最早的解决办法是让Bottle使用 paste_ 或 cherrypy_ 等多线程的服务器。"
+msgstr "最早的解决办法是让Veilchen使用 paste_ 或 cherrypy_ 等多线程的服务器。"
 
 #: ../../tutorial.rst:1040
 msgid ""

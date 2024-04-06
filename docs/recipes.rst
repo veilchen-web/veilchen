@@ -48,7 +48,7 @@ WARNING: Beaker's SessionMiddleware is not thread safe.  If two concurrent reque
 Debugging with Style: Debugging Middleware
 --------------------------------------------------------------------------------
 
-Bottle catches all Exceptions raised in your app code to prevent your WSGI server from crashing. If the built-in :func:`debug` mode is not enough and you need exceptions to propagate to a debugging middleware, you can turn off this behaviour::
+Veilchen catches all Exceptions raised in your app code to prevent your WSGI server from crashing. If the built-in :func:`debug` mode is not enough and you need exceptions to propagate to a debugging middleware, you can turn off this behaviour::
 
     import veilchen
     app = veilchen.app() 
@@ -56,12 +56,12 @@ Bottle catches all Exceptions raised in your app code to prevent your WSGI serve
     myapp = DebuggingMiddleware(app) #Replace this with a middleware of your choice (see below)
     veilchen.run(app=myapp)
 
-Now, veilchen only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can handle the rest.
+Now, veilchen only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`VeilchenException`) and your middleware can handle the rest.
 
 The werkzeug_ and paste_ libraries both ship with very powerful debugging WSGI middleware. Look at :class:`werkzeug.debug.DebuggedApplication` for werkzeug_ and :class:`paste.evalexception.middleware.EvalException` for paste_. They both allow you do inspect the stack and even execute python code within the stack context, so **do not use them in production**.
 
 
-Unit-Testing Bottle Applications
+Unit-Testing Veilchen Applications
 --------------------------------------------------------------------------------
 
 Unit-testing is usually performed against methods defined in your web application without running a WSGI environment.
@@ -84,7 +84,7 @@ Test script::
     def test_webapp_index():
         assert mywebapp.index() == 'Hi!'
 
-In the example the Bottle route() method is never executed - only index() is tested.
+In the example the Veilchen route() method is never executed - only index() is tested.
 
 If the code being tested requires access to ``veilchen.request`` you can mock it using `Boddle <https://github.com/keredson/boddle>`_::
 
@@ -104,7 +104,7 @@ Test script::
             assert mywebapp.index() == 'Hi Derek!'
 
 
-Functional Testing Bottle Applications
+Functional Testing Veilchen Applications
 --------------------------------------------------------------------------------
 
 Any HTTP-based testing system can be used with a running WSGI server, but some testing frameworks work more intimately with WSGI, and provide the ability the call WSGI applications in a controlled environment, with tracebacks and full use of debugging tools. `Testing tools for WSGI <http://www.wsgi.org/en/latest/testing.html>`_ is a good starting point.
@@ -153,7 +153,7 @@ Again, this is not the recommend way to implement subprojects. It is only here b
 Ignore trailing slashes
 --------------------------------------------------------------------------------
 
-For Bottle, ``/example`` and ``/example/`` are two different routes [1]_. To treat both URLs the same you can add two ``@route`` decorators::
+For Veilchen, ``/example`` and ``/example/`` are two different routes [1]_. To treat both URLs the same you can add two ``@route`` decorators::
 
     @route('/test')
     @route('/test/')
@@ -190,7 +190,7 @@ Keep-alive requests
 
     For a more detailed explanation, see :doc:`async`.
 
-Several "push" mechanisms like XHR multipart need the ability to write response data without closing the connection in conjunction with the response header "Connection: keep-alive". WSGI does not easily lend itself to this behavior, but it is still possible to do so in Bottle by using the gevent_ async framework. Here is a sample that works with either the gevent_ HTTP server or the paste_ HTTP server (it may work with others, but I have not tried). Just change ``server='gevent'`` to ``server='paste'`` to use the paste_ server::
+Several "push" mechanisms like XHR multipart need the ability to write response data without closing the connection in conjunction with the response header "Connection: keep-alive". WSGI does not easily lend itself to this behavior, but it is still possible to do so in Veilchen by using the gevent_ async framework. Here is a sample that works with either the gevent_ HTTP server or the paste_ HTTP server (it may work with others, but I have not tried). Just change ``server='gevent'`` to ``server='paste'`` to use the paste_ server::
 
     from gevent import monkey; monkey.patch_all()
 
@@ -209,13 +209,13 @@ Several "push" mechanisms like XHR multipart need the ability to write response 
 
 If you browse to ``http://localhost:8080/stream``, you should see 'START', 'MIDDLE', and 'END' show up one at a time (rather than waiting 8 seconds to see them all at once).
 
-Gzip Compression in Bottle
+Gzip Compression in Veilchen
 --------------------------
 
 .. note::
    For a detailed discussion, see compression_
 
-A common feature request is for Bottle to support Gzip compression, which speeds up sites by compressing static resources (like CSS and JS files) during a request.
+A common feature request is for Veilchen to support Gzip compression, which speeds up sites by compressing static resources (like CSS and JS files) during a request.
 
 Supporting Gzip compression is not a straightforward proposition, due to a number of corner cases that crop up frequently. A proper Gzip implementation must:
 
@@ -229,7 +229,7 @@ Supporting Gzip compression is not a straightforward proposition, due to a numbe
 * Make sure the cache does not get to big.
 * Do not cache small files because a disk seek would take longer than on-the-fly compression.
 
-Because of these requirements, it is the recommendation of the Bottle project that Gzip compression is best handled by the WSGI server Bottle runs on top of. WSGI servers such as cherrypy_ provide a GzipFilter_ middleware that can be used to accomplish this.
+Because of these requirements, it is the recommendation of the Veilchen project that Gzip compression is best handled by the WSGI server Veilchen runs on top of. WSGI servers such as cherrypy_ provide a GzipFilter_ middleware that can be used to accomplish this.
 
 
 Using hooks to handle CORS
@@ -263,7 +263,7 @@ use hooks to add the appropiate headers::
            response.set_header(key, value)
 
 
-Using Bottle with Heroku
+Using Veilchen with Heroku
 ------------------------
 
 Heroku_, a popular cloud application platform now provides support
@@ -271,7 +271,7 @@ for running Python applications on their infrastructure.
 
 This recipe is based upon the `Heroku Quickstart 
 <http://devcenter.heroku.com/articles/quickstart>`_, 
-with Bottle specific code replacing the 
+with Veilchen specific code replacing the 
 `Write Your App <http://devcenter.heroku.com/articles/python#write_your_app>`_ 
 section of the `Getting Started with Python on Heroku/Cedar 
 <http://devcenter.heroku.com/articles/python>`_ guide::

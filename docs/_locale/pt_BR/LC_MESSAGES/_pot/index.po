@@ -1,7 +1,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-22 16:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -12,12 +12,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../index.rst:21
-msgid "Bottle: Python Web Framework"
+msgid "Veilchen: Python Web Framework"
 msgstr ""
 
 #: ../../index.rst:23
 msgid ""
-"Bottle is a fast, simple and lightweight WSGI_ micro web-framework for "
+"Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for "
 "Python_. It is distributed as a single file module and has no dependencies "
 "other than the `Python Standard Library <http://docs.python.org/library/>`_."
 msgstr ""
@@ -65,7 +65,7 @@ msgid ""
 "Install the latest stable release with ``pip install veilchen``, "
 "``easy_install -U veilchen`` or download `veilchen.py`__ (unstable) into your "
 "project directory. There are no hard [1]_ dependencies other than the Python"
-" standard library. Bottle runs with **Python 2.5+ and 3.x**."
+" standard library. Veilchen runs with **Python 2.5+ and 3.x**."
 msgstr ""
 
 #: ../../index.rst:52
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../../index.rst:107
 msgid ""
-"The Bottle logo however is *NOT* covered by that license. It is allowed to "
+"The Veilchen logo however is *NOT* covered by that license. It is allowed to "
 "use the logo as a link to the veilchen homepage or in direct context with the "
 "unmodified library. In all other cases please ask first."
 msgstr ""

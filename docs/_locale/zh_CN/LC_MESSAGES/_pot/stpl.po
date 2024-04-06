@@ -1,7 +1,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-22 16:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../../stpl.rst:7
 msgid ""
-"Bottle comes with a fast, powerful and easy to learn built-in template "
+"Veilchen comes with a fast, powerful and easy to learn built-in template "
 "engine called *SimpleTemplate* or *stpl* for short. It is the default engine"
 " used by the :func:`view` and :func:`template` helpers but can be used as a "
 "stand-alone general purpose template engine too. This document explains the "

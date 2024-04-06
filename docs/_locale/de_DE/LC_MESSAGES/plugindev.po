@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../plugindev.rst:38
 msgid ""
-"The last line tells Bottle to install the plugin to the default application."
+"The last line tells Veilchen to install the plugin to the default application."
 " This causes the plugin to be automatically applied to all routes of that "
 "application. In other words, ``stopwatch()`` is called once for each route "
 "callback and the return value is used as a replacement for the original "
@@ -95,7 +95,7 @@ msgid ""
 "The decorator API is quite limited, though. You don't know anything about "
 "the route being decorated or the associated application object and have no "
 "way to efficiently store data that is shared among all routes. But fear not!"
-" Plugins are not limited to just decorator functions. Bottle accepts "
+" Plugins are not limited to just decorator functions. Veilchen accepts "
 "anything as a plugin as long as it is callable or implements an extended "
 "API. This API is described below and gives you a lot of control over the "
 "whole process."
@@ -109,7 +109,7 @@ msgstr ""
 msgid ""
 ":class:`Plugin` is not a real class (you cannot import it from "
 ":mod:`veilchen`) but an interface that plugins are expected to implement. "
-"Bottle accepts any object of any type as a plugin, as long as it conforms to"
+"Veilchen accepts any object of any type as a plugin, as long as it conforms to"
 " the following API."
 msgstr ""
 
@@ -122,8 +122,8 @@ msgstr ""
 
 #: ../../plugindev.rst:58
 msgid ""
-"Both :meth:`Bottle.uninstall` and the `skip` parameter of "
-":meth:`Bottle.route()` accept a name string to refer to a plugin or plugin "
+"Both :meth:`Veilchen.uninstall` and the `skip` parameter of "
+":meth:`Veilchen.route()` accept a name string to refer to a plugin or plugin "
 "type. This works only for plugins that have a name attribute."
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 #: ../../plugindev.rst:66
 msgid ""
 "Called as soon as the plugin is installed to an application (see "
-":meth:`Bottle.install`). The only parameter is the associated application "
+":meth:`Veilchen.install`). The only parameter is the associated application "
 "object."
 msgstr ""
 
@@ -161,13 +161,13 @@ msgstr ""
 #: ../../plugindev.rst:78
 msgid ""
 "Called immediately before the plugin is uninstalled or the application is "
-"closed (see :meth:`Bottle.uninstall` or :meth:`Bottle.close`)."
+"closed (see :meth:`Veilchen.uninstall` or :meth:`Veilchen.close`)."
 msgstr ""
 
 #: ../../plugindev.rst:81
 msgid ""
 "Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for "
-"plugins that are applied directly to a route via the :meth:`Bottle.route()` "
+"plugins that are applied directly to a route via the :meth:`Veilchen.route()` "
 "decorator, but only for plugins installed to an application."
 msgstr ""
 
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../plugindev.rst:89
 msgid ""
-"The Plugin API is still evolving and changed with Bottle 0.10 to address "
+"The Plugin API is still evolving and changed with Veilchen 0.10 to address "
 "certain issues with the route context dictionary. To ensure backwards "
 "compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` "
 "attribute to tell veilchen which API to use. The API differences are "
@@ -185,7 +185,7 @@ msgid ""
 msgstr ""
 
 #: ../../plugindev.rst:91
-msgid "**Bottle 0.9 API 1** (:attr:`Plugin.api` not present)"
+msgid "**Veilchen 0.9 API 1** (:attr:`Plugin.api` not present)"
 msgstr ""
 
 #: ../../plugindev.rst:93
@@ -193,7 +193,7 @@ msgid "Original Plugin API as described in the 0.9 docs."
 msgstr ""
 
 #: ../../plugindev.rst:95
-msgid "**Bottle 0.10 API 2** (:attr:`Plugin.api` equals 2)"
+msgid "**Veilchen 0.10 API 2** (:attr:`Plugin.api` equals 2)"
 msgstr ""
 
 #: ../../plugindev.rst:97
@@ -269,7 +269,7 @@ msgstr ""
 #: ../../plugindev.rst:116
 msgid ""
 "A list of route-specific plugins. These are applied in addition to "
-"application-wide plugins. (see :meth:`Bottle.route`)."
+"application-wide plugins. (see :meth:`Veilchen.route`)."
 msgstr ""
 
 #: ../../plugindev.rst:118
@@ -279,7 +279,7 @@ msgstr ""
 #: ../../plugindev.rst:118
 msgid ""
 "A list of plugins to not apply to this route (again, see "
-":meth:`Bottle.route`)."
+":meth:`Veilchen.route`)."
 msgstr ""
 
 #: ../../plugindev.rst:120
@@ -288,7 +288,7 @@ msgstr ""
 
 #: ../../plugindev.rst:120
 msgid ""
-"Additional keyword arguments passed to the :meth:`Bottle.route` decorator "
+"Additional keyword arguments passed to the :meth:`Veilchen.route` decorator "
 "are stored in this dictionary. Used for route-specific configuration and "
 "meta-data."
 msgstr ""
@@ -352,7 +352,7 @@ msgstr ""
 msgid ""
 "To achieve this, you need control over the callback cache: "
 ":meth:`Route.reset` clears the cache for a single route and "
-":meth:`Bottle.reset` clears all caches for all routes of an application at "
+":meth:`Veilchen.reset` clears all caches for all routes of an application at "
 "once. On the next request, all plugins are re-applied to the route as if it "
 "were requested for the first time."
 msgstr ""
@@ -381,7 +381,7 @@ msgstr ""
 #: ../../plugindev.rst:218
 msgid ""
 "This plugin is actually useful and very similar to the version bundled with "
-"Bottle. Not bad for less than 60 lines of code, don't you think? Here is a "
+"Veilchen. Not bad for less than 60 lines of code, don't you think? Here is a "
 "usage example::"
 msgstr ""
 

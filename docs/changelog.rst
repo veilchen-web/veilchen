@@ -30,21 +30,21 @@ Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a s
 and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly
 in veilchen. This means that this release is *not* backwards compatible in Python <2.7.3 or
 <3.6 environments. Maintainers for distributions or systems that still use these old python
-versions should not update to Bottle 0.13 and stick with 0.12 instead.
+versions should not update to Veilchen 0.13 and stick with 0.12 instead.
 
 .. rubric:: Stabilized APIs
 * The documented API of the :class:`ConfigDict` class is now considered stable and ready to use.
 
 .. rubric:: Deprecated APIs
 * The old route syntax (``/hello/:name``) is deprecated in favor of the more readable and flexible ``/hello/<name>`` syntax.
-* :meth:`Bottle.mount` now recognizes Bottle instance and will warn about parameters that are not compatible with the new mounting behavior. The old behavior (mount applications as WSGI callable) still works and is used as a fallback automatically.
+* :meth:`Veilchen.mount` now recognizes Veilchen instance and will warn about parameters that are not compatible with the new mounting behavior. The old behavior (mount applications as WSGI callable) still works and is used as a fallback automatically.
 * The undocumented :func:`local_property` helper is now deprecated.
 * The server adapter for google app engine is not useful anymore and marked as deprecated.
-* Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side.
+* Veilchen uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side.
 
 .. rubric:: Removed APIs (deprecated since 0.12)
 * Plugins with the old API (``api=1`` or no api attribute) will no longer work.
-* Parameter order of :meth:`Bottle.mount` changed in 0.10. The old order will now result in an error instead of a warning.
+* Parameter order of :meth:`Veilchen.mount` changed in 0.10. The old order will now result in an error instead of a warning.
 * The :class:`ConfigDict` class was introduced in 0.11 and changed during 0.12. These changes are now final.
 
   * Attribute access and assignment was removed due to high overhead and limited usability.
@@ -52,7 +52,7 @@ versions should not update to Bottle 0.13 and stick with 0.12 instead.
   * :class:`ConfigDict` instances are no longer callable. This was a shortcut for :meth:`ConfigDict.update`.
   * :class:`ConfigDict` constructor no longer accepts any parameters. Use the `load_*` methods instead.
 
-* Bottle 0.12 changed some aspects of the Simple Template Engine. These changes are now final and the old syntax will now longer work.
+* Veilchen 0.12 changed some aspects of the Simple Template Engine. These changes are now final and the old syntax will now longer work.
 
   * The magic ``{{rebase()}}`` call was replaced by a ``base`` variable. Example: ``{{base}}``
   * In STPL Templates, the 'rebase' and 'include' keywords were replaced with functions in 0.12.
@@ -66,11 +66,11 @@ These changes might require special care when updating.
 * Signed cookies now use a stronger HMAC algorithm by default. This will result in old cookies to appear invalid after the update. Pass an explicit ``digestmod=hashlib.md5`` to :meth:`Request.get_cookie` and :meth:`Response.set_cookie` to get the old behavior.
 
 .. rubric:: Other Improvements
-* Bottle() instances are now context managers. If used in a with-statement, the default application changes to the specific instance and the shortcuts for many instance methods can be used.
-* Added support for ``PATCH`` requests and the :meth:`Bottle.patch` decorator.
+* Veilchen() instances are now context managers. If used in a with-statement, the default application changes to the specific instance and the shortcuts for many instance methods can be used.
+* Added support for ``PATCH`` requests and the :meth:`Veilchen.patch` decorator.
 * Added `aiohttp <http://aiohttp.readthedocs.io/en/stable/>`_ and `uvloop <https://github.com/MagicStack/uvloop>`_ server adapters.
 * Added command-line arguments for config from json or ini files.
-* :meth:`Bottle.mount` now recognizes instances of :class:`Bottle` and mounts them with significantly less overhead than other WSGI applications.
+* :meth:`Veilchen.mount` now recognizes instances of :class:`Veilchen` and mounts them with significantly less overhead than other WSGI applications.
 * The :attr:`Request.json` property now accepts ``application/json-rpc`` requests.
 * :func:`static_file` gained support for ``ETag`` headers. It will generate ETags and recognizes ``If-None-Match`` headers.
 * Jinja2 templates will produce better error messages than before.
@@ -100,7 +100,7 @@ Release 0.11
 * Support for partial downloads (``Range`` header) in :func:`static_file`.
 * The new :class:`ResourceManager` interface helps locating files bundled with an application.
 * Added a server adapter for `waitress <http://docs.pylonsproject.org/projects/waitress/en/latest/>`_.
-* New :meth:`Bottle.merge` method to install all routes from one application into another.
+* New :meth:`Veilchen.merge` method to install all routes from one application into another.
 * New :attr:`BaseRequest.app` property to get the application object that handles a request.
 * Added :meth:`FormsDict.decode()` to get an all-unicode version (needed by WTForms).
 * :class:`MultiDict` and subclasses are now pickle-able.
@@ -142,9 +142,9 @@ Release 0.10
 
   * Added command line interface to load applications and start servers.
   * Introduced a :class:`ConfigDict` that makes accessing configuration a lot easier (attribute access and auto-expanding namespaces).
-  * Added support for raw WSGI applications to :meth:`Bottle.mount`.
-  * :meth:`Bottle.mount` parameter order changed.
-  * :meth:`Bottle.route` now accepts an import string for the ``callback`` parameter.
+  * Added support for raw WSGI applications to :meth:`Veilchen.mount`.
+  * :meth:`Veilchen.mount` parameter order changed.
+  * :meth:`Veilchen.route` now accepts an import string for the ``callback`` parameter.
   * Dropped Gunicorn 0.8 support. Current supported version is 0.13.
   * Added custom options to Gunicorn server.
   * Finally dropped support for type filters. Replace with a custom plugin of needed.
@@ -156,7 +156,7 @@ Release 0.9
 .. rubric:: Whats new?
 
 * A brand new plugin-API. See :ref:`plugins` and :doc:`plugindev` for details.
-* The :func:`route` decorator got a lot of new features. See :meth:`Bottle.route` for details.
+* The :func:`route` decorator got a lot of new features. See :meth:`Veilchen.route` for details.
 * New server adapters for `gevent <http://www.gevent.org/>`_, `meinheld <http://meinheld.org/>`_ and `bjoern <https://github.com/jonashaag/bjoern>`_.
 * Support for SimpleTAL templates.
 * Better runtime exception handling for mako templates in debug mode.
@@ -191,7 +191,7 @@ These changes may break compatibility with previous versions.
   * Regular expressions must be encapsulated with ``#``. In 0.6 all non-alphanumeric characters not present in the regular expression were allowed.
   * Regular expressions not part of a route wildcard are escaped automatically. You don't have to escape dots or other regular control characters anymore. In 0.6 the whole URL was interpreted as a regular expression. You can use anonymous wildcards (``/index:#(\.html)?#``) to achieve a similar behaviour.
 
-* The ``BreakTheBottle`` exception is gone. Use :class:`HTTPResponse` instead.
+* The ``BreakTheVeilchen`` exception is gone. Use :class:`HTTPResponse` instead.
 * The :class:`SimpleTemplate` engine escapes HTML special characters in ``{{bad_html}}`` expressions automatically. Use the new ``{{!good_html}}`` syntax to get old behaviour (no escaping).
 * The :class:`SimpleTemplate` engine returns unicode strings instead of lists of byte strings.
 * ``veilchen.optimize()`` and the automatic route optimization is obsolete.

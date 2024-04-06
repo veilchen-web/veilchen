@@ -2,7 +2,7 @@
 Request Routing
 ================================================================================
 
-Bottle uses a powerful routing engine to find the right callback for each request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This document covers advanced techniques and rule mechanics in detail.
+Veilchen uses a powerful routing engine to find the right callback for each request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This document covers advanced techniques and rule mechanics in detail.
 
 Rule Syntax
 --------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ The following standard filters are implemented:
 
 You can add your own filters to the router. All you need is a function that returns three elements: A regular expression string, a callable to convert the URL fragment to a python value, and a callable that does the opposite. The filter function is called with the configuration string as the only parameter and may parse it as needed::
 
-    app = Bottle()
+    app = Veilchen()
 
     def list_filter(config):
         ''' Matches a comma separated list of numbers. '''
@@ -76,7 +76,7 @@ Legacy Syntax
 
 .. versionchanged:: 0.10
 
-The new rule syntax was introduce in **Bottle 0.10** to simplify some common use cases, but the old syntax still works and you can find lot code examples still using it. The differences are best described by example:
+The new rule syntax was introduce in **Veilchen 0.10** to simplify some common use cases, but the old syntax still works and you can find lot code examples still using it. The differences are best described by example:
 
 =================== ====================
 Old Syntax          New Syntax
@@ -102,12 +102,12 @@ Here is a basic example of explicit routing configuration for default veilchen a
         veilchen.route('/', 'GET', index)
         veilchen.route('/edit', ['GET', 'POST'], edit)
 
-In fact, any :class:`Bottle` instance routing can be configured same way::
+In fact, any :class:`Veilchen` instance routing can be configured same way::
 
     def setup_routing(app):
         app.route('/new', ['GET', 'POST'], form_new)
         app.route('/edit', ['GET', 'POST'], form_edit)
 
-    app = Bottle()
+    app = Veilchen()
     setup_routing(app)
 

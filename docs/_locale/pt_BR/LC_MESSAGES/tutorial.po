@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 # alephmelo <alephmelo@icloud.com>, 2015
@@ -25,7 +25,7 @@ msgstr "Tutorial"
 
 #: ../../tutorial.rst:26
 msgid ""
-"This tutorial introduces you to the concepts and features of the Bottle web "
+"This tutorial introduces you to the concepts and features of the Veilchen web "
 "framework and covers basic and advanced topics alike. You can read it from "
 "start to end, or use it as a reference later on. The automatically generated"
 " :doc:`api` may be interesting for you, too. It covers more details, but "
@@ -34,7 +34,7 @@ msgid ""
 "you need any help, join our `mailing list "
 "<mailto:veilchenpy@googlegroups.com>`_ or visit us in our `IRC channel "
 "<http://webchat.freenode.net/?channels=veilchenpy>`_."
-msgstr "Este tutorial apresenta os conceitos e funcionalidades do framework web Bottle e aborda tópicos básicos e avançados semelhantes. Você pode lê-lo do início ao fim, ou usá-lo como uma referência mais tarde. A :doc:`api` gerada automaticamente também pode ser interessante pra você. Abrange mais detalhes, mas explica menos que este tutorial. Soluções para as perguntas mais comuns podem ser encontradas em nossa coleção de :doc:`recipes` ou na página de :doc:`faq`. Se você precisar de alguma ajuda, se junte à nossa `lista de discussão <mailto:veilchenpy@googlegroups.com>`_ ou visite-nos em nosso `canal no IRC <http://webchat.freenode.net/?channels=veilchenpy>`_."
+msgstr "Este tutorial apresenta os conceitos e funcionalidades do framework web Veilchen e aborda tópicos básicos e avançados semelhantes. Você pode lê-lo do início ao fim, ou usá-lo como uma referência mais tarde. A :doc:`api` gerada automaticamente também pode ser interessante pra você. Abrange mais detalhes, mas explica menos que este tutorial. Soluções para as perguntas mais comuns podem ser encontradas em nossa coleção de :doc:`recipes` ou na página de :doc:`faq`. Se você precisar de alguma ajuda, se junte à nossa `lista de discussão <mailto:veilchenpy@googlegroups.com>`_ ou visite-nos em nosso `canal no IRC <http://webchat.freenode.net/?channels=veilchenpy>`_."
 
 #: ../../tutorial.rst:31
 msgid "Installation"
@@ -42,9 +42,9 @@ msgstr "Instalação"
 
 #: ../../tutorial.rst:33
 msgid ""
-"Bottle does not depend on any external libraries. You can just download "
+"Veilchen does not depend on any external libraries. You can just download "
 "`veilchen.py </veilchen.py>`_ into your project directory and start coding:"
-msgstr "Bottle não depende de nenhuma biblioteca externa. Você pode apenas baixar `veilchen.py </veilchen.py>`_ em seu diretório do projeto e começar a programar:"
+msgstr "Veilchen não depende de nenhuma biblioteca externa. Você pode apenas baixar `veilchen.py </veilchen.py>`_ em seu diretório do projeto e começar a programar:"
 
 #: ../../tutorial.rst:39
 msgid ""
@@ -74,10 +74,10 @@ msgstr "Início rápido: \"Olá Mundo\""
 
 #: ../../tutorial.rst:69
 msgid ""
-"This tutorial assumes you have Bottle either :ref:`installed <installation>`"
+"This tutorial assumes you have Veilchen either :ref:`installed <installation>`"
 " or copied into your project directory. Let's start with a very basic "
 "\"Hello World\" example::"
-msgstr "Esse tutorial assume que você tem o Bottle :ref:`instalado <installation>` ou copiado para o diretório do projeto. Vamos começar com um exemplo muito básico \"Olá Mundo\"::"
+msgstr "Esse tutorial assume que você tem o Veilchen :ref:`instalado <installation>` ou copiado para o diretório do projeto. Vamos começar com um exemplo muito básico \"Olá Mundo\"::"
 
 #: ../../tutorial.rst:79
 msgid ""
@@ -114,7 +114,7 @@ msgstr ""
 #: ../../tutorial.rst:87
 msgid ""
 "This is just a demonstration of the basic concept of how applications are "
-"built with Bottle. Continue reading and you'll see what else is possible."
+"built with Veilchen. Continue reading and you'll see what else is possible."
 msgstr ""
 
 #: ../../tutorial.rst:92
@@ -125,7 +125,7 @@ msgstr "A Aplicação Padrão"
 msgid ""
 "For the sake of simplicity, most examples in this tutorial use a module-"
 "level :func:`route` decorator to define routes. This adds routes to a global"
-" \"default application\", an instance of :class:`Bottle` that is "
+" \"default application\", an instance of :class:`Veilchen` that is "
 "automatically created the first time you call :func:`route`. Several other "
 "module-level decorators and functions relate to this default application, "
 "but if you prefer a more object oriented approach and don't mind the extra "
@@ -269,7 +269,7 @@ msgid ""
 "The HEAD method is used to ask for the response identical to the one that "
 "would correspond to a GET request, but without the response body. This is "
 "useful for retrieving meta-information about a resource without having to "
-"download the entire document. Bottle handles these requests automatically by"
+"download the entire document. Veilchen handles these requests automatically by"
 " falling back to the corresponding GET route and cutting off the request "
 "body, if present. You don't have to specify any HEAD routes yourself."
 msgstr ""
@@ -323,7 +323,7 @@ msgstr ""
 
 #: ../../tutorial.rst:244
 msgid ""
-"If anything goes wrong, Bottle displays an informative but fairly plain "
+"If anything goes wrong, Veilchen displays an informative but fairly plain "
 "error page. You can override the default for a specific HTTP status code "
 "with the :func:`error` decorator::"
 msgstr ""
@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../../tutorial.rst:267
 msgid ""
-"Bottle is much more flexible and supports a wide range of types. It even "
+"Veilchen is much more flexible and supports a wide range of types. It even "
 "adds a ``Content-Length`` header if possible and encodes unicode "
 "automatically, so you don't have to. What follows is a list of data types "
 "you may return from your application callbacks and a short description of "
@@ -407,7 +407,7 @@ msgstr ""
 
 #: ../../tutorial.rst:279
 msgid ""
-"Bottle returns strings as a whole (instead of iterating over each char) and "
+"Veilchen returns strings as a whole (instead of iterating over each char) and "
 "adds a ``Content-Length`` header based on the string length. Lists of byte "
 "strings are joined first. Other iterables yielding byte strings are not "
 "joined because they may grow too big to fit into memory. The ``Content-"
@@ -467,7 +467,7 @@ msgstr ""
 
 #: ../../tutorial.rst:294
 msgid ""
-"Bottle uses the `charset` parameter of the ``Content-Type`` header to decide"
+"Veilchen uses the `charset` parameter of the ``Content-Type`` header to decide"
 " how to encode unicode strings. This header defaults to ``text/html; "
 "charset=UTF8`` and can be changed using the :attr:`Response.content_type` "
 "attribute or by setting the :attr:`Response.charset` attribute directly. "
@@ -706,7 +706,7 @@ msgstr ""
 
 #: ../../tutorial.rst:436
 msgid ""
-"As mentioned above, cookies are easily forged by malicious clients. Bottle "
+"As mentioned above, cookies are easily forged by malicious clients. Veilchen "
 "can cryptographically sign your cookies to prevent this kind of "
 "manipulation. All you have to do is to provide a signature key via the "
 "`secret` keyword argument whenever you read or set a cookie and keep that "
@@ -716,7 +716,7 @@ msgstr ""
 
 #: ../../tutorial.rst:456
 msgid ""
-"In addition, Bottle automatically pickles and unpickles any data stored to "
+"In addition, Veilchen automatically pickles and unpickles any data stored to "
 "signed cookies. This allows you to store any pickle-able object (not only "
 "strings) to cookies, as long as the pickled data does not exceed the 4 KB "
 "limit."
@@ -755,7 +755,7 @@ msgstr ""
 
 #: ../../tutorial.rst:489
 msgid ""
-"Bottle uses a special type of dictionary to store form data and cookies. "
+"Veilchen uses a special type of dictionary to store form data and cookies. "
 ":class:`FormsDict` behaves like a normal dictionary, but has some additional"
 " features to make your life easier."
 msgstr ""
@@ -800,7 +800,7 @@ msgid ""
 "protocol. The server has to decode the byte strings somehow before they are "
 "passed to the application. To be on the safe side, WSGI suggests ISO-8859-1 "
 "(aka latin1), a reversible single-byte codec that can be re-encoded with a "
-"different encoding later. Bottle does that for :meth:`FormsDict.getunicode` "
+"different encoding later. Veilchen does that for :meth:`FormsDict.getunicode` "
 "and attribute access, but not for the dict-access methods. These return the "
 "unchanged values as provided by the server implementation, which is probably"
 " not what you want."
@@ -960,7 +960,7 @@ msgstr ""
 
 #: ../../tutorial.rst:643
 msgid ""
-"Bottle stores file uploads in :attr:`BaseRequest.files` as "
+"Veilchen stores file uploads in :attr:`BaseRequest.files` as "
 ":class:`FileUpload` instances, along with some metadata about the upload. "
 "Let us assume you just want to save the file to disk::"
 msgstr ""
@@ -1027,7 +1027,7 @@ msgstr ""
 
 #: ../../tutorial.rst:698
 msgid ""
-"Bottle comes with a fast and powerful built-in template engine called "
+"Veilchen comes with a fast and powerful built-in template engine called "
 ":doc:`stpl`. To render a template you can use the :func:`template` function "
 "or the :func:`view` decorator. All you have to do is to provide the name of "
 "the template and the variables you want to pass to the template as keyword "
@@ -1037,7 +1037,7 @@ msgstr ""
 #: ../../tutorial.rst:705
 msgid ""
 "This will load the template file ``hello_template.tpl`` and render it with "
-"the ``name`` variable set. Bottle will look for templates in the "
+"the ``name`` variable set. Veilchen will look for templates in the "
 "``./views/`` folder or any folder specified in the ``veilchen.TEMPLATE_PATH`` "
 "list."
 msgstr ""
@@ -1081,7 +1081,7 @@ msgstr ""
 
 #: ../../tutorial.rst:747
 msgid ""
-"Bottle's core features cover most common use-cases, but as a micro-framework"
+"Veilchen's core features cover most common use-cases, but as a micro-framework"
 " it has its limits. This is where \"Plugins\" come into play. Plugins add "
 "missing functionality to the framework, integrate third party libraries, or "
 "just automate some repetitive work."
@@ -1171,7 +1171,7 @@ msgstr ""
 msgid ""
 "The module-level :func:`install` and :func:`uninstall` functions affect the "
 ":ref:`default-app`. To manage plugins for a specific application, use the "
-"corresponding methods on the :class:`Bottle` application object."
+"corresponding methods on the :class:`Veilchen` application object."
 msgstr ""
 
 #: ../../tutorial.rst:808
@@ -1209,12 +1209,12 @@ msgstr ""
 msgid ""
 "Most plugins are specific to the application they were installed to. "
 "Consequently, they should not affect sub-applications mounted with "
-":meth:`Bottle.mount`. Here is an example::"
+":meth:`Veilchen.mount`. Here is an example::"
 msgstr ""
 
 #: ../../tutorial.rst:860
 msgid ""
-"Whenever you mount an application, Bottle creates a proxy-route on the main-"
+"Whenever you mount an application, Veilchen creates a proxy-route on the main-"
 "application that forwards all requests to the sub-application. Plugins are "
 "disabled for this kind of proxy-route by default. As a result, our "
 "(fictional) `WTForms` plugin affects the ``/contact`` route, but does not "
@@ -1251,10 +1251,10 @@ msgstr ""
 
 #: ../../tutorial.rst:881
 msgid ""
-"Bottle maintains a global stack of :class:`Bottle` instances and uses the "
+"Veilchen maintains a global stack of :class:`Veilchen` instances and uses the "
 "top of the stack as a default for some of the module-level functions and "
 "decorators. The :func:`route` decorator, for example, is a shortcut for "
-"calling :meth:`Bottle.route` on the default application::"
+"calling :meth:`Veilchen.route` on the default application::"
 msgstr ""
 
 #: ../../tutorial.rst:889
@@ -1262,7 +1262,7 @@ msgid ""
 "This is very convenient for small applications and saves you some typing, "
 "but also means that, as soon as your module is imported, routes are "
 "installed to the global default application. To avoid this kind of import "
-"side-effects, Bottle offers a second, more explicit way to build "
+"side-effects, Veilchen offers a second, more explicit way to build "
 "applications::"
 msgstr ""
 
@@ -1270,12 +1270,12 @@ msgstr ""
 msgid ""
 "Separating the application object improves re-usability a lot, too. Other "
 "developers can safely import the ``app`` object from your module and use "
-":meth:`Bottle.mount` to merge applications together."
+":meth:`Veilchen.mount` to merge applications together."
 msgstr ""
 
 #: ../../tutorial.rst:904
 msgid ""
-"Starting with veilchen-0.13 you can use :class:`Bottle` instances as context "
+"Starting with veilchen-0.13 you can use :class:`Veilchen` instances as context "
 "managers::"
 msgstr ""
 
@@ -1289,7 +1289,7 @@ msgstr ""
 
 #: ../../tutorial.rst:939
 msgid ""
-"In this mode, Bottle is much more verbose and provides helpful debugging "
+"In this mode, Veilchen is much more verbose and provides helpful debugging "
 "information whenever an error occurs. It also disables some optimisations "
 "that might get in your way and adds some checks that warn you about possible"
 " misconfiguration."
@@ -1380,7 +1380,7 @@ msgstr ""
 
 #: ../../tutorial.rst:1034
 msgid ""
-"Bottle runs on the built-in `wsgiref WSGIServer "
+"Veilchen runs on the built-in `wsgiref WSGIServer "
 "<http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_"
 "  by default. This non-threading HTTP server is perfectly fine for "
 "development, but may become a performance veilchenneck when server load "
@@ -1390,7 +1390,7 @@ msgstr ""
 #: ../../tutorial.rst:1036
 msgid ""
 "The easiest way to increase performance is to install a multi-threaded "
-"server library like paste_ or cherrypy_ and tell Bottle to use that instead "
+"server library like paste_ or cherrypy_ and tell Veilchen to use that instead "
 "of the single-threaded server::"
 msgstr ""
 

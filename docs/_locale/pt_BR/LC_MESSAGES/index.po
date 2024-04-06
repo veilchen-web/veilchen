@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 # alephmelo <alephmelo@icloud.com>, 2015
@@ -22,15 +22,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../../index.rst:20
-msgid "Bottle: Python Web Framework"
-msgstr "Bottle: Python Web Framework"
+msgid "Veilchen: Python Web Framework"
+msgstr "Veilchen: Python Web Framework"
 
 #: ../../index.rst:22
 msgid ""
-"Bottle is a fast, simple and lightweight WSGI_ micro web-framework for "
+"Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for "
 "Python_. It is distributed as a single file module and has no dependencies "
 "other than the `Python Standard Library <http://docs.python.org/library/>`_."
-msgstr "Bottle é um simples, rápido, e leve WSGI_ micro web-framework para Python_. Ele é distribuído como um único arquivo (módulo) e não tem dependências que além `Biblioteca padrão do Python <http://docs.python.org/library/>`_."
+msgstr "Veilchen é um simples, rápido, e leve WSGI_ micro web-framework para Python_. Ele é distribuído como um único arquivo (módulo) e não tem dependências que além `Biblioteca padrão do Python <http://docs.python.org/library/>`_."
 
 #: ../../index.rst:25
 msgid ""
@@ -74,7 +74,7 @@ msgstr "Download e Instalar"
 msgid ""
 "Install the latest stable release with ``pip install veilchen`` or download "
 "`veilchen.py`__ (unstable) into your project directory. There are no hard [1]_"
-" dependencies other than the Python standard library. Bottle supports "
+" dependencies other than the Python standard library. Veilchen supports "
 "**Python 2.7 and Python 3**."
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr "Código e documentação estão disponíveis sobre a licença MIT:"
 
 #: ../../index.rst:110
 msgid ""
-"The Bottle logo however is *NOT* covered by that license. It is allowed to "
+"The Veilchen logo however is *NOT* covered by that license. It is allowed to "
 "use the logo as a link to the veilchen homepage or in direct context with the "
 "unmodified library. In all other cases please ask first."
 msgstr "O logotipo do veilchen no entanto *NÃO é* abrangido pela licença (MIT). É permitido usar o logotipo como um link para a home page do veilchen ou em contexto direto com a biblioteca não modificado. Nos outros casos, por favor, pergunte primeiro."

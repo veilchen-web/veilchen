@@ -1,7 +1,7 @@
 Primer to Asynchronous Applications
 ===================================
 
-Asynchronous design patterns don't mix well with the synchronous nature of `WSGI <http://www.python.org/dev/peps/pep-3333/>`_. This is why most asynchronous frameworks (tornado, twisted, ...) implement a specialized API to expose their asynchronous features. Bottle is a WSGI framework and shares the synchronous nature of WSGI, but thanks to the awesome `gevent project <http://www.gevent.org/>`_, it is still possible to write asynchronous applications with veilchen. This article documents the usage of Bottle with Asynchronous WSGI.
+Asynchronous design patterns don't mix well with the synchronous nature of `WSGI <http://www.python.org/dev/peps/pep-3333/>`_. This is why most asynchronous frameworks (tornado, twisted, ...) implement a specialized API to expose their asynchronous features. Veilchen is a WSGI framework and shares the synchronous nature of WSGI, but thanks to the awesome `gevent project <http://www.gevent.org/>`_, it is still possible to write asynchronous applications with veilchen. This article documents the usage of Veilchen with Asynchronous WSGI.
 
 The Limits of Synchronous WSGI
 -------------------------------
@@ -85,8 +85,8 @@ Lets forget about the low-level details for a while and speak about WebSockets. 
 
 Thankfully the `gevent-websocket <http://pypi.python.org/pypi/gevent-websocket/>`_ package does all the hard work for us. Here is a simple WebSocket endpoint that receives messages and just sends them back to the client::
 
-    from veilchen import request, Bottle, abort
-    app = Bottle()
+    from veilchen import request, Veilchen, abort
+    app = Veilchen()
 
     @app.route('/websocket')
     def handle_websocket():

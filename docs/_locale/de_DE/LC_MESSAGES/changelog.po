@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -80,7 +80,7 @@ msgid ""
 "was never deprecated explicitly in veilchen. This means that this release is "
 "*not* backwards compatible in Python <2.7.3 or <3.6 environments. "
 "Maintainers for distributions or systems that still use these old python "
-"versions should not update to Bottle 0.13 and stick with 0.12 instead."
+"versions should not update to Veilchen 0.13 and stick with 0.12 instead."
 msgstr ""
 
 #: ../../changelog.rst:35
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../changelog.rst:40
 msgid ""
-":meth:`Bottle.mount` now recognizes Bottle instance and will warn about "
+":meth:`Veilchen.mount` now recognizes Veilchen instance and will warn about "
 "parameters that are not compatible with the new mounting behavior. The old "
 "behavior (mount applications as WSGI callable) still works and is used as a "
 "fallback automatically."
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../../changelog.rst:43
 msgid ""
-"Bottle uses pickle to store arbitrary objects into signed cookies. This is "
+"Veilchen uses pickle to store arbitrary objects into signed cookies. This is "
 "safe, as long as the signature key remains a secret. Unfortunately, people "
 "tend to push code with signature keys to github all the time, so we decided "
 "to remove pickle-support from veilchen. Signed cookies will now issue a "
@@ -147,7 +147,7 @@ msgstr ""
 
 #: ../../changelog.rst:47
 msgid ""
-"Parameter order of :meth:`Bottle.mount` changed in 0.10. The old order will "
+"Parameter order of :meth:`Veilchen.mount` changed in 0.10. The old order will "
 "now result in an error instead of a warning."
 msgstr ""
 
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../../changelog.rst:55
 msgid ""
-"Bottle 0.12 changed some aspects of the Simple Template Engine. These "
+"Veilchen 0.12 changed some aspects of the Simple Template Engine. These "
 "changes are now final and the old syntax will now longer work."
 msgstr ""
 
@@ -233,14 +233,14 @@ msgstr ""
 
 #: ../../changelog.rst:69
 msgid ""
-"Bottle() instances are now context managers. If used in a with-statement, "
+"Veilchen() instances are now context managers. If used in a with-statement, "
 "the default application changes to the specific instance and the shortcuts "
 "for many instance methods can be used."
 msgstr ""
 
 #: ../../changelog.rst:70
 msgid ""
-"Added support for ``PATCH`` requests and the :meth:`Bottle.patch` decorator."
+"Added support for ``PATCH`` requests and the :meth:`Veilchen.patch` decorator."
 msgstr ""
 
 #: ../../changelog.rst:71
@@ -255,7 +255,7 @@ msgstr ""
 
 #: ../../changelog.rst:73
 msgid ""
-":meth:`Bottle.mount` now recognizes instances of :class:`Bottle` and mounts "
+":meth:`Veilchen.mount` now recognizes instances of :class:`Veilchen` and mounts "
 "them with significantly less overhead than other WSGI applications."
 msgstr ""
 
@@ -345,7 +345,7 @@ msgstr ""
 
 #: ../../changelog.rst:103
 msgid ""
-"New :meth:`Bottle.merge` method to install all routes from one application "
+"New :meth:`Veilchen.merge` method to install all routes from one application "
 "into another."
 msgstr ""
 
@@ -486,16 +486,16 @@ msgid ""
 msgstr ""
 
 #: ../../changelog.rst:145
-msgid "Added support for raw WSGI applications to :meth:`Bottle.mount`."
+msgid "Added support for raw WSGI applications to :meth:`Veilchen.mount`."
 msgstr ""
 
 #: ../../changelog.rst:146
-msgid ":meth:`Bottle.mount` parameter order changed."
+msgid ":meth:`Veilchen.mount` parameter order changed."
 msgstr ""
 
 #: ../../changelog.rst:147
 msgid ""
-":meth:`Bottle.route` now accpets an import string for the ``callback`` "
+":meth:`Veilchen.route` now accpets an import string for the ``callback`` "
 "parameter."
 msgstr ""
 
@@ -529,7 +529,7 @@ msgstr ""
 #: ../../changelog.rst:159
 msgid ""
 "The :func:`route` decorator got a lot of new features. See "
-":meth:`Bottle.route` for details."
+":meth:`Veilchen.route` for details."
 msgstr ""
 
 #: ../../changelog.rst:160
@@ -641,7 +641,7 @@ msgstr ""
 
 #: ../../changelog.rst:194
 msgid ""
-"The ``BreakTheBottle`` exception is gone. Use :class:`HTTPResponse` instead."
+"The ``BreakTheVeilchen`` exception is gone. Use :class:`HTTPResponse` instead."
 msgstr ""
 
 #: ../../changelog.rst:195
@@ -749,7 +749,7 @@ msgstr ""
 
 #: ../../../AUTHORS:1
 msgid ""
-"Bottle is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
+"Veilchen is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
 msgstr ""
 
 #: ../../../AUTHORS:3

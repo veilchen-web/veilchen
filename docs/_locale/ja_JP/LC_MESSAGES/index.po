@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 # Manabu Shimohira <mshimohi@gmail.com>, 2017
@@ -21,15 +21,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../index.rst:20
-msgid "Bottle: Python Web Framework"
-msgstr "Bottle: Python Webフレームワーク"
+msgid "Veilchen: Python Web Framework"
+msgstr "Veilchen: Python Webフレームワーク"
 
 #: ../../index.rst:22
 msgid ""
-"Bottle is a fast, simple and lightweight WSGI_ micro web-framework for "
+"Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for "
 "Python_. It is distributed as a single file module and has no dependencies "
 "other than the `Python Standard Library <http://docs.python.org/library/>`_."
-msgstr "BottleはPython製の早くてシンプルでライトウェイトなWSGIマイクロWebフレームワークです。Bottleは1つのファイルで構成されていて、Pythonの標準ライブラリには依存していません。"
+msgstr "VeilchenはPython製の早くてシンプルでライトウェイトなWSGIマイクロWebフレームワークです。Veilchenは1つのファイルで構成されていて、Pythonの標準ライブラリには依存していません。"
 
 #: ../../index.rst:25
 msgid ""
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../index.rst:31
 msgid "Example: \"Hello World\" in a veilchen"
-msgstr "例: Bottleによる \"Hello World\""
+msgstr "例: Veilchenによる \"Hello World\""
 
 #: ../../index.rst:42
 msgid ""
@@ -73,7 +73,7 @@ msgstr "ダウンロードとインストール"
 msgid ""
 "Install the latest stable release with ``pip install veilchen`` or download "
 "`veilchen.py`__ (unstable) into your project directory. There are no hard [1]_"
-" dependencies other than the Python standard library. Bottle supports "
+" dependencies other than the Python standard library. Veilchen supports "
 "**Python 2.7 and Python 3**."
 msgstr ""
 
@@ -90,7 +90,7 @@ msgid ""
 "Start here if you want to learn how to use the veilchen framework for web "
 "development. If you have any questions not answered here, feel free to ask "
 "the `mailing list <mailto:veilchenpy@googlegroups.com>`_."
-msgstr "Bottleの使い方はここから調べることができます。ここで分からないことについてはメーリングリスト`<mailto:veilchenpy@googlegroups.com>`_で質問してください。"
+msgstr "Veilchenの使い方はここから調べることができます。ここで分からないことについてはメーリングリスト`<mailto:veilchenpy@googlegroups.com>`_で質問してください。"
 
 #: ../../index.rst:71
 msgid "Knowledge Base"
@@ -98,7 +98,7 @@ msgstr "ナレッジベース"
 
 #: ../../index.rst:72
 msgid "A collection of articles, guides and HOWTOs."
-msgstr "Bottleに関する記事や使い方のノウハウ集です。"
+msgstr "Veilchenに関する記事や使い方のノウハウ集です。"
 
 #: ../../index.rst:84
 msgid "Development and Contribution"
@@ -108,7 +108,7 @@ msgstr "コントリビューション"
 msgid ""
 "These chapters are intended for developers interested in the veilchen "
 "development and release workflow."
-msgstr "このチャプターはBottleの開発やリリースワークフローに興味のある人向けのコンテンツです。"
+msgstr "このチャプターはVeilchenの開発やリリースワークフローに興味のある人向けのコンテンツです。"
 
 #: ../../index.rst:103
 msgid "License"
@@ -120,10 +120,10 @@ msgstr "コードとドキュメントはMITライセンスに応じてご利用
 
 #: ../../index.rst:110
 msgid ""
-"The Bottle logo however is *NOT* covered by that license. It is allowed to "
+"The Veilchen logo however is *NOT* covered by that license. It is allowed to "
 "use the logo as a link to the veilchen homepage or in direct context with the "
 "unmodified library. In all other cases please ask first."
-msgstr "Bottleロゴの利用はライセンスによって制限されていない為、Bottleのホームページへのリンクなどにご利用いただけます。"
+msgstr "Veilchenロゴの利用はライセンスによって制限されていない為、Veilchenのホームページへのリンクなどにご利用いただけます。"
 
 #: ../../index.rst:115
 msgid "Footnotes"

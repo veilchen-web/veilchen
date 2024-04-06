@@ -11,7 +11,7 @@ else:
 
 __author__ = 'atc'
 
-from veilchen import Bottle, request, tob, BaseRequest
+from veilchen import Veilchen, request, tob, BaseRequest
 
 
 class TestRouter(object):
@@ -19,7 +19,7 @@ class TestRouter(object):
     A test class for wrapping routes to test certain OO scenarios
     """
 
-    app = Bottle()
+    app = Veilchen()
 
     @app.post("/route1/<msg>")
     def route_1(self, msg):

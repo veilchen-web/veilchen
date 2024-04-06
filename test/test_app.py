@@ -5,13 +5,13 @@
 """ 
 
 import unittest
-from veilchen import Bottle
+from veilchen import Veilchen
 
 class TestApplicationObject(unittest.TestCase):
     
     def test_setattr(self):
         """ Attributed can be assigned, but only once. """
-        app = Bottle()
+        app = Veilchen()
         app.test = 5
         self.assertEqual(5, app.test)
         self.assertRaises(AttributeError, setattr, app, 'test', 6) 

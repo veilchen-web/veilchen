@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../recipes.rst:51
 msgid ""
-"Bottle catches all Exceptions raised in your app code to prevent your WSGI "
+"Veilchen catches all Exceptions raised in your app code to prevent your WSGI "
 "server from crashing. If the built-in :func:`debug` mode is not enough and "
 "you need exceptions to propagate to a debugging middleware, you can turn off"
 " this behaviour::"
@@ -64,7 +64,7 @@ msgstr ""
 #: ../../recipes.rst:59
 msgid ""
 "Now, veilchen only catches its own exceptions (:exc:`HTTPError`, "
-":exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can "
+":exc:`HTTPResponse` and :exc:`VeilchenException`) and your middleware can "
 "handle the rest."
 msgstr ""
 
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: ../../recipes.rst:65
-msgid "Unit-Testing Bottle Applications"
+msgid "Unit-Testing Veilchen Applications"
 msgstr ""
 
 #: ../../recipes.rst:67
@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../recipes.rst:87
 msgid ""
-"In the example the Bottle route() method is never executed - only index() is"
+"In the example the Veilchen route() method is never executed - only index() is"
 " tested."
 msgstr ""
 
@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 
 #: ../../recipes.rst:108
-msgid "Functional Testing Bottle Applications"
+msgid "Functional Testing Veilchen Applications"
 msgstr ""
 
 #: ../../recipes.rst:110
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../recipes.rst:156
 msgid ""
-"For Bottle, ``/example`` and ``/example/`` are two different routes [1]_. To"
+"For Veilchen, ``/example`` and ``/example/`` are two different routes [1]_. To"
 " treat both URLs the same you can add two ``@route`` decorators::"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgid ""
 "Several \"push\" mechanisms like XHR multipart need the ability to write "
 "response data without closing the connection in conjunction with the "
 "response header \"Connection: keep-alive\". WSGI does not easily lend itself"
-" to this behavior, but it is still possible to do so in Bottle by using the "
+" to this behavior, but it is still possible to do so in Veilchen by using the "
 "gevent_ async framework. Here is a sample that works with either the gevent_"
 " HTTP server or the paste_ HTTP server (it may work with others, but I have "
 "not tried). Just change ``server='gevent'`` to ``server='paste'`` to use the"
@@ -197,7 +197,7 @@ msgid ""
 msgstr ""
 
 #: ../../recipes.rst:213
-msgid "Gzip Compression in Bottle"
+msgid "Gzip Compression in Veilchen"
 msgstr ""
 
 #: ../../recipes.rst:216
@@ -206,7 +206,7 @@ msgstr ""
 
 #: ../../recipes.rst:218
 msgid ""
-"A common feature request is for Bottle to support Gzip compression, which "
+"A common feature request is for Veilchen to support Gzip compression, which "
 "speeds up sites by compressing static resources (like CSS and JS files) "
 "during a request."
 msgstr ""
@@ -258,8 +258,8 @@ msgstr ""
 
 #: ../../recipes.rst:232
 msgid ""
-"Because of these requirements, it is the recommendation of the Bottle "
-"project that Gzip compression is best handled by the WSGI server Bottle runs"
+"Because of these requirements, it is the recommendation of the Veilchen "
+"project that Gzip compression is best handled by the WSGI server Veilchen runs"
 " on top of. WSGI servers such as cherrypy_ provide a GzipFilter_ middleware "
 "that can be used to accomplish this."
 msgstr ""
@@ -282,7 +282,7 @@ msgid ""
 msgstr ""
 
 #: ../../recipes.rst:261
-msgid "Using Bottle with Heroku"
+msgid "Using Veilchen with Heroku"
 msgstr ""
 
 #: ../../recipes.rst:263
@@ -294,7 +294,7 @@ msgstr ""
 #: ../../recipes.rst:266
 msgid ""
 "This recipe is based upon the `Heroku Quickstart "
-"<http://devcenter.heroku.com/articles/quickstart>`_, with Bottle specific "
+"<http://devcenter.heroku.com/articles/quickstart>`_, with Veilchen specific "
 "code replacing the `Write Your App "
 "<http://devcenter.heroku.com/articles/python#write_your_app>`_ section of "
 "the `Getting Started with Python on Heroku/Cedar "

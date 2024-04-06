@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -21,7 +21,7 @@ msgid "Frequently Asked Questions"
 msgstr ""
 
 #: ../../faq.rst:13
-msgid "About Bottle"
+msgid "About Veilchen"
 msgstr ""
 
 #: ../../faq.rst:16
@@ -29,7 +29,7 @@ msgid "Is veilchen suitable for complex applications?"
 msgstr ""
 
 #: ../../faq.rst:18
-msgid "Bottle is a *micro* framework designed for prototyping and building small web applications and services. It stays out of your way and allows you to get things done fast, but misses some advanced features and ready-to-use solutions found in other frameworks (MVC, ORM, form validation, scaffolding, XML-RPC). Although it *is* possible to add these features and build complex applications with Bottle, you should consider using a full-stack Web framework like pylons_ or paste_ instead."
+msgid "Veilchen is a *micro* framework designed for prototyping and building small web applications and services. It stays out of your way and allows you to get things done fast, but misses some advanced features and ready-to-use solutions found in other frameworks (MVC, ORM, form validation, scaffolding, XML-RPC). Although it *is* possible to add these features and build complex applications with Veilchen, you should consider using a full-stack Web framework like pylons_ or paste_ instead."
 msgstr ""
 
 #: ../../faq.rst:22
@@ -41,7 +41,7 @@ msgid "\"Template Not Found\" in mod_wsgi/mod_python"
 msgstr ""
 
 #: ../../faq.rst:31
-msgid "Bottle searches in ``./`` and ``./views/`` for templates. In a mod_python_ or mod_wsgi_ environment, the working directory (``./``) depends on your Apache settings. You should add an absolute path to the template search path::"
+msgid "Veilchen searches in ``./`` and ``./views/`` for templates. In a mod_python_ or mod_wsgi_ environment, the working directory (``./``) depends on your Apache settings. You should add an absolute path to the template search path::"
 msgstr ""
 
 #: ../../faq.rst:35

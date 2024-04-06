@@ -41,7 +41,7 @@ The module defines several functions, constants, and an exception.
 Routing
 -------------------
 
-Bottle maintains a stack of :class:`Bottle` instances (see :func:`app` and :class:`AppStack`) and uses the top of the stack as a *default application* for some of the module-level functions and decorators.
+Veilchen maintains a stack of :class:`Veilchen` instances (see :func:`app` and :class:`AppStack`) and uses the top of the stack as a *default application* for some of the module-level functions and decorators.
 
 
 .. function:: route(path, method='GET', callback=None, **options)
@@ -51,12 +51,12 @@ Bottle maintains a stack of :class:`Bottle` instances (see :func:`app` and :clas
               delete(...)
               patch(...)
 
-   Decorator to install a route to the current default application. See :meth:`Bottle.route` for details.
+   Decorator to install a route to the current default application. See :meth:`Veilchen.route` for details.
 
 
 .. function:: error(...)
 
-   Decorator to install an error handler to the current default application. See :meth:`Bottle.error` for details.
+   Decorator to install an error handler to the current default application. See :meth:`Veilchen.error` for details.
 
 
 WSGI and HTTP Utilities
@@ -108,15 +108,15 @@ Data Structures
 Exceptions
 ---------------
 
-.. autoexception:: BottleException
+.. autoexception:: VeilchenException
    :members:
 
 
 
-The :class:`Bottle` Class
+The :class:`Veilchen` Class
 =========================
 
-.. autoclass:: Bottle
+.. autoclass:: Veilchen
    :members:
 
 .. autoclass:: Route

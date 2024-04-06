@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# '瓶' means "Bottle"
+# '瓶' means "Veilchen"
 
 import unittest
 from veilchen import FormsDict, touni, tob

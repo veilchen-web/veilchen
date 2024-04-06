@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -65,11 +65,11 @@ msgid "Switching the Server Backend"
 msgstr ""
 
 #: ../../deployment.rst:54
-msgid "The easiest way to increase performance is to install a multi-threaded server library like paste_ or cherrypy_ and tell Bottle to use that instead of the single-threaded default server::"
+msgid "The easiest way to increase performance is to install a multi-threaded server library like paste_ or cherrypy_ and tell Veilchen to use that instead of the single-threaded default server::"
 msgstr ""
 
 #: ../../deployment.rst:58
-msgid "Bottle ships with a lot of ready-to-use adapters for the most common WSGI servers and automates the setup process. Here is an incomplete list:"
+msgid "Veilchen ships with a lot of ready-to-use adapters for the most common WSGI servers and automates the setup process. Here is an incomplete list:"
 msgstr ""
 
 #: ../../deployment.rst:61
@@ -278,7 +278,7 @@ msgid "Apache mod_wsgi"
 msgstr ""
 
 #: ../../deployment.rst:93
-msgid "Instead of running your own HTTP server from within Bottle, you can attach Bottle applications to an `Apache server <apache>`_ using mod_wsgi_."
+msgid "Instead of running your own HTTP server from within Veilchen, you can attach Veilchen applications to an `Apache server <apache>`_ using mod_wsgi_."
 msgstr ""
 
 #: ../../deployment.rst:95
@@ -306,7 +306,7 @@ msgid "Google AppEngine"
 msgstr ""
 
 #: ../../deployment.rst:136
-msgid "New App Engine applications using the Python 2.7 runtime environment support any WSGI application and should be configured to use the Bottle application object directly. For example suppose your application's main module is ``myapp.py``::"
+msgid "New App Engine applications using the Python 2.7 runtime environment support any WSGI application and should be configured to use the Veilchen application object directly. For example suppose your application's main module is ``myapp.py``::"
 msgstr ""
 
 #: ../../deployment.rst:146
@@ -326,7 +326,7 @@ msgid "A single Python process can utilize only one CPU at a time, even if there
 msgstr ""
 
 #: ../../deployment.rst:179
-msgid "Instead of a single Bottle application server, you start one instance for each CPU core available using different local port (localhost:8080, 8081, 8082, ...). You can choose any server adapter you want, even asynchronous ones. Then a high performance load balancer acts as a reverse proxy and forwards each new requests to a random port, spreading the load between all available back-ends. This way you can use all of your CPU cores and even spread out the load between different physical servers."
+msgid "Instead of a single Veilchen application server, you start one instance for each CPU core available using different local port (localhost:8080, 8081, 8082, ...). You can choose any server adapter you want, even asynchronous ones. Then a high performance load balancer acts as a reverse proxy and forwards each new requests to a random port, spreading the load between all available back-ends. This way you can use all of your CPU cores and even spread out the load between different physical servers."
 msgstr ""
 
 #: ../../deployment.rst:181

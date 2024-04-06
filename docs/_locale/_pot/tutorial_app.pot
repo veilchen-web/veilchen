@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -25,15 +25,15 @@ msgid "This tutorial is a work in progress and written by `noisefloor <http://gi
 msgstr ""
 
 #: ../../tutorial_app.rst:26
-msgid "This tutorial should give a brief introduction to the Bottle_ WSGI Framework. The main goal is to be able, after reading through this tutorial, to create a project using Bottle. Within this document, not all abilities will be shown, but at least the main and important ones like routing, utilizing the Bottle template abilities to format output and handling GET / POST parameters."
+msgid "This tutorial should give a brief introduction to the Veilchen_ WSGI Framework. The main goal is to be able, after reading through this tutorial, to create a project using Veilchen. Within this document, not all abilities will be shown, but at least the main and important ones like routing, utilizing the Veilchen template abilities to format output and handling GET / POST parameters."
 msgstr ""
 
 #: ../../tutorial_app.rst:28
-msgid "To understand the content here, it is not necessary to have a basic knowledge of WSGI, as Bottle tries to keep WSGI away from the user anyway. You should have a fair understanding of the Python_ programming language. Furthermore, the example used in the tutorial retrieves and stores data in a SQL database, so a basic idea about SQL helps, but is not a must to understand the concepts of Bottle. Right here, SQLite_ is used. The output of Bottle sent to the browser is formatted in some examples by the help of HTML. Thus, a basic idea about the common HTML tags does help as well."
+msgid "To understand the content here, it is not necessary to have a basic knowledge of WSGI, as Veilchen tries to keep WSGI away from the user anyway. You should have a fair understanding of the Python_ programming language. Furthermore, the example used in the tutorial retrieves and stores data in a SQL database, so a basic idea about SQL helps, but is not a must to understand the concepts of Veilchen. Right here, SQLite_ is used. The output of Veilchen sent to the browser is formatted in some examples by the help of HTML. Thus, a basic idea about the common HTML tags does help as well."
 msgstr ""
 
 #: ../../tutorial_app.rst:30
-msgid "For the sake of introducing Bottle, the Python code \"in between\" is kept short, in order to keep the focus. Also all code within the tutorial is working fine, but you may not necessarily use it \"in the wild\", e.g. on a public web server. In order to do so, you may add e.g. more error handling, protect the database with a password, test and escape the input etc."
+msgid "For the sake of introducing Veilchen, the Python code \"in between\" is kept short, in order to keep the focus. Also all code within the tutorial is working fine, but you may not necessarily use it \"in the wild\", e.g. on a public web server. In order to do so, you may add e.g. more error handling, protect the database with a password, test and escape the input etc."
 msgstr ""
 
 #: ../../tutorial_app.rst:32
@@ -53,7 +53,7 @@ msgid "During development, all pages will be available on ``localhost`` only, bu
 msgstr ""
 
 #: ../../tutorial_app.rst:41
-msgid "Bottle will do the routing and format the output, with the help of templates. The items of the list will be stored inside a SQLite database. Reading and  writing the database will be done by Python code."
+msgid "Veilchen will do the routing and format the output, with the help of templates. The items of the list will be stored inside a SQLite database. Reading and  writing the database will be done by Python code."
 msgstr ""
 
 #: ../../tutorial_app.rst:43
@@ -81,15 +81,15 @@ msgid "Before We Start..."
 msgstr ""
 
 #: ../../tutorial_app.rst:55
-msgid "Install Bottle"
+msgid "Install Veilchen"
 msgstr ""
 
 #: ../../tutorial_app.rst:56
-msgid "Assuming that you have a fairly new installation of Python (version 2.5 or higher), you only need to install Bottle in addition to that. Bottle has no other dependencies than Python itself."
+msgid "Assuming that you have a fairly new installation of Python (version 2.5 or higher), you only need to install Veilchen in addition to that. Veilchen has no other dependencies than Python itself."
 msgstr ""
 
 #: ../../tutorial_app.rst:58
-msgid "You can either manually install Bottle or use Python's easy_install: ``easy_install veilchen``"
+msgid "You can either manually install Veilchen or use Python's easy_install: ``easy_install veilchen``"
 msgstr ""
 
 #: ../../tutorial_app.rst:62
@@ -113,11 +113,11 @@ msgid "This generates a database-file `todo.db` with tables called ``todo`` and 
 msgstr ""
 
 #: ../../tutorial_app.rst:81
-msgid "Using Bottle for a Web-Based ToDo List"
+msgid "Using Veilchen for a Web-Based ToDo List"
 msgstr ""
 
 #: ../../tutorial_app.rst:83
-msgid "Now it is time to introduce Bottle in order to create a web-based application. But first, we need to look into a basic concept of Bottle: routes."
+msgid "Now it is time to introduce Veilchen in order to create a web-based application. But first, we need to look into a basic concept of Veilchen: routes."
 msgstr ""
 
 #: ../../tutorial_app.rst:87
@@ -125,7 +125,7 @@ msgid "Understanding routes"
 msgstr ""
 
 #: ../../tutorial_app.rst:88
-msgid "Basically, each page visible in the browser is dynamically generated when the page address is called. Thus, there is no static content. That is exactly what is called a \"route\" within Bottle: a certain address on the server. So, for example, when the page ``http://localhost:8080/todo`` is called from the browser, Bottle \"grabs\" the call and checks if there is any (Python) function defined for the route \"todo\". If so, Bottle will execute the corresponding Python code and return its result."
+msgid "Basically, each page visible in the browser is dynamically generated when the page address is called. Thus, there is no static content. That is exactly what is called a \"route\" within Veilchen: a certain address on the server. So, for example, when the page ``http://localhost:8080/todo`` is called from the browser, Veilchen \"grabs\" the call and checks if there is any (Python) function defined for the route \"todo\". If so, Veilchen will execute the corresponding Python code and return its result."
 msgstr ""
 
 #: ../../tutorial_app.rst:92
@@ -141,7 +141,7 @@ msgid "Save the code a ``todo.py``, preferably in the same directory as the file
 msgstr ""
 
 #: ../../tutorial_app.rst:110
-msgid "Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Bottle we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Bottle's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Bottle returns the result of the function ``todo_list()``. That is how routing within veilchen works."
+msgid "Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Veilchen we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Veilchen. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Veilchen's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Veilchen returns the result of the function ``todo_list()``. That is how routing within veilchen works."
 msgstr ""
 
 #: ../../tutorial_app.rst:112
@@ -153,7 +153,7 @@ msgid "will work fine, too. What will not work is to bind one route to more than
 msgstr ""
 
 #: ../../tutorial_app.rst:121
-msgid "What you will see in the browser is what is returned, thus the value given by the ``return`` statement. In this example, we need to convert ``result`` in to a string by ``str()``, as Bottle expects a string or a list of strings from the return statement. But here, the result of the database query is a list of tuples, which is the standard defined by the `Python DB API`_."
+msgid "What you will see in the browser is what is returned, thus the value given by the ``return`` statement. In this example, we need to convert ``result`` in to a string by ``str()``, as Veilchen expects a string or a list of strings from the return statement. But here, the result of the database query is a list of tuples, which is the standard defined by the `Python DB API`_."
 msgstr ""
 
 #: ../../tutorial_app.rst:123
@@ -161,7 +161,7 @@ msgid "Now, after understanding the little script above, it is time to execute i
 msgstr ""
 
 #: ../../tutorial_app.rst:127
-msgid "If so - congratulations! You are now a successful user of Bottle. In case it did not work and you need to make some changes to the script, remember to stop Bottle serving the page, otherwise the revised version will not be loaded."
+msgid "If so - congratulations! You are now a successful user of Veilchen. In case it did not work and you need to make some changes to the script, remember to stop Veilchen serving the page, otherwise the revised version will not be loaded."
 msgstr ""
 
 #: ../../tutorial_app.rst:129
@@ -177,7 +177,7 @@ msgid "Debugging and Auto-Reload"
 msgstr ""
 
 #: ../../tutorial_app.rst:136
-msgid "Maybe you already noticed that Bottle sends a short error message to the browser in case something within the script is wrong, e.g. the connection to the database is not working. For debugging purposes it is quite helpful to get more details. This can be easily achieved by adding the following statement to the script::"
+msgid "Maybe you already noticed that Veilchen sends a short error message to the browser in case something within the script is wrong, e.g. the connection to the database is not working. For debugging purposes it is quite helpful to get more details. This can be easily achieved by adding the following statement to the script::"
 msgstr ""
 
 #: ../../tutorial_app.rst:144
@@ -201,7 +201,7 @@ msgid "Again, the feature is mainly supposed to be used while developing, not on
 msgstr ""
 
 #: ../../tutorial_app.rst:164
-msgid "Bottle Template To Format The Output"
+msgid "Veilchen Template To Format The Output"
 msgstr ""
 
 #: ../../tutorial_app.rst:165
@@ -209,11 +209,11 @@ msgid "Now let's have a look at casting the output of the script into a proper f
 msgstr ""
 
 #: ../../tutorial_app.rst:167
-msgid "Actually Bottle expects to receive a string or a list of strings from a function and returns them by the help of the built-in server to the browser. Bottle does not bother about the content of the string itself, so it can be text formatted with HTML markup, too."
+msgid "Actually Veilchen expects to receive a string or a list of strings from a function and returns them by the help of the built-in server to the browser. Veilchen does not bother about the content of the string itself, so it can be text formatted with HTML markup, too."
 msgstr ""
 
 #: ../../tutorial_app.rst:169
-msgid "Bottle brings its own easy-to-use template engine with it. Templates are stored as separate files having a ``.tpl`` extension. The template can be called then from within a function. Templates can contain any type of text (which will be most likely HTML-markup mixed with Python statements). Furthermore, templates can take arguments, e.g. the result set of a database query, which will be then formatted nicely within the template."
+msgid "Veilchen brings its own easy-to-use template engine with it. Templates are stored as separate files having a ``.tpl`` extension. The template can be called then from within a function. Templates can contain any type of text (which will be most likely HTML-markup mixed with Python statements). Furthermore, templates can take arguments, e.g. the result set of a database query, which will be then formatted nicely within the template."
 msgstr ""
 
 #: ../../tutorial_app.rst:171
@@ -225,7 +225,7 @@ msgid "To include the template in our example, just add the following lines::"
 msgstr ""
 
 #: ../../tutorial_app.rst:183
-msgid "So we do here two things: first, we import ``template`` from Bottle in order to be able to use templates. Second, we assign the output of the template ``make_table`` to the variable ``output``, which is then returned. In addition to calling the template, we assign ``result``, which we received from the database query, to the variable ``rows``, which is later on used within the template. If necessary, you can assign more than one variable / value to a template."
+msgid "So we do here two things: first, we import ``template`` from Veilchen in order to be able to use templates. Second, we assign the output of the template ``make_table`` to the variable ``output``, which is then returned. In addition to calling the template, we assign ``result``, which we received from the database query, to the variable ``rows``, which is later on used within the template. If necessary, you can assign more than one variable / value to a template."
 msgstr ""
 
 #: ../../tutorial_app.rst:185
@@ -269,7 +269,7 @@ msgid "To do so, we first add a new route to our script and tell the route that 
 msgstr ""
 
 #: ../../tutorial_app.rst:239
-msgid "To access GET (or POST) data, we need to import ``request`` from Bottle. To assign the actual data to a variable, we use the statement ``request.GET.task.strip()`` statement, where ``task`` is the name of the GET data we want to access. That's all. If your GET data has more than one variable, multiple ``request.GET.get()`` statements can be used and assigned to other variables."
+msgid "To access GET (or POST) data, we need to import ``request`` from Veilchen. To assign the actual data to a variable, we use the statement ``request.GET.task.strip()`` statement, where ``task`` is the name of the GET data we want to access. That's all. If your GET data has more than one variable, multiple ``request.GET.get()`` statements can be used and assigned to other variables."
 msgstr ""
 
 #: ../../tutorial_app.rst:241
@@ -309,7 +309,7 @@ msgid "The last point to do is to enable editing of existing items."
 msgstr ""
 
 #: ../../tutorial_app.rst:287
-msgid "By using only the routes we know so far it is possible, but may be quite tricky. But Bottle knows something called \"dynamic routes\", which makes this task quite easy."
+msgid "By using only the routes we know so far it is possible, but may be quite tricky. But Veilchen knows something called \"dynamic routes\", which makes this task quite easy."
 msgstr ""
 
 #: ../../tutorial_app.rst:289
@@ -317,7 +317,7 @@ msgid "The basic statement for a dynamic route looks like this::"
 msgstr ""
 
 #: ../../tutorial_app.rst:293
-msgid "This tells Bottle to accept for ``<something>`` any string up to the next slash. Furthermore, the value of ``something`` will be passed to the function assigned to that route, so the data can be processed within the function, like this::"
+msgid "This tells Veilchen to accept for ``<something>`` any string up to the next slash. Furthermore, the value of ``something`` will be passed to the function assigned to that route, so the data can be processed within the function, like this::"
 msgstr ""
 
 #: ../../tutorial_app.rst:321
@@ -345,7 +345,7 @@ msgid "Using dynamic routes is fine, but for many cases it makes sense to valida
 msgstr ""
 
 #: ../../tutorial_app.rst:348
-msgid "For those cases, Bottle offers the ``<name:int>`` wildcard filter, which matches (signed) digits and converts the value to integer. In order to apply the wildcard filter, extend the code as follows::"
+msgid "For those cases, Veilchen offers the ``<name:int>`` wildcard filter, which matches (signed) digits and converts the value to integer. In order to apply the wildcard filter, extend the code as follows::"
 msgstr ""
 
 #: ../../tutorial_app.rst:356
@@ -357,7 +357,7 @@ msgid "Dynamic Routes Using Regular Expressions"
 msgstr ""
 
 #: ../../tutorial_app.rst:361
-msgid "Bottle can also handle dynamic routes, where the \"dynamic part\" of the route can be a regular expression."
+msgid "Veilchen can also handle dynamic routes, where the \"dynamic part\" of the route can be a regular expression."
 msgstr ""
 
 #: ../../tutorial_app.rst:363
@@ -381,7 +381,7 @@ msgid "Sometimes it may become necessary to associate a route not to a Python fu
 msgstr ""
 
 #: ../../tutorial_app.rst:393
-msgid "At first, we need to import the ``static_file`` function from Bottle. As you can see, the ``return static_file`` statement replaces the ``return`` statement. It takes at least two arguments: the name of the file to be returned and the path to the file. Even if the file is in the same directory as your application, the path needs to be stated. But in this case, you can use ``'.'`` as a path, too. Bottle guesses the MIME-type of the file automatically, but in case you like to state it explicitly, add a third argument to ``static_file``, which would be here ``mimetype='text/html'``. ``static_file`` works with any type of route, including the dynamic ones."
+msgid "At first, we need to import the ``static_file`` function from Veilchen. As you can see, the ``return static_file`` statement replaces the ``return`` statement. It takes at least two arguments: the name of the file to be returned and the path to the file. Even if the file is in the same directory as your application, the path needs to be stated. But in this case, you can use ``'.'`` as a path, too. Veilchen guesses the MIME-type of the file automatically, but in case you like to state it explicitly, add a third argument to ``static_file``, which would be here ``mimetype='text/html'``. ``static_file`` works with any type of route, including the dynamic ones."
 msgstr ""
 
 #: ../../tutorial_app.rst:397
@@ -389,7 +389,7 @@ msgid "Returning JSON Data"
 msgstr ""
 
 #: ../../tutorial_app.rst:398
-msgid "There may be cases where you do not want your application to generate the output directly, but return data to be processed further on, e.g. by JavaScript. For those cases, Bottle offers the possibility to return JSON objects, which is sort of standard for exchanging data between web applications. Furthermore, JSON can be processed by many programming languages, including Python"
+msgid "There may be cases where you do not want your application to generate the output directly, but return data to be processed further on, e.g. by JavaScript. For those cases, Veilchen offers the possibility to return JSON objects, which is sort of standard for exchanging data between web applications. Furthermore, JSON can be processed by many programming languages, including Python"
 msgstr ""
 
 #: ../../tutorial_app.rst:400
@@ -397,7 +397,7 @@ msgid "So, let's assume we want to return the data generated in the regular expr
 msgstr ""
 
 #: ../../tutorial_app.rst:415
-msgid "As you can, that is fairly simple: just return a regular Python dictionary and Bottle will convert it automatically into a JSON object prior to sending. So if you e.g. call \"http://localhost/json1\" Bottle should in this case return the JSON object ``{\"task\": [\"Read A-byte-of-python to get a good introduction into Python\"]}``."
+msgid "As you can, that is fairly simple: just return a regular Python dictionary and Veilchen will convert it automatically into a JSON object prior to sending. So if you e.g. call \"http://localhost/json1\" Veilchen should in this case return the JSON object ``{\"task\": [\"Read A-byte-of-python to get a good introduction into Python\"]}``."
 msgstr ""
 
 #: ../../tutorial_app.rst:420
@@ -405,7 +405,7 @@ msgid "Catching Errors"
 msgstr ""
 
 #: ../../tutorial_app.rst:421
-msgid "The next step may is to catch the error with Bottle itself, to keep away any type of error message from the user of your application. To do that, Bottle has an \"error-route\", which can be a assigned to a HTML-error."
+msgid "The next step may is to catch the error with Veilchen itself, to keep away any type of error message from the user of your application. To do that, Veilchen has an \"error-route\", which can be a assigned to a HTML-error."
 msgstr ""
 
 #: ../../tutorial_app.rst:423
@@ -413,7 +413,7 @@ msgid "In our case, we want to catch a 403 error. The code is as follows::"
 msgstr ""
 
 #: ../../tutorial_app.rst:431
-msgid "So, at first we need to import ``error`` from Bottle and define a route by ``error(403)``, which catches all \"403 forbidden\" errors. The function \"mistake\" is assigned to that. Please note that ``error()`` always passes the error-code to the function - even if you do not need it. Thus, the function always needs to accept one argument, otherwise it will not work."
+msgid "So, at first we need to import ``error`` from Veilchen and define a route by ``error(403)``, which catches all \"403 forbidden\" errors. The function \"mistake\" is assigned to that. Please note that ``error()`` always passes the error-code to the function - even if you do not need it. Thus, the function always needs to accept one argument, otherwise it will not work."
 msgstr ""
 
 #: ../../tutorial_app.rst:433
@@ -429,11 +429,11 @@ msgid "Summary"
 msgstr ""
 
 #: ../../tutorial_app.rst:453
-msgid "After going through all the sections above, you should have a brief understanding how the Bottle WSGI framework works. Furthermore you have all the knowledge necessary to use Bottle for your applications."
+msgid "After going through all the sections above, you should have a brief understanding how the Veilchen WSGI framework works. Furthermore you have all the knowledge necessary to use Veilchen for your applications."
 msgstr ""
 
 #: ../../tutorial_app.rst:455
-msgid "The following chapter give a short introduction how to adapt Bottle for larger projects. Furthermore, we will show how to operate Bottle with web servers which perform better on a higher load / more web traffic than the one we used so far."
+msgid "The following chapter give a short introduction how to adapt Veilchen for larger projects. Furthermore, we will show how to operate Veilchen with web servers which perform better on a higher load / more web traffic than the one we used so far."
 msgstr ""
 
 #: ../../tutorial_app.rst:458
@@ -441,15 +441,15 @@ msgid "Server Setup"
 msgstr ""
 
 #: ../../tutorial_app.rst:460
-msgid "So far, we used the standard server used by Bottle, which is the `WSGI reference Server`_ shipped along with Python. Although this server is perfectly suitable for development purposes, it is not really suitable for larger applications. But before we have a look at the alternatives, let's have a look how to tweak the settings of the standard server first."
+msgid "So far, we used the standard server used by Veilchen, which is the `WSGI reference Server`_ shipped along with Python. Although this server is perfectly suitable for development purposes, it is not really suitable for larger applications. But before we have a look at the alternatives, let's have a look how to tweak the settings of the standard server first."
 msgstr ""
 
 #: ../../tutorial_app.rst:464
-msgid "Running Bottle on a different port and IP"
+msgid "Running Veilchen on a different port and IP"
 msgstr ""
 
 #: ../../tutorial_app.rst:465
-msgid "As standard, Bottle serves the pages on the IP address 127.0.0.1, also known as ``localhost``, and on port ``8080``. To modify the setting is pretty simple, as additional parameters can be passed to Bottle's ``run()`` function to change the port and the address."
+msgid "As standard, Veilchen serves the pages on the IP address 127.0.0.1, also known as ``localhost``, and on port ``8080``. To modify the setting is pretty simple, as additional parameters can be passed to Veilchen's ``run()`` function to change the port and the address."
 msgstr ""
 
 #: ../../tutorial_app.rst:467
@@ -457,11 +457,11 @@ msgid "To change the port, just add ``port=portnumber`` to the run command. So, 
 msgstr ""
 
 #: ../../tutorial_app.rst:471
-msgid "would make Bottle listen to port 80."
+msgid "would make Veilchen listen to port 80."
 msgstr ""
 
 #: ../../tutorial_app.rst:473
-msgid "To change the IP address where Bottle is listening::"
+msgid "To change the IP address where Veilchen is listening::"
 msgstr ""
 
 #: ../../tutorial_app.rst:477
@@ -469,23 +469,23 @@ msgid "If needed, both parameters can be combined, like::"
 msgstr ""
 
 #: ../../tutorial_app.rst:481
-msgid "The ``port`` and ``host`` parameter can also be applied when Bottle is running with a different server, as shown in the following section."
+msgid "The ``port`` and ``host`` parameter can also be applied when Veilchen is running with a different server, as shown in the following section."
 msgstr ""
 
 #: ../../tutorial_app.rst:485
-msgid "Running Bottle with a different server"
+msgid "Running Veilchen with a different server"
 msgstr ""
 
 #: ../../tutorial_app.rst:486
-msgid "As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a veilchenneck, as it is single-threaded, thus it can only serve one request at a time."
+msgid "As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Veilchen. For larger tasks, the standard server may become a veilchenneck, as it is single-threaded, thus it can only serve one request at a time."
 msgstr ""
 
 #: ../../tutorial_app.rst:488
-msgid "But Bottle has already various adapters to multi-threaded servers on board, which perform better on higher load. Bottle supports Cherrypy_, Flup_ and Paste_."
+msgid "But Veilchen has already various adapters to multi-threaded servers on board, which perform better on higher load. Veilchen supports Cherrypy_, Flup_ and Paste_."
 msgstr ""
 
 #: ../../tutorial_app.rst:490
-msgid "If you want to run for example Bottle with the Paste server, use the following code::"
+msgid "If you want to run for example Veilchen with the Paste server, use the following code::"
 msgstr ""
 
 #: ../../tutorial_app.rst:496
@@ -493,11 +493,11 @@ msgid "This works exactly the same way with ``FlupServer``, ``CherryPyServer`` a
 msgstr ""
 
 #: ../../tutorial_app.rst:500
-msgid "Running Bottle on Apache with mod_wsgi"
+msgid "Running Veilchen on Apache with mod_wsgi"
 msgstr ""
 
 #: ../../tutorial_app.rst:501
-msgid "Maybe you already have an Apache_ or you want to run a Bottle-based application large scale - then it is time to think about Apache with mod_wsgi_."
+msgid "Maybe you already have an Apache_ or you want to run a Veilchen-based application large scale - then it is time to think about Apache with mod_wsgi_."
 msgstr ""
 
 #: ../../tutorial_app.rst:503
@@ -505,7 +505,7 @@ msgid "We assume that your Apache server is up and running and mod_wsgi is worki
 msgstr ""
 
 #: ../../tutorial_app.rst:505
-msgid "Bottle brings an adapter for mod_wsgi with it, so serving your application is an easy task."
+msgid "Veilchen brings an adapter for mod_wsgi with it, so serving your application is an easy task."
 msgstr ""
 
 #: ../../tutorial_app.rst:507
@@ -537,11 +537,11 @@ msgid "Final Words"
 msgstr ""
 
 #: ../../tutorial_app.rst:545
-msgid "Now we are at the end of this introduction and tutorial to Bottle. We learned about the basic concepts of Bottle and wrote a first application using the Bottle framework. In addition to that, we saw how to adapt Bottle for large tasks and serve Bottle through an Apache web server with mod_wsgi."
+msgid "Now we are at the end of this introduction and tutorial to Veilchen. We learned about the basic concepts of Veilchen and wrote a first application using the Veilchen framework. In addition to that, we saw how to adapt Veilchen for large tasks and serve Veilchen through an Apache web server with mod_wsgi."
 msgstr ""
 
 #: ../../tutorial_app.rst:547
-msgid "As said in the introduction, this tutorial is not showing all shades and possibilities of Bottle. What we skipped here is e.g. receiving file objects and streams and how to handle authentication data. Furthermore, we did not show how templates can be called from within another template. For an introduction into those points, please refer to the full `Bottle documentation`_ ."
+msgid "As said in the introduction, this tutorial is not showing all shades and possibilities of Veilchen. What we skipped here is e.g. receiving file objects and streams and how to handle authentication data. Furthermore, we did not show how templates can be called from within another template. For an introduction into those points, please refer to the full `Veilchen documentation`_ ."
 msgstr ""
 
 #: ../../tutorial_app.rst:550

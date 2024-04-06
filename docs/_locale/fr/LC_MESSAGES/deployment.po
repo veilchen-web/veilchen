@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 # Ibrahim DERRAZ <ibrahim@derraz.fr>, 2017
@@ -103,13 +103,13 @@ msgstr ""
 #: ../../deployment.rst:54
 msgid ""
 "The easiest way to increase performance is to install a multi-threaded "
-"server library like paste_ or cherrypy_ and tell Bottle to use that instead "
+"server library like paste_ or cherrypy_ and tell Veilchen to use that instead "
 "of the single-threaded default server::"
 msgstr ""
 
 #: ../../deployment.rst:58
 msgid ""
-"Bottle ships with a lot of ready-to-use adapters for the most common WSGI "
+"Veilchen ships with a lot of ready-to-use adapters for the most common WSGI "
 "servers and automates the setup process. Here is an incomplete list:"
 msgstr ""
 
@@ -323,8 +323,8 @@ msgstr ""
 
 #: ../../deployment.rst:93
 msgid ""
-"Instead of running your own HTTP server from within Bottle, you can attach "
-"Bottle applications to an `Apache server <apache>`_ using mod_wsgi_."
+"Instead of running your own HTTP server from within Veilchen, you can attach "
+"Veilchen applications to an `Apache server <apache>`_ using mod_wsgi_."
 msgstr ""
 
 #: ../../deployment.rst:95
@@ -363,7 +363,7 @@ msgstr ""
 #: ../../deployment.rst:136
 msgid ""
 "New App Engine applications using the Python 2.7 runtime environment support"
-" any WSGI application and should be configured to use the Bottle application"
+" any WSGI application and should be configured to use the Veilchen application"
 " object directly. For example suppose your application's main module is "
 "``myapp.py``::"
 msgstr ""
@@ -394,7 +394,7 @@ msgstr ""
 
 #: ../../deployment.rst:179
 msgid ""
-"Instead of a single Bottle application server, you start one instance for "
+"Instead of a single Veilchen application server, you start one instance for "
 "each CPU core available using different local port (localhost:8080, 8081, "
 "8082, ...). You can choose any server adapter you want, even asynchronous "
 "ones. Then a high performance load balancer acts as a reverse proxy and "

@@ -9,13 +9,13 @@
 Frequently Asked Questions
 ==========================
 
-About Bottle
+About Veilchen
 ============
 
 Is veilchen suitable for complex applications?
 ---------------------------------------------
 
-Bottle is a *micro* framework designed for prototyping and building small web applications and services. It stays out of your way and allows you to get things done fast, but misses some advanced features and ready-to-use solutions found in other frameworks (MVC, ORM, form validation, scaffolding, XML-RPC). Although it *is* possible to add these features and build complex applications with Bottle, you should consider using a full-stack Web framework like pylons_ or paste_ instead.
+Veilchen is a *micro* framework designed for prototyping and building small web applications and services. It stays out of your way and allows you to get things done fast, but misses some advanced features and ready-to-use solutions found in other frameworks (MVC, ORM, form validation, scaffolding, XML-RPC). Although it *is* possible to add these features and build complex applications with Veilchen, you should consider using a full-stack Web framework like pylons_ or paste_ instead.
 
 
 Common Problems and Pitfalls
@@ -28,7 +28,7 @@ Common Problems and Pitfalls
 "Template Not Found" in mod_wsgi/mod_python
 --------------------------------------------------------------------------------
 
-Bottle searches in ``./`` and ``./views/`` for templates. In a mod_python_ or mod_wsgi_ environment, the working directory (``./``) depends on your Apache settings. You should add an absolute path to the template search path::
+Veilchen searches in ``./`` and ``./views/`` for templates. In a mod_python_ or mod_wsgi_ environment, the working directory (``./``) depends on your Apache settings. You should add an absolute path to the template search path::
 
     veilchen.TEMPLATE_PATH.insert(0,'/absolut/path/to/templates/')
 

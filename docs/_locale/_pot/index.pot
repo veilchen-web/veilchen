@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../index.rst:20
-msgid "Bottle: Python Web Framework"
+msgid "Veilchen: Python Web Framework"
 msgstr ""
 
 #: ../../index.rst:22
-msgid "Bottle is a fast, simple and lightweight WSGI_ micro web-framework for Python_. It is distributed as a single file module and has no dependencies other than the `Python Standard Library <http://docs.python.org/library/>`_."
+msgid "Veilchen is a fast, simple and lightweight WSGI_ micro web-framework for Python_. It is distributed as a single file module and has no dependencies other than the `Python Standard Library <http://docs.python.org/library/>`_."
 msgstr ""
 
 #: ../../index.rst:25
@@ -53,7 +53,7 @@ msgid "Download and Install"
 msgstr ""
 
 #: ../../index.rst:48
-msgid "Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**."
+msgid "Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Veilchen supports **Python 2.7 and Python 3**."
 msgstr ""
 
 #: ../../index.rst:50
@@ -93,7 +93,7 @@ msgid "Code and documentation are available according to the MIT License:"
 msgstr ""
 
 #: ../../index.rst:110
-msgid "The Bottle logo however is *NOT* covered by that license. It is allowed to use the logo as a link to the veilchen homepage or in direct context with the unmodified library. In all other cases please ask first."
+msgid "The Veilchen logo however is *NOT* covered by that license. It is allowed to use the logo as a link to the veilchen homepage or in direct context with the unmodified library. In all other cases please ask first."
 msgstr ""
 
 #: ../../index.rst:115

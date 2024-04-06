@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-22 16:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: ../../changelog.rst:36
 msgid ""
-"New :meth:`Bottle.merge` method to install all routes from one application "
+"New :meth:`Veilchen.merge` method to install all routes from one application "
 "into another."
 msgstr ""
 
@@ -227,16 +227,16 @@ msgid ""
 msgstr ""
 
 #: ../../changelog.rst:78
-msgid "Added support for raw WSGI applications to :meth:`Bottle.mount`."
+msgid "Added support for raw WSGI applications to :meth:`Veilchen.mount`."
 msgstr ""
 
 #: ../../changelog.rst:79
-msgid ":meth:`Bottle.mount` parameter order changed."
+msgid ":meth:`Veilchen.mount` parameter order changed."
 msgstr ""
 
 #: ../../changelog.rst:80
 msgid ""
-":meth:`Bottle.route` now accpets an import string for the ``callback`` "
+":meth:`Veilchen.route` now accpets an import string for the ``callback`` "
 "parameter."
 msgstr ""
 
@@ -270,7 +270,7 @@ msgstr ""
 #: ../../changelog.rst:92
 msgid ""
 "The :func:`route` decorator got a lot of new features. See "
-":meth:`Bottle.route` for details."
+":meth:`Veilchen.route` for details."
 msgstr ""
 
 #: ../../changelog.rst:93
@@ -382,7 +382,7 @@ msgstr ""
 
 #: ../../changelog.rst:127
 msgid ""
-"The ``BreakTheBottle`` exception is gone. Use :class:`HTTPResponse` instead."
+"The ``BreakTheVeilchen`` exception is gone. Use :class:`HTTPResponse` instead."
 msgstr ""
 
 #: ../../changelog.rst:128
@@ -490,7 +490,7 @@ msgstr ""
 
 #: ../../../AUTHORS:1
 msgid ""
-"Bottle is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
+"Veilchen is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
 msgstr ""
 
 #: ../../../AUTHORS:3

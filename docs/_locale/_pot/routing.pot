@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bottle 0.13-dev\n"
+"Project-Id-Version: Veilchen 0.13-dev\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -21,7 +21,7 @@ msgid "Request Routing"
 msgstr ""
 
 #: ../../routing.rst:5
-msgid "Bottle uses a powerful routing engine to find the right callback for each request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This document covers advanced techniques and rule mechanics in detail."
+msgid "Veilchen uses a powerful routing engine to find the right callback for each request. The :ref:`tutorial <tutorial-routing>` shows you the basics. This document covers advanced techniques and rule mechanics in detail."
 msgstr ""
 
 #: ../../routing.rst:8
@@ -123,7 +123,7 @@ msgid "Legacy Syntax"
 msgstr ""
 
 #: ../../routing.rst:79
-msgid "The new rule syntax was introduce in **Bottle 0.10** to simplify some common use cases, but the old syntax still works and you can find lot code examples still using it. The differences are best described by example:"
+msgid "The new rule syntax was introduce in **Veilchen 0.10** to simplify some common use cases, but the old syntax still works and you can find lot code examples still using it. The differences are best described by example:"
 msgstr ""
 
 #: ../../routing.rst:82
@@ -183,5 +183,5 @@ msgid "Here is a basic example of explicit routing configuration for default vei
 msgstr ""
 
 #: ../../routing.rst:105
-msgid "In fact, any :class:`Bottle` instance routing can be configured same way::"
+msgid "In fact, any :class:`Veilchen` instance routing can be configured same way::"
 msgstr ""

@@ -6,7 +6,7 @@ from veilchen import response
 class TestAppMounting(ServerTestBase):
     def setUp(self):
         ServerTestBase.setUp(self)
-        self.subapp = veilchen.Bottle()
+        self.subapp = veilchen.Veilchen()
 
         @self.subapp.route('/')
         @self.subapp.route('/test/<test>')
@@ -113,7 +113,7 @@ class TestAppMounting(ServerTestBase):
 class TestAppMerging(ServerTestBase):
     def setUp(self):
         ServerTestBase.setUp(self)
-        self.subapp = veilchen.Bottle()
+        self.subapp = veilchen.Veilchen()
         @self.subapp.route('/')
         @self.subapp.route('/test/:test')
         def test(test='foo'):

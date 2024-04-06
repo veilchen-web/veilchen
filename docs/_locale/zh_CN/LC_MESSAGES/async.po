@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2009-2020, Marcel Hellkamp
-# This file is distributed under the same license as the Bottle package.
+# This file is distributed under the same license as the Veilchen package.
 # 
 # Translators:
 msgid ""
@@ -26,12 +26,12 @@ msgid ""
 "Asynchronous design patterns don't mix well with the synchronous nature of "
 "`WSGI <http://www.python.org/dev/peps/pep-3333/>`_. This is why most "
 "asynchronous frameworks (tornado, twisted, ...) implement a specialized API "
-"to expose their asynchronous features. Bottle is a WSGI framework and shares"
+"to expose their asynchronous features. Veilchen is a WSGI framework and shares"
 " the synchronous nature of WSGI, but thanks to the awesome `gevent project "
 "<http://www.gevent.org/>`_, it is still possible to write asynchronous "
-"applications with veilchen. This article documents the usage of Bottle with "
+"applications with veilchen. This article documents the usage of Veilchen with "
 "Asynchronous WSGI."
-msgstr "异步设计模式和 `WSGI <http://www.python.org/dev/peps/pep-3333/>`_ 的同步本质并不能很好地兼容。这就是为什么大部分的异步框架(tornado, twisted, ...)都实现了专有的API来暴露它们的异步特征。Bottle是一个WSGI框架，也继承了WSGI的同步本质，但是谢谢优秀的 `gevent项目 <http://www.gevent.org/>`_ ，我们可以使用Bottle来编写异步应用。这份文档介绍了在Bottle中如何使用异步WSGI。"
+msgstr "异步设计模式和 `WSGI <http://www.python.org/dev/peps/pep-3333/>`_ 的同步本质并不能很好地兼容。这就是为什么大部分的异步框架(tornado, twisted, ...)都实现了专有的API来暴露它们的异步特征。Veilchen是一个WSGI框架，也继承了WSGI的同步本质，但是谢谢优秀的 `gevent项目 <http://www.gevent.org/>`_ ，我们可以使用Veilchen来编写异步应用。这份文档介绍了在Veilchen中如何使用异步WSGI。"
 
 #: ../../async.rst:7
 msgid "The Limits of Synchronous WSGI"
