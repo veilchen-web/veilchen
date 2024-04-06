@@ -179,7 +179,7 @@ msgid "Route decorator can also be directly called as method. This way provides 
 msgstr ""
 
 #: ../../routing.rst:99
-msgid "Here is a basic example of explicit routing configuration for default bottle application::"
+msgid "Here is a basic example of explicit routing configuration for default veilchen application::"
 msgstr ""
 
 #: ../../routing.rst:105

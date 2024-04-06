@@ -5,7 +5,7 @@
 """ 
 
 import unittest
-from bottle import Bottle
+from veilchen import Bottle
 
 class TestApplicationObject(unittest.TestCase):
     

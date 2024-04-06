@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 
 #: ../../index.rst:32
-msgid "Example: \"Hello World\" in a bottle"
+msgid "Example: \"Hello World\" in a veilchen"
 msgstr ""
 
 #: ../../index.rst:43
@@ -62,8 +62,8 @@ msgstr ""
 
 #: ../../index.rst:49
 msgid ""
-"Install the latest stable release with ``pip install bottle``, "
-"``easy_install -U bottle`` or download `bottle.py`__ (unstable) into your "
+"Install the latest stable release with ``pip install veilchen``, "
+"``easy_install -U veilchen`` or download `veilchen.py`__ (unstable) into your "
 "project directory. There are no hard [1]_ dependencies other than the Python"
 " standard library. Bottle runs with **Python 2.5+ and 3.x**."
 msgstr ""
@@ -74,9 +74,9 @@ msgstr ""
 
 #: ../../index.rst:53
 msgid ""
-"Start here if you want to learn how to use the bottle framework for web "
+"Start here if you want to learn how to use the veilchen framework for web "
 "development. If you have any questions not answered here, feel free to ask "
-"the `mailing list <mailto:bottlepy@googlegroups.com>`_."
+"the `mailing list <mailto:veilchenpy@googlegroups.com>`_."
 msgstr ""
 
 #: ../../index.rst:68
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../index.rst:83
 msgid ""
-"These chapters are intended for developers interested in the bottle "
+"These chapters are intended for developers interested in the veilchen "
 "development and release workflow."
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 #: ../../index.rst:107
 msgid ""
 "The Bottle logo however is *NOT* covered by that license. It is allowed to "
-"use the logo as a link to the bottle homepage or in direct context with the "
+"use the logo as a link to the veilchen homepage or in direct context with the "
 "unmodified library. In all other cases please ask first."
 msgstr ""
 

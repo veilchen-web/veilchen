@@ -1,4 +1,4 @@
-from bottle import ResourceManager
+from veilchen import ResourceManager
 import os.path
 import unittest
 

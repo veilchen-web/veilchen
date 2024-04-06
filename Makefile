@@ -1,5 +1,5 @@
 VERSION = $(shell python setup.py --version)
-ALLFILES = $(shell echo bottle.py test/*.py test/views/*.tpl)
+ALLFILES = $(shell echo veilchen.py test/*.py test/views/*.tpl)
 VENV = build/venv
 TESTBUILD = build/python
 
@@ -48,7 +48,7 @@ tx-push: venv
 	. $(VENV)/bin/activate; \
 	cd docs/_locale/ \
 	&& sphinx-build -b gettext -E .. _pot \
-	&& sphinx-intl update-txconfig-resources -p _pot -d . --transifex-project-name bottle \
+	&& sphinx-intl update-txconfig-resources -p _pot -d . --transifex-project-name veilchen \
 	&& tx push -s
 
 tx:

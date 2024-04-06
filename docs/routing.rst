@@ -96,11 +96,11 @@ Explicit routing configuration
 
 Route decorator can also be directly called as method. This way provides flexibility in complex setups, allowing you to directly control, when and how routing configuration done.
 
-Here is a basic example of explicit routing configuration for default bottle application::
+Here is a basic example of explicit routing configuration for default veilchen application::
 
     def setup_routing():
-        bottle.route('/', 'GET', index)
-        bottle.route('/edit', ['GET', 'POST'], edit)
+        veilchen.route('/', 'GET', index)
+        veilchen.route('/edit', ['GET', 'POST'], edit)
 
 In fact, any :class:`Bottle` instance routing can be configured same way::
 

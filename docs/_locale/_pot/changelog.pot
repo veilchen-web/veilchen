@@ -33,7 +33,7 @@ msgid "Dropped support for Python versions that reached their end-of-life."
 msgstr ""
 
 #: ../../changelog.rst:15
-msgid "Keeping up support for ancient Python versions hinders adaptation of new features and serves no real purpose. If you need support for older Python versions, you can stay on bottle-0.12. The updated list of tested and supported python releases is as follows:"
+msgid "Keeping up support for ancient Python versions hinders adaptation of new features and serves no real purpose. If you need support for older Python versions, you can stay on veilchen-0.12. The updated list of tested and supported python releases is as follows:"
 msgstr ""
 
 #: ../../changelog.rst:20
@@ -69,7 +69,7 @@ msgid "PyPy 3.7"
 msgstr ""
 
 #: ../../changelog.rst:29
-msgid "Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a step further and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly in bottle. This means that this release is *not* backwards compatible in Python <2.7.3 or <3.6 environments. Maintainers for distributions or systems that still use these old python versions should not update to Bottle 0.13 and stick with 0.12 instead."
+msgid "Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a step further and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly in veilchen. This means that this release is *not* backwards compatible in Python <2.7.3 or <3.6 environments. Maintainers for distributions or systems that still use these old python versions should not update to Bottle 0.13 and stick with 0.12 instead."
 msgstr ""
 
 #: ../../changelog.rst:35
@@ -101,7 +101,7 @@ msgid "The server adapter for google app engine is not useful anymore and marked
 msgstr ""
 
 #: ../../changelog.rst:43
-msgid "Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from bottle. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side."
+msgid "Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side."
 msgstr ""
 
 #: ../../changelog.rst:45
@@ -233,7 +233,7 @@ msgid "New :class:`ConfigDict` API (see :doc:`configuration`)"
 msgstr ""
 
 #: ../../changelog.rst:93
-msgid "More information can be found in this `development blog post <http://blog.bottlepy.org/2013/07/19/preview-bottle-012.html>`_."
+msgid "More information can be found in this `development blog post <http://blog.veilchenpy.org/2013/07/19/preview-veilchen-012.html>`_."
 msgstr ""
 
 #: ../../changelog.rst:97
@@ -494,7 +494,7 @@ msgid "The :class:`SimpleTemplate` engine returns unicode strings instead of lis
 msgstr ""
 
 #: ../../changelog.rst:197
-msgid "``bottle.optimize()`` and the automatic route optimization is obsolete."
+msgid "``veilchen.optimize()`` and the automatic route optimization is obsolete."
 msgstr ""
 
 #: ../../changelog.rst:198
@@ -566,7 +566,7 @@ msgid "Contributors"
 msgstr ""
 
 #: ../../../AUTHORS:1
-msgid "Bottle is written and maintained by Marcel Hellkamp <marc@bottlepy.org>."
+msgid "Bottle is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
 msgstr ""
 
 #: ../../../AUTHORS:3

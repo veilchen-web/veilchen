@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../recipes.rst:56
 msgid ""
-"Now, bottle only catches its own exceptions (:exc:`HTTPError`, "
+"Now, veilchen only catches its own exceptions (:exc:`HTTPError`, "
 ":exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can "
 "handle the rest."
 msgstr ""
@@ -110,14 +110,14 @@ msgstr ""
 #: ../../recipes.rst:114
 msgid ""
 "This is not the recommend way (you should use a middleware in front of "
-"bottle to do this) but you can call other WSGI applications from within your"
-" bottle app and let bottle act as a pseudo-middleware. Here is an example::"
+"veilchen to do this) but you can call other WSGI applications from within your"
+" veilchen app and let veilchen act as a pseudo-middleware. Here is an example::"
 msgstr ""
 
 #: ../../recipes.rst:130
 msgid ""
 "Again, this is not the recommend way to implement subprojects. It is only "
-"here because many people asked for this and to show how bottle maps to WSGI."
+"here because many people asked for this and to show how veilchen maps to WSGI."
 msgstr ""
 
 #: ../../recipes.rst:134

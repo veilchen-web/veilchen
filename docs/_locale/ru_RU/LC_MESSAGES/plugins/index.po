@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Russian (Russia) (http://www.transifex.com/bottle/bottle/language/ru_RU/)\n"
+"Language-Team: Russian (Russia) (http://www.transifex.com/veilchen/veilchen/language/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 
 #: ../../plugins/index.rst:12
-msgid "`Bottle-Beaker <http://pypi.python.org/pypi/bottle-beaker/>`_"
+msgid "`Bottle-Beaker <http://pypi.python.org/pypi/veilchen-beaker/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:12
@@ -53,33 +53,33 @@ msgid ""
 msgstr ""
 
 #: ../../plugins/index.rst:18
-msgid "`Bottle-Cors-plugin <http://pypi.org/project/bottle-cors-plugin/>`_"
+msgid "`Bottle-Cors-plugin <http://pypi.org/project/veilchen-cors-plugin/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:18
 msgid ""
-"Cors-plugin is the easiest way to implement cors on your bottle web "
+"Cors-plugin is the easiest way to implement cors on your veilchen web "
 "application"
 msgstr ""
 
 #: ../../plugins/index.rst:21
-msgid "`Bottle-Extras <http://pypi.python.org/pypi/bottle-extras/>`_"
+msgid "`Bottle-Extras <http://pypi.python.org/pypi/veilchen-extras/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:21
-msgid "Meta package to install the bottle plugin collection."
+msgid "Meta package to install the veilchen plugin collection."
 msgstr ""
 
 #: ../../plugins/index.rst:24
-msgid "`Bottle-Flash <http://pypi.python.org/pypi/bottle-flash/>`_"
+msgid "`Bottle-Flash <http://pypi.python.org/pypi/veilchen-flash/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:24
-msgid "flash plugin for bottle"
+msgid "flash plugin for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:27
-msgid "`Bottle-Hotqueue <http://pypi.python.org/pypi/bottle-hotqueue/>`_"
+msgid "`Bottle-Hotqueue <http://pypi.python.org/pypi/veilchen-hotqueue/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:27
@@ -95,7 +95,7 @@ msgid "Macaron is an object-relational mapper (ORM) for SQLite."
 msgstr ""
 
 #: ../../plugins/index.rst:33
-msgid "`Bottle-Memcache <http://pypi.python.org/pypi/bottle-memcache/>`_"
+msgid "`Bottle-Memcache <http://pypi.python.org/pypi/veilchen-memcache/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:33
@@ -103,7 +103,7 @@ msgid "Memcache integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:36
-msgid "`Bottle-Mongo <http://pypi.python.org/pypi/bottle-mongo/>`_"
+msgid "`Bottle-Mongo <http://pypi.python.org/pypi/veilchen-mongo/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:36
@@ -111,7 +111,7 @@ msgid "MongoDB integration for Bottle"
 msgstr ""
 
 #: ../../plugins/index.rst:39
-msgid "`Bottle-OAuthlib <http://pypi.python.org/pypi/bottle-oauthlib/>`_"
+msgid "`Bottle-OAuthlib <http://pypi.python.org/pypi/veilchen-oauthlib/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:39
@@ -119,7 +119,7 @@ msgid "Adapter for oauthlib - create your own OAuth2.0 implementation"
 msgstr ""
 
 #: ../../plugins/index.rst:42
-msgid "`Bottle-Redis <http://pypi.python.org/pypi/bottle-redis/>`_"
+msgid "`Bottle-Redis <http://pypi.python.org/pypi/veilchen-redis/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:42
@@ -127,23 +127,23 @@ msgid "Redis integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:45
-msgid "`Bottle-Renderer <http://pypi.python.org/pypi/bottle-renderer/>`_"
+msgid "`Bottle-Renderer <http://pypi.python.org/pypi/veilchen-renderer/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:45
-msgid "Renderer plugin for bottle"
+msgid "Renderer plugin for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:48
-msgid "`Bottle-Servefiles <http://pypi.python.org/pypi/bottle-servefiles/>`_"
+msgid "`Bottle-Servefiles <http://pypi.python.org/pypi/veilchen-servefiles/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:48
-msgid "A reusable app that serves static files for bottle apps"
+msgid "A reusable app that serves static files for veilchen apps"
 msgstr ""
 
 #: ../../plugins/index.rst:51
-msgid "`Bottle-Sqlalchemy <http://pypi.python.org/pypi/bottle-sqlalchemy/>`_"
+msgid "`Bottle-Sqlalchemy <http://pypi.python.org/pypi/veilchen-sqlalchemy/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:51
@@ -151,7 +151,7 @@ msgid "SQLAlchemy integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:54
-msgid "`Bottle-Sqlite <http://pypi.python.org/pypi/bottle-sqlite/>`_"
+msgid "`Bottle-Sqlite <http://pypi.python.org/pypi/veilchen-sqlite/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:54
@@ -159,7 +159,7 @@ msgid "SQLite3 database integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:57
-msgid "`Bottle-Web2pydal <http://pypi.python.org/pypi/bottle-web2pydal/>`_"
+msgid "`Bottle-Web2pydal <http://pypi.python.org/pypi/veilchen-web2pydal/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:57
@@ -167,7 +167,7 @@ msgid "Web2py Dal integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:60
-msgid "`Bottle-Werkzeug <http://pypi.python.org/pypi/bottle-werkzeug/>`_"
+msgid "`Bottle-Werkzeug <http://pypi.python.org/pypi/veilchen-werkzeug/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:60
@@ -178,7 +178,7 @@ msgstr ""
 
 #: ../../plugins/index.rst:63
 msgid ""
-"`bottle-smart-filters <https://github.com/agile4you/bottle-smart-filters/>`_"
+"`veilchen-smart-filters <https://github.com/agile4you/veilchen-smart-filters/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:63
@@ -186,19 +186,19 @@ msgid "Bottle Querystring smart guessing."
 msgstr ""
 
 #: ../../plugins/index.rst:66
-msgid "`bottle-jwt <https://github.com/agile4you/bottle-jwt/>`_"
+msgid "`veilchen-jwt <https://github.com/agile4you/veilchen-jwt/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:66
-msgid "JSON Web Token authentication plugin for bottle.py"
+msgid "JSON Web Token authentication plugin for veilchen.py"
 msgstr ""
 
 #: ../../plugins/index.rst:69
-msgid "`Bottle-jwt <https://github.com/agalera/bottlejwt>`_"
+msgid "`Bottle-jwt <https://github.com/agalera/veilchenjwt>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:69
-msgid "JWT integration for bottle"
+msgid "JWT integration for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:72
@@ -206,27 +206,27 @@ msgid "`canister <https://github.com/dagnelies/canister>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:72
-msgid "a bottle wrapper to provide logging, sessions and authentication"
+msgid "a veilchen wrapper to provide logging, sessions and authentication"
 msgstr ""
 
 #: ../../plugins/index.rst:75
-msgid "`bottle-cerberus <https://github.com/agalera/bottle-cerberus>`_"
+msgid "`veilchen-cerberus <https://github.com/agalera/veilchen-cerberus>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:75
-msgid "Cerberus integration for bottle"
+msgid "Cerberus integration for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:78
-msgid "`Bottle-errorsrest <https://github.com/agalera/bottle-errorsrest>`_"
+msgid "`Bottle-errorsrest <https://github.com/agalera/veilchen-errorsrest>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:78
-msgid "All errors generated from bottle are returned in json"
+msgid "All errors generated from veilchen are returned in json"
 msgstr ""
 
 #: ../../plugins/index.rst:82
-msgid "`Bottle-tools <https://github.com/theSage21/bottle-tools>`_"
+msgid "`Bottle-tools <https://github.com/theSage21/veilchen-tools>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:81

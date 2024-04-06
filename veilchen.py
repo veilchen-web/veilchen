@@ -7,7 +7,7 @@ a built-in HTTP Server and adapters for many third party WSGI/HTTP-server and
 template engines - all in a single file and with no dependencies other than the
 Python Standard Library.
 
-Homepage and documentation: http://bottlepy.org/
+Homepage and documentation: http://veilchenpy.org/
 
 Copyright (c) 2009-2018, Marcel Hellkamp.
 License: MIT (see LICENSE for details)
@@ -246,7 +246,7 @@ class lazy_attribute(object):
 
 
 class BottleException(Exception):
-    """ A base class for exceptions used by bottle. """
+    """ A base class for exceptions used by veilchen. """
     pass
 
 ###############################################################################
@@ -743,7 +743,7 @@ class Bottle(object):
 
         if options:
             depr(0, 13, "Unsupported mount options. Falling back to WSGI mount.",
-                 "Do not specify any route options when mounting bottle application.")
+                 "Do not specify any route options when mounting veilchen application.")
             return self._mount_wsgi(prefix, app, **options)
 
         if not prefix.endswith("/"):
@@ -963,11 +963,11 @@ class Bottle(object):
         return tob(template(ERROR_PAGE_TEMPLATE, e=res, template_settings=dict(name='__ERROR_PAGE_TEMPLATE')))
 
     def _handle(self, environ):
-        path = environ['bottle.raw_path'] = environ['PATH_INFO']
+        path = environ['veilchen.raw_path'] = environ['PATH_INFO']
         if py3k:
             environ['PATH_INFO'] = path.encode('latin1').decode('utf8', 'ignore')
 
-        environ['bottle.app'] = self
+        environ['veilchen.app'] = self
         request.bind(environ)
         response.bind()
 
@@ -978,7 +978,7 @@ class Bottle(object):
                     self.trigger_hook('before_request')
                     route, args = self.router.match(environ)
                     environ['route.handle'] = route
-                    environ['bottle.route'] = route
+                    environ['veilchen.route'] = route
                     environ['route.url_args'] = args
                     out = route.call(**args)
                     break
@@ -1006,7 +1006,7 @@ class Bottle(object):
             stacktrace = format_exc()
             environ['wsgi.errors'].write(stacktrace)
             environ['wsgi.errors'].flush()
-            environ['bottle.exc_info'] = sys.exc_info()
+            environ['veilchen.exc_info'] = sys.exc_info()
             out = HTTPError(500, "Internal Server Error", E, stacktrace)
             out.apply(response)
 
@@ -1086,7 +1086,7 @@ class Bottle(object):
         return new_iter
 
     def wsgi(self, environ, start_response):
-        """ The bottle WSGI-interface. """
+        """ The veilchen WSGI-interface. """
         try:
             out = self._cast(self._handle(environ))
             # rfc2616 section 4.3
@@ -1094,9 +1094,9 @@ class Bottle(object):
             or environ['REQUEST_METHOD'] == 'HEAD':
                 if hasattr(out, 'close'): out.close()
                 out = []
-            exc_info = environ.get('bottle.exc_info')
+            exc_info = environ.get('veilchen.exc_info')
             if exc_info is not None:
-                del environ['bottle.exc_info']
+                del environ['veilchen.exc_info']
             start_response(response._wsgi_status_line(), response.headerlist, exc_info)
             return out
         except (KeyboardInterrupt, SystemExit, MemoryError):
@@ -1143,7 +1143,7 @@ class BaseRequest(object):
         convenient access methods and properties. Most of them are read-only.
 
         Adding new attributes to a request actually adds them to the environ
-        dictionary (as 'bottle.request.ext.<name>'). This is the recommended
+        dictionary (as 'veilchen.request.ext.<name>'). This is the recommended
         way to store and access request-specific data.
     """
 
@@ -1157,16 +1157,16 @@ class BaseRequest(object):
         #: The wrapped WSGI environ dictionary. This is the only real attribute.
         #: All other attributes actually are read-only properties.
         self.environ = {} if environ is None else environ
-        self.environ['bottle.request'] = self
+        self.environ['veilchen.request'] = self
 
-    @DictProperty('environ', 'bottle.app', read_only=True)
+    @DictProperty('environ', 'veilchen.app', read_only=True)
     def app(self):
         """ Bottle application handling this request. """
         raise RuntimeError('This request is not connected to an application.')
 
-    @DictProperty('environ', 'bottle.route', read_only=True)
+    @DictProperty('environ', 'veilchen.route', read_only=True)
     def route(self):
-        """ The bottle :class:`Route` object that matches this request. """
+        """ The veilchen :class:`Route` object that matches this request. """
         raise RuntimeError('This request is not connected to a route.')
 
     @DictProperty('environ', 'route.url_args', read_only=True)
@@ -1185,7 +1185,7 @@ class BaseRequest(object):
         """ The ``REQUEST_METHOD`` value as an uppercase string. """
         return self.environ.get('REQUEST_METHOD', 'GET').upper()
 
-    @DictProperty('environ', 'bottle.request.headers', read_only=True)
+    @DictProperty('environ', 'veilchen.request.headers', read_only=True)
     def headers(self):
         """ A :class:`WSGIHeaderDict` that provides case-insensitive access to
             HTTP request headers. """
@@ -1195,7 +1195,7 @@ class BaseRequest(object):
         """ Return the value of a request header, or a given default value. """
         return self.headers.get(name, default)
 
-    @DictProperty('environ', 'bottle.request.cookies', read_only=True)
+    @DictProperty('environ', 'veilchen.request.cookies', read_only=True)
     def cookies(self):
         """ Cookies parsed into a :class:`FormsDict`. Signed cookies are NOT
             decoded. Use :meth:`get_cookie` if you expect signed cookies. """
@@ -1220,19 +1220,19 @@ class BaseRequest(object):
             return default
         return value or default
 
-    @DictProperty('environ', 'bottle.request.query', read_only=True)
+    @DictProperty('environ', 'veilchen.request.query', read_only=True)
     def query(self):
         """ The :attr:`query_string` parsed into a :class:`FormsDict`. These
             values are sometimes called "URL arguments" or "GET parameters", but
             not to be confused with "URL wildcards" as they are provided by the
             :class:`Router`. """
-        get = self.environ['bottle.get'] = FormsDict()
+        get = self.environ['veilchen.get'] = FormsDict()
         pairs = _parse_qsl(self.environ.get('QUERY_STRING', ''))
         for key, value in pairs:
             get[key] = value
         return get
 
-    @DictProperty('environ', 'bottle.request.forms', read_only=True)
+    @DictProperty('environ', 'veilchen.request.forms', read_only=True)
     def forms(self):
         """ Form values parsed from an `url-encoded` or `multipart/form-data`
             encoded POST or PUT request body. The result is returned as a
@@ -1245,7 +1245,7 @@ class BaseRequest(object):
                 forms[name] = item
         return forms
 
-    @DictProperty('environ', 'bottle.request.params', read_only=True)
+    @DictProperty('environ', 'veilchen.request.params', read_only=True)
     def params(self):
         """ A :class:`FormsDict` with the combined values of :attr:`query` and
             :attr:`forms`. File uploads are stored in :attr:`files`. """
@@ -1256,7 +1256,7 @@ class BaseRequest(object):
             params[key] = value
         return params
 
-    @DictProperty('environ', 'bottle.request.files', read_only=True)
+    @DictProperty('environ', 'veilchen.request.files', read_only=True)
     def files(self):
         """ File uploads parsed from `multipart/form-data` encoded POST or PUT
             request body. The values are instances of :class:`FileUpload`.
@@ -1269,7 +1269,7 @@ class BaseRequest(object):
                 files[name] = item
         return files
 
-    @DictProperty('environ', 'bottle.request.json', read_only=True)
+    @DictProperty('environ', 'veilchen.request.json', read_only=True)
     def json(self):
         """ If the ``Content-Type`` header is ``application/json`` or
             ``application/json-rpc``, this property holds the parsed content
@@ -1324,7 +1324,7 @@ class BaseRequest(object):
             if read(2) != rn:
                 raise err
 
-    @DictProperty('environ', 'bottle.request.body', read_only=True)
+    @DictProperty('environ', 'veilchen.request.body', read_only=True)
     def _body(self):
         try:
             read_func = self.environ['wsgi.input'].read
@@ -1374,7 +1374,7 @@ class BaseRequest(object):
     #: An alias for :attr:`query`.
     GET = query
 
-    @DictProperty('environ', 'bottle.request.post', read_only=True)
+    @DictProperty('environ', 'veilchen.request.post', read_only=True)
     def POST(self):
         """ The values of :attr:`forms` and :attr:`files` combined into a single
             :class:`FormsDict`. Values are either strings (form values) or
@@ -1416,7 +1416,7 @@ class BaseRequest(object):
             correctly. """
         return self.urlparts.geturl()
 
-    @DictProperty('environ', 'bottle.request.urlparts', read_only=True)
+    @DictProperty('environ', 'veilchen.request.urlparts', read_only=True)
     def urlparts(self):
         """ The :attr:`url` string as an :class:`urlparse.SplitResult` tuple.
             The tuple contains (scheme, host, path, query_string and fragment),
@@ -1548,7 +1548,7 @@ class BaseRequest(object):
     def __setitem__(self, key, value):
         """ Change an environ value and clear all caches that depend on it. """
 
-        if self.environ.get('bottle.request.readonly'):
+        if self.environ.get('veilchen.request.readonly'):
             raise KeyError('The environ dictionary is read-only.')
 
         self.environ[key] = value
@@ -1562,7 +1562,7 @@ class BaseRequest(object):
             todelete = ('headers', 'cookies')
 
         for key in todelete:
-            self.environ.pop('bottle.request.' + key, None)
+            self.environ.pop('veilchen.request.' + key, None)
 
     def __repr__(self):
         return '<%s: %s %s>' % (self.__class__.__name__, self.method, self.url)
@@ -1570,21 +1570,21 @@ class BaseRequest(object):
     def __getattr__(self, name):
         """ Search in self.environ for additional user defined attributes. """
         try:
-            var = self.environ['bottle.request.ext.%s' % name]
+            var = self.environ['veilchen.request.ext.%s' % name]
             return var.__get__(self) if hasattr(var, '__get__') else var
         except KeyError:
             raise AttributeError('Attribute %r not defined.' % name)
 
     def __setattr__(self, name, value):
         if name == 'environ': return object.__setattr__(self, name, value)
-        key = 'bottle.request.ext.%s' % name
+        key = 'veilchen.request.ext.%s' % name
         if hasattr(self, name):
             raise AttributeError("Attribute already defined: %s" % name)
         self.environ[key] = value
 
     def __delattr__(self, name):
         try:
-            del self.environ['bottle.request.ext.%s' % name]
+            del self.environ['veilchen.request.ext.%s' % name]
         except KeyError:
             raise AttributeError("Attribute not defined: %s" % name)
 
@@ -1830,7 +1830,7 @@ class BaseResponse(object):
             Warning: Pickle is a potentially dangerous format. If an attacker
             gains access to the secret key, he could forge cookies that execute
             code on server side if unpickled. Using pickle is discouraged and
-            support for it will be removed in later versions of bottle.
+            support for it will be removed in later versions of veilchen.
 
             Warning: Signed cookies are not encrypted (the client can still see
             the content) and not copy-protected (the client can restore an old
@@ -2393,7 +2393,7 @@ class ConfigDict(dict):
             by joining section name and key name together and converting to
             lower case.
 
-            The special sections ``bottle`` and ``ROOT`` refer to the root
+            The special sections ``veilchen`` and ``ROOT`` refer to the root
             namespace and the ``DEFAULT`` section defines default values for all
             other sections.
 
@@ -2413,7 +2413,7 @@ class ConfigDict(dict):
         for section in conf.sections():
             for key in conf.options(section):
                 value = conf.get(section, key)
-                if section not in ('bottle', 'ROOT'):
+                if section not in ('veilchen', 'ROOT'):
                     key = section + '.' + key
                 self[key.lower()] = value
         return self
@@ -3202,8 +3202,8 @@ url       = make_default_app_wrapper('get_url')
 ###############################################################################
 
 # Before you edit or add a server adapter, please read:
-# - https://github.com/bottlepy/bottle/pull/647#issuecomment-60152870
-# - https://github.com/bottlepy/bottle/pull/865#issuecomment-242795341
+# - https://github.com/veilchenpy/veilchen/pull/647#issuecomment-60152870
+# - https://github.com/veilchenpy/veilchen/pull/865#issuecomment-242795341
 
 class ServerAdapter(object):
     quiet = False
@@ -3605,7 +3605,7 @@ def load(target, **namespace):
 
 
 def load_app(target):
-    """ Load a bottle application from a module and make sure that the import
+    """ Load a veilchen application from a module and make sure that the import
         does not affect the current default application, but returns a separate
         application object. See :func:`load` for the target parameter. """
     global NORUN
@@ -3651,7 +3651,7 @@ def run(app=None,
     if NORUN: return
     if reloader and not os.environ.get('BOTTLE_CHILD'):
         import subprocess
-        fd, lockfile = tempfile.mkstemp(prefix='bottle.', suffix='.lock')
+        fd, lockfile = tempfile.mkstemp(prefix='veilchen.', suffix='.lock')
         environ = os.environ.copy()
         environ['BOTTLE_CHILD'] = 'true'
         environ['BOTTLE_LOCKFILE'] = lockfile
@@ -4332,7 +4332,7 @@ ERROR_PAGE_TEMPLATE = """
         </body>
     </html>
 %%except ImportError:
-    <b>ImportError:</b> Could not generate the error page. Please add bottle to
+    <b>ImportError:</b> Could not generate the error page. Please add veilchen to
     the import path.
 %%end
 """ % __name__
@@ -4354,9 +4354,9 @@ local = threading.local()
 apps = app = default_app = AppStack()
 
 #: A virtual package that redirects import statements.
-#: Example: ``import bottle.ext.sqlite`` actually imports `bottle_sqlite`.
-ext = _ImportRedirect('bottle.ext' if __name__ == '__main__' else
-                      __name__ + ".ext", 'bottle_%s').module
+#: Example: ``import veilchen.ext.sqlite`` actually imports `veilchen_sqlite`.
+ext = _ImportRedirect('veilchen.ext' if __name__ == '__main__' else
+                      __name__ + ".ext", 'veilchen_%s').module
 
 
 def _main(argv):  # pragma: no coverage
@@ -4374,7 +4374,7 @@ def _main(argv):  # pragma: no coverage
         _cli_error("No application entry point specified.")
 
     sys.path.insert(0, '.')
-    sys.modules.setdefault('bottle', sys.modules['__main__'])
+    sys.modules.setdefault('veilchen', sys.modules['__main__'])
 
     host, port = (args.bind or 'localhost'), 8080
     if ':' in host and host.rfind(']') < host.rfind(':'):

@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 
 #: ../../plugins/index.rst:12
-msgid "`Bottle-Beaker <http://pypi.python.org/pypi/bottle-beaker/>`_"
+msgid "`Bottle-Beaker <http://pypi.python.org/pypi/veilchen-beaker/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:12
@@ -47,23 +47,23 @@ msgid ""
 msgstr ""
 
 #: ../../plugins/index.rst:18
-msgid "`Bottle-Extras <http://pypi.python.org/pypi/bottle-extras/>`_"
+msgid "`Bottle-Extras <http://pypi.python.org/pypi/veilchen-extras/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:18
-msgid "Meta package to install the bottle plugin collection."
+msgid "Meta package to install the veilchen plugin collection."
 msgstr ""
 
 #: ../../plugins/index.rst:21
-msgid "`Bottle-Flash <http://pypi.python.org/pypi/bottle-flash/>`_"
+msgid "`Bottle-Flash <http://pypi.python.org/pypi/veilchen-flash/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:21
-msgid "flash plugin for bottle"
+msgid "flash plugin for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:24
-msgid "`Bottle-Hotqueue <http://pypi.python.org/pypi/bottle-hotqueue/>`_"
+msgid "`Bottle-Hotqueue <http://pypi.python.org/pypi/veilchen-hotqueue/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:24
@@ -79,7 +79,7 @@ msgid "Macaron is an object-relational mapper (ORM) for SQLite."
 msgstr ""
 
 #: ../../plugins/index.rst:30
-msgid "`Bottle-Memcache <http://pypi.python.org/pypi/bottle-memcache/>`_"
+msgid "`Bottle-Memcache <http://pypi.python.org/pypi/veilchen-memcache/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:30
@@ -87,7 +87,7 @@ msgid "Memcache integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:33
-msgid "`Bottle-Mongo <http://pypi.python.org/pypi/bottle-mongo/>`_"
+msgid "`Bottle-Mongo <http://pypi.python.org/pypi/veilchen-mongo/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:33
@@ -95,7 +95,7 @@ msgid "MongoDB integration for Bottle"
 msgstr ""
 
 #: ../../plugins/index.rst:36
-msgid "`Bottle-Redis <http://pypi.python.org/pypi/bottle-redis/>`_"
+msgid "`Bottle-Redis <http://pypi.python.org/pypi/veilchen-redis/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:36
@@ -103,23 +103,23 @@ msgid "Redis integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:39
-msgid "`Bottle-Renderer <http://pypi.python.org/pypi/bottle-renderer/>`_"
+msgid "`Bottle-Renderer <http://pypi.python.org/pypi/veilchen-renderer/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:39
-msgid "Renderer plugin for bottle"
+msgid "Renderer plugin for veilchen"
 msgstr ""
 
 #: ../../plugins/index.rst:42
-msgid "`Bottle-Servefiles <http://pypi.python.org/pypi/bottle-servefiles/>`_"
+msgid "`Bottle-Servefiles <http://pypi.python.org/pypi/veilchen-servefiles/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:42
-msgid "A reusable app that serves static files for bottle apps"
+msgid "A reusable app that serves static files for veilchen apps"
 msgstr ""
 
 #: ../../plugins/index.rst:45
-msgid "`Bottle-Sqlalchemy <http://pypi.python.org/pypi/bottle-sqlalchemy/>`_"
+msgid "`Bottle-Sqlalchemy <http://pypi.python.org/pypi/veilchen-sqlalchemy/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:45
@@ -127,7 +127,7 @@ msgid "SQLAlchemy integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:48
-msgid "`Bottle-Sqlite <http://pypi.python.org/pypi/bottle-sqlite/>`_"
+msgid "`Bottle-Sqlite <http://pypi.python.org/pypi/veilchen-sqlite/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:48
@@ -135,7 +135,7 @@ msgid "SQLite3 database integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:51
-msgid "`Bottle-Web2pydal <http://pypi.python.org/pypi/bottle-web2pydal/>`_"
+msgid "`Bottle-Web2pydal <http://pypi.python.org/pypi/veilchen-web2pydal/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:51
@@ -143,7 +143,7 @@ msgid "Web2py Dal integration for Bottle."
 msgstr ""
 
 #: ../../plugins/index.rst:54
-msgid "`Bottle-Werkzeug <http://pypi.python.org/pypi/bottle-werkzeug/>`_"
+msgid "`Bottle-Werkzeug <http://pypi.python.org/pypi/veilchen-werkzeug/>`_"
 msgstr ""
 
 #: ../../plugins/index.rst:54

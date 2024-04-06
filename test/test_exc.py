@@ -1,4 +1,4 @@
-import bottle
+import veilchen
 from .tools import ServerTestBase
 
 class TestError(Exception):
@@ -7,24 +7,24 @@ class TestError(Exception):
 class TestAppException(ServerTestBase):
 
     def test_no_exc(self):
-        @bottle.route('/')
+        @veilchen.route('/')
         def test(): return 'test'
         self.assertBody('test', '/')
 
     def test_memory_error(self):
-        @bottle.route('/')
+        @veilchen.route('/')
         def test(): raise MemoryError
         self.assertRaises(MemoryError)
 
     def test_other_error(self):
-        @bottle.route('/')
+        @veilchen.route('/')
         def test(): raise TestError
         self.assertRaises(TestError)
 
     def test_noncatched_error(self):
-        @bottle.route('/')
+        @veilchen.route('/')
         def test(): raise TestError
-        bottle.request.environ['exc_info'] = None
-        bottle.catchall = False
+        veilchen.request.environ['exc_info'] = None
+        veilchen.catchall = False
         self.assertStatus(500, '/')
         self.assertInBody('TestError')

@@ -45,7 +45,7 @@ msgid "Bottle catches all Exceptions raised in your app code to prevent your WSG
 msgstr ""
 
 #: ../../recipes.rst:59
-msgid "Now, bottle only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can handle the rest."
+msgid "Now, veilchen only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can handle the rest."
 msgstr ""
 
 #: ../../recipes.rst:61
@@ -74,7 +74,7 @@ msgid "In the example the Bottle route() method is never executed - only index()
 msgstr ""
 
 #: ../../recipes.rst:89
-msgid "If the code being tested requires access to ``bottle.request`` you can mock it using `Boddle <https://github.com/keredson/boddle>`_::"
+msgid "If the code being tested requires access to ``veilchen.request`` you can mock it using `Boddle <https://github.com/keredson/boddle>`_::"
 msgstr ""
 
 #: ../../recipes.rst:108
@@ -94,11 +94,11 @@ msgid "Embedding other WSGI Apps"
 msgstr ""
 
 #: ../../recipes.rst:134
-msgid "This is not the recommend way (you should use a middleware in front of bottle to do this) but you can call other WSGI applications from within your bottle app and let bottle act as a pseudo-middleware. Here is an example::"
+msgid "This is not the recommend way (you should use a middleware in front of veilchen to do this) but you can call other WSGI applications from within your veilchen app and let veilchen act as a pseudo-middleware. Here is an example::"
 msgstr ""
 
 #: ../../recipes.rst:150
-msgid "Again, this is not the recommend way to implement subprojects. It is only here because many people asked for this and to show how bottle maps to WSGI."
+msgid "Again, this is not the recommend way to implement subprojects. It is only here because many people asked for this and to show how veilchen maps to WSGI."
 msgstr ""
 
 #: ../../recipes.rst:154

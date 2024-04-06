@@ -23,7 +23,7 @@ msgid ""
 "to expose their asynchronous features. Bottle is a WSGI framework and shares"
 " the synchronous nature of WSGI, but thanks to the awesome `gevent project "
 "<http://www.gevent.org/>`_, it is still possible to write asynchronous "
-"applications with bottle. This article documents the usage of Bottle with "
+"applications with veilchen. This article documents the usage of Bottle with "
 "Asynchronous WSGI."
 msgstr ""
 

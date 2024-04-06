@@ -4,16 +4,16 @@ from setuptools import setup
 
 import veilchen
 
-setup(name='bottle',
+setup(name='veilchen',
       version=veilchen.__version__,
       description='Fast and simple WSGI-framework for small web-applications.',
       long_description=veilchen.__doc__,
       long_description_content_type="text/markdown",
       author="Oz Tiram",
       author_email='oz.tiram@gmail.com',
-      url='http://bottlepy.org/',
+      url='http://veilchenpy.org/',
       project_urls={
-          'Source': 'https://github.com/bottlepy/bottle',
+          'Source': 'https://github.com/veilchenpy/veilchen',
       },
       py_modules=['veilchen'],
       scripts=['veilechen.py'],

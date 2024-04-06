@@ -246,6 +246,6 @@ msgstr ""
 msgid ":class:`SimpleTemplate` API"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.SimpleTemplate.render:1
+#: ../../../veilchen.pydocstring of veilchen.SimpleTemplate.render:1
 msgid "Render the template using keyword arguments as local variables."
 msgstr ""

@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Japanese (Japan) (http://www.transifex.com/bottle/bottle/language/ja_JP/)\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/veilchen/veilchen/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../configuration.rst:8
 msgid ""
-"This is a draft for a new API. `Tell us <mailto:bottlepy@googlegroups.com>`_"
+"This is a draft for a new API. `Tell us <mailto:veilchenpy@googlegroups.com>`_"
 " what you think."
 msgstr ""
 
@@ -206,42 +206,42 @@ msgstr ""
 msgid "API Documentation"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict:1
 msgid ""
 "A dict-like configuration storage with additional support for namespaces, "
 "validators, meta-data, overlays and more."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict:4
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict:4
 msgid ""
 "This dict-like class is heavily optimized for read access. All read-only "
 "methods as well as item access should be as fast as the built-in dict."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_module:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_module:1
 msgid "Load values from a Python module."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_module:3
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_module:3
 msgid "Example modue ``config.py``::"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_module:0
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:0
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_module:0
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:0
 msgid "Parameters"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_module:17
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_module:17
 msgid ""
 "If true (default), dictionary values are assumed to represent namespaces "
 "(see :meth:`load_dict`)."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:1
 msgid "Load values from an ``*.ini`` style config file."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:3
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:3
 msgid ""
 "A configuration file consists of sections, each led by a ``[section]`` "
 "header, followed by key/value entries separated by either ``=`` or ``:``. "
@@ -253,61 +253,61 @@ msgid ""
 " an otherwise empty line."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:13
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:13
 msgid ""
 "Both section and key names may contain dots (``.``) as namespace separators."
 " The actual configuration parameter name is constructed by joining section "
 "name and key name together and converting to lower case."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:18
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:18
 msgid ""
-"The special sections ``bottle`` and ``ROOT`` refer to the root namespace and"
+"The special sections ``veilchen`` and ``ROOT`` refer to the root namespace and"
 " the ``DEFAULT`` section defines default values for all other sections."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:22
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:22
 msgid "With Python 3, extended string interpolation is enabled."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:24
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:24
 msgid "The path of a config file, or a list of paths."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:25
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:25
 msgid ""
 "All keyword parameters are passed to the underlying "
 ":class:`python:configparser.ConfigParser` constructor call."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_dict:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_dict:1
 msgid ""
 "Load values from a dictionary structure. Nesting can be used to represent "
 "namespaces."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.update:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.update:1
 msgid ""
 "If the first parameter is a string, all keys are prefixed with this "
 "namespace. Apart from that it works just as the usual dict.update()."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.setdefault:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.setdefault:1
 msgid "Insert key with a value of default if key is not in the dictionary."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.setdefault:3
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.setdefault:3
 msgid "Return the value for key if key is in the dictionary, else default."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_get:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_get:1
 msgid "Return the value of a meta field for a key."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_set:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_set:1
 msgid "Set the meta field for a key to a new value."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_list:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_list:1
 msgid "Return an iterable of meta field names defined for a key."
 msgstr ""

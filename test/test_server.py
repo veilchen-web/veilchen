@@ -7,7 +7,7 @@ import signal
 import socket
 from subprocess import Popen, PIPE
 from . import tools
-from bottle import server_names, tob
+from veilchen import server_names, tob
 
 try:
     from urllib.request import urlopen

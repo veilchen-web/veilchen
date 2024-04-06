@@ -1,7 +1,7 @@
 import unittest
-import bottle
+import veilchen
 from .tools import api
-from bottle import _re_flatten
+from veilchen import _re_flatten
 
 
 class TestReFlatten(unittest.TestCase):
@@ -23,7 +23,7 @@ class TestRoute(unittest.TestCase):
             def w():
                 return f()
             return w
-        route = bottle.Route(bottle.Bottle(), None, None, d(x))
+        route = veilchen.Route(veilchen.Bottle(), None, None, d(x))
         self.assertEqual(route.get_undecorated_callback(), x)
         self.assertEqual(set(route.get_callback_args()), set(['a', 'b']))
 
@@ -34,7 +34,7 @@ class TestRoute(unittest.TestCase):
                 return w
             return d
 
-        route = bottle.Route(bottle.Bottle(), None, None, d2('foo')(x))
+        route = veilchen.Route(veilchen.Bottle(), None, None, d2('foo')(x))
         self.assertEqual(route.get_undecorated_callback(), x)
         self.assertEqual(set(route.get_callback_args()), set(['a', 'b']))
 
@@ -54,14 +54,14 @@ class TestRoute(unittest.TestCase):
         def x(a, b):
             return
 
-        route = bottle.Route(bottle.Bottle(), None, None, x)
+        route = veilchen.Route(veilchen.Bottle(), None, None, x)
 
         # triggers the "TypeError: 'foo' is not a Python function"
         self.assertEqual(set(route.get_callback_args()), set(['a', 'b']))
 
-    if bottle.py3k:
+    if veilchen.py3k:
         def test_callback_inspection_newsig(self):
             env = {}
             eval(compile('def foo(a, *, b=5): pass', '<foo>', 'exec'), env, env)
-            route = bottle.Route(bottle.Bottle(), None, None, env['foo'])
+            route = veilchen.Route(veilchen.Bottle(), None, None, env['foo'])
             self.assertEqual(set(route.get_callback_args()), set(['a', 'b']))

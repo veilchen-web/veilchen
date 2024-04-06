@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import bottle
+import veilchen
 
 
 class TestRouter(unittest.TestCase):
     CGI = False
     
     def setUp(self):
-        self.r = bottle.Router()
+        self.r = veilchen.Router()
     
     def add(self, path, target, method='GET', **ka):
         self.r.add(path, method, target, **ka)
@@ -35,7 +35,7 @@ class TestRouter(unittest.TestCase):
         self.assertMatches('/:test/', '/test/', test='test') # Middle
         self.assertMatches(':test', 'test', test='test') # Full wildcard
         self.assertMatches('/:#anon#/match', '/anon/match') # Anon wildcards
-        self.assertRaises(bottle.HTTPError, self.match, '//no/m/at/ch/')
+        self.assertRaises(veilchen.HTTPError, self.match, '//no/m/at/ch/')
 
     def testNewSyntax(self):
         self.assertMatches('/static', '/static')
@@ -47,7 +47,7 @@ class TestRouter(unittest.TestCase):
         self.assertMatches('/<test>/', '/test/', test='test') # Middle
         self.assertMatches('<test>', 'test', test='test') # Full wildcard
         self.assertMatches('/<:re:anon>/match', '/anon/match') # Anon wildcards
-        self.assertRaises(bottle.HTTPError, self.match, '//no/m/at/ch/')
+        self.assertRaises(veilchen.HTTPError, self.match, '//no/m/at/ch/')
 
     def testUnicode(self):
         self.assertMatches('/uni/<x>', '/uni/瓶', x='瓶')
@@ -56,20 +56,20 @@ class TestRouter(unittest.TestCase):
         self.r.add_filter('test', lambda x: ('.*', int, int))
 
         self.assertMatches('/int/<i:test>', '/int/5', i=5) # No tail
-        self.assertRaises(bottle.HTTPError, self.match, '/int/noint')
+        self.assertRaises(veilchen.HTTPError, self.match, '/int/noint')
 
     def testIntFilter(self):
         self.assertMatches('/object/<id:int>', '/object/567', id=567)
-        self.assertRaises(bottle.HTTPError, self.match, '/object/abc')
+        self.assertRaises(veilchen.HTTPError, self.match, '/object/abc')
 
     def testFloatFilter(self):
         self.assertMatches('/object/<id:float>', '/object/1', id=1)
         self.assertMatches('/object/<id:float>', '/object/1.1', id=1.1)
         self.assertMatches('/object/<id:float>', '/object/.1', id=0.1)
         self.assertMatches('/object/<id:float>', '/object/1.', id=1)
-        self.assertRaises(bottle.HTTPError, self.match, '/object/abc')
-        self.assertRaises(bottle.HTTPError, self.match, '/object/')
-        self.assertRaises(bottle.HTTPError, self.match, '/object/.')
+        self.assertRaises(veilchen.HTTPError, self.match, '/object/abc')
+        self.assertRaises(veilchen.HTTPError, self.match, '/object/')
+        self.assertRaises(veilchen.HTTPError, self.match, '/object/.')
 
     def testPathFilter(self):
         self.assertMatches('/<id:path>/:f', '/a/b', id='a', f='b')
@@ -83,7 +83,7 @@ class TestRouter(unittest.TestCase):
         self.assertMatches('/func(:param)', '/func(foo)', param='foo')
         self.assertMatches('/func2(:param#(foo|bar)#)', '/func2(foo)', param='foo')
         self.assertMatches('/func2(:param#(foo|bar)#)', '/func2(bar)', param='bar')
-        self.assertRaises(bottle.HTTPError, self.match, '/func2(baz)')
+        self.assertRaises(veilchen.HTTPError, self.match, '/func2(baz)')
 
     def testErrorInPattern(self):
         self.assertRaises(Exception, self.assertMatches, '/:bug#(#/', '/foo/')
@@ -100,7 +100,7 @@ class TestRouter(unittest.TestCase):
         self.assertEqual('/hello/world/?q=value', url)
 
         # RouteBuildError: Missing URL argument: 'test'
-        self.assertRaises(bottle.RouteBuildError, build, 'test')
+        self.assertRaises(veilchen.RouteBuildError, build, 'test')
 
     def testBuildAnon(self):
         add, build = self.add, self.r.build
@@ -113,7 +113,7 @@ class TestRouter(unittest.TestCase):
         self.assertEqual('/anon/hello?q=value', url)
 
         # RouteBuildError: Missing URL argument: anon0.
-        self.assertRaises(bottle.RouteBuildError, build, 'anonroute')
+        self.assertRaises(veilchen.RouteBuildError, build, 'anonroute')
 
     def testBuildFilter(self):
         add, build = self.add, self.r.build
@@ -148,7 +148,7 @@ class TestRouter(unittest.TestCase):
         self.assertEqual(self.match('/foox')[0], 'foo')
 
     def test_lots_of_routes(self):
-        n = bottle.Router._MAX_GROUPS_PER_PATTERN+10
+        n = veilchen.Router._MAX_GROUPS_PER_PATTERN+10
         for i in range(n):        
             self.add('/<:>/'+str(i), str(i), 'GET')
         self.assertEqual(self.match('/foo/'+str(n-1))[0], str(n-1))

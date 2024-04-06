@@ -1,5 +1,5 @@
 .. highlight:: python
-.. currentmodule:: bottle
+.. currentmodule:: veilchen
 
 .. _mako: http://www.makotemplates.org/
 .. _cheetah: http://www.cheetahtemplate.org/
@@ -10,9 +10,9 @@
 .. _cherrypy: http://www.cherrypy.org/
 .. _WSGI: http://www.wsgi.org/
 .. _Python: http://python.org/
-.. _testing: https://github.com/bottlepy/bottle/raw/master/bottle.py
-.. _issue_tracker: https://github.com/bottlepy/bottle/issues
-.. _PyPI: http://pypi.python.org/pypi/bottle
+.. _testing: https://github.com/veilchenpy/veilchen/raw/master/veilchen.py
+.. _issue_tracker: https://github.com/veilchenpy/veilchen/issues
+.. _PyPI: http://pypi.python.org/pypi/veilchen
 .. _gae: https://developers.google.com/appengine/
 
 ============================
@@ -27,11 +27,11 @@ Bottle is a fast, simple and lightweight WSGI_ micro web-framework for Python_. 
 * **Utilities:** Convenient access to form data, file uploads, cookies, headers and other HTTP-related metadata.
 * **Server:** Built-in HTTP development server and support for paste_, bjoern_, gae_, cherrypy_ or any other WSGI_ capable HTTP server.
 
-.. rubric:: Example: "Hello World" in a bottle
+.. rubric:: Example: "Hello World" in a veilchen
 
 ::
 
-  from bottle import route, run, template
+  from veilchen import route, run, template
 
   @route('/hello/<name>')
   def index(name):
@@ -43,9 +43,9 @@ Run this script or paste it into a Python console, then point your browser to `<
 
 .. rubric:: Download and Install
 
-.. __: https://github.com/bottlepy/bottle/raw/master/bottle.py
+.. __: https://github.com/veilchenpy/veilchen/raw/master/veilchen.py
 
-Install the latest stable release with ``pip install bottle`` or download `bottle.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**.
+Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**.
 
 .. deprecated:: 0.13
     Support for Python 2.5 and 2.6 was dropped with this release.
@@ -53,7 +53,7 @@ Install the latest stable release with ``pip install bottle`` or download `bottl
 
 User's Guide
 ===============
-Start here if you want to learn how to use the bottle framework for web development. If you have any questions not answered here, feel free to ask the `mailing list <mailto:bottlepy@googlegroups.com>`_.
+Start here if you want to learn how to use the veilchen framework for web development. If you have any questions not answered here, feel free to ask the `mailing list <mailto:veilchenpy@googlegroups.com>`_.
 
 .. toctree::
    :maxdepth: 2
@@ -83,7 +83,7 @@ A collection of articles, guides and HOWTOs.
 Development and Contribution
 ============================
 
-These chapters are intended for developers interested in the bottle development and release workflow.
+These chapters are intended for developers interested in the veilchen development and release workflow.
 
 .. toctree::
    :maxdepth: 2
@@ -108,7 +108,7 @@ Code and documentation are available according to the MIT License:
   :literal:
 
 The Bottle logo however is *NOT* covered by that license. It is allowed to
-use the logo as a link to the bottle homepage or in direct context with
+use the logo as a link to the veilchen homepage or in direct context with
 the unmodified library. In all other cases please ask first.
 
 .. rubric:: Footnotes

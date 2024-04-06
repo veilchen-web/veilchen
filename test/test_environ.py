@@ -6,13 +6,13 @@ import sys
 
 import itertools
 
-import bottle
-from bottle import request, tob, touni, tonat, json_dumps, HTTPError, parse_date, CookieError
+import veilchen
+from veilchen import request, tob, touni, tonat, json_dumps, HTTPError, parse_date, CookieError
 from . import tools
 import wsgiref.util
 import base64
 
-from bottle import BaseRequest, BaseResponse, LocalRequest
+from veilchen import BaseRequest, BaseResponse, LocalRequest
 
 
 class TestRequest(unittest.TestCase):
@@ -21,11 +21,11 @@ class TestRequest(unittest.TestCase):
         e = {}
         r = BaseRequest(e)
         self.assertRaises(RuntimeError, lambda: r.app)
-        e.update({'bottle.app': 5})
+        e.update({'veilchen.app': 5})
         self.assertEqual(r.app, 5)
 
     def test_route_property(self):
-        e = {'bottle.route': 5}
+        e = {'veilchen.route': 5}
         r = BaseRequest(e)
         self.assertEqual(r.route, 5)
 
@@ -122,7 +122,7 @@ class TestRequest(unittest.TestCase):
         self.assertTrue('PATH_INFO' not in request)
 
     def test_readonly_environ(self):
-        request = BaseRequest({'bottle.request.readonly':True})
+        request = BaseRequest({'veilchen.request.readonly':True})
         def test(): request['x']='y'
         self.assertRaises(KeyError, test)
 
@@ -374,7 +374,7 @@ class TestRequest(unittest.TestCase):
 
     def test_json_tobig(self):
         """ Environ: Request.json property with huge body. """
-        test = dict(a=5, tobig='x' * bottle.BaseRequest.MEMFILE_MAX)
+        test = dict(a=5, tobig='x' * veilchen.BaseRequest.MEMFILE_MAX)
         e = {'CONTENT_TYPE': 'application/json'}
         wsgiref.util.setup_testing_defaults(e)
         e['wsgi.input'].write(tob(json_dumps(test)))
@@ -504,7 +504,7 @@ class TestResponse(unittest.TestCase):
             result = [v for (h, v) in rs.headerlist if h.lower()=='x-test'][0]
             self.assertEqual(wire, result)
 
-        if bottle.py3k:
+        if veilchen.py3k:
             cmp(1, tonat('1', 'latin1'))
             cmp('öäü', 'öäü'.encode('utf8').decode('latin1'))
             # Dropped byte header support in Python 3:
@@ -584,7 +584,7 @@ class TestResponse(unittest.TestCase):
         self.assertEqual(rs.status_line, '404 Brain not Found') # last value
 
         # Unicode in status line (thanks RFC7230 :/)
-        if bottle.py3k:
+        if veilchen.py3k:
             rs.status = '400 Non-ASÎÎ'
             self.assertEqual(rs.status, rs.status_line)
             self.assertEqual(rs.status_code, 400)
@@ -745,7 +745,7 @@ class TestResponse(unittest.TestCase):
         # Test HeaderDict
         apis = 'append', 'replace', '__setitem__', 'setdefault'
         for api, mask, test in itertools.product(apis, masks, tests):
-            hd = bottle.HeaderDict()
+            hd = veilchen.HeaderDict()
             func = getattr(hd, api)
             value = mask.replace("{}", test)
             self.assertRaises(ValueError, func, value, "test-value")
@@ -754,7 +754,7 @@ class TestResponse(unittest.TestCase):
         # Test functions on BaseResponse
         apis = 'add_header', 'set_header', '__setitem__'
         for api, mask, test in itertools.product(apis, masks, tests):
-            rs = bottle.BaseResponse()
+            rs = veilchen.BaseResponse()
             func = getattr(rs, api)
             value = mask.replace("{}", test)
             self.assertRaises(ValueError, func, value, "test-value")
@@ -786,10 +786,10 @@ class TestRedirect(unittest.TestCase):
                 del args[key]
         env.update(args)
         request.bind(env)
-        bottle.response.bind()
+        veilchen.response.bind()
         try:
-            bottle.redirect(target, **(query or {}))
-        except bottle.HTTPResponse as E:
+            veilchen.redirect(target, **(query or {}))
+        except veilchen.HTTPResponse as E:
             self.assertEqual(status, E.status_code)
             self.assertTrue(E.headers)
             self.assertEqual(result, E.headers['Location'])
@@ -875,21 +875,21 @@ class TestRedirect(unittest.TestCase):
     def test_redirect_preserve_cookies(self):
         env = {'SERVER_PROTOCOL':'HTTP/1.1'}
         request.bind(env)
-        bottle.response.bind()
+        veilchen.response.bind()
         try:
-            bottle.response.set_cookie('xxx', 'yyy')
-            bottle.redirect('...')
-        except bottle.HTTPResponse as E:
+            veilchen.response.set_cookie('xxx', 'yyy')
+            veilchen.redirect('...')
+        except veilchen.HTTPResponse as E:
             h = [v for (k, v) in E.headerlist if k == 'Set-Cookie']
             self.assertEqual(h, ['xxx=yyy'])
 
 class TestWSGIHeaderDict(unittest.TestCase):
     def setUp(self):
         self.env = {}
-        self.headers = bottle.WSGIHeaderDict(self.env)
+        self.headers = veilchen.WSGIHeaderDict(self.env)
 
     def test_empty(self):
-        self.assertEqual(0, len(bottle.WSGIHeaderDict({})))
+        self.assertEqual(0, len(veilchen.WSGIHeaderDict({})))
 
     def test_native(self):
         self.env['HTTP_TEST_HEADER'] = 'foobar'

@@ -18,7 +18,7 @@ msgstr ""
 #: ../../development.rst:4
 msgid ""
 "This document is intended for developers and package maintainers interested "
-"in the bottle development and release workflow. If you want to contribute, "
+"in the veilchen development and release workflow. If you want to contribute, "
 "you are just right!"
 msgstr ""
 
@@ -35,21 +35,21 @@ msgstr ""
 #: ../../development.rst:12
 msgid ""
 "**Mailing list**: Join our mailing list by sending an email to "
-"`bottlepy+subscribe@googlegroups.com "
-"<mailto:bottlepy+subscribe@googlegroups.com>`_ (no google account required)."
+"`veilchenpy+subscribe@googlegroups.com "
+"<mailto:veilchenpy+subscribe@googlegroups.com>`_ (no google account required)."
 msgstr ""
 
 #: ../../development.rst:13
 msgid ""
-"**Twitter**: `Follow us on Twitter <https://twitter.com/bottlepy>`_ or "
-"search for the `#bottlepy <https://twitter.com/#!/search/%23bottlepy>`_ tag."
+"**Twitter**: `Follow us on Twitter <https://twitter.com/veilchenpy>`_ or "
+"search for the `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag."
 msgstr ""
 
 #: ../../development.rst:14
 msgid ""
-"**IRC**: Join `#bottlepy on irc.freenode.net "
-"<irc://irc.freenode.net/bottlepy>`_ or use the `web chat interface "
-"<http://webchat.freenode.net/?channels=bottlepy>`_."
+"**IRC**: Join `#veilchenpy on irc.freenode.net "
+"<irc://irc.freenode.net/veilchenpy>`_ or use the `web chat interface "
+"<http://webchat.freenode.net/?channels=veilchenpy>`_."
 msgstr ""
 
 #: ../../development.rst:15
@@ -66,9 +66,9 @@ msgstr ""
 
 #: ../../development.rst:21
 msgid ""
-"The bottle `development repository <https://github.com/bottlepy/bottle>`_ "
-"and the `issue tracker <https://github.com/bottlepy/bottle/issues>`_ are "
-"both hosted at `github <https://github.com/bottlepy/bottle>`_. If you plan "
+"The veilchen `development repository <https://github.com/veilchenpy/veilchen>`_ "
+"and the `issue tracker <https://github.com/veilchenpy/veilchen/issues>`_ are "
+"both hosted at `github <https://github.com/veilchenpy/veilchen>`_. If you plan "
 "to contribute, it is a good idea to create an account there and fork the "
 "main repository. This way your changes and ideas are visible to other "
 "developers and can be discussed openly. Even without an account, you can "
@@ -77,18 +77,18 @@ msgid ""
 msgstr ""
 
 #: ../../development.rst:23
-msgid "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
+msgid "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
 msgstr ""
 
 #: ../../development.rst:24
-msgid "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
+msgid "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
 msgstr ""
 
 #: ../../development.rst:25
 msgid ""
 "**Download:** Development branch as `tar archive "
-"<http://github.com/bottlepy/bottle/tarball/master>`_ or `zip file "
-"<http://github.com/bottlepy/bottle/zipball/master>`_."
+"<http://github.com/veilchenpy/veilchen/tarball/master>`_ or `zip file "
+"<http://github.com/veilchenpy/veilchen/zipball/master>`_."
 msgstr ""
 
 #: ../../development.rst:29
@@ -98,7 +98,7 @@ msgstr ""
 #: ../../development.rst:31
 msgid ""
 "Bottle is released at irregular intervals and distributed through `PyPI "
-"<http://pypi.python.org/pypi/bottle>`_. Release candidates and bugfix-"
+"<http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-"
 "revisions of outdated releases are only available from the git repository "
 "mentioned above. Some Linux distributions may offer packages for outdated "
 "releases, though."
@@ -317,8 +317,8 @@ msgstr ""
 #: ../../development.rst:127
 msgid ""
 "First of all you need to create a fork (a personal clone) of the official "
-"repository. To do this, you simply click the \"fork\" button on the `bottle "
-"project page <https://github.com/bottlepy/bottle>`_. When the fork is done, "
+"repository. To do this, you simply click the \"fork\" button on the `veilchen "
+"project page <https://github.com/veilchenpy/veilchen>`_. When the fork is done, "
 "you will be presented with a short introduction to your new repository."
 msgstr ""
 
@@ -334,7 +334,7 @@ msgstr ""
 msgid ""
 "Once the clone is complete your repository will have a remote named "
 "\"origin\" that points to your fork on github. Don’t let the name confuse "
-"you, this does not point to the original bottle repository, but to your own "
+"you, this does not point to the original veilchen repository, but to your own "
 "fork. To keep track of the official repository, add another remote named "
 "\"upstream\"::"
 msgstr ""

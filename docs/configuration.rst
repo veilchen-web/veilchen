@@ -2,10 +2,10 @@
 Configuration (DRAFT)
 =====================
 
-.. currentmodule:: bottle
+.. currentmodule:: veilchen
 
 .. warning::
-    This is a draft for a new API. `Tell us <mailto:bottlepy@googlegroups.com>`_ what you think.
+    This is a draft for a new API. `Tell us <mailto:veilchenpy@googlegroups.com>`_ what you think.
 
 Bottle applications can store their configuration in :attr:`Bottle.config`, a dict-like object and central place for application specific settings. This dictionary controls many aspects of the framework, tells (newer) plugins what to do, and can be used to store your own configuration as well.
 
@@ -14,8 +14,8 @@ Configuration Basics
 
 The :attr:`Bottle.config` object behaves a lot like an ordinary dictionary. All the common dict methods work as expected. Let us start with some examples::
 
-    import bottle
-    app = bottle.default_app()             # or bottle.Bottle() if you prefer
+    import veilchen
+    app = veilchen.default_app()             # or veilchen.Bottle() if you prefer
 
     app.config['autojson']    = False      # Turns off the "autojson" feature
     app.config['sqlite.db']   = ':memory:' # Tells the sqlite plugin which db to use
@@ -43,7 +43,7 @@ The :attr:`Bottle.config` object behaves a lot like an ordinary dictionary. All 
 
 The app object is not always available, but as long as you are within a request context, you can use the `request` object to get the current application and its configuration::
 
-    from bottle import request
+    from veilchen import request
     def is_admin(user):
         return user == request.app.config['myapp.admin_user']
 
@@ -177,8 +177,8 @@ This feature is most useful for plugins. They can validate their config paramete
         def apply(self, callback, route):
             ...
 
-    import bottle
-    app = bottle.default_app()
+    import veilchen
+    app = veilchen.default_app()
     app.install(SomePlugin())
 
     app.config['some.list'] = 'a;b;c'     # Actually stores ['a', 'b', 'c']

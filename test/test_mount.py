@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import bottle
+import veilchen
 from .tools import ServerTestBase
-from bottle import response
+from veilchen import response
 
 class TestAppMounting(ServerTestBase):
     def setUp(self):
         ServerTestBase.setUp(self)
-        self.subapp = bottle.Bottle()
+        self.subapp = veilchen.Bottle()
 
         @self.subapp.route('/')
         @self.subapp.route('/test/<test>')
@@ -113,7 +113,7 @@ class TestAppMounting(ServerTestBase):
 class TestAppMerging(ServerTestBase):
     def setUp(self):
         ServerTestBase.setUp(self)
-        self.subapp = bottle.Bottle()
+        self.subapp = veilchen.Bottle()
         @self.subapp.route('/')
         @self.subapp.route('/test/:test')
         def test(test='foo'):

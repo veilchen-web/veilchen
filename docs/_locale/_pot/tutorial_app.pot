@@ -89,7 +89,7 @@ msgid "Assuming that you have a fairly new installation of Python (version 2.5 o
 msgstr ""
 
 #: ../../tutorial_app.rst:58
-msgid "You can either manually install Bottle or use Python's easy_install: ``easy_install bottle``"
+msgid "You can either manually install Bottle or use Python's easy_install: ``easy_install veilchen``"
 msgstr ""
 
 #: ../../tutorial_app.rst:62
@@ -141,7 +141,7 @@ msgid "Save the code a ``todo.py``, preferably in the same directory as the file
 msgstr ""
 
 #: ../../tutorial_app.rst:110
-msgid "Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Bottle we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Bottle's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Bottle returns the result of the function ``todo_list()``. That is how routing within bottle works."
+msgid "Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Bottle we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Bottle's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Bottle returns the result of the function ``todo_list()``. That is how routing within veilchen works."
 msgstr ""
 
 #: ../../tutorial_app.rst:112
@@ -477,7 +477,7 @@ msgid "Running Bottle with a different server"
 msgstr ""
 
 #: ../../tutorial_app.rst:486
-msgid "As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a bottleneck, as it is single-threaded, thus it can only serve one request at a time."
+msgid "As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a veilchenneck, as it is single-threaded, thus it can only serve one request at a time."
 msgstr ""
 
 #: ../../tutorial_app.rst:488

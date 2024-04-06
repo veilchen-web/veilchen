@@ -6,12 +6,12 @@
 # Charles LeMagne, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: Charles LeMagne\n"
-"Language-Team: German (Germany) (http://www.transifex.com/bottle/bottle/language/de_DE/)\n"
+"Language-Team: German (Germany) (http://www.transifex.com/veilchen/veilchen/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,9 +25,9 @@ msgstr "Entwicklernotizen"
 #: ../../development.rst:4
 msgid ""
 "This document is intended for developers and package maintainers interested "
-"in the bottle development and release workflow. If you want to contribute, "
+"in the veilchen development and release workflow. If you want to contribute, "
 "you are just right!"
-msgstr "Dieses Dokument ist für Entwickler und Paketbetreuer gedacht die Interesse an der Entwicklung und dem Veröffentlichungsworkflow von bottle haben.\nWenn du etwas beitragen möchtest, dann bist du genau richtig!"
+msgstr "Dieses Dokument ist für Entwickler und Paketbetreuer gedacht die Interesse an der Entwicklung und dem Veröffentlichungsworkflow von veilchen haben.\nWenn du etwas beitragen möchtest, dann bist du genau richtig!"
 
 #: ../../development.rst:8
 msgid "Get involved"
@@ -42,22 +42,22 @@ msgstr "Es gibt einige Wege der Community beizutreten und auf dem neuesten Stand
 #: ../../development.rst:12
 msgid ""
 "**Mailing list**: Join our mailing list by sending an email to "
-"`bottlepy+subscribe@googlegroups.com "
-"<mailto:bottlepy+subscribe@googlegroups.com>`_ (no google account required)."
-msgstr "**Mailing list**: Tritt unserer Mailingliste bei indem du eine e-Mail an `bottlepy+subscribe@googlegroups.com <mailto:bottlepy+subscribe@googlegroups.com>` sendest. (Ein Google Account wird nicht benötigt)"
+"`veilchenpy+subscribe@googlegroups.com "
+"<mailto:veilchenpy+subscribe@googlegroups.com>`_ (no google account required)."
+msgstr "**Mailing list**: Tritt unserer Mailingliste bei indem du eine e-Mail an `veilchenpy+subscribe@googlegroups.com <mailto:veilchenpy+subscribe@googlegroups.com>` sendest. (Ein Google Account wird nicht benötigt)"
 
 #: ../../development.rst:13
 msgid ""
-"**Twitter**: `Follow us on Twitter <https://twitter.com/bottlepy>`_ or "
-"search for the `#bottlepy <https://twitter.com/#!/search/%23bottlepy>`_ tag."
-msgstr "**Twitter**: `Folge uns auf Twitter <https://twitter.com/bottlepy>`_ oder suche nach dem `#bottlepy <https://twitter.com/#!/search/%23bottlepy>`_ tag."
+"**Twitter**: `Follow us on Twitter <https://twitter.com/veilchenpy>`_ or "
+"search for the `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag."
+msgstr "**Twitter**: `Folge uns auf Twitter <https://twitter.com/veilchenpy>`_ oder suche nach dem `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag."
 
 #: ../../development.rst:14
 msgid ""
-"**IRC**: Join `#bottlepy on irc.freenode.net "
-"<irc://irc.freenode.net/bottlepy>`_ or use the `web chat interface "
-"<http://webchat.freenode.net/?channels=bottlepy>`_."
-msgstr "**IRC**: Tritt `#bottlepy auf irc.freenode.net bei <irc://irc.freenode.net/bottlepy>`_ oder nutze die `Webchat Oberfläche <http://webchat.freenode.net/?channels=bottlepy>`_."
+"**IRC**: Join `#veilchenpy on irc.freenode.net "
+"<irc://irc.freenode.net/veilchenpy>`_ or use the `web chat interface "
+"<http://webchat.freenode.net/?channels=veilchenpy>`_."
+msgstr "**IRC**: Tritt `#veilchenpy auf irc.freenode.net bei <irc://irc.freenode.net/veilchenpy>`_ oder nutze die `Webchat Oberfläche <http://webchat.freenode.net/?channels=veilchenpy>`_."
 
 #: ../../development.rst:15
 msgid ""
@@ -73,36 +73,36 @@ msgstr "Die Quelldateien holen"
 
 #: ../../development.rst:21
 msgid ""
-"The bottle `development repository <https://github.com/bottlepy/bottle>`_ "
-"and the `issue tracker <https://github.com/bottlepy/bottle/issues>`_ are "
-"both hosted at `github <https://github.com/bottlepy/bottle>`_. If you plan "
+"The veilchen `development repository <https://github.com/veilchenpy/veilchen>`_ "
+"and the `issue tracker <https://github.com/veilchenpy/veilchen/issues>`_ are "
+"both hosted at `github <https://github.com/veilchenpy/veilchen>`_. If you plan "
 "to contribute, it is a good idea to create an account there and fork the "
 "main repository. This way your changes and ideas are visible to other "
 "developers and can be discussed openly. Even without an account, you can "
 "clone the repository or just download the latest development version as a "
 "source archive."
-msgstr "Das bottle `Entwicklungs-repository <https://github.com/bottlepy/bottle>`_ und der `Issue-tracker <https://github.com/bottlepy/bottle/issues>`_ sind beide auf `github <https://github.com/bottlepy/bottle>`_ zu finden."
+msgstr "Das veilchen `Entwicklungs-repository <https://github.com/veilchenpy/veilchen>`_ und der `Issue-tracker <https://github.com/veilchenpy/veilchen/issues>`_ sind beide auf `github <https://github.com/veilchenpy/veilchen>`_ zu finden."
 
 #: ../../development.rst:23
-msgid "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
-msgstr "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
+msgid "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
+msgstr "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
 
 #: ../../development.rst:24
-msgid "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
-msgstr "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
+msgid "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
+msgstr "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
 
 #: ../../development.rst:25
 msgid ""
 "**Download:** Development branch as `tar archive "
-"<http://github.com/bottlepy/bottle/tarball/master>`_ or `zip file "
-"<http://github.com/bottlepy/bottle/zipball/master>`_."
-msgstr "**Download:** Entwicklungs branch als `tar Archiv <http://github.com/bottlepy/bottle/tarball/master>`_ oder `zip Datei <http://github.com/bottlepy/bottle/zipball/master>`_."
+"<http://github.com/veilchenpy/veilchen/tarball/master>`_ or `zip file "
+"<http://github.com/veilchenpy/veilchen/zipball/master>`_."
+msgstr "**Download:** Entwicklungs branch als `tar Archiv <http://github.com/veilchenpy/veilchen/tarball/master>`_ oder `zip Datei <http://github.com/veilchenpy/veilchen/zipball/master>`_."
 
 #: ../../development.rst:26
 msgid ""
-"**Translations:** `transifex.com/projects/p/bottle "
-"<https://www.transifex.com/projects/p/bottle/>`_"
-msgstr "**Übersetzungen:** `transifex.com/projects/p/bottle <https://www.transifex.com/projects/p/bottle/>`_"
+"**Translations:** `transifex.com/projects/p/veilchen "
+"<https://www.transifex.com/projects/p/veilchen/>`_"
+msgstr "**Übersetzungen:** `transifex.com/projects/p/veilchen <https://www.transifex.com/projects/p/veilchen/>`_"
 
 #: ../../development.rst:30
 msgid "Releases and Updates"
@@ -111,11 +111,11 @@ msgstr "Veröffentlichungen und Updates"
 #: ../../development.rst:32
 msgid ""
 "Bottle is released at irregular intervals and distributed through `PyPI "
-"<http://pypi.python.org/pypi/bottle>`_. Release candidates and bugfix-"
+"<http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-"
 "revisions of outdated releases are only available from the git repository "
 "mentioned above. Some Linux distributions may offer packages for outdated "
 "releases, though."
-msgstr "Bottle wird in unregelmäßigen Abständen veröffentlicht und über `PyPI <http://pypi.python.org/pypi/bottle>`_ verteilt. Veröffentlichungskandidaten und bugfix-Revisionen von veralteten Veröffentlichungen sind nur über das oben genannte Git-Repository verfügbar. Einige Linux-Distributionen bieten jedoch möglicherweise Paket aus veralteten Veröffentlichungen an."
+msgstr "Bottle wird in unregelmäßigen Abständen veröffentlicht und über `PyPI <http://pypi.python.org/pypi/veilchen>`_ verteilt. Veröffentlichungskandidaten und bugfix-Revisionen von veralteten Veröffentlichungen sind nur über das oben genannte Git-Repository verfügbar. Einige Linux-Distributionen bieten jedoch möglicherweise Paket aus veralteten Veröffentlichungen an."
 
 #: ../../development.rst:34
 msgid ""
@@ -319,10 +319,10 @@ msgstr "Die folgenden Beispiele nehmen an dass du einen (kostnelosen) `Github Ac
 #: ../../development.rst:125
 msgid ""
 "First of all you need to create a fork (a personal clone) of the official "
-"repository. To do this, you simply click the \"fork\" button on the `bottle "
-"project page <https://github.com/bottlepy/bottle>`_. When the fork is done, "
+"repository. To do this, you simply click the \"fork\" button on the `veilchen "
+"project page <https://github.com/veilchenpy/veilchen>`_. When the fork is done, "
 "you will be presented with a short introduction to your new repository."
-msgstr "Als Erstes musst du eine Fork (ein persönlicher Klon) des offiziellen Repositorys erstellen. Um dies zu tun klicke einfach auf den \"fork\" Button auf der `bottle Projektseite <https://github.com/bottlepy/bottle>`_. Wenn das Forken erledigt ist, wirst du eine kurze Einführung in dein neues Repository präsentiert bekommen. "
+msgstr "Als Erstes musst du eine Fork (ein persönlicher Klon) des offiziellen Repositorys erstellen. Um dies zu tun klicke einfach auf den \"fork\" Button auf der `veilchen Projektseite <https://github.com/veilchenpy/veilchen>`_. Wenn das Forken erledigt ist, wirst du eine kurze Einführung in dein neues Repository präsentiert bekommen. "
 
 #: ../../development.rst:127
 msgid ""
@@ -336,10 +336,10 @@ msgstr "Die Fork die du erstellt hast ist auf github gehostet und lesbar für je
 msgid ""
 "Once the clone is complete your repository will have a remote named "
 "\"origin\" that points to your fork on github. Don’t let the name confuse "
-"you, this does not point to the original bottle repository, but to your own "
+"you, this does not point to the original veilchen repository, but to your own "
 "fork. To keep track of the official repository, add another remote named "
 "\"upstream\"::"
-msgstr "Sobald dein Klon vollständig ist wird dein Repository eine remote namens \"origin\" haben die auf deine Fork auf github zeigt. Lass dich nicht von den Namen irritieren, sie zeigt nicht auf das originale bottle Repository, sondern auf deine eigene Fork. Um mit Änderungen an dem offiziellen repository auf dem Laufenden zu bleiben füge eine weitere remote namens \"upstream\" hinzu::"
+msgstr "Sobald dein Klon vollständig ist wird dein Repository eine remote namens \"origin\" haben die auf deine Fork auf github zeigt. Lass dich nicht von den Namen irritieren, sie zeigt nicht auf das originale veilchen Repository, sondern auf deine eigene Fork. Um mit Änderungen an dem offiziellen repository auf dem Laufenden zu bleiben füge eine weitere remote namens \"upstream\" hinzu::"
 
 #: ../../development.rst:137
 msgid ""

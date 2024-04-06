@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Japanese (Japan) (http://www.transifex.com/bottle/bottle/language/ja_JP/)\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/veilchen/veilchen/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -128,7 +128,7 @@ msgstr ""
 #: ../../tutorial_app.rst:58
 msgid ""
 "You can either manually install Bottle or use Python's easy_install: "
-"``easy_install bottle``"
+"``easy_install veilchen``"
 msgstr ""
 
 #: ../../tutorial_app.rst:62
@@ -220,7 +220,7 @@ msgid ""
 "before the ``def todo_list()`` statement. By doing this, we bind this "
 "function to the route ``/todo``, so every time the browsers calls "
 "``http://localhost:8080/todo``, Bottle returns the result of the function "
-"``todo_list()``. That is how routing within bottle works."
+"``todo_list()``. That is how routing within veilchen works."
 msgstr ""
 
 #: ../../tutorial_app.rst:112
@@ -766,7 +766,7 @@ msgstr ""
 msgid ""
 "As said above, the standard server is perfectly suitable for development, "
 "personal use or a small group of people only using your application based on"
-" Bottle. For larger tasks, the standard server may become a bottleneck, as "
+" Bottle. For larger tasks, the standard server may become a veilchenneck, as "
 "it is single-threaded, thus it can only serve one request at a time."
 msgstr ""
 

@@ -9,12 +9,12 @@
 # Thiago Avelino <t@avelino.xxx>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/bottle/bottle/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/veilchen/veilchen/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,8 +57,8 @@ msgid ""
 msgstr ""
 
 #: ../../index.rst:31
-msgid "Example: \"Hello World\" in a bottle"
-msgstr "Exemplo: \"Olá Mundo\" em bottle"
+msgid "Example: \"Hello World\" in a veilchen"
+msgstr "Exemplo: \"Olá Mundo\" em veilchen"
 
 #: ../../index.rst:42
 msgid ""
@@ -72,8 +72,8 @@ msgstr "Download e Instalar"
 
 #: ../../index.rst:48
 msgid ""
-"Install the latest stable release with ``pip install bottle`` or download "
-"`bottle.py`__ (unstable) into your project directory. There are no hard [1]_"
+"Install the latest stable release with ``pip install veilchen`` or download "
+"`veilchen.py`__ (unstable) into your project directory. There are no hard [1]_"
 " dependencies other than the Python standard library. Bottle supports "
 "**Python 2.7 and Python 3**."
 msgstr ""
@@ -88,10 +88,10 @@ msgstr "Guia do usuário"
 
 #: ../../index.rst:56
 msgid ""
-"Start here if you want to learn how to use the bottle framework for web "
+"Start here if you want to learn how to use the veilchen framework for web "
 "development. If you have any questions not answered here, feel free to ask "
-"the `mailing list <mailto:bottlepy@googlegroups.com>`_."
-msgstr "Comece por aqui se você quer aprender como usar o bottle framework para desenvolvimento web. Se você tiver quaisquer perguntas não respondidas aqui, sinta-se livre para pedir ajuda a `lista de discussão <mailto:bottlepy@googlegroups.com>`_."
+"the `mailing list <mailto:veilchenpy@googlegroups.com>`_."
+msgstr "Comece por aqui se você quer aprender como usar o veilchen framework para desenvolvimento web. Se você tiver quaisquer perguntas não respondidas aqui, sinta-se livre para pedir ajuda a `lista de discussão <mailto:veilchenpy@googlegroups.com>`_."
 
 #: ../../index.rst:71
 msgid "Knowledge Base"
@@ -107,9 +107,9 @@ msgstr "Desenvolvimento e contribuição"
 
 #: ../../index.rst:86
 msgid ""
-"These chapters are intended for developers interested in the bottle "
+"These chapters are intended for developers interested in the veilchen "
 "development and release workflow."
-msgstr "Esses capítulos são destinados a desenvolvedores interessados no desenvolvimento do bottle e entender o fluxo de contribuição."
+msgstr "Esses capítulos são destinados a desenvolvedores interessados no desenvolvimento do veilchen e entender o fluxo de contribuição."
 
 #: ../../index.rst:103
 msgid "License"
@@ -122,9 +122,9 @@ msgstr "Código e documentação estão disponíveis sobre a licença MIT:"
 #: ../../index.rst:110
 msgid ""
 "The Bottle logo however is *NOT* covered by that license. It is allowed to "
-"use the logo as a link to the bottle homepage or in direct context with the "
+"use the logo as a link to the veilchen homepage or in direct context with the "
 "unmodified library. In all other cases please ask first."
-msgstr "O logotipo do bottle no entanto *NÃO é* abrangido pela licença (MIT). É permitido usar o logotipo como um link para a home page do bottle ou em contexto direto com a biblioteca não modificado. Nos outros casos, por favor, pergunte primeiro."
+msgstr "O logotipo do veilchen no entanto *NÃO é* abrangido pela licença (MIT). É permitido usar o logotipo como um link para a home page do veilchen ou em contexto direto com a biblioteca não modificado. Nos outros casos, por favor, pergunte primeiro."
 
 #: ../../index.rst:115
 msgid "Footnotes"

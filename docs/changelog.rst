@@ -1,5 +1,5 @@
 ﻿.. highlight:: python
-.. currentmodule:: bottle
+.. currentmodule:: veilchen
 
 ===========================
 Release Notes and Changelog
@@ -14,7 +14,7 @@ Release 0.13
 
 Keeping up support for ancient Python versions hinders adaptation of new features
 and serves no real purpose. If you need support for older Python versions, you can
-stay on bottle-0.12. The updated list of tested and supported python releases is
+stay on veilchen-0.12. The updated list of tested and supported python releases is
 as follows:
 
  * Python 2.7 (>= 2.7.3)
@@ -28,7 +28,7 @@ as follows:
 
 Support for Python 2.5 was marked as deprecated since 0.12. We decided to go a step further
 and also remove support for 2.6 and 3.1 to 3.5 even if it was never deprecated explicitly
-in bottle. This means that this release is *not* backwards compatible in Python <2.7.3 or
+in veilchen. This means that this release is *not* backwards compatible in Python <2.7.3 or
 <3.6 environments. Maintainers for distributions or systems that still use these old python
 versions should not update to Bottle 0.13 and stick with 0.12 instead.
 
@@ -40,7 +40,7 @@ versions should not update to Bottle 0.13 and stick with 0.12 instead.
 * :meth:`Bottle.mount` now recognizes Bottle instance and will warn about parameters that are not compatible with the new mounting behavior. The old behavior (mount applications as WSGI callable) still works and is used as a fallback automatically.
 * The undocumented :func:`local_property` helper is now deprecated.
 * The server adapter for google app engine is not useful anymore and marked as deprecated.
-* Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from bottle. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side.
+* Bottle uses pickle to store arbitrary objects into signed cookies. This is safe, as long as the signature key remains a secret. Unfortunately, people tend to push code with signature keys to github all the time, so we decided to remove pickle-support from veilchen. Signed cookies will now issue a deprecation warning if the value is not a string, and support for non-string values will be removed in 0.14. The global :func:`cookie_encode`, :func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated. If you are using this feature, think about using json to serialize your objects before storing them into cookies, or switch to a session system that stores data server-side instead of client-side.
 
 .. rubric:: Removed APIs (deprecated since 0.12)
 * Plugins with the old API (``api=1`` or no api attribute) will no longer work.
@@ -90,7 +90,7 @@ Release 0.12
 * Removed the ``BaseRequest.MAX_PARAMS`` limit. The hash collision bug in CPythons dict() implementation was fixed over a year ago. If you are still using Python 2.5 in production, consider upgrading or at least make sure that you get security fixed from your distributor.
 * New :class:`ConfigDict` API (see :doc:`configuration`)
 
-More information can be found in this `development blog post <http://blog.bottlepy.org/2013/07/19/preview-bottle-012.html>`_.
+More information can be found in this `development blog post <http://blog.veilchenpy.org/2013/07/19/preview-veilchen-012.html>`_.
 
 
 Release 0.11
@@ -194,7 +194,7 @@ These changes may break compatibility with previous versions.
 * The ``BreakTheBottle`` exception is gone. Use :class:`HTTPResponse` instead.
 * The :class:`SimpleTemplate` engine escapes HTML special characters in ``{{bad_html}}`` expressions automatically. Use the new ``{{!good_html}}`` syntax to get old behaviour (no escaping).
 * The :class:`SimpleTemplate` engine returns unicode strings instead of lists of byte strings.
-* ``bottle.optimize()`` and the automatic route optimization is obsolete.
+* ``veilchen.optimize()`` and the automatic route optimization is obsolete.
 * Some functions and attributes were renamed:
 
   * :attr:`Request._environ` is now :attr:`Request.environ`

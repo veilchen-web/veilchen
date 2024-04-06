@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: German (Germany) (http://www.transifex.com/bottle/bottle/language/de_DE/)\n"
+"Language-Team: German (Germany) (http://www.transifex.com/veilchen/veilchen/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -260,12 +260,12 @@ msgstr ""
 msgid ":class:`SimpleTemplate` API"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.SimpleTemplate.prepare:1
+#: ../../../veilchen.pydocstring of veilchen.SimpleTemplate.prepare:1
 msgid ""
 "Run preparations (parsing, caching, ...). It should be possible to call this"
 " again to refresh a template or to update settings."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.SimpleTemplate.render:1
+#: ../../../veilchen.pydocstring of veilchen.SimpleTemplate.render:1
 msgid "Render the template using keyword arguments as local variables."
 msgstr ""

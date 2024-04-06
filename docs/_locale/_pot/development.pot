@@ -21,7 +21,7 @@ msgid "Developer Notes"
 msgstr ""
 
 #: ../../development.rst:4
-msgid "This document is intended for developers and package maintainers interested in the bottle development and release workflow. If you want to contribute, you are just right!"
+msgid "This document is intended for developers and package maintainers interested in the veilchen development and release workflow. If you want to contribute, you are just right!"
 msgstr ""
 
 #: ../../development.rst:8
@@ -33,15 +33,15 @@ msgid "There are several ways to join the community and stay up to date. Here ar
 msgstr ""
 
 #: ../../development.rst:12
-msgid "**Mailing list**: Join our mailing list by sending an email to `bottlepy+subscribe@googlegroups.com <mailto:bottlepy+subscribe@googlegroups.com>`_ (no google account required)."
+msgid "**Mailing list**: Join our mailing list by sending an email to `veilchenpy+subscribe@googlegroups.com <mailto:veilchenpy+subscribe@googlegroups.com>`_ (no google account required)."
 msgstr ""
 
 #: ../../development.rst:13
-msgid "**Twitter**: `Follow us on Twitter <https://twitter.com/bottlepy>`_ or search for the `#bottlepy <https://twitter.com/#!/search/%23bottlepy>`_ tag."
+msgid "**Twitter**: `Follow us on Twitter <https://twitter.com/veilchenpy>`_ or search for the `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag."
 msgstr ""
 
 #: ../../development.rst:14
-msgid "**IRC**: Join `#bottlepy on irc.freenode.net <irc://irc.freenode.net/bottlepy>`_ or use the `web chat interface <http://webchat.freenode.net/?channels=bottlepy>`_."
+msgid "**IRC**: Join `#veilchenpy on irc.freenode.net <irc://irc.freenode.net/veilchenpy>`_ or use the `web chat interface <http://webchat.freenode.net/?channels=veilchenpy>`_."
 msgstr ""
 
 #: ../../development.rst:15
@@ -53,23 +53,23 @@ msgid "Get the Sources"
 msgstr ""
 
 #: ../../development.rst:21
-msgid "The bottle `development repository <https://github.com/bottlepy/bottle>`_ and the `issue tracker <https://github.com/bottlepy/bottle/issues>`_ are both hosted at `github <https://github.com/bottlepy/bottle>`_. If you plan to contribute, it is a good idea to create an account there and fork the main repository. This way your changes and ideas are visible to other developers and can be discussed openly. Even without an account, you can clone the repository or just download the latest development version as a source archive."
+msgid "The veilchen `development repository <https://github.com/veilchenpy/veilchen>`_ and the `issue tracker <https://github.com/veilchenpy/veilchen/issues>`_ are both hosted at `github <https://github.com/veilchenpy/veilchen>`_. If you plan to contribute, it is a good idea to create an account there and fork the main repository. This way your changes and ideas are visible to other developers and can be discussed openly. Even without an account, you can clone the repository or just download the latest development version as a source archive."
 msgstr ""
 
 #: ../../development.rst:23
-msgid "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
+msgid "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
 msgstr ""
 
 #: ../../development.rst:24
-msgid "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
+msgid "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
 msgstr ""
 
 #: ../../development.rst:25
-msgid "**Download:** Development branch as `tar archive <http://github.com/bottlepy/bottle/tarball/master>`_ or `zip file <http://github.com/bottlepy/bottle/zipball/master>`_."
+msgid "**Download:** Development branch as `tar archive <http://github.com/veilchenpy/veilchen/tarball/master>`_ or `zip file <http://github.com/veilchenpy/veilchen/zipball/master>`_."
 msgstr ""
 
 #: ../../development.rst:26
-msgid "**Translations:** `transifex.com/projects/p/bottle <https://www.transifex.com/projects/p/bottle/>`_"
+msgid "**Translations:** `transifex.com/projects/p/veilchen <https://www.transifex.com/projects/p/veilchen/>`_"
 msgstr ""
 
 #: ../../development.rst:30
@@ -77,7 +77,7 @@ msgid "Releases and Updates"
 msgstr ""
 
 #: ../../development.rst:32
-msgid "Bottle is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/bottle>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though."
+msgid "Bottle is released at irregular intervals and distributed through `PyPI <http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-revisions of outdated releases are only available from the git repository mentioned above. Some Linux distributions may offer packages for outdated releases, though."
 msgstr ""
 
 #: ../../development.rst:34
@@ -209,7 +209,7 @@ msgid "The following examples assume that you have an (free) `github account <ht
 msgstr ""
 
 #: ../../development.rst:125
-msgid "First of all you need to create a fork (a personal clone) of the official repository. To do this, you simply click the \"fork\" button on the `bottle project page <https://github.com/bottlepy/bottle>`_. When the fork is done, you will be presented with a short introduction to your new repository."
+msgid "First of all you need to create a fork (a personal clone) of the official repository. To do this, you simply click the \"fork\" button on the `veilchen project page <https://github.com/veilchenpy/veilchen>`_. When the fork is done, you will be presented with a short introduction to your new repository."
 msgstr ""
 
 #: ../../development.rst:127
@@ -217,7 +217,7 @@ msgid "The fork you just created is hosted at github and read-able by everyone, 
 msgstr ""
 
 #: ../../development.rst:131
-msgid "Once the clone is complete your repository will have a remote named \"origin\" that points to your fork on github. Don’t let the name confuse you, this does not point to the original bottle repository, but to your own fork. To keep track of the official repository, add another remote named \"upstream\"::"
+msgid "Once the clone is complete your repository will have a remote named \"origin\" that points to your fork on github. Don’t let the name confuse you, this does not point to the original veilchen repository, but to your own fork. To keep track of the official repository, add another remote named \"upstream\"::"
 msgstr ""
 
 #: ../../development.rst:137

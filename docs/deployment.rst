@@ -26,7 +26,7 @@
 Deployment
 ================================================================================
 
-The bottle :func:`run` function, when called without any parameters, starts a local development server on port 8080. You can access and test your application via http://localhost:8080/ if you are on the same host.
+The veilchen :func:`run` function, when called without any parameters, starts a local development server on port 8080. You can access and test your application via http://localhost:8080/ if you are on the same host.
 
 To get your application available to the outside world, specify the IP the server should listen to (e.g. ``run(host='192.168.0.1')``) or let the server listen to all interfaces at once (e.g. ``run(host='0.0.0.0')``). The listening port can be changed in a similar way, but you need root or admin rights to choose a port below 1024. Port 80 is the standard for HTTP servers::
 
@@ -36,7 +36,7 @@ To get your application available to the outside world, specify the IP the serve
 Server Options
 ================================================================================
 
-The built-in default server is based on `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_. This non-threading HTTP server is perfectly fine for development, but may become a performance bottleneck when server load increases. There are three ways to eliminate this bottleneck:
+The built-in default server is based on `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_. This non-threading HTTP server is perfectly fine for development, but may become a performance veilchenneck when server load increases. There are three ways to eliminate this veilchenneck:
 
 * Use a different server that is either multi-threaded or supports asynchronous IO.
 * Start multiple server processes and spread the load with a load-balancer.
@@ -82,7 +82,7 @@ The full list is available through :data:`server_names`.
 
 If there is no adapter for your favorite server or if you need more control over the server setup, you may want to start the server manually. Refer to the server documentation on how to run WSGI applications. Here is an example for paste_::
 
-    application = bottle.default_app()
+    application = veilchen.default_app()
     from paste import httpserver
     httpserver.serve(application, host='0.0.0.0', port=80)
 
@@ -100,10 +100,10 @@ File ``/var/www/yourapp/app.wsgi``::
     # Change working directory so relative paths (and template lookup) work again
     os.chdir(os.path.dirname(__file__))
     
-    import bottle
-    # ... build or import your bottle application here ...
-    # Do NOT use bottle.run() with mod_wsgi
-    application = bottle.default_app()
+    import veilchen
+    # ... build or import your veilchen application here ...
+    # Do NOT use veilchen.run() with mod_wsgi
+    application = veilchen.default_app()
 
 The Apache configuration may look like this::
 
@@ -135,13 +135,13 @@ Google AppEngine
 
 New App Engine applications using the Python 2.7 runtime environment support any WSGI application and should be configured to use the Bottle application object directly. For example suppose your application's main module is ``myapp.py``::
 
-    import bottle
+    import veilchen
 
-    @bottle.route('/')
+    @veilchen.route('/')
     def home():
         return '<html><head></head><body>Hello world!</body></html>'
 
-    app = bottle.default_app()
+    app = veilchen.default_app()
 
 Then you can configure App Engine's ``app.yaml`` to use the ``app`` object like so::
 
@@ -220,9 +220,9 @@ Lighttpd example::
 Good old CGI
 ================================================================================
 
-A CGI server starts a new process for each request. This adds a lot of overhead but is sometimes the only option, especially on cheap hosting packages. The `cgi` server adapter does not actually start a CGI server, but transforms your bottle application into a valid CGI application::
+A CGI server starts a new process for each request. This adds a lot of overhead but is sometimes the only option, especially on cheap hosting packages. The `cgi` server adapter does not actually start a CGI server, but transforms your veilchen application into a valid CGI application::
 
-    bottle.run(server='cgi')
+    veilchen.run(server='cgi')
 
 
 

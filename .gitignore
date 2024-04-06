@@ -9,7 +9,7 @@
 dist/
 build/
 MANIFEST
-bottle.egg-info/
+veilchen.egg-info/
 
 .idea/
 

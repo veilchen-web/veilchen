@@ -4,7 +4,7 @@ Some objects are context-local, meaning that they have different values dependin
 '''
 
 import unittest
-import bottle
+import veilchen
 import threading
 
 
@@ -19,23 +19,23 @@ class TestThreadLocals(unittest.TestCase):
         e2 = {'PATH_INFO': '/t2'}
 
         def run():
-            bottle.request.bind(e2)
-            self.assertEqual(bottle.request.path, '/t2')
+            veilchen.request.bind(e2)
+            self.assertEqual(veilchen.request.path, '/t2')
 
-        bottle.request.bind(e1)
-        self.assertEqual(bottle.request.path, '/t1')
+        veilchen.request.bind(e1)
+        self.assertEqual(veilchen.request.path, '/t1')
         run_thread(run)
-        self.assertEqual(bottle.request.path, '/t1')
+        self.assertEqual(veilchen.request.path, '/t1')
 
     def test_response(self):
 
         def run():
-            bottle.response.bind()
-            bottle.response.content_type='test/thread'
-            self.assertEqual(bottle.response.headers['Content-Type'], 'test/thread')
+            veilchen.response.bind()
+            veilchen.response.content_type='test/thread'
+            self.assertEqual(veilchen.response.headers['Content-Type'], 'test/thread')
 
-        bottle.response.bind()
-        bottle.response.content_type='test/main'
-        self.assertEqual(bottle.response.headers['Content-Type'], 'test/main')
+        veilchen.response.bind()
+        veilchen.response.content_type='test/main'
+        self.assertEqual(veilchen.response.headers['Content-Type'], 'test/main')
         run_thread(run)
-        self.assertEqual(bottle.response.headers['Content-Type'], 'test/main')
+        self.assertEqual(veilchen.response.headers['Content-Type'], 'test/main')

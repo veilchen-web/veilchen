@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/bottle/bottle/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/veilchen/veilchen/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -223,11 +223,11 @@ msgstr "route修饰器也可以直接当作函数来调用。在复杂的部署�
 
 #: ../../routing.rst:99
 msgid ""
-"Here is a basic example of explicit routing configuration for default bottle"
+"Here is a basic example of explicit routing configuration for default veilchen"
 " application::"
 msgstr "下面是一个简单的例子"
 
 #: ../../routing.rst:105
 msgid ""
 "In fact, any :class:`Bottle` instance routing can be configured same way::"
-msgstr "实际上，bottle可以是任何 :class:`Bottle` 类的实例"
+msgstr "实际上，veilchen可以是任何 :class:`Bottle` 类的实例"

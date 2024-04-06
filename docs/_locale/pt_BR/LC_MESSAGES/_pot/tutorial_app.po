@@ -127,7 +127,7 @@ msgstr ""
 #: ../../tutorial_app.rst:60
 msgid ""
 "You can either manually install Bottle or use Python's easy_install: "
-"``easy_install bottle``"
+"``easy_install veilchen``"
 msgstr ""
 
 #: ../../tutorial_app.rst:64
@@ -219,7 +219,7 @@ msgid ""
 "before the ``def todo_list()`` statement. By doing this, we bind this "
 "function to the route ``/todo``, so every time the browsers calls "
 "``http://localhost:8080/todo``, Bottle returns the result of the function "
-"``todo_list()``. That is how routing within bottle works."
+"``todo_list()``. That is how routing within veilchen works."
 msgstr ""
 
 #: ../../tutorial_app.rst:114
@@ -786,7 +786,7 @@ msgstr ""
 msgid ""
 "As said above, the standard server is perfectly suitable for development, "
 "personal use or a small group of people only using your application based on"
-" Bottle. For larger tasks, the standard server may become a bottleneck, as "
+" Bottle. For larger tasks, the standard server may become a veilchenneck, as "
 "it is single-threaded, thus it can only serve one request at a time."
 msgstr ""
 

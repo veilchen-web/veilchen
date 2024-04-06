@@ -2,7 +2,7 @@
 import unittest
 from . import tools
 
-from bottle import HTTPResponse, HTTPError, json_dumps
+from veilchen import HTTPResponse, HTTPError, json_dumps
 
 
 class MyPlugin(object):

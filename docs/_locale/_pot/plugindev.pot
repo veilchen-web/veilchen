@@ -25,7 +25,7 @@ msgid "This guide explains the plugin API and how to write custom plugins. I sug
 msgstr ""
 
 #: ../../plugindev.rst:12
-msgid "This is a draft. If you see any errors or find that a specific part is not explained clear enough, please tell the `mailing-list <mailto:bottlepy@googlegroups.com>`_ or file a `bug report <https://github.com/bottlepy/bottle/issues>`_."
+msgid "This is a draft. If you see any errors or find that a specific part is not explained clear enough, please tell the `mailing-list <mailto:veilchenpy@googlegroups.com>`_ or file a `bug report <https://github.com/veilchenpy/veilchen/issues>`_."
 msgstr ""
 
 #: ../../plugindev.rst:16
@@ -65,7 +65,7 @@ msgid "Plugin API"
 msgstr ""
 
 #: ../../plugindev.rst:50
-msgid ":class:`Plugin` is not a real class (you cannot import it from :mod:`bottle`) but an interface that plugins are expected to implement. Bottle accepts any object of any type as a plugin, as long as it conforms to the following API."
+msgid ":class:`Plugin` is not a real class (you cannot import it from :mod:`veilchen`) but an interface that plugins are expected to implement. Bottle accepts any object of any type as a plugin, as long as it conforms to the following API."
 msgstr ""
 
 #: ../../plugindev.rst:54
@@ -77,7 +77,7 @@ msgid "Both :meth:`Bottle.uninstall` and the `skip` parameter of :meth:`Bottle.r
 msgstr ""
 
 #: ../../plugindev.rst:62
-msgid "The Plugin API is still evolving. This integer attribute tells bottle which version to use. If it is missing, bottle defaults to the first version. The current version is ``2``. See :ref:`plugin-changelog` for details."
+msgid "The Plugin API is still evolving. This integer attribute tells veilchen which version to use. If it is missing, veilchen defaults to the first version. The current version is ``2``. See :ref:`plugin-changelog` for details."
 msgstr ""
 
 #: ../../plugindev.rst:66
@@ -105,7 +105,7 @@ msgid "Plugin API changes"
 msgstr ""
 
 #: ../../plugindev.rst:89
-msgid "The Plugin API is still evolving and changed with Bottle 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell bottle which API to use. The API differences are summarized here."
+msgid "The Plugin API is still evolving and changed with Bottle 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell veilchen which API to use. The API differences are summarized here."
 msgstr ""
 
 #: ../../plugindev.rst:91

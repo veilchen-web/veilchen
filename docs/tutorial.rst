@@ -1,4 +1,4 @@
-.. module:: bottle
+.. module:: veilchen
 
 .. _Apache Server:
 .. _Apache: http://www.apache.org/
@@ -14,43 +14,43 @@
 .. _Paste: https://pythonpaste.readthedocs.io
 .. _Pound: http://www.apsis.ch/pound/
 .. _WSGI_Specification: http://www.wsgi.org/
-.. _issue: http://github.com/bottlepy/bottle/issues
+.. _issue: http://github.com/veilchenpy/veilchen/issues
 .. _Python: http://python.org/
 .. _SimpleCookie: http://docs.python.org/library/cookie.html#morsel-objects
-.. _testing: http://github.com/bottlepy/bottle/raw/master/bottle.py
+.. _testing: http://github.com/veilchenpy/veilchen/raw/master/veilchen.py
 
 ========
 Tutorial
 ========
 
-This tutorial introduces you to the concepts and features of the Bottle web framework and covers basic and advanced topics alike. You can read it from start to end, or use it as a reference later on. The automatically generated :doc:`api` may be interesting for you, too. It covers more details, but explains less than this tutorial. Solutions for the most common questions can be found in our :doc:`recipes` collection or on the :doc:`faq` page. If you need any help, join our `mailing list <mailto:bottlepy@googlegroups.com>`_ or visit us in our `IRC channel <http://webchat.freenode.net/?channels=bottlepy>`_.
+This tutorial introduces you to the concepts and features of the Bottle web framework and covers basic and advanced topics alike. You can read it from start to end, or use it as a reference later on. The automatically generated :doc:`api` may be interesting for you, too. It covers more details, but explains less than this tutorial. Solutions for the most common questions can be found in our :doc:`recipes` collection or on the :doc:`faq` page. If you need any help, join our `mailing list <mailto:veilchenpy@googlegroups.com>`_ or visit us in our `IRC channel <http://webchat.freenode.net/?channels=veilchenpy>`_.
 
 .. _installation:
 
 Installation
 ==============================================================================
 
-Bottle does not depend on any external libraries. You can just download `bottle.py </bottle.py>`_ into your project directory and start coding:
+Bottle does not depend on any external libraries. You can just download `veilchen.py </veilchen.py>`_ into your project directory and start coding:
 
 .. code-block:: bash
 
-    $ wget https://bottlepy.org/bottle.py
+    $ wget https://veilchenpy.org/veilchen.py
 
-This will get you the latest development snapshot that includes all the new features. If you prefer a more stable environment, you should stick with the stable releases. These are available on `PyPI <http://pypi.python.org/pypi/bottle>`_ and can be installed via :command:`pip` (recommended), :command:`easy_install` or your package manager:
+This will get you the latest development snapshot that includes all the new features. If you prefer a more stable environment, you should stick with the stable releases. These are available on `PyPI <http://pypi.python.org/pypi/veilchen>`_ and can be installed via :command:`pip` (recommended), :command:`easy_install` or your package manager:
 
 .. code-block:: bash
 
-    $ sudo pip install bottle              # recommended
-    $ sudo easy_install bottle             # alternative without pip
-    $ sudo apt-get install python-bottle   # works for debian, ubuntu, ...
+    $ sudo pip install veilchen              # recommended
+    $ sudo easy_install veilchen             # alternative without pip
+    $ sudo apt-get install python-veilchen   # works for debian, ubuntu, ...
 
-Either way, you'll need Python 2.7 or newer (including 3.4+) to run bottle applications. If you do not have permissions to install packages system-wide or simply don't want to, create a `virtualenv <http://pypi.python.org/pypi/virtualenv>`_ first:
+Either way, you'll need Python 2.7 or newer (including 3.4+) to run veilchen applications. If you do not have permissions to install packages system-wide or simply don't want to, create a `virtualenv <http://pypi.python.org/pypi/virtualenv>`_ first:
 
 .. code-block:: bash
 
     $ virtualenv develop              # Create virtual environment
     $ source develop/bin/activate     # Change default python to virtual one
-    (develop)$ pip install -U bottle  # Install bottle to virtual environment
+    (develop)$ pip install -U veilchen  # Install veilchen to virtual environment
 
 Or, if virtualenv is not installed on your system:
 
@@ -59,7 +59,7 @@ Or, if virtualenv is not installed on your system:
     $ wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
     $ python virtualenv.py develop    # Create virtual environment
     $ source develop/bin/activate     # Change default python to virtual one
-    (develop)$ pip install -U bottle  # Install bottle to virtual environment
+    (develop)$ pip install -U veilchen  # Install veilchen to virtual environment
 
 
 
@@ -68,7 +68,7 @@ Quickstart: "Hello World"
 
 This tutorial assumes you have Bottle either :ref:`installed <installation>` or copied into your project directory. Let's start with a very basic "Hello World" example::
 
-    from bottle import route, run
+    from veilchen import route, run
 
     @route('/hello')
     def hello():
@@ -93,7 +93,7 @@ The Default Application
 
 For the sake of simplicity, most examples in this tutorial use a module-level :func:`route` decorator to define routes. This adds routes to a global "default application", an instance of :class:`Bottle` that is automatically created the first time you call :func:`route`. Several other module-level decorators and functions relate to this default application, but if you prefer a more object oriented approach and don't mind the extra typing, you can create a separate application object and use that instead of the global one::
 
-    from bottle import Bottle, run
+    from veilchen import Bottle, run
 
     app = Bottle()
 
@@ -119,7 +119,7 @@ In the last chapter we built a very simple web application with only a single ro
     def hello():
         return "Hello World!"
 
-The :func:`route` decorator links an URL path to a callback function, and adds a new route to the :ref:`default application <tutorial-default>`. An application with just one route is kind of boring, though. Let's add some more (don't forget ``from bottle import template``)::
+The :func:`route` decorator links an URL path to a callback function, and adds a new route to the :ref:`default application <tutorial-default>`. An application with just one route is kind of boring, though. Let's add some more (don't forget ``from veilchen import template``)::
 
     @route('/')
     @route('/hello/<name>')
@@ -182,7 +182,7 @@ The HTTP protocol defines several `request methods`__ (sometimes referred to as 
 
 The POST method is commonly used for HTML form submission. This example shows how to handle a login form using POST::
 
-    from bottle import get, post, request # or route
+    from veilchen import get, post, request # or route
 
     @get('/login') # or @route('/login')
     def login():
@@ -220,7 +220,7 @@ Routing Static Files
 
 Static files such as images or CSS files are not served automatically. You have to add a route and a callback to control which files get served and where to find them::
 
-  from bottle import static_file
+  from veilchen import static_file
   @route('/static/<filename>')
   def server_static(filename):
       return static_file(filename, root='/path/to/your/static/files')
@@ -243,7 +243,7 @@ Error Pages
 
 If anything goes wrong, Bottle displays an informative but fairly plain error page. You can override the default for a specific HTTP status code with the :func:`error` decorator::
 
-  from bottle import error
+  from veilchen import error
   @error(404)
   def error404(error):
       return 'Nothing here, sorry'
@@ -295,7 +295,7 @@ Bottle uses the `charset` parameter of the ``Content-Type`` header to decide how
 
 ::
 
-    from bottle import response
+    from veilchen import response
     @route('/iso')
     def get_iso():
         response.charset = 'ISO-8859-15'
@@ -317,7 +317,7 @@ You can directly return file objects, but :func:`static_file` is the recommended
 
 ::
 
-    from bottle import static_file
+    from veilchen import static_file
     @route('/images/<filename:re:.*\.png>')
     def send_image(filename):
         return static_file(filename, root='/path/to/image/files', mimetype='image/png')
@@ -347,14 +347,14 @@ The :func:`abort` function is a shortcut for generating HTTP error pages.
 
 ::
 
-    from bottle import route, abort
+    from veilchen import route, abort
     @route('/restricted')
     def restricted():
         abort(401, "Sorry, access denied.")
 
 To redirect a client to a different URL, you can send a ``303 See Other`` response with the ``Location`` header set to the new URL. :func:`redirect` does that for you::
 
-    from bottle import route, redirect
+    from veilchen import route, redirect
     @route('/wrong/url')
     def wrong():
         redirect("/right/url")
@@ -366,7 +366,7 @@ You may provide a different HTTP status code as a second parameter.
 
 .. rubric:: Other Exceptions
 
-All exceptions other than :exc:`HTTPResponse` or :exc:`HTTPError` will result in a ``500 Internal Server Error`` response, so they won't crash your WSGI server. You can turn off this behavior to handle exceptions in your middleware by setting ``bottle.app().catchall`` to ``False``.
+All exceptions other than :exc:`HTTPResponse` or :exc:`HTTPError` will result in a ``500 Internal Server Error`` response, so they won't crash your WSGI server. You can turn off this behavior to handle exceptions in your middleware by setting ``veilchen.app().catchall`` to ``False``.
 
 
 .. _tutorial-response:
@@ -472,7 +472,7 @@ Request Data
 
 Cookies, HTTP header, HTML ``<form>`` fields and other request data is available through the global :data:`request` object. This special object always refers to the *current* request, even in multi-threaded environments where multiple client connections are handled at the same time::
 
-  from bottle import request, route, template
+  from veilchen import request, route, template
 
   @route('/hello')
   def hello():
@@ -524,7 +524,7 @@ Bottle uses a special type of dictionary to store form data and cookies. :class:
       >>> request.query['city']
       'GÃ¶ttingen' # An utf8 string provisionally decoded as ISO-8859-1 by the server
       >>> request.query.city
-      'Göttingen'  # The same string correctly re-encoded as utf8 by bottle
+      'Göttingen'  # The same string correctly re-encoded as utf8 by veilchen
 
     If you need the whole dictionary with correctly decoded values (e.g. for WTForms), you can call :meth:`FormsDict.decode` to get a re-encoded copy.
 
@@ -536,7 +536,7 @@ Cookies are small pieces of text stored in the clients browser and sent back to 
 
 All cookies sent by the client are available through :attr:`BaseRequest.cookies` (a :class:`FormsDict`). This example shows a simple cookie-based view counter::
 
-  from bottle import route, request, response
+  from veilchen import route, request, response
   @route('/counter')
   def counter():
       count = int( request.cookies.get('counter', '0') )
@@ -551,7 +551,7 @@ HTTP Headers
 
 All HTTP headers sent by the client (e.g. ``Referer``, ``Agent`` or ``Accept-Language``) are stored in a :class:`WSGIHeaderDict` and accessible through the :attr:`BaseRequest.headers` attribute. A :class:`WSGIHeaderDict` is basically a dictionary with case-insensitive keys::
 
-  from bottle import route, request
+  from veilchen import route, request
   @route('/is_ajax')
   def is_ajax():
       if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -567,7 +567,7 @@ The query string (as in ``/forum?id=1&page=5``) is commonly used to transmit a s
 
 ::
 
-  from bottle import route, request, response, template
+  from veilchen import route, request, response, template
   @route('/forum')
   def display_forum():
       forum_id = request.query.id
@@ -592,7 +592,7 @@ The ``action`` attribute specifies the URL that will receive the form data. ``me
 
 Form fields transmitted via ``POST`` are stored in :attr:`BaseRequest.forms` as a :class:`FormsDict`. The server side code may look like this::
 
-    from bottle import route, request
+    from veilchen import route, request
 
     @route('/login')
     def login():
@@ -702,7 +702,7 @@ Bottle comes with a fast and powerful built-in template engine called :doc:`stpl
     def hello(name='World'):
         return template('hello_template', name=name)
 
-This will load the template file ``hello_template.tpl`` and render it with the ``name`` variable set. Bottle will look for templates in the ``./views/`` folder or any folder specified in the ``bottle.TEMPLATE_PATH`` list.
+This will load the template file ``hello_template.tpl`` and render it with the ``name`` variable set. Bottle will look for templates in the ``./views/`` folder or any folder specified in the ``veilchen.TEMPLATE_PATH`` list.
 
 The :func:`view` decorator allows you to return a dictionary with the template variables instead of calling :func:`template`::
 
@@ -730,7 +730,7 @@ Here is an example template::
 
 .. rubric:: Caching
 
-Templates are cached in memory after compilation. Modifications made to the template files will have no affect until you clear the template cache. Call ``bottle.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode.
+Templates are cached in memory after compilation. Modifications made to the template files will have no affect until you clear the template cache. Call ``veilchen.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode.
 
 .. highlight:: python
 
@@ -750,8 +750,8 @@ We have a growing :doc:`/plugins/index` and most plugins are designed to be port
 
 The effects and APIs of plugins are manifold and depend on the specific plugin. The ``SQLitePlugin`` plugin for example detects callbacks that require a ``db`` keyword argument and creates a fresh database connection object every time the callback is called. This makes it very convenient to use a database::
 
-    from bottle import route, install, template
-    from bottle_sqlite import SQLitePlugin
+    from veilchen import route, install, template
+    from veilchen_sqlite import SQLitePlugin
 
     install(SQLitePlugin(dbfile='/tmp/test.db'))
 
@@ -780,7 +780,7 @@ Let us take the ``SQLitePlugin`` plugin for example. It only affects route callb
 
 To install a plugin, just call :func:`install` with the plugin as first argument::
 
-    from bottle_sqlite import SQLitePlugin
+    from veilchen_sqlite import SQLitePlugin
     install(SQLitePlugin(dbfile='/tmp/test.db'))
 
 The plugin is not applied to the route callbacks yet. This is delayed to make sure no routes are missed. You can install plugins first and add routes later, if you want to. The order of installed plugins is significant, though. If a plugin requires a database connection, you need to install the database plugin first.
@@ -901,7 +901,7 @@ Separating the application object improves re-usability a lot, too. Other develo
 
 .. versionadded:: 0.13
 
-Starting with bottle-0.13 you can use :class:`Bottle` instances as context managers::
+Starting with veilchen-0.13 you can use :class:`Bottle` instances as context managers::
 
     app = Bottle()
 
@@ -934,7 +934,7 @@ During early development, the debug mode can be very helpful.
 
 ::
 
-    bottle.debug(True)
+    veilchen.debug(True)
 
 In this mode, Bottle is much more verbose and provides helpful debugging information whenever an error occurs. It also disables some optimisations that might get in your way and adds some checks that warn you about possible misconfiguration.
 
@@ -956,7 +956,7 @@ the newest version of your code.
 
 ::
 
-    from bottle import run
+    from veilchen import run
     run(reloader=True)
 
 How it works: the main process will not start a server, but spawn a new
@@ -982,13 +982,13 @@ Command Line Interface
 
 .. versionadded: 0.10
 
-Starting with version 0.10 you can use bottle as a command-line tool:
+Starting with version 0.10 you can use veilchen as a command-line tool:
 
 .. code-block:: console
 
-    $ python -m bottle
+    $ python -m veilchen
 
-    Usage: bottle.py [options] package.module:app
+    Usage: veilchen.py [options] package.module:app
 
     Options:
       -h, --help            show this help message and exit
@@ -1014,28 +1014,28 @@ Both plugins and applications are specified via import expressions. These consis
 
     # Grab the 'app' object from the 'myapp.controller' module and
     # start a paste server on port 80 on all interfaces.
-    python -m bottle -server paste -bind 0.0.0.0:80 myapp.controller:app
+    python -m veilchen -server paste -bind 0.0.0.0:80 myapp.controller:app
 
     # Start a self-reloading development server and serve the global
     # default application. The routes are defined in 'test.py'
-    python -m bottle --debug --reload test
+    python -m veilchen --debug --reload test
 
     # Install a custom debug plugin with some parameters
-    python -m bottle --debug --reload --plugin 'utils:DebugPlugin(exc=True)'' test
+    python -m veilchen --debug --reload --plugin 'utils:DebugPlugin(exc=True)'' test
 
     # Serve an application that is created with 'myapp.controller.make_app()'
     # on demand.
-    python -m bottle 'myapp.controller:make_app()''
+    python -m veilchen 'myapp.controller:make_app()''
 
 
 Deployment
 ================================================================================
 
-Bottle runs on the built-in `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_  by default. This non-threading HTTP server is perfectly fine for development, but may become a performance bottleneck when server load increases.
+Bottle runs on the built-in `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_  by default. This non-threading HTTP server is perfectly fine for development, but may become a performance veilchenneck when server load increases.
 
 The easiest way to increase performance is to install a multi-threaded server library like paste_ or cherrypy_ and tell Bottle to use that instead of the single-threaded server::
 
-    bottle.run(server='paste')
+    veilchen.run(server='paste')
 
 This, and many other deployment options are described in a separate article: :doc:`deployment`
 

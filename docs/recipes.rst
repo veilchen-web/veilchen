@@ -1,4 +1,4 @@
-.. module:: bottle
+.. module:: veilchen
 
 .. _beaker: https://beaker.readthedocs.io/en/latest/
 .. _mod_python: http://www.modpython.org/
@@ -7,7 +7,7 @@
 .. _paste: http://pythonpaste.org/modules/evalexception.html
 .. _pylons: http://pylonshq.com/
 .. _gevent: http://www.gevent.org/
-.. _compression: https://github.com/bottlepy/bottle/issues/92
+.. _compression: https://github.com/veilchenpy/veilchen/issues/92
 .. _GzipFilter: http://www.cherrypy.org/wiki/GzipFilter
 .. _cherrypy: http://www.cherrypy.org
 .. _heroku: http://heroku.com
@@ -22,7 +22,7 @@ Keeping track of Sessions
 
 There is no built-in support for sessions because there is no *right* way to do it (in a micro framework). Depending on requirements and environment you could use beaker_ middleware with a fitting backend or implement it yourself. Here is an example for beaker sessions with a file-based backend::
 
-    import bottle
+    import veilchen
     from beaker.middleware import SessionMiddleware
 
     session_opts = {
@@ -31,16 +31,16 @@ There is no built-in support for sessions because there is no *right* way to do 
         'session.data_dir': './data',
         'session.auto': True
     }
-    app = SessionMiddleware(bottle.app(), session_opts)
+    app = SessionMiddleware(veilchen.app(), session_opts)
 
-    @bottle.route('/test')
+    @veilchen.route('/test')
     def test():
-      s = bottle.request.environ.get('beaker.session')
+      s = veilchen.request.environ.get('beaker.session')
       s['test'] = s.get('test',0) + 1
       s.save()
       return 'Test counter: %d' % s['test']
 
-    bottle.run(app=app)
+    veilchen.run(app=app)
 
 WARNING: Beaker's SessionMiddleware is not thread safe.  If two concurrent requests modify the same session at the same time, one of the updates might get lost. For this reason, sessions should only be populated once and treated as a read-only store after that. If you find yourself updating sessions regularly, and don't want to risk losing any updates, think about using a real database instead or seek alternative session middleware libraries.
 
@@ -50,13 +50,13 @@ Debugging with Style: Debugging Middleware
 
 Bottle catches all Exceptions raised in your app code to prevent your WSGI server from crashing. If the built-in :func:`debug` mode is not enough and you need exceptions to propagate to a debugging middleware, you can turn off this behaviour::
 
-    import bottle
-    app = bottle.app() 
-    app.catchall = False #Now most exceptions are re-raised within bottle.
+    import veilchen
+    app = veilchen.app() 
+    app.catchall = False #Now most exceptions are re-raised within veilchen.
     myapp = DebuggingMiddleware(app) #Replace this with a middleware of your choice (see below)
-    bottle.run(app=myapp)
+    veilchen.run(app=myapp)
 
-Now, bottle only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can handle the rest.
+Now, veilchen only catches its own exceptions (:exc:`HTTPError`, :exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can handle the rest.
 
 The werkzeug_ and paste_ libraries both ship with very powerful debugging WSGI middleware. Look at :class:`werkzeug.debug.DebuggedApplication` for werkzeug_ and :class:`paste.evalexception.middleware.EvalException` for paste_. They both allow you do inspect the stack and even execute python code within the stack context, so **do not use them in production**.
 
@@ -68,14 +68,14 @@ Unit-testing is usually performed against methods defined in your web applicatio
 
 A simple example using `Nose <http://readthedocs.org/docs/nose>`_::
 
-    import bottle
+    import veilchen
     
-    @bottle.route('/')
+    @veilchen.route('/')
     def index():
         return 'Hi!'
 
     if __name__ == '__main__':
-        bottle.run()
+        veilchen.run()
 
 Test script::
 
@@ -86,13 +86,13 @@ Test script::
 
 In the example the Bottle route() method is never executed - only index() is tested.
 
-If the code being tested requires access to ``bottle.request`` you can mock it using `Boddle <https://github.com/keredson/boddle>`_::
+If the code being tested requires access to ``veilchen.request`` you can mock it using `Boddle <https://github.com/keredson/boddle>`_::
 
-    import bottle
+    import veilchen
     
-    @bottle.route('/')
+    @veilchen.route('/')
     def index():
-        return 'Hi %s!' % bottle.request.params['name']
+        return 'Hi %s!' % veilchen.request.params['name']
 
 Test script::
 
@@ -131,9 +131,9 @@ Example using `WebTest <http://webtest.pythonpaste.org/>`_ and `Nose <http://rea
 Embedding other WSGI Apps
 --------------------------------------------------------------------------------
 
-This is not the recommend way (you should use a middleware in front of bottle to do this) but you can call other WSGI applications from within your bottle app and let bottle act as a pseudo-middleware. Here is an example::
+This is not the recommend way (you should use a middleware in front of veilchen to do this) but you can call other WSGI applications from within your veilchen app and let veilchen act as a pseudo-middleware. Here is an example::
 
-    from bottle import request, response, route
+    from veilchen import request, response, route
     subproject = SomeWSGIApplication()
 
     @route('/subproject/<subpath:re:.*>', method='ANY')
@@ -147,7 +147,7 @@ This is not the recommend way (you should use a middleware in front of bottle to
                 response.add_header(key, value)
         return app(new_environ, start_response)
 
-Again, this is not the recommend way to implement subprojects. It is only here because many people asked for this and to show how bottle maps to WSGI.
+Again, this is not the recommend way to implement subprojects. It is only here because many people asked for this and to show how veilchen maps to WSGI.
 
 
 Ignore trailing slashes
@@ -168,9 +168,9 @@ add a WSGI middleware that strips trailing slashes from all URLs::
         e['PATH_INFO'] = e['PATH_INFO'].rstrip('/')
         return self.app(e,h)
     
-    app = bottle.app()
+    app = veilchen.app()
     myapp = StripPathMiddleware(app)
-    bottle.run(app=myapp)
+    veilchen.run(app=myapp)
 
 or add a ``before_request`` hook to strip the trailing slashes::
 
@@ -195,7 +195,7 @@ Several "push" mechanisms like XHR multipart need the ability to write response 
     from gevent import monkey; monkey.patch_all()
 
     import gevent
-    from bottle import route, run
+    from veilchen import route, run
     
     @route('/stream')
     def stream():
@@ -240,7 +240,7 @@ request. For example, if you want to allow Cross-Origin requests for your
 entire application, instead of writing a :doc:`plugin <plugin>` you can
 use hooks to add the appropiate headers::
 
-    from bottle import hook, response, HTTPResponse
+    from veilchen import hook, response, HTTPResponse
 
     cors_headers = {
         'Access-Control-Allow-Origin': '*',
@@ -277,7 +277,7 @@ section of the `Getting Started with Python on Heroku/Cedar
 <http://devcenter.heroku.com/articles/python>`_ guide::
 
     import os
-    from bottle import route, run
+    from veilchen import route, run
 
     @route("/")
     def hello_world():

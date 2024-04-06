@@ -23,7 +23,7 @@ def main():
         except ImportError:
             pass
 
-        from bottle import route, run
+        from veilchen import route, run
         route('/test', callback=lambda: 'OK')
         run(port=port, server=server, quiet=True)
 

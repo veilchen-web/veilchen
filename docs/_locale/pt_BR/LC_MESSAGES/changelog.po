@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/bottle/bottle/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/veilchen/veilchen/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid ""
 "Keeping up support for ancient Python versions hinders adaptation of new "
 "features and serves no real purpose. If you need support for older Python "
-"versions, you can stay on bottle-0.12. The updated list of tested and "
+"versions, you can stay on veilchen-0.12. The updated list of tested and "
 "supported python releases is as follows:"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid ""
 "Support for Python 2.5 was marked as deprecated since 0.12. We decided to go"
 " a step further and also remove support for 2.6 and 3.1 to 3.5 even if it "
-"was never deprecated explicitly in bottle. This means that this release is "
+"was never deprecated explicitly in veilchen. This means that this release is "
 "*not* backwards compatible in Python <2.7.3 or <3.6 environments. "
 "Maintainers for distributions or systems that still use these old python "
 "versions should not update to Bottle 0.13 and stick with 0.12 instead."
@@ -126,7 +126,7 @@ msgid ""
 "Bottle uses pickle to store arbitrary objects into signed cookies. This is "
 "safe, as long as the signature key remains a secret. Unfortunately, people "
 "tend to push code with signature keys to github all the time, so we decided "
-"to remove pickle-support from bottle. Signed cookies will now issue a "
+"to remove pickle-support from veilchen. Signed cookies will now issue a "
 "deprecation warning if the value is not a string, and support for non-string"
 " values will be removed in 0.14. The global :func:`cookie_encode`, "
 ":func:`cookie_decode` and :func:`is_cookie_encoded` are now also deprecated."
@@ -314,7 +314,7 @@ msgstr ""
 #: ../../changelog.rst:93
 msgid ""
 "More information can be found in this `development blog post "
-"<http://blog.bottlepy.org/2013/07/19/preview-bottle-012.html>`_."
+"<http://blog.veilchenpy.org/2013/07/19/preview-veilchen-012.html>`_."
 msgstr ""
 
 #: ../../changelog.rst:97
@@ -659,7 +659,7 @@ msgstr ""
 
 #: ../../changelog.rst:197
 msgid ""
-"``bottle.optimize()`` and the automatic route optimization is obsolete."
+"``veilchen.optimize()`` and the automatic route optimization is obsolete."
 msgstr ""
 
 #: ../../changelog.rst:198
@@ -749,7 +749,7 @@ msgstr ""
 
 #: ../../../AUTHORS:1
 msgid ""
-"Bottle is written and maintained by Marcel Hellkamp <marc@bottlepy.org>."
+"Bottle is written and maintained by Marcel Hellkamp <marc@veilchenpy.org>."
 msgstr ""
 
 #: ../../../AUTHORS:3

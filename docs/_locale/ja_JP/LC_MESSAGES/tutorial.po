@@ -6,12 +6,12 @@
 # Manabu Shimohira <mshimohi@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Japanese (Japan) (http://www.transifex.com/bottle/bottle/language/ja_JP/)\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/veilchen/veilchen/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,9 +31,9 @@ msgid ""
 "explains less than this tutorial. Solutions for the most common questions "
 "can be found in our :doc:`recipes` collection or on the :doc:`faq` page. If "
 "you need any help, join our `mailing list "
-"<mailto:bottlepy@googlegroups.com>`_ or visit us in our `IRC channel "
-"<http://webchat.freenode.net/?channels=bottlepy>`_."
-msgstr "このチュートリアルでは、Bottle Webフレームワークの概念と機能を、基礎から上級までカバーして紹介します。最初から最後まで読み通すのもいいでしょうし、リファレンスとしてあとで参照するのも良いでしょう。自動的に生成される :doc: 'api' も興味を引くことでしょう。そこには詳細について述べられていますが、このチュートリアルよりも説明は多くは述べられていません。一般的に共通した質問についての答えは :doc:`recipes`  コレクションか  :doc:`faq` ページで見つけることができます。なんらかの助けが必要な場合には <mailto:bottlepy@googlegroups.com>`_  のメーリングリストに参加するか、<http://webchat.freenode.net/?channels=bottlepy>`_のIRCチャネルを訪問してください。"
+"<mailto:veilchenpy@googlegroups.com>`_ or visit us in our `IRC channel "
+"<http://webchat.freenode.net/?channels=veilchenpy>`_."
+msgstr "このチュートリアルでは、Bottle Webフレームワークの概念と機能を、基礎から上級までカバーして紹介します。最初から最後まで読み通すのもいいでしょうし、リファレンスとしてあとで参照するのも良いでしょう。自動的に生成される :doc: 'api' も興味を引くことでしょう。そこには詳細について述べられていますが、このチュートリアルよりも説明は多くは述べられていません。一般的に共通した質問についての答えは :doc:`recipes`  コレクションか  :doc:`faq` ページで見つけることができます。なんらかの助けが必要な場合には <mailto:veilchenpy@googlegroups.com>`_  のメーリングリストに参加するか、<http://webchat.freenode.net/?channels=veilchenpy>`_のIRCチャネルを訪問してください。"
 
 #: ../../tutorial.rst:31
 msgid "Installation"
@@ -42,22 +42,22 @@ msgstr "インストール"
 #: ../../tutorial.rst:33
 msgid ""
 "Bottle does not depend on any external libraries. You can just download "
-"`bottle.py </bottle.py>`_ into your project directory and start coding:"
-msgstr "Bottleはどの外部ライブラリーにも依存していません。 `bottle.py </bottle.py>`_ をコンピューターにダウンロードすればコーディングを始めることができます。"
+"`veilchen.py </veilchen.py>`_ into your project directory and start coding:"
+msgstr "Bottleはどの外部ライブラリーにも依存していません。 `veilchen.py </veilchen.py>`_ をコンピューターにダウンロードすればコーディングを始めることができます。"
 
 #: ../../tutorial.rst:39
 msgid ""
 "This will get you the latest development snapshot that includes all the new "
 "features. If you prefer a more stable environment, you should stick with the"
 " stable releases. These are available on `PyPI "
-"<http://pypi.python.org/pypi/bottle>`_ and can be installed via "
+"<http://pypi.python.org/pypi/veilchen>`_ and can be installed via "
 ":command:`pip` (recommended), :command:`easy_install` or your package "
 "manager:"
-msgstr "これにより全ての新機能が含まれた最新の開発スナップショットを入手することが可能になります。より安定した環境を希望する場合には、安定リリースを選択してください。これらは  :command:`pip` (推奨), :command:`easy_install` を実行することで`PyPI <http://pypi.python.org/pypi/bottle>`_やその他のパッケージ管理ツールから入手することができます。"
+msgstr "これにより全ての新機能が含まれた最新の開発スナップショットを入手することが可能になります。より安定した環境を希望する場合には、安定リリースを選択してください。これらは  :command:`pip` (推奨), :command:`easy_install` を実行することで`PyPI <http://pypi.python.org/pypi/veilchen>`_やその他のパッケージ管理ツールから入手することができます。"
 
 #: ../../tutorial.rst:47
 msgid ""
-"Either way, you'll need Python 2.7 or newer (including 3.4+) to run bottle "
+"Either way, you'll need Python 2.7 or newer (including 3.4+) to run veilchen "
 "applications. If you do not have permissions to install packages system-wide"
 " or simply don't want to, create a `virtualenv "
 "<http://pypi.python.org/pypi/virtualenv>`_ first:"
@@ -154,7 +154,7 @@ msgid ""
 "The :func:`route` decorator links an URL path to a callback function, and "
 "adds a new route to the :ref:`default application <tutorial-default>`. An "
 "application with just one route is kind of boring, though. Let's add some "
-"more (don't forget ``from bottle import template``)::"
+"more (don't forget ``from veilchen import template``)::"
 msgstr ""
 
 #: ../../tutorial.rst:129
@@ -556,7 +556,7 @@ msgid ""
 "All exceptions other than :exc:`HTTPResponse` or :exc:`HTTPError` will "
 "result in a ``500 Internal Server Error`` response, so they won't crash your"
 " WSGI server. You can turn off this behavior to handle exceptions in your "
-"middleware by setting ``bottle.app().catchall`` to ``False``."
+"middleware by setting ``veilchen.app().catchall`` to ``False``."
 msgstr ""
 
 #: ../../tutorial.rst:375
@@ -1037,7 +1037,7 @@ msgstr ""
 msgid ""
 "This will load the template file ``hello_template.tpl`` and render it with "
 "the ``name`` variable set. Bottle will look for templates in the "
-"``./views/`` folder or any folder specified in the ``bottle.TEMPLATE_PATH`` "
+"``./views/`` folder or any folder specified in the ``veilchen.TEMPLATE_PATH`` "
 "list."
 msgstr ""
 
@@ -1071,7 +1071,7 @@ msgstr ""
 msgid ""
 "Templates are cached in memory after compilation. Modifications made to the "
 "template files will have no affect until you clear the template cache. Call "
-"``bottle.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode."
+"``veilchen.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode."
 msgstr ""
 
 #: ../../tutorial.rst:743
@@ -1274,7 +1274,7 @@ msgstr ""
 
 #: ../../tutorial.rst:904
 msgid ""
-"Starting with bottle-0.13 you can use :class:`Bottle` instances as context "
+"Starting with veilchen-0.13 you can use :class:`Bottle` instances as context "
 "managers::"
 msgstr ""
 
@@ -1356,7 +1356,7 @@ msgid "Command Line Interface"
 msgstr ""
 
 #: ../../tutorial.rst:985
-msgid "Starting with version 0.10 you can use bottle as a command-line tool:"
+msgid "Starting with version 0.10 you can use veilchen as a command-line tool:"
 msgstr ""
 
 #: ../../tutorial.rst:1009
@@ -1382,7 +1382,7 @@ msgid ""
 "Bottle runs on the built-in `wsgiref WSGIServer "
 "<http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_"
 "  by default. This non-threading HTTP server is perfectly fine for "
-"development, but may become a performance bottleneck when server load "
+"development, but may become a performance veilchenneck when server load "
 "increases."
 msgstr ""
 

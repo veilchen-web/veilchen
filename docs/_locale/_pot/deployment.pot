@@ -21,7 +21,7 @@ msgid "Deployment"
 msgstr ""
 
 #: ../../deployment.rst:29
-msgid "The bottle :func:`run` function, when called without any parameters, starts a local development server on port 8080. You can access and test your application via http://localhost:8080/ if you are on the same host."
+msgid "The veilchen :func:`run` function, when called without any parameters, starts a local development server on port 8080. You can access and test your application via http://localhost:8080/ if you are on the same host."
 msgstr ""
 
 #: ../../deployment.rst:31
@@ -33,7 +33,7 @@ msgid "Server Options"
 msgstr ""
 
 #: ../../deployment.rst:39
-msgid "The built-in default server is based on `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_. This non-threading HTTP server is perfectly fine for development, but may become a performance bottleneck when server load increases. There are three ways to eliminate this bottleneck:"
+msgid "The built-in default server is based on `wsgiref WSGIServer <http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_. This non-threading HTTP server is perfectly fine for development, but may become a performance veilchenneck when server load increases. There are three ways to eliminate this veilchenneck:"
 msgstr ""
 
 #: ../../deployment.rst:41
@@ -350,5 +350,5 @@ msgid "Good old CGI"
 msgstr ""
 
 #: ../../deployment.rst:223
-msgid "A CGI server starts a new process for each request. This adds a lot of overhead but is sometimes the only option, especially on cheap hosting packages. The `cgi` server adapter does not actually start a CGI server, but transforms your bottle application into a valid CGI application::"
+msgid "A CGI server starts a new process for each request. This adds a lot of overhead but is sometimes the only option, especially on cheap hosting packages. The `cgi` server adapter does not actually start a CGI server, but transforms your veilchen application into a valid CGI application::"
 msgstr ""

@@ -3,8 +3,8 @@
 
 import unittest
 import sys, os.path
-import bottle
-from bottle import FileUpload, BytesIO, tob
+import veilchen
+from veilchen import FileUpload, BytesIO, tob
 import tempfile
 
 class TestFileUpload(unittest.TestCase):
@@ -33,8 +33,8 @@ class TestFileUpload(unittest.TestCase):
         self.assertFilename('.name.cfg', 'name.cfg')
         self.assertFilename(' . na me . ', 'na-me')
         self.assertFilename('path/', 'empty')
-        self.assertFilename(bottle.tob('ümläüts$'), 'umlauts')
-        self.assertFilename(bottle.touni('ümläüts$'), 'umlauts')
+        self.assertFilename(veilchen.tob('ümläüts$'), 'umlauts')
+        self.assertFilename(veilchen.touni('ümläüts$'), 'umlauts')
         self.assertFilename('', 'empty')
         self.assertFilename('a'+'b'*1337+'c', 'a'+'b'*254)
 

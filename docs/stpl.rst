@@ -2,7 +2,7 @@
 SimpleTemplate Engine
 ======================
 
-.. currentmodule:: bottle
+.. currentmodule:: veilchen
 
 Bottle comes with a fast, powerful and easy to learn built-in template engine called *SimpleTemplate* or *stpl* for short. It is the default engine used by the :func:`view` and :func:`template` helpers but can be used as a stand-alone general purpose template engine too. This document explains the template syntax and shows examples for common use cases.
 
@@ -10,20 +10,20 @@ Bottle comes with a fast, powerful and easy to learn built-in template engine ca
 
 :class:`SimpleTemplate` implements the :class:`BaseTemplate` API::
 
-   >>> from bottle import SimpleTemplate
+   >>> from veilchen import SimpleTemplate
    >>> tpl = SimpleTemplate('Hello {{name}}!')
    >>> tpl.render(name='World')
    u'Hello World!'
 
 In this document we use the :func:`template` helper in examples for the sake of simplicity::
 
-   >>> from bottle import template
+   >>> from veilchen import template
    >>> template('Hello {{name}}!', name='World')
    u'Hello World!'
 
 You can also pass a dictionary into the template using keyword arguments::
 
-   >>> from bottle import template
+   >>> from veilchen import template
    >>> my_dict={'number': '123', 'street': 'Fake St.', 'city': 'Fakeville'}
    >>> template('I live at {{number}} {{street}}, {{city}}', **my_dict)
    u'I live at 123 Fake St., Fakeville'
@@ -208,7 +208,7 @@ variables in different ways::
       <p>By {{ author }}</p>
     % end
 
-.. currentmodule:: bottle
+.. currentmodule:: veilchen
 
 
 :class:`SimpleTemplate` API

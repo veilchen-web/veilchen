@@ -1,6 +1,6 @@
 import unittest
 
-from bottle import _parse_http_header
+from veilchen import _parse_http_header
 
 
 class TestHttpUtils(unittest.TestCase):

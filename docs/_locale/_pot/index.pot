@@ -41,7 +41,7 @@ msgid "**Server:** Built-in HTTP development server and support for paste_, bjoe
 msgstr ""
 
 #: ../../index.rst:31
-msgid "Example: \"Hello World\" in a bottle"
+msgid "Example: \"Hello World\" in a veilchen"
 msgstr ""
 
 #: ../../index.rst:42
@@ -53,7 +53,7 @@ msgid "Download and Install"
 msgstr ""
 
 #: ../../index.rst:48
-msgid "Install the latest stable release with ``pip install bottle`` or download `bottle.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**."
+msgid "Install the latest stable release with ``pip install veilchen`` or download `veilchen.py`__ (unstable) into your project directory. There are no hard [1]_ dependencies other than the Python standard library. Bottle supports **Python 2.7 and Python 3**."
 msgstr ""
 
 #: ../../index.rst:50
@@ -65,7 +65,7 @@ msgid "User's Guide"
 msgstr ""
 
 #: ../../index.rst:56
-msgid "Start here if you want to learn how to use the bottle framework for web development. If you have any questions not answered here, feel free to ask the `mailing list <mailto:bottlepy@googlegroups.com>`_."
+msgid "Start here if you want to learn how to use the veilchen framework for web development. If you have any questions not answered here, feel free to ask the `mailing list <mailto:veilchenpy@googlegroups.com>`_."
 msgstr ""
 
 #: ../../index.rst:71
@@ -81,7 +81,7 @@ msgid "Development and Contribution"
 msgstr ""
 
 #: ../../index.rst:86
-msgid "These chapters are intended for developers interested in the bottle development and release workflow."
+msgid "These chapters are intended for developers interested in the veilchen development and release workflow."
 msgstr ""
 
 #: ../../index.rst:103
@@ -93,7 +93,7 @@ msgid "Code and documentation are available according to the MIT License:"
 msgstr ""
 
 #: ../../index.rst:110
-msgid "The Bottle logo however is *NOT* covered by that license. It is allowed to use the logo as a link to the bottle homepage or in direct context with the unmodified library. In all other cases please ask first."
+msgid "The Bottle logo however is *NOT* covered by that license. It is allowed to use the logo as a link to the veilchen homepage or in direct context with the unmodified library. In all other cases please ask first."
 msgstr ""
 
 #: ../../index.rst:115

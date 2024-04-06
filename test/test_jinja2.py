@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
-from bottle import Jinja2Template, jinja2_template, jinja2_view, touni
+from veilchen import Jinja2Template, jinja2_template, jinja2_view, touni
 from .tools import warn, chdir
 
 
@@ -40,14 +40,14 @@ class TestJinja2Template(unittest.TestCase):
 
     def test_custom_filters(self):
         """Templates: jinja2 custom filters """
-        from bottle import jinja2_template as template
+        from veilchen import jinja2_template as template
         settings = dict(filters = {"star": lambda var: touni("").join((touni('*'), var, touni('*')))})
         t = Jinja2Template("start {{var|star}} end", **settings)
         self.assertEqual("start *var* end", t.render(var="var"))
 
     def test_custom_tests(self):
         """Templates: jinja2 custom tests """
-        from bottle import jinja2_template as template
+        from veilchen import jinja2_template as template
         TEMPL = touni("{% if var is even %}gerade{% else %}ungerade{% endif %}")
         settings = dict(tests={"even": lambda x: False if x % 2 else True})
         t = Jinja2Template(TEMPL, **settings)

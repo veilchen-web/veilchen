@@ -1,4 +1,4 @@
-.. module:: bottle
+.. module:: veilchen
 
 
 ========================
@@ -9,7 +9,7 @@ This guide explains the plugin API and how to write custom plugins. I suggest re
 
 .. note::
 
-    This is a draft. If you see any errors or find that a specific part is not explained clear enough, please tell the `mailing-list <mailto:bottlepy@googlegroups.com>`_ or file a `bug report <https://github.com/bottlepy/bottle/issues>`_.
+    This is a draft. If you see any errors or find that a specific part is not explained clear enough, please tell the `mailing-list <mailto:veilchenpy@googlegroups.com>`_ or file a `bug report <https://github.com/veilchenpy/veilchen/issues>`_.
 
 
 How Plugins Work: The Basics
@@ -19,7 +19,7 @@ The plugin API builds on the concept of `decorators <http://docs.python.org/glos
 
 This is just a simplification. Plugins can do a lot more than just decorating route callbacks, but it is a good starting point. Lets have a look at some code::
 
-    from bottle import response, install
+    from veilchen import response, install
     import time
 
     def stopwatch(callback):
@@ -47,7 +47,7 @@ The decorator API is quite limited, though. You don't know anything about the ro
 Plugin API
 ==========
 
-:class:`Plugin` is not a real class (you cannot import it from :mod:`bottle`) but an interface that plugins are expected to implement. Bottle accepts any object of any type as a plugin, as long as it conforms to the following API.
+:class:`Plugin` is not a real class (you cannot import it from :mod:`veilchen`) but an interface that plugins are expected to implement. Bottle accepts any object of any type as a plugin, as long as it conforms to the following API.
 
 .. class:: Plugin(object)
 
@@ -59,7 +59,7 @@ Plugin API
 
     .. attribute:: api
 
-        The Plugin API is still evolving. This integer attribute tells bottle which version to use. If it is missing, bottle defaults to the first version. The current version is ``2``. See :ref:`plugin-changelog` for details.
+        The Plugin API is still evolving. This integer attribute tells veilchen which version to use. If it is missing, veilchen defaults to the first version. The current version is ``2``. See :ref:`plugin-changelog` for details.
 
     .. method:: setup(self, app)
 
@@ -86,7 +86,7 @@ Both :meth:`Plugin.setup` and :meth:`Plugin.close` are *not* called for plugins 
 Plugin API changes
 ------------------
 
-The Plugin API is still evolving and changed with Bottle 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell bottle which API to use. The API differences are summarized here.
+The Plugin API is still evolving and changed with Bottle 0.10 to address certain issues with the route context dictionary. To ensure backwards compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` attribute to tell veilchen which API to use. The API differences are summarized here.
 
 * **Bottle 0.9 API 1** (:attr:`Plugin.api` not present)
 
@@ -218,7 +218,7 @@ This plugin provides an sqlite3 database connection handle as an additional keyw
 This plugin is actually useful and very similar to the version bundled with Bottle. Not bad for less than 60 lines of code, don't you think? Here is a usage example::
 
     sqlite = SQLitePlugin(dbfile='/tmp/test.db')
-    bottle.install(sqlite)
+    veilchen.install(sqlite)
 
     @route('/show/<page>')
     def show(page, db):

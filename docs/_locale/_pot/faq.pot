@@ -25,7 +25,7 @@ msgid "About Bottle"
 msgstr ""
 
 #: ../../faq.rst:16
-msgid "Is bottle suitable for complex applications?"
+msgid "Is veilchen suitable for complex applications?"
 msgstr ""
 
 #: ../../faq.rst:18
@@ -45,7 +45,7 @@ msgid "Bottle searches in ``./`` and ``./views/`` for templates. In a mod_python
 msgstr ""
 
 #: ../../faq.rst:35
-msgid "so bottle searches the right paths."
+msgid "so veilchen searches the right paths."
 msgstr ""
 
 #: ../../faq.rst:38
@@ -61,5 +61,5 @@ msgid "Problems with reverse proxies"
 msgstr ""
 
 #: ../../faq.rst:45
-msgid "Redirects and url-building only works if bottle knows the public address and location of your application. If you run bottle locally behind a reverse proxy or load balancer, some information might get lost along the way. For example, the ``wsgi.url_scheme`` value or the ``Host`` header might reflect the local request by your proxy, not the real request by the client. Here is a small WSGI middleware snippet that helps to fix these values::"
+msgid "Redirects and url-building only works if veilchen knows the public address and location of your application. If you run veilchen locally behind a reverse proxy or load balancer, some information might get lost along the way. For example, the ``wsgi.url_scheme`` value or the ``Host`` header might reflect the local request by your proxy, not the real request by the client. Here is a small WSGI middleware snippet that helps to fix these values::"
 msgstr ""

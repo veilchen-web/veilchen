@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/bottle/bottle/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/veilchen/veilchen/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,9 +30,9 @@ msgid ""
 "explains less than this tutorial. Solutions for the most common questions "
 "can be found in our :doc:`recipes` collection or on the :doc:`faq` page. If "
 "you need any help, join our `mailing list "
-"<mailto:bottlepy@googlegroups.com>`_ or visit us in our `IRC channel "
-"<http://webchat.freenode.net/?channels=bottlepy>`_."
-msgstr "这份教程将向你介绍Bottle的开发理念和功能特性。既介绍Bottle的基本用法，也包含了进阶用法。你可以从头到尾通读一遍，也可当做开发时的参考。你也许对自动生成的 :doc:`api` 感兴趣。它包含了更多的细节，但解释没有这份教程详细。在 :doc:`recipes` 或 :doc:`faq` 可找到常见问题的解决办法。如果需要任何帮助，可加入我们的 `邮件列表 <mailto:bottlepy@googlegroups.com>`_ 或在 `IRC频道 <http://webchat.freenode.net/?channels=bottlepy>`_ 和我们交流。"
+"<mailto:veilchenpy@googlegroups.com>`_ or visit us in our `IRC channel "
+"<http://webchat.freenode.net/?channels=veilchenpy>`_."
+msgstr "这份教程将向你介绍Bottle的开发理念和功能特性。既介绍Bottle的基本用法，也包含了进阶用法。你可以从头到尾通读一遍，也可当做开发时的参考。你也许对自动生成的 :doc:`api` 感兴趣。它包含了更多的细节，但解释没有这份教程详细。在 :doc:`recipes` 或 :doc:`faq` 可找到常见问题的解决办法。如果需要任何帮助，可加入我们的 `邮件列表 <mailto:veilchenpy@googlegroups.com>`_ 或在 `IRC频道 <http://webchat.freenode.net/?channels=veilchenpy>`_ 和我们交流。"
 
 #: ../../tutorial.rst:31
 msgid "Installation"
@@ -41,22 +41,22 @@ msgstr "安装"
 #: ../../tutorial.rst:33
 msgid ""
 "Bottle does not depend on any external libraries. You can just download "
-"`bottle.py </bottle.py>`_ into your project directory and start coding:"
-msgstr "Bottle不依赖其他库，你需要做的仅是下载 `bottle.py </bottle.py>`_ (开发版)到你的项目文件夹，然后开始写代码。"
+"`veilchen.py </veilchen.py>`_ into your project directory and start coding:"
+msgstr "Bottle不依赖其他库，你需要做的仅是下载 `veilchen.py </veilchen.py>`_ (开发版)到你的项目文件夹，然后开始写代码。"
 
 #: ../../tutorial.rst:39
 msgid ""
 "This will get you the latest development snapshot that includes all the new "
 "features. If you prefer a more stable environment, you should stick with the"
 " stable releases. These are available on `PyPI "
-"<http://pypi.python.org/pypi/bottle>`_ and can be installed via "
+"<http://pypi.python.org/pypi/veilchen>`_ and can be installed via "
 ":command:`pip` (recommended), :command:`easy_install` or your package "
 "manager:"
-msgstr "在终端运行以上命令，即可下载到Bottle的最新开发版，包含了所有新功能特性。如果更需要稳定性，你应该坚持使用Bottle的稳定版本。可在 `PyPI <http://pypi.python.org/pypi/bottle>`_ 下载稳定版本，然后通过 :command:`pip` (推荐), :command:`easy_install` 或你的包管理软件安装。"
+msgstr "在终端运行以上命令，即可下载到Bottle的最新开发版，包含了所有新功能特性。如果更需要稳定性，你应该坚持使用Bottle的稳定版本。可在 `PyPI <http://pypi.python.org/pypi/veilchen>`_ 下载稳定版本，然后通过 :command:`pip` (推荐), :command:`easy_install` 或你的包管理软件安装。"
 
 #: ../../tutorial.rst:47
 msgid ""
-"Either way, you'll need Python 2.7 or newer (including 3.4+) to run bottle "
+"Either way, you'll need Python 2.7 or newer (including 3.4+) to run veilchen "
 "applications. If you do not have permissions to install packages system-wide"
 " or simply don't want to, create a `virtualenv "
 "<http://pypi.python.org/pypi/virtualenv>`_ first:"
@@ -75,7 +75,7 @@ msgid ""
 "This tutorial assumes you have Bottle either :ref:`installed <installation>`"
 " or copied into your project directory. Let's start with a very basic "
 "\"Hello World\" example::"
-msgstr "到目前为止，我假设你已经 :ref:`安装 <installation>` 好了bottle或已将bottle.py拷贝到你的项目文件夹。接下来我们就可以写一个非常简单的\"Hello World\"了::"
+msgstr "到目前为止，我假设你已经 :ref:`安装 <installation>` 好了veilchen或已将veilchen.py拷贝到你的项目文件夹。接下来我们就可以写一个非常简单的\"Hello World\"了::"
 
 #: ../../tutorial.rst:79
 msgid ""
@@ -153,7 +153,7 @@ msgid ""
 "The :func:`route` decorator links an URL path to a callback function, and "
 "adds a new route to the :ref:`default application <tutorial-default>`. An "
 "application with just one route is kind of boring, though. Let's add some "
-"more (don't forget ``from bottle import template``)::"
+"more (don't forget ``from veilchen import template``)::"
 msgstr ""
 
 #: ../../tutorial.rst:129
@@ -555,8 +555,8 @@ msgid ""
 "All exceptions other than :exc:`HTTPResponse` or :exc:`HTTPError` will "
 "result in a ``500 Internal Server Error`` response, so they won't crash your"
 " WSGI server. You can turn off this behavior to handle exceptions in your "
-"middleware by setting ``bottle.app().catchall`` to ``False``."
-msgstr "除了 :exc:`HTTPResponse` 或 :exc:`HTTPError` 以外的其他异常，都会导致500错误，所以不会造成WSGI服务器崩溃。你将 ``bottle.app().catchall`` 的值设为 ``False`` 来关闭这种行为，以便在你的中间件中处理异常。"
+"middleware by setting ``veilchen.app().catchall`` to ``False``."
+msgstr "除了 :exc:`HTTPResponse` 或 :exc:`HTTPError` 以外的其他异常，都会导致500错误，所以不会造成WSGI服务器崩溃。你将 ``veilchen.app().catchall`` 的值设为 ``False`` 来关闭这种行为，以便在你的中间件中处理异常。"
 
 #: ../../tutorial.rst:375
 msgid "The :class:`Response` Object"
@@ -1036,9 +1036,9 @@ msgstr "Bottle内置了一个快速的，强大的模板引擎，称为 :doc:`st
 msgid ""
 "This will load the template file ``hello_template.tpl`` and render it with "
 "the ``name`` variable set. Bottle will look for templates in the "
-"``./views/`` folder or any folder specified in the ``bottle.TEMPLATE_PATH`` "
+"``./views/`` folder or any folder specified in the ``veilchen.TEMPLATE_PATH`` "
 "list."
-msgstr "这会加载 ``hello_template.tpl`` 模板文件，并提供 ``name`` 变量。默认情况，Bottle会在 ``./views/`` 目录查找模板文件(译者注：或当前目录)。可在 ``bottle.TEMPLATE_PATH`` 这个列表中添加更多的模板路径。"
+msgstr "这会加载 ``hello_template.tpl`` 模板文件，并提供 ``name`` 变量。默认情况，Bottle会在 ``./views/`` 目录查找模板文件(译者注：或当前目录)。可在 ``veilchen.TEMPLATE_PATH`` 这个列表中添加更多的模板路径。"
 
 #: ../../tutorial.rst:707
 msgid ""
@@ -1070,8 +1070,8 @@ msgstr "缓存"
 msgid ""
 "Templates are cached in memory after compilation. Modifications made to the "
 "template files will have no affect until you clear the template cache. Call "
-"``bottle.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode."
-msgstr "模板在经过编译后被缓存在内存里。你在修改模板文件后，要调用 ``bottle.TEMPLATES.clear()`` 函数清除缓存才能看到效果。在debug模式下，缓存被禁用了，无需手动清除缓存。"
+"``veilchen.TEMPLATES.clear()`` to do so. Caching is disabled in debug mode."
+msgstr "模板在经过编译后被缓存在内存里。你在修改模板文件后，要调用 ``veilchen.TEMPLATES.clear()`` 函数清除缓存才能看到效果。在debug模式下，缓存被禁用了，无需手动清除缓存。"
 
 #: ../../tutorial.rst:743
 msgid "Plugins"
@@ -1273,7 +1273,7 @@ msgstr "分离应用对象，大大提高了可重用性。其他开发者可安
 
 #: ../../tutorial.rst:904
 msgid ""
-"Starting with bottle-0.13 you can use :class:`Bottle` instances as context "
+"Starting with veilchen-0.13 you can use :class:`Bottle` instances as context "
 "managers::"
 msgstr ""
 
@@ -1355,7 +1355,7 @@ msgid "Command Line Interface"
 msgstr "命令行接口"
 
 #: ../../tutorial.rst:985
-msgid "Starting with version 0.10 you can use bottle as a command-line tool:"
+msgid "Starting with version 0.10 you can use veilchen as a command-line tool:"
 msgstr "从0.10版本开始，你可像一个命令行工具那样使用Bottle:"
 
 #: ../../tutorial.rst:1009
@@ -1381,7 +1381,7 @@ msgid ""
 "Bottle runs on the built-in `wsgiref WSGIServer "
 "<http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server>`_"
 "  by default. This non-threading HTTP server is perfectly fine for "
-"development, but may become a performance bottleneck when server load "
+"development, but may become a performance veilchenneck when server load "
 "increases."
 msgstr ""
 

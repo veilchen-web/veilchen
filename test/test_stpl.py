@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import with_statement
 import unittest
-from bottle import SimpleTemplate, TemplateError, view, template, touni, tob, html_quote
+from veilchen import SimpleTemplate, TemplateError, view, template, touni, tob, html_quote
 import re, os
 import traceback
 from .tools import chdir

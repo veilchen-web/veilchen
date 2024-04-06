@@ -1,7 +1,7 @@
 from __future__ import with_statement
 import unittest
 from .tools import warn, chdir
-from bottle import MakoTemplate, mako_template, mako_view, touni
+from veilchen import MakoTemplate, mako_template, mako_view, touni
 
 class TestMakoTemplate(unittest.TestCase):
     def test_string(self):

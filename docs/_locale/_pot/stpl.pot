@@ -172,10 +172,10 @@ msgstr ""
 msgid ":class:`SimpleTemplate` API"
 msgstr ""
 
-#: ../../../bottle.py:docstring of bottle.SimpleTemplate.prepare:1
+#: ../../../veilchen.py:docstring of veilchen.SimpleTemplate.prepare:1
 msgid "Run preparations (parsing, caching, ...). It should be possible to call this again to refresh a template or to update settings."
 msgstr ""
 
-#: ../../../bottle.py:docstring of bottle.SimpleTemplate.render:1
+#: ../../../veilchen.py:docstring of veilchen.SimpleTemplate.render:1
 msgid "Render the template using keyword arguments as local variables."
 msgstr ""

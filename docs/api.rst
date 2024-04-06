@@ -2,12 +2,12 @@
 API Reference
 ==============================
 
-.. module:: bottle
+.. module:: veilchen
    :platform: Unix, Windows
    :synopsis: WSGI micro framework
 .. moduleauthor:: Marcel Hellkamp <marc@gsites.de>
 
-This is a mostly auto-generated API. If you are new to bottle, you might find the
+This is a mostly auto-generated API. If you are new to veilchen, you might find the
 narrative :doc:`tutorial` more helpful.
 
 
@@ -134,7 +134,7 @@ The :class:`Request` class wraps a WSGI environment and provides helpful methods
 .. autoclass:: BaseRequest
    :members:
 
-The module-level :data:`bottle.request` is a proxy object (implemented in :class:`LocalRequest`) and always refers to the `current` request, or in other words, the request that is currently processed by the request handler in the current thread. This `thread locality` ensures that you can safely use a global instance in a multi-threaded environment.
+The module-level :data:`veilchen.request` is a proxy object (implemented in :class:`LocalRequest`) and always refers to the `current` request, or in other words, the request that is currently processed by the request handler in the current thread. This `thread locality` ensures that you can safely use a global instance in a multi-threaded environment.
 
 .. autoclass:: LocalRequest
    :members:
@@ -145,7 +145,7 @@ The module-level :data:`bottle.request` is a proxy object (implemented in :class
 The :class:`Response` Object
 ===================================================
 
-The :class:`Response` class stores the HTTP status code as well as headers and cookies that are to be sent to the client. Similar to :data:`bottle.request` there is a thread-local :data:`bottle.response` instance that can be used to adjust the `current` response. Moreover, you can instantiate :class:`Response` and return it from your request handler. In this case, the custom instance overrules the headers and cookies defined in the global one.
+The :class:`Response` class stores the HTTP status code as well as headers and cookies that are to be sent to the client. Similar to :data:`veilchen.request` there is a thread-local :data:`veilchen.response` instance that can be used to adjust the `current` response. Moreover, you can instantiate :class:`Response` and return it from your request handler. In this case, the custom instance overrules the headers and cookies defined in the global one.
 
 .. autoclass:: Response
    :members:
@@ -157,7 +157,7 @@ The :class:`Response` class stores the HTTP status code as well as headers and c
    :members:
 
 
-The following two classes can be raised as an exception. The most noticeable difference is that bottle invokes error handlers for :class:`HTTPError`, but not for :class:`HTTPResponse` or other response types.
+The following two classes can be raised as an exception. The most noticeable difference is that veilchen invokes error handlers for :class:`HTTPError`, but not for :class:`HTTPResponse` or other response types.
 
 .. autoexception:: HTTPResponse
    :members:
@@ -171,7 +171,7 @@ The following two classes can be raised as an exception. The most noticeable dif
 Templates
 =========
 
-All template engines supported by :mod:`bottle` implement the :class:`BaseTemplate` API. This way it is possible to switch and mix template engines without changing the application code at all.
+All template engines supported by :mod:`veilchen` implement the :class:`BaseTemplate` API. This way it is possible to switch and mix template engines without changing the application code at all.
 
 .. autoclass:: BaseTemplate
    :members:
@@ -195,5 +195,5 @@ Class                      URL                               Decorator          
 
 To use :class:`MakoTemplate` as your default template engine, just import its specialised decorator and render function::
 
-  from bottle import mako_view as view, mako_template as template
+  from veilchen import mako_view as view, mako_template as template
 

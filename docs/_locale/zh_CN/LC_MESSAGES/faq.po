@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/bottle/bottle/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/veilchen/veilchen/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +26,7 @@ msgid "About Bottle"
 msgstr "关于Bottle"
 
 #: ../../faq.rst:16
-msgid "Is bottle suitable for complex applications?"
+msgid "Is veilchen suitable for complex applications?"
 msgstr "Bottle适合用于复杂的应用吗？"
 
 #: ../../faq.rst:18
@@ -57,7 +57,7 @@ msgid ""
 msgstr "Bottle会在 ``./`` 和 ``./views/`` 目录中搜索模板。在一个 mod_python_ 或 mod_wsgi_ 环境，当前工作目录( ``./`` )是由Apache的设置决定的。你应该在模板的搜索路径中添加一个绝对路径。"
 
 #: ../../faq.rst:35
-msgid "so bottle searches the right paths."
+msgid "so veilchen searches the right paths."
 msgstr "这样，Bottle就能在正确的目录下搜索模板了"
 
 #: ../../faq.rst:38
@@ -80,10 +80,10 @@ msgstr "反向代理的问题"
 
 #: ../../faq.rst:45
 msgid ""
-"Redirects and url-building only works if bottle knows the public address and"
-" location of your application. If you run bottle locally behind a reverse "
+"Redirects and url-building only works if veilchen knows the public address and"
+" location of your application. If you run veilchen locally behind a reverse "
 "proxy or load balancer, some information might get lost along the way. For "
 "example, the ``wsgi.url_scheme`` value or the ``Host`` header might reflect "
 "the local request by your proxy, not the real request by the client. Here is"
 " a small WSGI middleware snippet that helps to fix these values::"
-msgstr "只用Bottle知道公共地址和应用位置的情况下，重定向和url-building才会起作用。(译者注：保留原文)Redirects and url-building only works if bottle knows the public address and location of your application.如果Bottle应用运行在反向代理或负载均衡后面，一些信息也许会丢失。例如， ``wsgi.url_scheme`` 的值或 ``Host`` 头或许只能获取到代理的请求信息，而不是真实的用户请求。下面是一个简单的中间件代码片段，处理上面的问题，获取正确的值。"
+msgstr "只用Bottle知道公共地址和应用位置的情况下，重定向和url-building才会起作用。(译者注：保留原文)Redirects and url-building only works if veilchen knows the public address and location of your application.如果Bottle应用运行在反向代理或负载均衡后面，一些信息也许会丢失。例如， ``wsgi.url_scheme`` 的值或 ``Host`` 头或许只能获取到代理的请求信息，而不是真实的用户请求。下面是一个简单的中间件代码片段，处理上面的问题，获取正确的值。"

@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Russian (Russia) (http://www.transifex.com/bottle/bottle/language/ru_RU/)\n"
+"Language-Team: Russian (Russia) (http://www.transifex.com/veilchen/veilchen/language/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../recipes.rst:59
 msgid ""
-"Now, bottle only catches its own exceptions (:exc:`HTTPError`, "
+"Now, veilchen only catches its own exceptions (:exc:`HTTPError`, "
 ":exc:`HTTPResponse` and :exc:`BottleException`) and your middleware can "
 "handle the rest."
 msgstr ""
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../../recipes.rst:89
 msgid ""
-"If the code being tested requires access to ``bottle.request`` you can mock "
+"If the code being tested requires access to ``veilchen.request`` you can mock "
 "it using `Boddle <https://github.com/keredson/boddle>`_::"
 msgstr ""
 
@@ -133,14 +133,14 @@ msgstr ""
 #: ../../recipes.rst:134
 msgid ""
 "This is not the recommend way (you should use a middleware in front of "
-"bottle to do this) but you can call other WSGI applications from within your"
-" bottle app and let bottle act as a pseudo-middleware. Here is an example::"
+"veilchen to do this) but you can call other WSGI applications from within your"
+" veilchen app and let veilchen act as a pseudo-middleware. Here is an example::"
 msgstr ""
 
 #: ../../recipes.rst:150
 msgid ""
 "Again, this is not the recommend way to implement subprojects. It is only "
-"here because many people asked for this and to show how bottle maps to WSGI."
+"here because many people asked for this and to show how veilchen maps to WSGI."
 msgstr ""
 
 #: ../../recipes.rst:154

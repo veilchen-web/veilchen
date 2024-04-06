@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/bottle/bottle/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/veilchen/veilchen/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,9 +33,9 @@ msgstr "这份指南介绍了插件的API，以及如何编写自己的插件。
 msgid ""
 "This is a draft. If you see any errors or find that a specific part is not "
 "explained clear enough, please tell the `mailing-list "
-"<mailto:bottlepy@googlegroups.com>`_ or file a `bug report "
-"<https://github.com/bottlepy/bottle/issues>`_."
-msgstr "这是一份初稿。如果你发现了任何错误，或某些部分解释的不够清楚，请通过 `邮件列表 <mailto:bottlepy@googlegroups.com>`_ 或  `bug report <https://github.com/bottlepy/bottle/issues>`_ 告知。"
+"<mailto:veilchenpy@googlegroups.com>`_ or file a `bug report "
+"<https://github.com/veilchenpy/veilchen/issues>`_."
+msgstr "这是一份初稿。如果你发现了任何错误，或某些部分解释的不够清楚，请通过 `邮件列表 <mailto:veilchenpy@googlegroups.com>`_ 或  `bug report <https://github.com/veilchenpy/veilchen/issues>`_ 告知。"
 
 #: ../../plugindev.rst:16
 msgid "How Plugins Work: The Basics"
@@ -108,10 +108,10 @@ msgstr "插件API"
 #: ../../plugindev.rst:50
 msgid ""
 ":class:`Plugin` is not a real class (you cannot import it from "
-":mod:`bottle`) but an interface that plugins are expected to implement. "
+":mod:`veilchen`) but an interface that plugins are expected to implement. "
 "Bottle accepts any object of any type as a plugin, as long as it conforms to"
 " the following API."
-msgstr "``Plugin`` 类不是一个真正的类(你不能从bottle中导入它)，它只是一个插件需要实现的接口。只要一个对象实现了以下接口，Bottle就认可它作为一个插件。"
+msgstr "``Plugin`` 类不是一个真正的类(你不能从veilchen中导入它)，它只是一个插件需要实现的接口。只要一个对象实现了以下接口，Bottle就认可它作为一个插件。"
 
 #: ../../plugindev.rst:54
 msgid ""
@@ -129,8 +129,8 @@ msgstr ":meth:`Bottle.uninstall` 方法和 :meth:`Bottle.route()` 中的 `skip` 
 
 #: ../../plugindev.rst:62
 msgid ""
-"The Plugin API is still evolving. This integer attribute tells bottle which "
-"version to use. If it is missing, bottle defaults to the first version. The "
+"The Plugin API is still evolving. This integer attribute tells veilchen which "
+"version to use. If it is missing, veilchen defaults to the first version. The "
 "current version is ``2``. See :ref:`plugin-changelog` for details."
 msgstr "插件的API还在逐步改进。这个整形数告诉Bottle使用哪个版本的插件。如果没有这个属性，Bottle默认使用第一个版本。当前版本是 ``2`` 。详见 :ref:`plugin-changelog` 。"
 
@@ -180,7 +180,7 @@ msgid ""
 "The Plugin API is still evolving and changed with Bottle 0.10 to address "
 "certain issues with the route context dictionary. To ensure backwards "
 "compatibility with 0.9 Plugins, we added an optional :attr:`Plugin.api` "
-"attribute to tell bottle which API to use. The API differences are "
+"attribute to tell veilchen which API to use. The API differences are "
 "summarized here."
 msgstr "插件的API还在不断改进中。在Bottle 0.10版本中的改动，定位了route上下文字典中已确定的问题。为了保持对0.9版本插件的兼容，我们添加了一个可选的 :attr:`Plugin.api` 属性，告诉Bottle使用哪个版本的API。API之间的不同点总结如下。"
 

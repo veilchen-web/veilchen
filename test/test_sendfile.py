@@ -1,6 +1,6 @@
 import unittest
-from bottle import static_file, request, response, parse_date, parse_range_header, Bottle, tob
-import bottle
+from veilchen import static_file, request, response, parse_date, parse_range_header, Bottle, tob
+import veilchen
 import wsgiref.util
 import os
 import tempfile
@@ -9,8 +9,8 @@ import time
 basename = os.path.basename(__file__)
 root = os.path.dirname(__file__)
 
-basename2 = os.path.basename(bottle.__file__)
-root2 = os.path.dirname(bottle.__file__)
+basename2 = os.path.basename(veilchen.__file__)
+root2 = os.path.dirname(veilchen.__file__)
 
 
 weekday_full = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -21,7 +21,7 @@ class TestDateParser(unittest.TestCase):
     def test_rfc1123(self):
         """DateParser: RFC 1123 format"""
         ts = time.time()
-        rs = bottle.http_date(ts)
+        rs = veilchen.http_date(ts)
         self.assertEqual(int(ts), int(parse_date(rs)))
 
     def test_rfc850(self):
@@ -87,12 +87,12 @@ class TestSendFile(unittest.TestCase):
 
     def test_ims(self):
         """ SendFile: If-Modified-Since"""
-        request.environ['HTTP_IF_MODIFIED_SINCE'] = bottle.http_date(time.time())
+        request.environ['HTTP_IF_MODIFIED_SINCE'] = veilchen.http_date(time.time())
         res = static_file(basename, root=root)
         self.assertEqual(304, res.status_code)
         self.assertEqual(int(os.stat(__file__).st_mtime), parse_date(res.headers['Last-Modified']))
         self.assertAlmostEqual(int(time.time()), parse_date(res.headers['Date']))
-        request.environ['HTTP_IF_MODIFIED_SINCE'] = bottle.http_date(100)
+        request.environ['HTTP_IF_MODIFIED_SINCE'] = veilchen.http_date(100)
         self.assertEqual(open(__file__,'rb').read(), static_file(basename, root=root).body.read())
 
     def test_ims_empty(self):
@@ -127,7 +127,7 @@ class TestSendFile(unittest.TestCase):
 
         f = static_file(basename, root=root, download=True)
         self.assertEqual('attachment; filename="%s"' % basename, f.headers['Content-Disposition'])
-        request.environ['HTTP_IF_MODIFIED_SINCE'] = bottle.http_date(100)
+        request.environ['HTTP_IF_MODIFIED_SINCE'] = veilchen.http_date(100)
 
         f = static_file(basename, root=root)
         self.assertEqual(open(__file__,'rb').read(), f.body.read())

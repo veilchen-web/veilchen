@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../../configuration.rst:8
 msgid ""
-"This is a draft for a new API. `Tell us <mailto:bottlepy@googlegroups.com>`_"
+"This is a draft for a new API. `Tell us <mailto:veilchenpy@googlegroups.com>`_"
 " what you think."
 msgstr ""
 
@@ -176,46 +176,46 @@ msgstr ""
 msgid "API Documentation"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict:1
 msgid ""
 "A dict-like configuration storage with additional support for namespaces, "
 "validators, meta-data, on_change listeners and more."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:1
 msgid "Load values from an ``*.ini`` style config file."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_config:3
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_config:3
 msgid ""
 "If the config file contains sections, their names are used as namespaces for"
-" the values within. The two special sections ``DEFAULT`` and ``bottle`` "
+" the values within. The two special sections ``DEFAULT`` and ``veilchen`` "
 "refer to the root namespace (no prefix)."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.load_dict:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.load_dict:1
 msgid ""
 "Load values from a dictionary structure. Nesting can be used to represent "
 "namespaces."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.update:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.update:1
 msgid ""
 "If the first parameter is a string, all keys are prefixed with this "
 "namespace. Apart from that it works just as the usual dict.update(). "
 "Example: ``update('some.namespace', key='value')``"
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_get:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_get:1
 msgid "Return the value of a meta field for a key."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_set:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_set:1
 msgid ""
 "Set the meta field for a key to a new value. This triggers the on-change "
 "handler for existing keys."
 msgstr ""
 
-#: ../../../bottle.pydocstring of bottle.ConfigDict.meta_list:1
+#: ../../../veilchen.pydocstring of veilchen.ConfigDict.meta_list:1
 msgid "Return an iterable of meta field names defined for a key."
 msgstr ""

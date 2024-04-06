@@ -1,6 +1,6 @@
 import tempfile
 import unittest
-from bottle import ConfigDict
+from veilchen import ConfigDict
 
 
 class TestConfDict(unittest.TestCase):
@@ -170,7 +170,7 @@ class TestINIConfigLoader(unittest.TestCase):
                                                        delete=True)
         self.config_file.write(b'[DEFAULT]\n'
                                b'default: 45\n'
-                               b'[bottle]\n'
+                               b'[veilchen]\n'
                                b'port = 8080\n'
                                b'[ROOT]\n'
                                b'namespace.key = test\n'

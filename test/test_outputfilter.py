@@ -2,8 +2,8 @@
 '''Everything returned by Bottle()._cast() MUST be WSGI compatiple.'''
 
 import unittest
-import bottle
-from bottle import tob, touni
+import veilchen
+from veilchen import tob, touni
 from .tools import ServerTestBase, tobs, warn
 
 USING_UJSON = True
@@ -42,7 +42,7 @@ class TestOutputFilter(ServerTestBase):
         self.assertInBody('Unhandled exception')
 
     def test_error(self):
-        bottle.debug(True)
+        veilchen.debug(True)
         self.app.route('/')(lambda: 1/0)
         self.assertStatus(500)
         self.assertInBody('ZeroDivisionError')
@@ -65,20 +65,20 @@ class TestOutputFilter(ServerTestBase):
 
         @self.app.route('/')
         def test5():
-            bottle.response.content_type='text/html; charset=iso-8859-15'
+            veilchen.response.content_type='text/html; charset=iso-8859-15'
             return touni('äöüß')
         self.assertBody(touni('äöüß').encode('iso-8859-15'))
 
         @self.app.route('/')
         def test5():
-            bottle.response.content_type='text/html'
+            veilchen.response.content_type='text/html'
             return touni('äöüß')
         self.assertBody(touni('äöüß').encode('utf8'))
 
     def test_json(self):
         self.app.route('/')(lambda: {'a': 1})
 
-        self.assertBody(bottle.json_dumps({'a': 1}))
+        self.assertBody(veilchen.json_dumps({'a': 1}))
         self.assertHeader('Content-Type','application/json')
 
     @unittest.skipIf(USING_UJSON, 'ujson do not throw exception in serialize')
@@ -94,22 +94,22 @@ class TestOutputFilter(ServerTestBase):
 
 
     def test_json_HTTPResponse(self):
-        self.app.route('/')(lambda: bottle.HTTPResponse({'a': 1}, 500))
+        self.app.route('/')(lambda: veilchen.HTTPResponse({'a': 1}, 500))
 
-        self.assertBody(bottle.json_dumps({'a': 1}))
+        self.assertBody(veilchen.json_dumps({'a': 1}))
         self.assertHeader('Content-Type','application/json')
 
     def test_json_HTTPError(self):
         self.app.error(400)(lambda e: e.body)
-        self.app.route('/')(lambda: bottle.HTTPError(400, {'a': 1}))
+        self.app.route('/')(lambda: veilchen.HTTPError(400, {'a': 1}))
 
-        self.assertBody(bottle.json_dumps({'a': 1}))
+        self.assertBody(veilchen.json_dumps({'a': 1}))
         self.assertHeader('Content-Type','application/json')
 
     def test_generator_callback(self):
         @self.app.route('/')
         def test():
-            bottle.response.headers['Test-Header'] = 'test'
+            veilchen.response.headers['Test-Header'] = 'test'
             yield 'foo'
         self.assertBody('foo')
         self.assertHeader('Test-Header', 'test')
@@ -118,7 +118,7 @@ class TestOutputFilter(ServerTestBase):
         @self.app.route('/')
         def test():
             yield
-            bottle.response.headers['Test-Header'] = 'test'
+            veilchen.response.headers['Test-Header'] = 'test'
         self.assertBody('')
         self.assertHeader('Test-Header', 'test')
 
@@ -140,7 +140,7 @@ class TestOutputFilter(ServerTestBase):
         @self.app.route('/')
         def test():
             yield
-            bottle.abort(404, 'teststring')
+            veilchen.abort(404, 'teststring')
         self.assertInBody('teststring')
         self.assertInBody('404 Not Found')
         self.assertStatus(404)
@@ -148,7 +148,7 @@ class TestOutputFilter(ServerTestBase):
     def test_httpresponse_in_generator_callback(self):
         @self.app.route('/')
         def test():
-            yield bottle.HTTPResponse('test')
+            yield veilchen.HTTPResponse('test')
         self.assertBody('test')
 
     def test_unicode_generator_callback(self):
@@ -183,10 +183,10 @@ class TestOutputFilter(ServerTestBase):
 
     def test_cookie(self):
         """ WSGI: Cookies """
-        @bottle.route('/cookie')
+        @veilchen.route('/cookie')
         def test():
-            bottle.response.set_cookie('b', 'b')
-            bottle.response.set_cookie('c', 'c', path='/')
+            veilchen.response.set_cookie('b', 'b')
+            veilchen.response.set_cookie('c', 'c', path='/')
             return 'hello'
         try:
             c = self.urlopen('/cookie')['header'].get_all('Set-Cookie', '')

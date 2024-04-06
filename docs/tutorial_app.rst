@@ -1,4 +1,4 @@
-.. _Bottle: http://bottle.paws.org
+.. _Bottle: http://veilchen.paws.org
 .. _Python: http://www.python.org
 .. _SQLite: http://www.sqlite.org
 .. _Windows: http://www.sqlite.org/download.html
@@ -10,7 +10,7 @@
 .. _Flup: https://www.saddi.com/software/flup/
 .. _Paste: https://pythonpaste.readthedocs.io
 .. _Apache: http://www.apache.org
-.. _`Bottle documentation`: http://bottlepy.org/docs/dev/tutorial.html
+.. _`Bottle documentation`: http://veilchenpy.org/docs/dev/tutorial.html
 .. _`mod_wsgi`: http://code.google.com/p/modwsgi/
 .. _`json`: http://www.json.org
 
@@ -55,7 +55,7 @@ Before We Start...
 
 Assuming that you have a fairly new installation of Python (version 2.5 or higher), you only need to install Bottle in addition to that. Bottle has no other dependencies than Python itself.
 
-You can either manually install Bottle or use Python's easy_install: ``easy_install bottle``
+You can either manually install Bottle or use Python's easy_install: ``easy_install veilchen``
 
 
 .. rubric:: Further Software Necessities
@@ -93,7 +93,7 @@ Basically, each page visible in the browser is dynamically generated when the pa
 So, after understanding the concept of routes, let's create the first one. The goal is to see all open items from the ToDo list::
 
     import sqlite3
-    from bottle import route, run
+    from veilchen import route, run
 
     @route('/todo')
     def todo_list():
@@ -107,7 +107,7 @@ So, after understanding the concept of routes, let's create the first one. The g
 
 Save the code a ``todo.py``, preferably in the same directory as the file ``todo.db``. Otherwise, you need to add the path to ``todo.db`` in the ``sqlite3.connect()`` statement.
 
-Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Bottle we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Bottle's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Bottle returns the result of the function ``todo_list()``. That is how routing within bottle works.
+Let's have a look what we just did: We imported the necessary module ``sqlite3`` to access to SQLite database and from Bottle we imported ``route`` and ``run``. The ``run()`` statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported ``route``, which is the function responsible for Bottle's routing. As you can see, we defined one function, ``todo_list()``, with a few lines of code reading from the database. The important point is the `decorator statement`_ ``@route('/todo')`` right before the ``def todo_list()`` statement. By doing this, we bind this function to the route ``/todo``, so every time the browsers calls ``http://localhost:8080/todo``, Bottle returns the result of the function ``todo_list()``. That is how routing within veilchen works.
 
 Actually you can bind more than one route to a function. So the following code::
 
@@ -135,7 +135,7 @@ So, in the next step we format the output in a nicer way. But before we do that,
 
 Maybe you already noticed that Bottle sends a short error message to the browser in case something within the script is wrong, e.g. the connection to the database is not working. For debugging purposes it is quite helpful to get more details. This can be easily achieved by adding the following statement to the script::
 
-    from bottle import run, route, debug
+    from veilchen import run, route, debug
     ...
     #add this at the very end:
     debug(True)
@@ -172,7 +172,7 @@ Right here, we are going to cast the result of our query showing the open ToDo i
 
 To include the template in our example, just add the following lines::
 
-    from bottle import route, run, debug, template
+    from veilchen import route, run, debug, template
     ...
     result = c.fetchall()
     c.close()
@@ -215,7 +215,7 @@ As we can review all open items properly, we move to the next step, which is add
 
 To do so, we first add a new route to our script and tell the route that it should get GET data::
 
-    from bottle import route, run, debug, template, request
+    from veilchen import route, run, debug, template, request
     ...
     return template('make_table', rows=result)
     ...
@@ -347,7 +347,7 @@ Using dynamic routes is fine, but for many cases it makes sense to validate the 
 
 For those cases, Bottle offers the ``<name:int>`` wildcard filter, which matches (signed) digits and converts the value to integer. In order to apply the wildcard filter, extend the code as follows::
 
-    from bottle import route, run, debug, template, request
+    from veilchen import route, run, debug, template, request
     ...
     @route('/edit/<no:int>', method='GET')
     def edit_item(no):
@@ -384,7 +384,7 @@ The line ``@route(/item<item:re:[0-9]+>)`` starts like a normal route, but the t
 
 Sometimes it may become necessary to associate a route not to a Python function, but just return a static file. So if you have for example a help page for your application, you may want to return this page as plain HTML. This works as follows::
 
-    from bottle import route, run, debug, template, request, static_file
+    from veilchen import route, run, debug, template, request, static_file
 
     @route('/help')
     def help():
@@ -422,7 +422,7 @@ The next step may is to catch the error with Bottle itself, to keep away any typ
 
 In our case, we want to catch a 403 error. The code is as follows::
 
-    from bottle import error
+    from veilchen import error
 
     @error(403)
     def mistake(code):
@@ -483,13 +483,13 @@ The ``port`` and ``host`` parameter can also be applied when Bottle is running w
 
 .. rubric:: Running Bottle with a different server
 
-As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a bottleneck, as it is single-threaded, thus it can only serve one request at a time.
+As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a veilchenneck, as it is single-threaded, thus it can only serve one request at a time.
 
 But Bottle has already various adapters to multi-threaded servers on board, which perform better on higher load. Bottle supports Cherrypy_, Flup_ and Paste_.
 
 If you want to run for example Bottle with the Paste server, use the following code::
 
-    from bottle import PasteServer
+    from veilchen import PasteServer
     ...
     run(server=PasteServer)
 
@@ -510,14 +510,14 @@ When you run your application via mod_wsgi, it is imperative to remove the ``run
 
 After that, create a file called ``adapter.wsgi`` with the following content::
 
-    import sys, os, bottle
+    import sys, os, veilchen
 
     sys.path = ['/var/www/todo/'] + sys.path
     os.chdir(os.path.dirname(__file__))
 
     import todo # This loads your application
 
-    application = bottle.default_app()
+    application = veilchen.default_app()
 
 and save it in the same path, ``/var/www/todo``. Actually the name of the file can be anything, as long as the extension is ``.wsgi``. The name is only used to reference the file from your virtual host.
 
@@ -554,10 +554,10 @@ As the ToDo list example was developed piece by piece, here is the complete list
 Main code for the application ``todo.py``::
 
     import sqlite3
-    from bottle import route, run, debug, template, request, static_file, error
+    from veilchen import route, run, debug, template, request, static_file, error
 
     # only needed when you run Bottle on mod_wsgi
-    from bottle import default_app
+    from veilchen import default_app
 
 
     @route('/todo')

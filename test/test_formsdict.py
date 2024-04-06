@@ -2,7 +2,7 @@
 # '瓶' means "Bottle"
 
 import unittest
-from bottle import FormsDict, touni, tob
+from veilchen import FormsDict, touni, tob
 
 class TestFormsDict(unittest.TestCase):
     def test_attr_access(self):

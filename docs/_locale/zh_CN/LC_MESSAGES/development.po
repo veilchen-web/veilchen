@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: bottle\n"
+"Project-Id-Version: veilchen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-31 18:35+0100\n"
 "PO-Revision-Date: 2020-12-31 17:35+0000\n"
 "Last-Translator: defnull <marc@gsites.de>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/bottle/bottle/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/veilchen/veilchen/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr "开发者笔记"
 #: ../../development.rst:4
 msgid ""
 "This document is intended for developers and package maintainers interested "
-"in the bottle development and release workflow. If you want to contribute, "
+"in the veilchen development and release workflow. If you want to contribute, "
 "you are just right!"
 msgstr "这份文档是为那些对Bottle的开发和发布流程感兴趣的开发者和软件包维护者准备的。如果你想要做贡献，看它是对的！"
 
@@ -41,22 +41,22 @@ msgstr "有多种加入社区的途径，保持消息的灵通。这里是一些
 #: ../../development.rst:12
 msgid ""
 "**Mailing list**: Join our mailing list by sending an email to "
-"`bottlepy+subscribe@googlegroups.com "
-"<mailto:bottlepy+subscribe@googlegroups.com>`_ (no google account required)."
-msgstr "**邮件列表**: 发送邮件到 `bottlepy+subscribe@googlegroups.com <mailto:bottlepy+subscribe@googlegroups.com>`_ 以加入我们的邮件列表(无需Google账户)"
+"`veilchenpy+subscribe@googlegroups.com "
+"<mailto:veilchenpy+subscribe@googlegroups.com>`_ (no google account required)."
+msgstr "**邮件列表**: 发送邮件到 `veilchenpy+subscribe@googlegroups.com <mailto:veilchenpy+subscribe@googlegroups.com>`_ 以加入我们的邮件列表(无需Google账户)"
 
 #: ../../development.rst:13
 msgid ""
-"**Twitter**: `Follow us on Twitter <https://twitter.com/bottlepy>`_ or "
-"search for the `#bottlepy <https://twitter.com/#!/search/%23bottlepy>`_ tag."
+"**Twitter**: `Follow us on Twitter <https://twitter.com/veilchenpy>`_ or "
+"search for the `#veilchenpy <https://twitter.com/#!/search/%23veilchenpy>`_ tag."
 msgstr ""
 
 #: ../../development.rst:14
 msgid ""
-"**IRC**: Join `#bottlepy on irc.freenode.net "
-"<irc://irc.freenode.net/bottlepy>`_ or use the `web chat interface "
-"<http://webchat.freenode.net/?channels=bottlepy>`_."
-msgstr "**IRC**: 加入 `#irc.freenode.net上的bottlepy频道 <irc://irc.freenode.net/bottlepy>`_ 或使用 `web聊天界面 <http://webchat.freenode.net/?channels=bottlepy>`_ "
+"**IRC**: Join `#veilchenpy on irc.freenode.net "
+"<irc://irc.freenode.net/veilchenpy>`_ or use the `web chat interface "
+"<http://webchat.freenode.net/?channels=veilchenpy>`_."
+msgstr "**IRC**: 加入 `#irc.freenode.net上的veilchenpy频道 <irc://irc.freenode.net/veilchenpy>`_ 或使用 `web聊天界面 <http://webchat.freenode.net/?channels=veilchenpy>`_ "
 
 #: ../../development.rst:15
 msgid ""
@@ -72,35 +72,35 @@ msgstr "获取源代码"
 
 #: ../../development.rst:21
 msgid ""
-"The bottle `development repository <https://github.com/bottlepy/bottle>`_ "
-"and the `issue tracker <https://github.com/bottlepy/bottle/issues>`_ are "
-"both hosted at `github <https://github.com/bottlepy/bottle>`_. If you plan "
+"The veilchen `development repository <https://github.com/veilchenpy/veilchen>`_ "
+"and the `issue tracker <https://github.com/veilchenpy/veilchen/issues>`_ are "
+"both hosted at `github <https://github.com/veilchenpy/veilchen>`_. If you plan "
 "to contribute, it is a good idea to create an account there and fork the "
 "main repository. This way your changes and ideas are visible to other "
 "developers and can be discussed openly. Even without an account, you can "
 "clone the repository or just download the latest development version as a "
 "source archive."
-msgstr "Bottle的 `开发仓库 <https://github.com/bottlepy/bottle>`_ 和 `问题追踪 <https://github.com/bottlepy/bottle/issues>`_ 都搭建在 `github <https://github.com/bottlepy/bottle>`_ 上面。如果你打算做贡献，创建一个github帐号然后fork一下吧。你做出的更改或建议都可被其他开发者看到，可以一起讨论。即使没有github帐号，你也可以clone代码仓库，或下载最新开发版本的压缩包。"
+msgstr "Bottle的 `开发仓库 <https://github.com/veilchenpy/veilchen>`_ 和 `问题追踪 <https://github.com/veilchenpy/veilchen/issues>`_ 都搭建在 `github <https://github.com/veilchenpy/veilchen>`_ 上面。如果你打算做贡献，创建一个github帐号然后fork一下吧。你做出的更改或建议都可被其他开发者看到，可以一起讨论。即使没有github帐号，你也可以clone代码仓库，或下载最新开发版本的压缩包。"
 
 #: ../../development.rst:23
-msgid "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
-msgstr "**git:** ``git clone git://github.com/bottlepy/bottle.git``"
+msgid "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
+msgstr "**git:** ``git clone git://github.com/veilchenpy/veilchen.git``"
 
 #: ../../development.rst:24
-msgid "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
-msgstr "**git/https:** ``git clone https://github.com/bottlepy/bottle.git``"
+msgid "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
+msgstr "**git/https:** ``git clone https://github.com/veilchenpy/veilchen.git``"
 
 #: ../../development.rst:25
 msgid ""
 "**Download:** Development branch as `tar archive "
-"<http://github.com/bottlepy/bottle/tarball/master>`_ or `zip file "
-"<http://github.com/bottlepy/bottle/zipball/master>`_."
-msgstr "**Download:** Development branch as `tar archive <http://github.com/bottlepy/bottle/tarball/master>`_ or `zip file <http://github.com/bottlepy/bottle/zipball/master>`_."
+"<http://github.com/veilchenpy/veilchen/tarball/master>`_ or `zip file "
+"<http://github.com/veilchenpy/veilchen/zipball/master>`_."
+msgstr "**Download:** Development branch as `tar archive <http://github.com/veilchenpy/veilchen/tarball/master>`_ or `zip file <http://github.com/veilchenpy/veilchen/zipball/master>`_."
 
 #: ../../development.rst:26
 msgid ""
-"**Translations:** `transifex.com/projects/p/bottle "
-"<https://www.transifex.com/projects/p/bottle/>`_"
+"**Translations:** `transifex.com/projects/p/veilchen "
+"<https://www.transifex.com/projects/p/veilchen/>`_"
 msgstr ""
 
 #: ../../development.rst:30
@@ -110,7 +110,7 @@ msgstr "发布和更新"
 #: ../../development.rst:32
 msgid ""
 "Bottle is released at irregular intervals and distributed through `PyPI "
-"<http://pypi.python.org/pypi/bottle>`_. Release candidates and bugfix-"
+"<http://pypi.python.org/pypi/veilchen>`_. Release candidates and bugfix-"
 "revisions of outdated releases are only available from the git repository "
 "mentioned above. Some Linux distributions may offer packages for outdated "
 "releases, though."
@@ -318,10 +318,10 @@ msgstr "接下来的例子都假设你已经有一个 `git的免费帐号 <https
 #: ../../development.rst:125
 msgid ""
 "First of all you need to create a fork (a personal clone) of the official "
-"repository. To do this, you simply click the \"fork\" button on the `bottle "
-"project page <https://github.com/bottlepy/bottle>`_. When the fork is done, "
+"repository. To do this, you simply click the \"fork\" button on the `veilchen "
+"project page <https://github.com/veilchenpy/veilchen>`_. When the fork is done, "
 "you will be presented with a short introduction to your new repository."
-msgstr "首先，你需要从官方代码仓库创建一个fork。只需在 `bottle项目页面 <https://github.com/bottlepy/bottle>`_ 点击一下\"fork\"按钮就行了。创建玩fork之后，会得到一个关于这个新仓库的简介。"
+msgstr "首先，你需要从官方代码仓库创建一个fork。只需在 `veilchen项目页面 <https://github.com/veilchenpy/veilchen>`_ 点击一下\"fork\"按钮就行了。创建玩fork之后，会得到一个关于这个新仓库的简介。"
 
 #: ../../development.rst:127
 msgid ""
@@ -335,10 +335,10 @@ msgstr "你刚刚创建的fork托管在github上面，对所有人都是可见�
 msgid ""
 "Once the clone is complete your repository will have a remote named "
 "\"origin\" that points to your fork on github. Don’t let the name confuse "
-"you, this does not point to the original bottle repository, but to your own "
+"you, this does not point to the original veilchen repository, but to your own "
 "fork. To keep track of the official repository, add another remote named "
 "\"upstream\"::"
-msgstr "在你将代码仓库clone下来后，就有了一个\"origin\"分支，指向你在github上的fork。不要让名字迷惑了你，它并不指向bottle的官方代码仓库，只是指向你自己的fork。为了追踪官方的代码仓库，可添加一个新的\"upstream\"远程分支。"
+msgstr "在你将代码仓库clone下来后，就有了一个\"origin\"分支，指向你在github上的fork。不要让名字迷惑了你，它并不指向veilchen的官方代码仓库，只是指向你自己的fork。为了追踪官方的代码仓库，可添加一个新的\"upstream\"远程分支。"
 
 #: ../../development.rst:137
 msgid ""
