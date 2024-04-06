@@ -1,19 +1,8 @@
-.. image:: http://bottlepy.org/docs/dev/_static/logo_nav.png
-  :target: http://bottlepy.org/
-  :alt: Bottle Logo
+.. image:: https://raw.githubusercontent.com/veilchen-web/logos/main/veilchen-white.jpg
+  :target: https://github.com/veilchen-web/veilchen
+  :alt: Veilchen Logo
+  :scale: 5%
   :align: right
-
-.. image:: https://github.com/bottlepy/bottle/workflows/Tests/badge.svg
-    :target: https://github.com/bottlepy/bottle/workflows/Tests
-    :alt: Tests Status
-
-.. image:: https://img.shields.io/pypi/v/bottle.svg
-    :target: https://pypi.python.org/pypi/bottle/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/l/bottle.svg
-    :target: https://pypi.python.org/pypi/bottle/
-    :alt: License
 
 .. _jinja2: http://jinja.pocoo.org/
 .. _bjoern: https://github.com/jonashaag/bjoern
