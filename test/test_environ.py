@@ -504,15 +504,10 @@ class TestResponse(unittest.TestCase):
             result = [v for (h, v) in rs.headerlist if h.lower()=='x-test'][0]
             self.assertEqual(wire, result)
 
-        if veilchen.py3k:
-            cmp(1, tonat('1', 'latin1'))
-            cmp('öäü', 'öäü'.encode('utf8').decode('latin1'))
+        cmp(1, tonat('1', 'latin1'))
+        cmp('öäü', 'öäü'.encode('utf8').decode('latin1'))
             # Dropped byte header support in Python 3:
             #cmp(tob('äöü'), 'äöü'.encode('utf8').decode('latin1'))
-        else:
-            cmp(1, '1')
-            cmp('öäü', 'öäü')
-            cmp(touni('äöü'), 'äöü')
 
     def test_set_status(self):
         rs = BaseResponse()
@@ -584,12 +579,11 @@ class TestResponse(unittest.TestCase):
         self.assertEqual(rs.status_line, '404 Brain not Found') # last value
 
         # Unicode in status line (thanks RFC7230 :/)
-        if veilchen.py3k:
-            rs.status = '400 Non-ASÎÎ'
-            self.assertEqual(rs.status, rs.status_line)
-            self.assertEqual(rs.status_code, 400)
-            wire = rs._wsgi_status_line().encode('latin1')
-            self.assertEqual(rs.status, wire.decode('utf8'))
+        rs.status = '400 Non-ASÎÎ'
+        self.assertEqual(rs.status, rs.status_line)
+        self.assertEqual(rs.status_code, 400)
+        wire = rs._wsgi_status_line().encode('latin1')
+        self.assertEqual(rs.status, wire.decode('utf8'))
 
     def test_content_type(self):
         rs = BaseResponse()

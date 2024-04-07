@@ -104,8 +104,8 @@ class TestWsgi(ServerTestBase):
 
     def test_utf8_header(self):
         header = 'öäü'
-        if veilchen.py3k:
-            header = header.encode('utf8').decode('latin1')
+        header = header.encode('utf8').decode('latin1')
+
         @veilchen.route('/test')
         def test():
             h = veilchen.request.get_header('X-Test')
