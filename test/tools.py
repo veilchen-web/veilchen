@@ -12,7 +12,7 @@ import wsgiref.validate
 import mimetypes
 import uuid
 
-from veilchen import tob, tonat, BytesIO, unicode
+from veilchen import tob, BytesIO, unicode
 
 
 def warn(msg):
