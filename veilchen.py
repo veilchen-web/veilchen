@@ -72,6 +72,7 @@ from datetime import date as datedate, datetime, timedelta
 from tempfile import NamedTemporaryFile
 from traceback import format_exc, print_exc
 from unicodedata import normalize
+from functools import cached_property
 
 try:
     from ujson import dumps as json_dumps, loads as json_lds
@@ -183,21 +184,6 @@ class DictProperty(object):
     def __delete__(self, obj):
         if self.read_only: raise AttributeError("Read-Only property.")
         del getattr(obj, self.attr)[self.key]
-
-
-class cached_property(object):
-    """ A property that is only computed once per instance and then replaces
-        itself with an ordinary attribute. Deleting the attribute resets the
-        property. """
-
-    def __init__(self, func):
-        update_wrapper(self, func)
-        self.func = func
-
-    def __get__(self, obj, cls):
-        if obj is None: return self
-        value = obj.__dict__[self.func.__name__] = self.func(obj)
-        return value
 
 
 class lazy_attribute(object):
