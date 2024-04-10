@@ -104,9 +104,6 @@ json_loads = lambda s: json_lds(touni(s))
 callable = lambda x: hasattr(x, '__call__')
 imap = map
 
-def _raise(*a):
-    raise a[0](a[1]).with_traceback(a[2])
-
 # Some helpers for string/byte handling
 def tob(s, enc='utf8'):
     if isinstance(s, unicode):
@@ -666,7 +663,7 @@ class Veilchen(object):
 
                 def start_response(status, headerlist, exc_info=None):
                     if exc_info:
-                        _raise(*exc_info)
+                        raise exc_info[1].with_traceback(exc_info[2])
 
                     # Errors here mean that the mounted WSGI app did not
                     # follow PEP-3333 (which requires latin1) or used a
@@ -2219,10 +2216,8 @@ class WSGIHeaderDict(DictMixin):
     def __getitem__(self, key):
         val = self.environ[self._ekey(key)]
         if isinstance(val, unicode):
-            val = val.encode('latin1').decode('utf8')
-        else:
-            val = val.decode('utf8')
-        return val
+            return val.encode('latin1').decode('utf8')
+        return val.decode('utf8')
 
     def __setitem__(self, key, value):
         raise TypeError("%s is read-only." % self.__class__)
@@ -2328,8 +2323,7 @@ class ConfigDict(dict):
 
         """
         options.setdefault('allow_no_value', True)
-        options.setdefault('interpolation',
-                           configparser.ExtendedInterpolation())
+        options.setdefault('interpolation', configparser.ExtendedInterpolation())
         conf = configparser.ConfigParser(**options)
         conf.read(filename)
         for section in conf.sections():
@@ -3282,8 +3276,8 @@ class FapwsServer(ServerAdapter):
         evwsgi.start(self.host, port)
         # fapws3 never releases the GIL. Complain upstream. I tried. No luck.
         if 'BOTTLE_CHILD' in os.environ and not self.quiet:
-            _stderr("WARNING: Auto-reloading does not work with Fapws3.")
-            _stderr("         (Fapws3 breaks python thread support)")
+            print("WARNING: Auto-reloading does not work with Fapws3.", file=sys.stderr)
+            print("         (Fapws3 breaks python thread support)", file=sys.stderr)
         evwsgi.set_base_module(base)
 
         def app(environ, start_response):
@@ -3627,14 +3621,14 @@ def run(app=None,
 
         server.quiet = server.quiet or quiet
         if not server.quiet:
-            _stderr("Veilchen v%s server starting up (using %s)..." %
-                    (__version__, repr(server)))
+            print("Veilchen v%s server starting up (using %s)..." %
+                  (__version__, repr(server)), file=sys.stderr)
             if server.host.startswith("unix:"):
-                _stderr("Listening on %s" % server.host)
+                print("Listening on %s" % server.host, file=sys.stderr)
             else:
-                _stderr("Listening on http://%s:%d/" %
-                        (server.host, server.port))
-            _stderr("Hit Ctrl-C to quit.\n")
+                print("Listening on http://%s:%d/" %
+                        (server.host, server.port), file=sys.stderr)
+            print("Hit Ctrl-C to quit.\n", file=sys.stderr)
 
         if reloader:
             lockfile = os.environ.get('BOTTLE_LOCKFILE')
