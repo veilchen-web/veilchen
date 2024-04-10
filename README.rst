@@ -4,6 +4,10 @@
   :scale: 5%
   :align: right
 
+.. image:: https://readthedocs.org/projects/veilchen/badge/?version=latest
+   :target: https://veilchen.readthedocs.io/en/latest/
+   :alt: Documentation Status
+
 .. _jinja2: http://jinja.pocoo.org/
 .. _bjoern: https://github.com/jonashaag/bjoern
 .. _WSGI: https://wsgi.readthedocs.io/
