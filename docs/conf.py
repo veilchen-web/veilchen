@@ -8,8 +8,13 @@ veilchen_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 sys.path.insert(0, veilchen_dir)
 import veilchen
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
-              'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc',
+              'sphinx.ext.intersphinx',
+              'sphinx.ext.viewcode',
+              'sphinx_rtd_theme',]
+
+html_theme = "sphinx_rtd_theme"
+
 master_doc = 'index'
 project = u'Veilchen'
 copyright = u'2009-%s, %s' % (time.strftime('%Y'), veilchen.__author__)
@@ -24,5 +29,3 @@ intersphinx_mapping = {'python': ('http://docs.python.org/', None),
 
 locale_dirs = ['_locale/']
 gettext_compact = False
-
-
