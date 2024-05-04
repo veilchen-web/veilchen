@@ -114,9 +114,6 @@ def touni(s, enc='utf8', err='strict'):
     return str("" if s is None else s)
 
 
-tonat = touni
-
-
 def _stderr(*args):
     try:
         print(*args, file=sys.stderr)
