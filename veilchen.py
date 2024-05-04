@@ -98,13 +98,12 @@ def getargspec(func):
     kwargs = makelist(spec[0]) + makelist(spec.kwonlyargs)
     return kwargs, spec[1], spec[2], spec[3]
 
-unicode = str
 json_loads = lambda s: json_lds(touni(s))
 callable = lambda x: hasattr(x, '__call__')
 
 # Some helpers for string/byte handling
 def tob(s, enc='utf8'):
-    if isinstance(s, unicode):
+    if isinstance(s, str):
         return s.encode(enc)
     return b'' if s is None else bytes(s)
 
@@ -112,7 +111,7 @@ def tob(s, enc='utf8'):
 def touni(s, enc='utf8', err='strict'):
     if isinstance(s, bytes):
         return s.decode(enc, err)
-    return unicode("" if s is None else s)
+    return str("" if s is None else s)
 
 
 tonat = touni
@@ -979,10 +978,10 @@ class Veilchen(object):
             return []
         # Join lists of byte or unicode strings. Mixed lists are NOT supported
         if isinstance(out, (tuple, list))\
-        and isinstance(out[0], (bytes, unicode)):
+        and isinstance(out[0], (bytes, str)):
             out = out[0][0:0].join(out)  # b'abc'[0:0] -> b''
         # Encode unicode strings
-        if isinstance(out, unicode):
+        if isinstance(out, str):
             out = out.encode(response.charset)
         # Byte Strings are just returned
         if isinstance(out, bytes):
@@ -1028,7 +1027,7 @@ class Veilchen(object):
             return self._cast(first)
         elif isinstance(first, bytes):
             new_iter = itertools.chain([first], iout)
-        elif isinstance(first, unicode):
+        elif isinstance(first, str):
             encoder = lambda x: x.encode(response.charset)
             new_iter = map(encoder, itertools.chain([first], iout))
         else:
@@ -2114,7 +2113,7 @@ class FormsDict(MultiDict):
     recode_unicode = True
 
     def _fix(self, s, encoding=None):
-        if isinstance(s, unicode) and self.recode_unicode:  # Python 3 WSGI
+        if isinstance(s, str) and self.recode_unicode:  # Python 3 WSGI
             return s.encode('latin1').decode(encoding or self.input_encoding)
         elif isinstance(s, bytes):  # Python 2 WSGI
             return s.decode(encoding or self.input_encoding)
@@ -2139,7 +2138,7 @@ class FormsDict(MultiDict):
         except (UnicodeError, KeyError):
             return default
 
-    def __getattr__(self, name, default=unicode()):
+    def __getattr__(self, name, default=""):
         # Without this guard, pickle generates a cryptic TypeError:
         if name.startswith('__') and name.endswith('__'):
             return super(FormsDict, self).__getattr__(name)
@@ -2213,7 +2212,7 @@ class WSGIHeaderDict(DictMixin):
 
     def __getitem__(self, key):
         val = self.environ[self._ekey(key)]
-        if isinstance(val, unicode):
+        if isinstance(val, str):
             return val.encode('latin1').decode('utf8')
         return val.decode('utf8')
 
@@ -2671,7 +2670,7 @@ class FileUpload(object):
             or dashes are removed. The filename is limited to 255 characters.
         """
         fname = self.raw_filename
-        if not isinstance(fname, unicode):
+        if not isinstance(fname, str):
             fname = fname.decode('utf8', 'ignore')
         fname = normalize('NFKD', fname)
         fname = fname.encode('ASCII', 'ignore').decode('ASCII')

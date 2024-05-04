@@ -12,7 +12,7 @@ import wsgiref.validate
 import mimetypes
 import uuid
 
-from veilchen import tob, BytesIO, unicode
+from veilchen import tob, BytesIO
 
 
 def warn(msg):
@@ -175,7 +175,7 @@ def multipart_environ(fields, files):
         body += 'Content-Type: %s\n\n' % mimetype
         body += content + '\n'
     body += boundary + '--\n'
-    if isinstance(body, unicode):
+    if isinstance(body, str):
         body = body.encode('utf8')
     env['CONTENT_LENGTH'] = str(len(body))
     env['wsgi.input'].write(body)
