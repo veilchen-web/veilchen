@@ -3776,50 +3776,6 @@ class BaseTemplate(object):
         """
         raise NotImplementedError
 
-
-class MakoTemplate(BaseTemplate):
-    def prepare(self, **options):
-        from mako.template import Template
-        from mako.lookup import TemplateLookup
-        options.update({'input_encoding': self.encoding})
-        options.setdefault('format_exceptions', bool(DEBUG))
-        lookup = TemplateLookup(directories=self.lookup, **options)
-        if self.source:
-            self.tpl = Template(self.source, lookup=lookup, **options)
-        else:
-            self.tpl = Template(uri=self.name,
-                                filename=self.filename,
-                                lookup=lookup, **options)
-
-    def render(self, *args, **kwargs):
-        for dictarg in args:
-            kwargs.update(dictarg)
-        _defaults = self.defaults.copy()
-        _defaults.update(kwargs)
-        return self.tpl.render(**_defaults)
-
-
-class CheetahTemplate(BaseTemplate):
-    def prepare(self, **options):
-        from Cheetah.Template import Template
-        self.context = threading.local()
-        self.context.vars = {}
-        options['searchList'] = [self.context.vars]
-        if self.source:
-            self.tpl = Template(source=self.source, **options)
-        else:
-            self.tpl = Template(file=self.filename, **options)
-
-    def render(self, *args, **kwargs):
-        for dictarg in args:
-            kwargs.update(dictarg)
-        self.context.vars.update(self.defaults)
-        self.context.vars.update(kwargs)
-        out = str(self.tpl)
-        self.context.vars.clear()
-        return out
-
-
 class Jinja2Template(BaseTemplate):
     def prepare(self, filters=None, tests=None, globals={}, **kwargs):
         from jinja2 import Environment, FunctionLoader
@@ -4147,9 +4103,6 @@ def template(*args, **kwargs):
     return TEMPLATES[tplid].render(kwargs)
 
 
-mako_template = functools.partial(template, template_adapter=MakoTemplate)
-cheetah_template = functools.partial(template,
-                                     template_adapter=CheetahTemplate)
 jinja2_template = functools.partial(template, template_adapter=Jinja2Template)
 
 
@@ -4181,9 +4134,6 @@ def view(tpl_name, **defaults):
 
     return decorator
 
-
-mako_view = functools.partial(view, template_adapter=MakoTemplate)
-cheetah_view = functools.partial(view, template_adapter=CheetahTemplate)
 jinja2_view = functools.partial(view, template_adapter=Jinja2Template)
 
 ###############################################################################
