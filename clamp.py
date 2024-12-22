@@ -7,6 +7,14 @@ from functools import cached_property
 
 app = Bottle()
 
+subapp = Bottle()
+
+@subapp.route('/')
+@subapp.route('/test/:test')
+def test(test='foo'):
+    return test
+
+
 @app.route("/foo")
 def foo():
     return "Hello from /foo"
@@ -35,6 +43,9 @@ def new_route():
 # Access routes again (cache invalidated)
 print("Routes (after adding a route):", app.router.routes)
 
+app.mount("/test/", subapp)
+
+print("Routes ", app.router.print_trie())
 
 from veilchen import run
 

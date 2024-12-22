@@ -252,7 +252,7 @@ class TrieNode:
 class TrieRouter:
     def __init__(self, app=None):
         self.root = TrieNode(path="/")
-        self.app = app  # Reference to the application instance
+        self.app = app  # Reference to the main application instance
 
     @cached_property
     def routes(self):
@@ -341,6 +341,42 @@ class TrieRouter:
     def _parse_query_string(self, query_string):
         return dict(urllib.parse.parse_qsl(query_string))
 
+    def mount(self, prefix, subapp):
+        """Mount a sub-application at the given prefix."""
+        if not prefix.endswith('/'):
+            prefix += '/'
+
+        # Find or create the prefix node
+        node = self.root
+        parts = prefix.strip('/').split('/')
+        for part in parts:
+            if part not in node.children:
+                # Initialize TrieNode with the cumulative path up to this part
+                cumulative_path = f"{node.path.rstrip('/')}/{part}"
+                node.children[part] = TrieNode(path=cumulative_path)
+            node = node.children[part]
+
+        # Add routes from the sub-application to the Trie
+        for route in subapp.router.routes:
+            subpath = route.rule.lstrip('/')  # Remove leading slash
+            subparts = subpath.split('/')
+
+            # Traverse and create nodes for the sub-application's routes
+            current_node = node
+            for subpart in subparts:
+                if subpart not in current_node.children:
+                    cumulative_path = f"{current_node.path.rstrip('/')}/{subpart}"
+                    current_node.children[subpart] = TrieNode(path=cumulative_path)
+                current_node = current_node.children[subpart]
+
+            # Set the callback and method for the final node
+            current_node.method = route.method
+            current_node.callback = route.callback
+
+        # Clear the callback and method for the prefix itself (if necessary)
+        node.callback = None
+        node.method = None
+
     def print_trie(self, node=None, depth=0):
         if node is None:
             node = self.root
@@ -349,7 +385,6 @@ class TrieRouter:
         print(f"{indent}{node.path} (Method: {node.method}, Handler: {handler_name})")
         for child in node.children.values():
             self.print_trie(child, depth + 1)
-
 
 
 class Route:
@@ -600,28 +635,34 @@ class Veilchen:
         if not prefix.endswith('/'):
             self.route('/' + '/'.join(segments), **options)
 
-    def _mount_app(self, prefix, app, **options):
-        if app in self._mounts or '_mount.app' in app.config:
+    def _mount_app(self, prefix, subapp, **options):
+        if subapp in self._mounts or '_mount.app' in subapp.config:
             depr(0, 13, "Application mounted multiple times. Falling back to WSGI mount.",
                  "Clone application before mounting to a different location.")
-            return self._mount_wsgi(prefix, app, **options)
+            return self._mount_wsgi(prefix, subapp, **options)
 
         if options:
             depr(0, 13, "Unsupported mount options. Falling back to WSGI mount.",
                  "Do not specify any route options when mounting veilchen application.")
-            return self._mount_wsgi(prefix, app, **options)
+            return self._mount_wsgi(prefix, subapp, **options)
 
         if not prefix.endswith("/"):
             depr(0, 13, "Prefix must end in '/'. Falling back to WSGI mount.",
                  "Consider adding an explicit redirect from '/prefix' to '/prefix/' in the parent application.")
-            return self._mount_wsgi(prefix, app, **options)
+            return self._mount_wsgi(prefix, subapp, **options)
 
-        self._mounts.append(app)
-        app.config['_mount.prefix'] = prefix
-        app.config['_mount.app'] = self
-        for route in app.routes:
-            route.rule = prefix + route.rule.lstrip('/')
-            self.add_route(route)
+        self._mounts.append(subapp)
+        subapp.config['_mount.prefix'] = prefix
+        subapp.config['_mount.app'] = self
+
+        """Override the mount method to work with the TrieRouter."""
+        # Ensure the prefix ends with a '/'
+        if not prefix.endswith('/'):
+            prefix += '/'
+        # Use the TrieRouter's mount method
+        self.router.mount(prefix, subapp)
+        # Set subapp.config to share the parent's configuration
+        subapp.config.update(self.config)
 
     def mount(self, prefix, app, **options):
         """ Mount an application (:class:`Veilchen` or plain WSGI) to a specific
