@@ -73,6 +73,7 @@ from tempfile import NamedTemporaryFile
 from traceback import format_exc, print_exc
 from unicodedata import normalize
 from functools import cached_property
+import urllib.parse
 
 try:
     from ujson import dumps as json_dumps, loads as json_lds
@@ -235,206 +236,120 @@ def _re_flatten(p):
                   len(m.group(1)) % 2 else m.group(1) + '(?:', p)
 
 
-class Router:
-    """ A Router is an ordered collection of route->target pairs. It is used to
-        efficiently match WSGI requests against a number of routes and return
-        the first target that satisfies the request. The target may be anything,
-        usually a string, ID or callable object. A route consists of a path-rule
-        and a HTTP method.
+class TrieNode:
+    def __init__(self, path="/", method="GET"):
+        self.path = path  # Full path for this node
+        self.method = method  # HTTP method for this node
+        self.callback = None  # Function to call for this route
+        self.is_dynamic = False  # Whether this node represents a dynamic segment
+        self.children = {}  # Child nodes in the Trie
+        self.rule = path  # Rule or name for dynamic segment, e.g., ":name"
 
-        The path-rule is either a static path (e.g. `/contact`) or a dynamic
-        path that contains wildcards (e.g. `/wiki/<page>`). The wildcard syntax
-        and details on the matching order are described in docs:`routing`.
-    """
+    def __repr__(self):
+        return f"TrieNode(path={self.path}, method={self.method}, callback={self.callback})"
 
-    default_pattern = '[^/]+'
-    default_filter = 're'
 
-    #: The current CPython regexp implementation does not allow more
-    #: than 99 matching groups per regular expression.
-    _MAX_GROUPS_PER_PATTERN = 99
+class TrieRouter:
+    def __init__(self, app=None):
+        self.root = TrieNode(path="/")
+        self.app = app  # Reference to the application instance
 
-    def __init__(self, strict=False):
-        self.rules = []  # All rules in order
-        self._groups = {}  # index of regexes to find them in dyna_routes
-        self.builder = {}  # Data structure for the url builder
-        self.static = {}  # Search structure for static routes
-        self.dyna_routes = {}
-        self.dyna_regexes = {}  # Search structure for dynamic routes
-        #: If true, static routes are no longer checked first.
-        self.strict_order = strict
-        self.filters = {
-            're': lambda conf: (_re_flatten(conf or self.default_pattern),
-                                None, None),
-            'int': lambda conf: (r'-?\d+', int, lambda x: str(int(x))),
-            'float': lambda conf: (r'-?[\d.]+', float, lambda x: str(float(x))),
-            'path': lambda conf: (r'.+?', None, None)
-        }
+    @cached_property
+    def routes(self):
+        """Dynamically collect all routes by traversing the Trie."""
+        collected_routes = []
 
-    def add_filter(self, name, func):
-        """ Add a filter. The provided function is called with the configuration
-        string as parameter and must return a (regexp, to_python, to_url) tuple.
-        The first element is a string, the last two are callables or None. """
-        self.filters[name] = func
+        def collect_routes(node):
+            if node.callback:
+                if not callable(node.callback):
+                    raise TypeError(
+                        f"Callback for route {node.path} is not callable: {node.callback}"
+                    )
+                collected_routes.append(
+                    Route(self.app, node.path, node.method, node.callback)
+                )
+            for child in node.children.values():
+                collect_routes(child)
 
-    rule_syntax = re.compile('(\\\\*)'
-        '(?:(?::([a-zA-Z_][a-zA-Z_0-9]*)?()(?:#(.*?)#)?)'
-          '|(?:<([a-zA-Z_][a-zA-Z_0-9]*)?(?::([a-zA-Z_]*)'
-            '(?::((?:\\\\.|[^\\\\>])+)?)?)?>))')
+        collect_routes(self.root)
+        return collected_routes
 
-    def _itertokens(self, rule):
-        offset, prefix = 0, ''
-        for match in self.rule_syntax.finditer(rule):
-            prefix += rule[offset:match.start()]
-            g = match.groups()
-            if g[2] is not None:
-                depr(0, 13, "Use of old route syntax.",
-                            "Use <name> instead of :name in routes.")
-            if len(g[0]) % 2:  # Escaped wildcard
-                prefix += match.group(0)[len(g[0]):]
-                offset = match.end()
-                continue
-            if prefix:
-                yield prefix, None, None
-            name, filtr, conf = g[4:7] if g[2] is None else g[1:4]
-            yield name, filtr or 'default', conf or None
-            offset, prefix = match.end(), ''
-        if offset <= len(rule) or prefix:
-            yield prefix + rule[offset:], None, None
-
-    def add(self, rule, method, target, name=None):
-        """ Add a new rule or replace the target for an existing rule. """
-        anons = 0  # Number of anonymous wildcards found
-        keys = []  # Names of keys
-        pattern = ''  # Regular expression pattern with named groups
-        filters = []  # Lists of wildcard input filters
-        builder = []  # Data structure for the URL builder
-        is_static = True
-
-        for key, mode, conf in self._itertokens(rule):
-            if mode:
-                is_static = False
-                if mode == 'default': mode = self.default_filter
-                mask, in_filter, out_filter = self.filters[mode](conf)
-                if not key:
-                    pattern += '(?:%s)' % mask
-                    key = 'anon%d' % anons
-                    anons += 1
-                else:
-                    pattern += '(?P<%s>%s)' % (key, mask)
-                    keys.append(key)
-                if in_filter: filters.append((key, in_filter))
-                builder.append((key, out_filter or str))
-            elif key:
-                pattern += re.escape(key)
-                builder.append((None, key))
-
-        self.builder[rule] = builder
-        if name: self.builder[name] = builder
-
-        if is_static and not self.strict_order:
-            self.static.setdefault(method, {})
-            self.static[method][self.build(rule)] = (target, None)
-            return
-
-        try:
-            re_pattern = re.compile('^(%s)$' % pattern)
-            re_match = re_pattern.match
-        except re.error as e:
-            raise RouteSyntaxError("Could not add Route: %s (%s)" % (rule, e))
-
-        if filters:
-
-            def getargs(path):
-                url_args = re_match(path).groupdict()
-                for name, wildcard_filter in filters:
-                    try:
-                        url_args[name] = wildcard_filter(url_args[name])
-                    except ValueError:
-                        raise HTTPError(400, 'Path has wrong format.')
-                return url_args
-        elif re_pattern.groupindex:
-
-            def getargs(path):
-                return re_match(path).groupdict()
+    def add(self, rule, method="GET", callback=None, name=None, **config):
+        if callback is None:
+            raise ValueError("A callback function must be provided for a route.")
+        if isinstance(callback, Route):
+            callback_function = callback.callback
         else:
-            getargs = None
+            callback_function = callback
+        if not callable(callback_function):
+            raise TypeError(f"Provided callback is not callable: {callback_function}")
+        parts = self._split_path(rule)
+        current_node = self.root
+        current_path = ""
 
-        flatpat = _re_flatten(pattern)
-        whole_rule = (rule, flatpat, target, getargs)
+        for part in parts:
+            is_dynamic = part.startswith(":")
+            key = ":" if is_dynamic else part
+            if key not in current_node.children:
+                child_path = f"{current_path}/{part}" if current_path else f"/{part}"
+                current_node.children[key] = TrieNode(path=child_path, method=method)
+                if is_dynamic:
+                    current_node.children[key].is_dynamic = True
+            current_node = current_node.children[key]
+            current_path = current_node.path
 
-        if (flatpat, method) in self._groups:
-            if DEBUG:
-                msg = 'Route <%s %s> overwrites a previously defined route'
-                warnings.warn(msg % (method, rule), RuntimeWarning)
-            self.dyna_routes[method][
-                self._groups[flatpat, method]] = whole_rule
-        else:
-            self.dyna_routes.setdefault(method, []).append(whole_rule)
-            self._groups[flatpat, method] = len(self.dyna_routes[method]) - 1
-
-        self._compile(method)
-
-    def _compile(self, method):
-        all_rules = self.dyna_routes[method]
-        comborules = self.dyna_regexes[method] = []
-        maxgroups = self._MAX_GROUPS_PER_PATTERN
-        for x in range(0, len(all_rules), maxgroups):
-            some = all_rules[x:x + maxgroups]
-            combined = (flatpat for (_, flatpat, _, _) in some)
-            combined = '|'.join('(^%s$)' % flatpat for flatpat in combined)
-            combined = re.compile(combined).match
-            rules = [(target, getargs) for (_, _, target, getargs) in some]
-            comborules.append((combined, rules))
-
-    def build(self, _name, *anons, **query):
-        """ Build an URL by filling the wildcards in a rule. """
-        builder = self.builder.get(_name)
-        if not builder:
-            raise RouteBuildError("No route with that name.", _name)
-        try:
-            for i, value in enumerate(anons):
-                query['anon%d' % i] = value
-            url = ''.join([f(query.pop(n)) if n else f for (n, f) in builder])
-            return url if not query else url + '?' + urlencode(query)
-        except KeyError as E:
-            raise RouteBuildError('Missing URL argument: %r' % E.args[0])
+        current_node.callback = callback_function
+        if "routes" in self.__dict__:
+            del self.__dict__["routes"]
 
     def match(self, environ):
-        """ Return a (target, url_args) tuple or raise HTTPError(400/404/405). """
-        verb = environ['REQUEST_METHOD'].upper()
-        path = environ['PATH_INFO'] or '/'
+        full_path = environ["PATH_INFO"]
+        method = environ["REQUEST_METHOD"]
+        query_string = environ.get("QUERY_STRING", "")
+        parts = self._split_path(full_path)
+        current_node = self.root
+        path_params = {}
 
-        methods = ('PROXY', 'HEAD', 'GET', 'ANY') if verb == 'HEAD' else ('PROXY', verb, 'ANY')
+        for part in parts:
+            if part in current_node.children:
+                current_node = current_node.children[part]
+            elif ":" in current_node.children:
+                dynamic_key = current_node.children[":"].rule.split("/")[-1][1:]
+                current_node = current_node.children[":"]
+                path_params[dynamic_key] = part
+            else:
+                raise HTTPError(404, f"Not found: {full_path}")
 
-        for method in methods:
-            if method in self.static and path in self.static[method]:
-                target, getargs = self.static[method][path]
-                return target, getargs(path) if getargs else {}
-            elif method in self.dyna_regexes:
-                for combined, rules in self.dyna_regexes[method]:
-                    match = combined(path)
-                    if match:
-                        target, getargs = rules[match.lastindex - 1]
-                        return target, getargs(path) if getargs else {}
+        if current_node.method != method:
+            raise ValueError(
+                f"Method not allowed for path {full_path}. Expected {current_node.method}."
+            )
 
-        # No matching route found. Collect alternative methods for 405 response
-        allowed = set([])
-        nocheck = set(methods)
-        for method in set(self.static) - nocheck:
-            if path in self.static[method]:
-                allowed.add(method)
-        for method in set(self.dyna_regexes) - allowed - nocheck:
-            for combined, rules in self.dyna_regexes[method]:
-                match = combined(path)
-                if match:
-                    allowed.add(method)
-        if allowed:
-            allow_header = ",".join(sorted(allowed))
-            raise HTTPError(405, "Method not allowed.", Allow=allow_header)
+        if not current_node.callback:
+            raise HTTPError(404, f"Not found: {full_path}")
 
-        # No matching route and no alternative method found. We give up
-        raise HTTPError(404, "Not found: " + repr(path))
+        query_params = self._parse_query_string(query_string)
+        combined_params = {**path_params, **query_params}
+
+        # Return the Route object instead of the raw callback
+        route = Route(self.app, current_node.path, current_node.method, current_node.callback)
+        return route, combined_params
+
+    def _split_path(self, path):
+        return [part for part in path.strip("/").split("/") if part]
+
+    def _parse_query_string(self, query_string):
+        return dict(urllib.parse.parse_qsl(query_string))
+
+    def print_trie(self, node=None, depth=0):
+        if node is None:
+            node = self.root
+        indent = "  " * depth
+        handler_name = node.callback.__name__ if callable(node.callback) else None
+        print(f"{indent}{node.path} (Method: {node.method}, Handler: {handler_name})")
+        for child in node.children.values():
+            self.print_trie(child, depth + 1)
+
 
 
 class Route:
@@ -590,7 +505,7 @@ class Veilchen:
         self.resources = ResourceManager()
 
         self.routes = []  # List of installed :class:`Route` instances.
-        self.router = Router()  # Maps requests to :class:`Route` instances.
+        self.router = TrieRouter(self)  # Maps requests to :class:`Route` instances.
         self.error_handler = {}
 
         # Core plugins
