@@ -17,12 +17,10 @@ class TrieNode:
     def __repr__(self):
         return f"TrieNode(path={self.path}, method={self.method}, callback={self.callback})"
 
-
 class TrieRouter:
     def __init__(self, app=None):
         self.root = TrieNode(path="/")
         self.app = app  # Reference to the application instance
-        self._routes_cache = None  # Tracks changes for invalidation if needed
 
     @cached_property
     def routes(self):
@@ -31,7 +29,7 @@ class TrieRouter:
 
         def collect_routes(node):
             if node.callback:
-                # Ensure that the callback is callable (raw function, not a Route object)
+                # Validate that the callback is callable
                 if not callable(node.callback):
                     raise TypeError(
                         f"Callback for route {node.path} is not callable: {node.callback}"
@@ -50,6 +48,16 @@ class TrieRouter:
         """Add a route, similar to Bottle's Router.add."""
         if callback is None:
             raise ValueError("A callback function must be provided for a route.")
+
+        # If the callback is a Route object, extract its callback function
+        if isinstance(callback, Route):
+            callback_function = callback.callback
+        else:
+            callback_function = callback
+
+        # Debug: Confirm the callback is callable
+        if not callable(callback_function):
+            raise TypeError(f"Provided callback is not callable: {callback_function}")
 
         # Add route to the Trie structure
         parts = self._split_path(rule)
@@ -71,7 +79,7 @@ class TrieRouter:
             current_path = current_node.path
 
         # Store the raw callable function in the Trie node
-        current_node.callback = callback
+        current_node.callback = callback_function
 
         # Invalidate the cached routes property
         if "routes" in self.__dict__:
@@ -128,7 +136,6 @@ class TrieRouter:
 
         for child in node.children.values():
             self.print_trie(child, depth + 1)
-
 
 
 class CustomBottle(Bottle):
